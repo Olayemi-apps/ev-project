@@ -1,3 +1,70 @@
+/* ===== DevTools Detection ===== */
+
+(function () {
+
+  function detectDevTools() {
+
+    const threshold = 160;
+
+    const widthDiff = window.outerWidth - window.innerWidth;
+    const heightDiff = window.outerHeight - window.innerHeight;
+
+    if (widthDiff > threshold || heightDiff > threshold) {
+
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          height:100vh;
+          background:#0a0a0a;
+          color:#fff;
+          font-family:system-ui;
+          text-align:center;
+          padding:40px;
+        ">
+          <div>
+            <h1>Security Notice</h1>
+            <p>Developer tools are not permitted on this platform.</p>
+          </div>
+        </div>
+      `;
+
+    }
+
+  }
+
+  setInterval(detectDevTools, 1000);
+
+})();
+
+/* ===== Basic Site Protection ===== */
+
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.shiftKey && e.key === "J") ||
+    (e.ctrlKey && e.shiftKey && e.key === "C") ||
+    (e.ctrlKey && e.key === "U") ||
+    (e.ctrlKey && e.key === "S")
+  ) {
+    e.preventDefault();
+    return false;
+  }
+
+});
+/*========================================*/
+
+
+
+
+
 :root{
   --bg: #0b0f14;
   --panel: #0f1620;
