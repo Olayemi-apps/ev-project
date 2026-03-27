@@ -1694,101 +1694,57 @@ function renderStoriesMiniCharts(rows){
     });
 
     // =====================================
-    // COLUMN RENDERING (FIX)
-    // =====================================
+  // COLUMN RENDERING (FIX)
+  // =====================================
 
-    const topEl = document.getElementById("mi-top");
-    const policyEl = document.getElementById("mi-policy");
-    const chargingEl = document.getElementById("mi-charging");
-    const capitalEl = document.getElementById("mi-capital");
+  const topEl = document.getElementById("mi-top");
+  const policyEl = document.getElementById("mi-policy");
+  const chargingEl = document.getElementById("mi-charging");
+  const capitalEl = document.getElementById("mi-capital");
 
-    [topEl, policyEl, chargingEl, capitalEl].forEach(el => {
-      if (!el) return;
+  if (topEl && policyEl && chargingEl && capitalEl){
 
-      const parent = el.parentElement; // 👈 THIS is .mi-col-body
+    // reset
+    topEl.innerHTML = "";
+    policyEl.innerHTML = "";
+    chargingEl.innerHTML = "";
+    capitalEl.innerHTML = "";
 
-      if (parent && !parent.querySelector(".mi-scroll-hint")){
-        const hint = document.createElement("div");
-        hint.className = "mi-scroll-hint";
-        hint.innerHTML = "⌄";
+    rows.forEach(r => {
 
-        parent.appendChild(hint); // 👈 injects into .mi-col-body
+      const story = normalizeStory(r);
+      if (!story) return;
+
+      const card = `
+        <div class="mi-story-card">
+          <div class="mi-story-title">${story.title}</div>
+          <div class="mi-story-summary">${story.summary || ""}</div>
+        </div>
+      `;
+
+      // 🔥 MARKET SIGNALS (HIGH IMPACT)
+      if (story.stratum_impact_index >= 40){
+        topEl.innerHTML += card;
       }
+
+      // POLICY
+      if (story.category === "Policy"){
+        policyEl.innerHTML += card;
+      }
+
+      // CHARGING
+      if (story.category === "Charging"){
+        chargingEl.innerHTML += card;
+      }
+
+      // CAPITAL
+      if (story.category === "Capital"){
+        capitalEl.innerHTML += card;
+      }
+
     });
 
-    if (topEl && policyEl && chargingEl && capitalEl){
-
-      // reset
-      topEl.innerHTML = "";
-      policyEl.innerHTML = "";
-      chargingEl.innerHTML = "";
-      capitalEl.innerHTML = "";
-
-      rows.forEach(r => {
-
-        const story = normalizeStory(r);
-        if (!story) return;
-
-        const card = `
-          <div class="mi-story-card" data-story='${JSON.stringify(story)}'>
-            <div class="mi-story-title">${story.title}</div>
-            <div class="mi-story-summary">
-              ${story.summary?.slice(0, 120)}...
-              <span class="mi-read-more">more</span>
-            </div>
-          </div>
-        `;
-
-        document.querySelectorAll(".mi-story-card").forEach(card => {
-
-        card.addEventListener("click", () => {
-
-          const data = JSON.parse(card.dataset.story || "{}");
-
-          const drawer = document.getElementById("mi-story-drawer");
-          const body = document.getElementById("mi-drawer-body");
-
-          if (!drawer || !body) return;
-
-          body.innerHTML = `
-            <h2 style="margin-bottom:10px;">${data.title}</h2>
-            <div style="font-size:13px; opacity:0.6; margin-bottom:10px;">
-              ${data.category} • ${data.region}
-            </div>
-            <p style="line-height:1.6;">
-              ${data.summary || "No summary available"}
-            </p>
-          `;
-
-          drawer.classList.add("open");
-
-          });
-
-        });
-
-        // 🔥 MARKET SIGNALS (HIGH IMPACT)
-        if (story.stratum_impact_index >= 40){
-          topEl.innerHTML += card;
-        }
-
-        // POLICY
-        if (story.category === "Policy"){
-          policyEl.innerHTML += card;
-        }
-
-        // CHARGING
-        if (story.category === "Charging"){
-          chargingEl.innerHTML += card;
-        }
-
-        // CAPITAL
-        if (story.category === "Capital"){
-          capitalEl.innerHTML += card;
-        }
-
-      });
-
-    }
+  }
   }
 
 /* ===== STREAM MINI BAR ===== */
@@ -2874,6 +2830,11 @@ async function loadMarketIntel() {
   });
 
 }
+
+document.getElementById("mi-drawer-close")
+  ?.addEventListener("click", ()=>{
+    document.getElementById("mi-story-drawer").classList.remove("active");
+});
 
 
 window.loadMarketIntelIntoDrawer = async function () {
