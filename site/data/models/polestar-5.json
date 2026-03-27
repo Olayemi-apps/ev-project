@@ -1,0 +1,41 @@
+{
+  "slug": "polestar-5",
+  "brand": "Polestar",
+  "model": "5",
+  "category": "Performance EV",
+  "tagline": "High-performance electric GT built on Polestar’s next-generation aluminium platform.",
+  "highlights": [
+    "Next-generation Polestar flagship",
+    "Advanced bonded aluminium architecture"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Low",
+    "notes": [
+      "Expected EU homologation",
+      "Final UK specification confirmed per VIN"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": 103,
+    "range_wltp_km": 600,
+    "accel_0_100_s": 3.2,
+    "dc_charge_10_80_min": 20
+  },
+  "images": [
+    "./assets/images/polestar-5.avif"
+  ],
+  "source": {
+    "official_url": "https://www.polestar.com",
+    "last_checked": null
+  },
+  "trims": [],
+  "oem": {
+    "meta_title": "Polestar 5",
+    "meta_description": "High-performance electric grand tourer from Polestar."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP estimate",
+    "specs_disclaimer_html": " *Specifications indicative and subject to change."
+  }
+}

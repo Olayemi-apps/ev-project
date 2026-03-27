@@ -1,0 +1,46 @@
+name: EV Data Pipeline
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-ingest:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libatk-bridge2.0-0 libgtk-3-0 libgbm-dev
+
+      - name: Install dependencies
+        run: |
+          pip install -r ingest/requirements.txt || echo "No requirements file"
+
+      - name: Install Playwright Browsers
+        run: |
+          python -m playwright install
+
+      - name: Run ingest pipeline
+        run: |
+          python -m ingest.ingest
+
+      - name: Commit updated data
+        run: |
+          git pull --rebase || echo "No remote changes"
+          git add site/data/
+          git commit -m "Auto update EV data" || echo "No changes"
+          git push

@@ -1,0 +1,53 @@
+{
+  "slug": "rivian-r1s",
+  "brand": "Rivian",
+  "model": "R1S",
+  "category": "Specialist / Utility",
+  "tagline": "All-electric adventure SUV combining off-road capability with premium EV technology.",
+  "highlights": [
+    "Adventure-focused electric SUV",
+    "Concierge-led sourcing and compliance support"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Medium",
+    "notes": [
+      "US market model requires compliance review for UK import"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": 135,
+    "range_wltp_km": 660,
+    "accel_0_100_s": 3.1,
+    "dc_charge_10_80_min": 25
+  },
+  "images": [
+    "./assets/images/rivian-r1s.jpg"
+  ],
+  "source": {
+    "official_url": "https://rivian.com",
+    "last_checked": null
+  },
+  "trims": [
+    {
+      "id": "r1s-awd",
+      "name": "R1S AWD",
+      "availability": "Production",
+      "specs": {
+        "battery_kwh": 135,
+        "range_wltp_km": 660,
+        "accel_0_100_s": 3.1,
+        "drivetrain": "AWD",
+        "dc_charge_10_80_min": 25
+      }
+    }
+  ],
+  "oem": {
+    "meta_title": "Rivian R1S",
+    "meta_description": "Luxury adventure EV SUV with high performance and off-road capability."
+  },
+  "specs_meta": {
+    "range_standard": "EPA / WLTP estimate",
+    "specs_disclaimer_html": " *Specifications indicative and vary by configuration."
+  }
+}

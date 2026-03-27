@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Article | Stratum EV</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/market-intelligence.css" />
+    <link rel="stylesheet" href="./css/stories.css" />
+  </head>
+
+  <body data-page="story">
+
+    <main class="mi mi-article">
+
+      <section class="mi-article-hero">
+
+        <!-- Back Navigation -->
+        <div class="mi-article-back">
+          <a href="market-intelligence.html?tab=stories" class="mi-back-link">
+            ← Back to Market Intelligence
+          </a>
+        </div>
+
+        <!-- Meta -->
+        <div id="articleMeta" class="mi-article-meta"></div>
+
+        <!-- Title + Tone Badge -->
+        <div class="mi-article-title-wrap">
+          <h1 id="articleTitle"></h1>
+          <span id="articleTone" class="mi-tone-badge"></span>
+        </div>
+
+        <!-- Article Actions -->
+        <div class="mi-article-actions">
+          <button id="exportBriefBtn" class="mi-btn mi-btn-outline">
+            Export Executive Brief
+          </button>
+        </div>
+
+      </section>
+
+      <section class="mi-article-body" id="articleBody"></section>
+
+      <section class="mi-article-source" id="articleSource"></section>
+
+    </main>
+
+    <!-- Related Signals -->
+    <section class="mi-related">
+      <h3 class="mi-related-title">Related Signals</h3>
+      <div id="relatedSignals" class="mi-related-grid"></div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./js/story.js"></script>
+    <script src="./js/ajax-nav.js"></script>
+  </body>
+</html>

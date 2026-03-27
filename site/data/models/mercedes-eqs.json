@@ -1,0 +1,35 @@
+{
+  "slug": "mercedes-eqs",
+  "brand": "Mercedes-Benz",
+  "model": "EQS",
+  "category": "Luxury Sedan",
+  "tagline": "Luxury electric flagship sedan with long-range efficiency and advanced interior technology.",
+  "highlights": [],
+  "uk_readiness": {
+    "iva_risk": "Unknown",
+    "notes": []
+  },
+  "specs": {
+    "drivetrain": null,
+    "battery_kwh": 108,
+    "range_wltp_km": 720,
+    "accel_0_100_s": 4.3,
+    "dc_charge_10_80_min": 31
+  },
+  "images": [
+    "./assets/images/eqs.jpg"
+  ],
+  "source": {
+    "official_url": null,
+    "last_checked": null
+  },
+  "trims": [],
+  "oem": {
+    "meta_title": "Mercedes-Benz EQS",
+    "meta_description": "Luxury electric flagship sedan with long-range efficiency and advanced interior technology."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "specs_disclaimer_html": "*Specifications indicative and may vary by market, configuration and conditions."
+  }
+}

@@ -1,0 +1,217 @@
+<!-- /site/model.html -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Model | Stratum EV</title>
+  <meta name="description" content="Model brief with headline specs, trims, and UK import readiness context." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/market-intelligence-drawer.css" />
+  <link rel="stylesheet" href="./css/market-intelligence.css" />
+  <link rel="stylesheet" href="./css/app.css?v=11" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html" aria-label="Stratum EV home">
+        <img class="brand-logo" src="./assets/img/brand/stratum-ev-logo-clean-h48.png" alt="Stratum EV" />
+      </a>
+
+      <nav class="tabs" aria-label="Primary">
+        <a class="tab" href="./index.html">Market Intelligence</a>
+        <a class="tab" href="./about.html">About Us</a>
+        <a class="tab" href="./featured.html">Featured EV</a>
+        <a class="tab" href="./services.html">Services</a>
+        <a class="tab" href="./ev-history.html">EV History</a>
+        <a class="tab" href="./ev-evolution.html">EV Evolution</a>
+        <a class="tab" href="./innovation.html">Innovation</a>
+        <a class="tab" href="https://www.shopify.com">Store</a>
+        <a class="tab" href="./contact.html">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- Model-only: dynamic “last checked” status chip -->
+      <span class="badge badge-status" id="lastChecked" aria-live="polite"></span>
+    </div>
+  </header>
+
+
+  <main class="container page">
+    <a class="back" href="./index.html">← Back to models</a>
+
+    <div class="header">
+      <div class="panel">
+        <h1 class="h-title" id="title" style="margin-bottom:10px;"></h1>
+        <p class="h-sub" id="tagline" style="margin-top:0;"></p>
+
+        <div class="spec-grid" id="specs"></div>
+
+        <div class="cta-row">
+          <a id="ctaEmail" class="btn" href="#">Request sourcing</a>
+          <a id="ctaSource" class="btn btn-ghost" href="#" target="_blank" rel="noreferrer">View official source</a>
+        </div>
+
+        <div class="note" id="disclaimer" style="display:none;"></div>
+
+        <h2 class="h2" style="margin-top:18px;">Highlights</h2>
+        <ul class="list" id="highlights"></ul>
+
+        <h2 class="h2" style="margin-top:18px;">UK readiness</h2>
+        <p class="p" id="iva"></p>
+        <ul class="list" id="uknotes"></ul>
+
+        <div id="trimsWrap" style="margin-top:18px;"></div>
+      </div>
+
+      <div class="heroimg" id="heroWrap">
+        <img id="hero" alt="Model image" loading="eager" />
+      </div>
+    </div>
+  </main>
+
+  <!-- Sourcing modal -->
+  <div id="sourcingModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="1"></div>
+
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div>
+          <div class="kicker">Sourcing request</div>
+          <div id="modalTitle" class="title">Request sourcing</div>
+        </div>
+        <button id="modalClose" class="iconbtn" type="button" aria-label="Close">×</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="sourcingForm" class="form">
+          <div class="form-row">
+            <label class="form-label" for="f_contact">Your email</label>
+            <input id="f_contact" name="contact" type="email" class="input" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="f_trim">Target trim/spec</label>
+            <input id="f_trim" name="trim" type="text" class="input" placeholder="Example: AWD, air suspension, 22&quot; wheels" />
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label class="form-label" for="f_budget">Budget range</label>
+              <input id="f_budget" name="budget" type="text" class="input" placeholder="Example: £45k–£60k" />
+            </div>
+            <div>
+              <label class="form-label" for="f_timeline">Timeline</label>
+              <input id="f_timeline" name="timeline" type="text" class="input" placeholder="Example: 6–10 weeks" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="f_location">UK delivery location</label>
+            <input id="f_location" name="location" type="text" class="input" placeholder="Example: London" />
+          </div>
+
+          <div class="form-row">
+            <label class="form-label" for="f_notes">Notes</label>
+            <textarea id="f_notes" name="notes" class="input" placeholder="Any must-haves, colours, wheel size, constraints, etc."></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn btn-ghost" type="button" data-close="1">Cancel</button>
+            <button class="btn" type="submit">Send request</button>
+          </div>
+
+          <p class="small muted" style="margin:10px 0 0;">
+            This will open your email client with the request pre-filled.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>Built from official sources, updated via ingest snapshots.</div>
+      <div class="footer-links">
+        <a href="./index.html">Market Intelligence</a>
+        <a href="./services.html">Services</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/model.js"></script>
+  <script src="./js/market-intelligence.js"></script>
+  <script src="./js/nav.js"></script>
+  <script src="./js/reveal.js"></script>
+  <script src="./js/ajax-nav.js"></script>
+
+  <!-- Market Intelligence Drawer -->
+<div id="mi-drawer" class="mi-drawer" aria-hidden="true">
+  <div class="mi-drawer__backdrop" data-mi-close></div>
+
+  <div class="mi-drawer__panel" role="dialog" aria-modal="true" aria-label="Market Intelligence">
+    <div class="mi-drawer__header">
+      <div>
+        <div class="mi-drawer__title">Market Intelligence</div>
+        <div id="mi-updated" class="mi-drawer__sub">Loading latest intelligence…</div>
+      </div>
+
+      <div class="mi-drawer__actions">
+        <a id="mi-brief-download" class="mi-btn" href="./data/briefs/latest.pdf" target="_blank" rel="noreferrer">
+          Download Latest Weekly Brief
+        </a>
+        <button class="mi-close" type="button" data-mi-close aria-label="Close">✕</button>
+      </div>
+    </div>
+
+    <div class="mi-drawer__body">
+      <section class="mi-brief" id="mi-brief"></section>
+      <section class="mi-kpis" id="mi-kpis"></section>
+
+      <section class="mi-controls">
+        <div class="mi-filters">
+          <select id="f-region">
+            <option value="">All Regions</option>
+            <option>UK</option><option>EU</option><option>US</option><option>China</option><option>Global</option>
+          </select>
+
+          <select id="f-category">
+            <option value="">All Categories</option>
+            <option>Industry</option><option>OEM</option><option>Battery</option><option>Charging</option><option>Policy</option><option>Investment</option>
+          </select>
+
+          <input id="f-q" type="search" placeholder="Search titles and sources" />
+        </div>
+
+        <div class="mi-sort">
+          <select id="f-sort">
+            <option value="newest">Sort: Newest</option>
+            <option value="oldest">Sort: Oldest</option>
+            <option value="source">Sort: Source</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="mi-grid">
+        <section class="mi-panel">
+          <h2>Top Stories</h2>
+          <div id="mi-top" class="mi-list"></div>
+        </section>
+
+        <section class="mi-panel">
+          <h2>Stream</h2>
+          <div id="mi-stream" class="mi-list"></div>
+        </section>
+      </section>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

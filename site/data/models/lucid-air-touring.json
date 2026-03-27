@@ -1,0 +1,40 @@
+{
+  "slug": "lucid-air-touring",
+  "brand": "Lucid",
+  "model": "Air Touring",
+  "category": "Luxury Sedan",
+  "tagline": "Long-range luxury electric sedan balancing performance and efficiency.",
+  "highlights": [
+    "Long-range luxury EV sedan",
+    "Lucid high-efficiency drivetrain"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Medium",
+    "notes": [
+      "Imported model requires UK compliance verification"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": 112,
+    "range_wltp_km": 653,
+    "accel_0_100_s": 3.4,
+    "dc_charge_10_80_min": 20
+  },
+  "images": [
+    "./assets/images/lucid-air-touring.jpg"
+  ],
+  "source": {
+    "official_url": "https://lucidmotors.com",
+    "last_checked": null
+  },
+  "trims": [],
+  "oem": {
+    "meta_title": "Lucid Air Touring",
+    "meta_description": "Long-range luxury electric sedan from Lucid."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "specs_disclaimer_html": " *Specifications indicative and vary by configuration."
+  }
+}

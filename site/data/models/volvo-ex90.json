@@ -1,0 +1,40 @@
+{
+  "slug": "volvo-ex90",
+  "brand": "Volvo",
+  "model": "EX90",
+  "category": "Luxury SUV",
+  "tagline": "Scandinavian luxury electric SUV with advanced safety architecture.",
+  "highlights": [
+    "Flagship Volvo electric SUV",
+    "Advanced safety and lidar technology"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Low",
+    "notes": [
+      "EU and UK specification available"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": 111,
+    "range_wltp_km": 600,
+    "accel_0_100_s": 4.9,
+    "dc_charge_10_80_min": 30
+  },
+  "images": [
+    "./assets/images/volvo-ex90.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.volvocars.com",
+    "last_checked": null
+  },
+  "trims": [],
+  "oem": {
+    "meta_title": "Volvo EX90",
+    "meta_description": "Luxury electric SUV from Volvo with advanced safety technology."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "specs_disclaimer_html": " *Specifications indicative and vary by configuration."
+  }
+}

@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Market Intelligence | Stratum EV</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/market-intelligence.css" />
+  <link rel="stylesheet" href="./css/stories.css" />
+  <link rel="stylesheet" href="./css/stream.css" />
+  <link rel="stylesheet" href="./css/app.css?v=11" />
+  <link rel="icon" href="data:," />
+</head>
+
+<body data-page="market-intelligence">
+    <header class="nav">
+        <div class="container nav-inner">
+          <a class="brand" href="./index.html" aria-label="Stratum EV home">
+            <img class="brand-logo" src="./assets/img/brand/stratum-ev-logo-clean-h48.png" alt="Stratum EV" />
+          </a>
+
+          <nav class="tabs" aria-label="Primary">
+            <a class="tab" href="./index.html">Home</a>
+            <a class="tab is-active" href="./market-intelligence.html">Market Intelligence</a>
+            <a class="tab" href="./about.html">About Us</a>
+            <a class="tab" href="./featured.html">Featured EV</a>
+            <a class="tab" href="./services.html">Services</a>
+            <a class="tab" href="./ev-history.html">EV History</a>
+            <a class="tab" href="./ev-evolution.html">EV Evolution</a>
+            <a class="tab" href="./innovation.html">Innovation</a>
+            <a class="tab" href="https://www.shopify.com">Store</a>
+            <a class="tab" href="./contact.html">Contact</a>
+            <!-- mobile only CTA -->
+            <a class="tab tab-cta" href="./uk-compliance-led-sourcing.html">
+                UK compliance-led sourcing
+            </a>
+          </nav>
+
+          <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+        <a class="badge badge-cta" href="./uk-compliance-led-sourcing.html">UK compliance-led sourcing</a>
+    </header>
+
+    <div class="nav-open-overlay"></div>
+
+    <main class="mi">
+
+      <!-- HERO -->
+      <section class="mi-hero">
+        <h1>Market Intelligence</h1>
+        <p id="mi-updated" class="mi-sub">
+          Live executive briefing and signals across OEM, policy, charging, and capital.
+        </p>
+
+        <div class="mi-actions">
+          <a id="mi-brief-download" class="mi-btn"
+            href="./data/briefs/latest.pdf"
+            target="_blank" rel="noreferrer">
+            Download Latest Weekly Brief
+          </a>
+          <span id="mi-brief-meta" class="mi-sub" style="margin-left:10px;"></span>
+        </div>
+      </section>
+
+      <!-- STATUS BAR -->
+      <section class="mi-status">
+        <div class="mi-status__left">
+          <div class="mi-pill" id="mi-pill-week">Week: –</div>
+          <div class="mi-pill" id="mi-pill-updated">Updated: –</div>
+        </div>
+
+        <div class="mi-status__right">
+          
+        </div>
+      </section>
+
+      <!-- TABS -->
+      <section class="mi-tabs">
+        <button class="mi-tab is-active" data-mi-tab="overview">Overview</button>
+        <button class="mi-tab" data-mi-tab="stories">Stories</button>
+        <button class="mi-tab" data-mi-tab="regulations">Regulations</button>
+        <button class="mi-tab" data-mi-tab="innovation">Innovation</button>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- TAB: OVERVIEW -->
+      <!-- ===================================================== -->
+      <section class="mi-tabpanel is-active" id="tab-overview">
+
+        <!-- Executive Brief -->
+        <section class="mi-brief" id="mi-brief">
+
+          <div class="mi-briefHeader">
+
+            <div class="mi-briefTitle">
+              Executive Brief
+            </div>
+
+            <div id="mi-brief-date" class="mi-briefDate"></div>
+
+          </div>
+
+          <div id="mi-brief-text"></div>
+
+        </section>
+
+        <!-- Executive Insight Panel -->
+        <section class="mi-executiveInsight">
+          <div class="mi-insightCard mi-risk">
+            <div class="mi-insightLabel">Risk Factor</div>
+            <div id="miRiskText" class="mi-insightText"></div>
+          </div>
+
+          <div class="mi-insightCard mi-opportunity">
+            <div class="mi-insightLabel">Opportunity Signal</div>
+            <div id="miOpportunityText" class="mi-insightText"></div>
+          </div>
+        </section>
+
+        <section id="mi-latest-brief" class="mi-latest"></section>
+
+        <section class="mi-kpis" id="mi-kpis"></section>
+
+        <!-- Weekly Volume Trend -->
+        <section class="mi-panel mi-trend-panel">
+          <h2>Weekly Volume Trend</h2>
+          <div class="mi-regime" id="mi-regime"></div>
+
+          <div class="mi-trend-desc">
+            Story volume over the most recent 7-day window, anchored to latest publication date.
+          </div>
+
+          <div class="mi-trend-toggle">
+            <button class="mi-chip is-active" data-trend="7">7D</button>
+            <button class="mi-chip" data-trend="30">30D</button>
+          </div>
+
+          <div class="mi-trend-summary" id="mi-trend-summary"></div>
+          <div class="mi-anomaly-insight" id="mi-anomaly-insight"></div>
+
+          <div class="mi-trend-wrap">
+            <div class="mi-trend-y"></div>
+            <div>
+              <div class="mi-trend-chart" id="mi-chart-trend"></div>
+              <div class="mi-trend-x" id="mi-trend-x"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- COVERAGE MIX -->
+        <section class="mi-panel mi-section" id="mi-coverage-panel">
+          <h2>Coverage Mix</h2>
+
+          <div class="mi-charts">
+            <div class="mi-chart">
+              <div class="mi-chart__title">Market Signal Structure (7d)</div>
+              <div id="mi-chart-category" class="mi-chart__viz mi-signal"></div>
+            </div>
+
+            <div class="mi-chart">
+              <div class="mi-chart__title">By Region (7d)</div>
+              <div id="mi-chart-region" class="mi-chart__viz"></div>
+              <div id="mi-coverage-insight" class="mi-coverage-insight"></div>
+            </div>
+            
+          </div>
+
+          
+
+          <div class="mi-momentum">
+            <div class="mi-chart__title">Category Momentum (Δ vs prior 7d)</div>
+            <div id="mi-chart-momentum" class="mi-chart__viz"></div>
+          </div>
+
+        
+        </section>
+
+        <!-- EXECUTIVE WATCHLISTS -->
+        <section class="mi-panel mi-section" id="mi-watchlist-panel">
+
+          <div class="mi-watch-head">
+            <div class="mi-watch-head-left">
+              <div class="mi-watch-eyebrow">Executive Watchlists</div>
+              <div class="mi-watch-sub">
+                Regulatory and innovation signals requiring executive attention
+              </div>
+            </div>
+
+            <div class="mi-watch-head-right">
+              <a class="mi-link-soft" href="#" data-mi-goto="regulations">
+                View regulations →
+              </a>
+              <a class="mi-link-soft" href="#" data-mi-goto="innovation">
+                View innovation →
+              </a>
+            </div>
+          </div>
+
+          <div class="mi-intensity-surface">
+            <div class="mi-chart__title">Signal Intensity (7d)</div>
+            <div id="mi-chart-intensity"></div>
+          </div>
+
+          <div class="mi-watchlists">
+
+            <div class="mi-watch">
+              <div class="mi-watch__title">
+                Regulation Watch
+                <span class="mi-pill mi-pill--priority" style="margin-left:8px;">
+                  High priority
+                </span>
+              </div>
+
+              <div class="mi-carousel" data-mi-carousel>
+                <button class="mi-carbtn" type="button" data-mi-prev>‹</button>
+                <div id="mi-regs-track" class="mi-carousel__track"></div>
+                <button class="mi-carbtn" type="button" data-mi-next>›</button>
+              </div>
+            </div>
+
+            <div class="mi-watch">
+              <div class="mi-watch__title">
+                Innovation Watch
+              </div>
+
+              <div class="mi-carousel" data-mi-carousel>
+                <button class="mi-carbtn" type="button" data-mi-prev>‹</button>
+                <div id="mi-innov-track" class="mi-carousel__track"></div>
+                <button class="mi-carbtn" type="button" data-mi-next>›</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- CAPITAL INTELLIGENCE -->
+        <section class="mi-panel mi-section" id="mi-capital-panel">
+          <h2>Capital Intelligence</h2>
+          <div id="mi-capital-content"></div>
+        </section>
+
+      </section> <!-- END TAB OVERVIEW -->
+
+
+      <!-- ===================================================== -->
+      <!-- TAB: STORIES -->
+      <!-- ===================================================== -->
+      <section class="mi-tabpanel" id="tab-stories">
+
+          <section class="mi-intel-wrapper">
+
+            <div class="mi-stories-header">
+              <div class="mi-stories-header-left">
+                <div class="mi-stories-title">Market Signal Monitor</div>
+                <div class="mi-stories-sub">
+                  Real-time strategic signals across OEM, policy, charging, and capital flows
+                </div>
+              </div>
+
+            </div>
+
+            <!-- TOP STORIES -->
+            <div class="mi-section-divider">
+              Top Signals
+            </div>
+            <div id="mi-featured-signal" class="mi-featured"></div>
+            <div class="mi-stories-grid">
+
+              <!-- MARKET -->
+              <section class="mi-stories-col market-accent">
+                <div class="mi-col-header">
+                  <h3 class="mi-col-title">Market Signals</h3>
+                </div>
+                <div class="mi-col-body">
+                  <div id="mi-top" class="mi-col-scroll"></div>
+                </div>
+              </section>
+
+              <!-- POLICY -->
+              <section class="mi-stories-col policy-accent">
+                <div class="mi-col-header">
+                  <h3 class="mi-col-title">Policy</h3>
+                </div>
+                <div class="mi-col-body">
+                  <div id="mi-policy" class="mi-col-scroll"></div>
+                </div>
+              </section>
+
+              <!-- CHARGING -->
+              <section class="mi-stories-col charging-accent">
+                <div class="mi-col-header">
+                  <h3 class="mi-col-title">Charging</h3>
+                </div>
+                <div class="mi-col-body">
+                  <div id="mi-charging" class="mi-col-scroll"></div>
+                </div>
+              </section>
+
+              <!-- CAPITAL -->
+              <section class="mi-stories-col capital-accent">
+                <div class="mi-col-header">
+                  <h3 class="mi-col-title">Capital</h3>
+                </div>
+                <div class="mi-col-body">
+                  <div id="mi-capital" class="mi-col-scroll"></div>
+                </div>
+              </section>
+
+            </div>
+            <div class="mi-intel-layout">
+
+              <!-- LEFT COLUMN: ANALYTICS -->
+              <div class="mi-stream-analytics">
+
+                <!-- CATEGORY DOUGHNUT -->
+                <div class="mi-chart-block--premium">
+                  <div class="mi-chart-header">
+                    <div>
+                      <div class="mi-chart-title">Narrative Distribution</div>
+                      <div class="mi-chart-sub">Filtered category mix</div>
+                    </div>
+                  </div>
+
+                  <div class="mi-chart-surface">
+                    <canvas id="topStoriesChart"></canvas>
+                  </div>
+                </div>
+
+                <!-- MINI BAR CHART -->
+                <div class="mi-chart-block--premium">
+                  <div class="mi-chart-header">
+                    <div>
+                      <div class="mi-chart-title">Signal Volume</div>
+                      <div class="mi-chart-sub">Category intensity snapshot</div>
+                    </div>
+                  </div>
+
+                  <div class="mi-chart-surface" style="height:160px;">
+                    <canvas id="streamMiniChart"></canvas>
+                  </div>
+                </div>
+
+                <!-- INSIGHT PANEL -->
+                <div class="mi-stories-insight" id="miStoriesInsight">
+                  <div class="mi-insight-label">Insight</div>
+                  <div class="mi-insight-text"></div>
+                </div>
+
+              </div>
+
+              <!-- RIGHT COLUMN: STREAM -->
+              <div class="mi-stream-body">
+
+                <div class="mi-stream-header">
+                  <div class="mi-stream-title">Live Intelligence Feed</div>
+                  <div class="mi-stream-sub">Ranked by signal weight</div>
+                </div>
+
+                <div id="mi-stream"></div>
+
+              </div>
+
+            </div>
+
+          </section>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- TAB: REGULATIONS -->
+      <!-- ===================================================== -->
+      <section class="mi-tabpanel" id="tab-regulations">
+
+        <section class="mi-panel">
+
+          <!-- Header -->
+          <div class="mi-reg-header">
+            <div>
+              <div class="mi-reg-title">Regulatory Intelligence</div>
+              <div class="mi-reg-sub">
+                Tracking policy tightening, subsidy flows, and compliance risk across EV markets
+              </div>
+            </div>
+          </div>
+
+          <!-- Top Layer -->
+          <div class="mi-reg-grid">
+
+            <!-- Regulatory Risk Snapshot -->
+            <div class="mi-reg-card">
+              <div class="mi-reg-card-title">Regulatory Risk Snapshot</div>
+              <div id="mi-reg-risk"></div>
+              <div id="mi-reg-index"></div>
+            </div>
+
+            <!-- Regional Exposure -->
+            <div class="mi-reg-card">
+              <div class="mi-reg-card-title">Regional Policy Exposure</div>
+              <div id="mi-reg-region"></div>
+            </div>
+
+            <!-- Regional Policy -->
+            <div class="mi-reg-heat">
+              <div class="mi-reg-heat-title">Regional Regulatory Heat</div>
+              <div id="mi-reg-heatmap"></div>
+            </div>
+
+            <!-- Regional Matrix -->
+            <div class="mi-reg-matrix">
+              <div class="mi-reg-matrix-title">Regulatory Pressure Matrix</div>
+              <canvas id="mi-reg-matrix-chart"></canvas>
+            </div>
+
+          </div>
+
+          <!-- Momentum -->
+          <div class="mi-reg-wide">
+            <div class="mi-reg-card-title">Policy Momentum</div>
+            <div id="mi-reg-momentum"></div>
+          </div>
+
+          <!-- Live Regulatory Feed -->
+          <div class="mi-reg-feed">
+            <div class="mi-reg-card-title">Live Regulatory Signals</div>
+            <div id="mi-reg-feed"></div>
+          </div>
+
+          <!-- Strategic Interpretation -->
+          <div class="mi-reg-strategy">
+            <div class="mi-reg-card-title">Strategic Interpretation</div>
+            <div id="mi-reg-strategy"></div>
+          </div>
+
+        </section>
+
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- TAB: INNOVATION -->
+      <!-- ===================================================== -->
+      <section class="mi-tabpanel" id="tab-innovation">
+
+        <section class="mi-panel">
+
+          <!-- Header -->
+          <div class="mi-reg-header">
+            <div>
+              <div class="mi-reg-title">Innovation Intelligence</div>
+              <div class="mi-reg-sub">
+                Tracking technology acceleration, R&D momentum, and structural breakthroughs across EV markets
+              </div>
+            </div>
+          </div>
+
+          <!-- Intelligence Grid -->
+          <div class="mi-innovation-grid">
+
+            <div class="mi-innovation-card" id="mi-innovation-index"></div>
+
+            <div class="mi-innovation-card" id="mi-innovation-heat"></div>
+
+            <div class="mi-innovation-card" id="mi-innovation-momentum"></div>
+
+          </div>
+
+          <!-- Live Innovation Feed -->
+          <div class="mi-reg-feed">
+            <div class="mi-reg-card-title">Live Innovation Signals</div>
+            <div id="mi-innov-full"></div>
+          </div>
+
+        </section>
+
+      </section>
+
+   </main>
+
+   <footer class="site-footer">
+
+    <!-- EV Brand Strip -->
+    <div class="brand-strip">
+      <div class="brand-track">
+
+        <span>Lucid</span>
+        <span>BYD</span>
+        <span>Scout Motors</span>
+        <span>XPeng</span>
+        <span>NIO</span>
+        <span>Zeekr</span>
+        <span>Rivian</span>
+        <span>Polestar</span>
+        <span>Lotus EV</span>
+        <span>Faraday Future</span>
+        <span>VinFast</span>
+        <span>Hyundai EV</span>
+
+        <!-- duplicate for seamless loop -->
+        <span>Lucid</span>
+        <span>BYD</span>
+        <span>Scout Motors</span>
+        <span>XPeng</span>
+        <span>NIO</span>
+        <span>Zeekr</span>
+        <span>Rivian</span>
+        <span>Polestar</span>
+        <span>Lotus EV</span>
+        <span>Faraday Future</span>
+        <span>VinFast</span>
+        <span>Hyundai EV</span>
+
+      </div>
+    </div>
+
+    <div class="footer-inner">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <div class="footer-logo">STRATUM EV</div>
+        <div class="footer-tagline">
+          Rare, high-spec EV sourcing with UK compliance intelligence.
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Navigation</div>
+        <a href="./index.html">Home</a>
+        <a href="./market-intelligence.html">Market Intelligence</a>
+        <a href="./services.html">Services</a>
+        <a href="./innovation.html">Innovation</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Research</div>
+        <a href="./ev-history.html">EV History</a>
+        <a href="./ev-evolution.html">EV Evolution</a>
+        <a href="./about.html">About Stratum EV</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Contact</div>
+        <a href="./contact.html">Contact</a>
+        <a href="./uk-compliance-led-sourcing.html">UK Compliance-Led EV Sourcing</a>
+        <div class="footer-meta">London · United Kingdom</div>
+      </div>
+
+    </div>
+
+      <div class="footer-bottom">
+
+        <div class="footer-copy">
+          © <span id="footer-year"></span> Stratum EV. All rights reserved.
+        </div>
+
+        <div class="footer-legal">
+          Built from official sources and structured market intelligence.
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+       <!-- STORY DRAWER -->
+   <div id="mi-story-drawer" class="mi-drawer">
+     <div class="mi-drawer-content">
+        <div class="mi-drawer-inner">
+          <button id="mi-drawer-close" class="mi-drawer-close">×</button>
+          <div id="mi-drawer-body"></div>
+        </div>  
+     </div>
+   </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./js/market-intelligence.js"></script> 
+  <script src="./js/ajax-nav.js"></script>
+  <script src="./js/nav.js"></script>
+ 
+  
+  
+
+</body>
+</html>

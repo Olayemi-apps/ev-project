@@ -1,0 +1,59 @@
+{
+  "slug": "lucid-air-sapphire",
+  "brand": "Lucid",
+  "model": "Air Sapphire",
+  "category": "Executive Performance Sedan",
+  "tagline": "Ultra-luxury electric performance sedan with discreet, limited-production sourcing.",
+  "highlights": [
+    "Limited production flagship with discreet luxury positioning",
+    "Concierge-led sourcing, shipping, IVA preparation, and registration"
+  ],
+  "uk_readiness": {
+    "iva_risk": "TBC",
+    "notes": [
+      "Confirm charging standards, connectivity, and region settings per VIN",
+      "Validate any OTA and app access constraints for UK usage"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": null,
+    "range_wltp_km": null,
+    "accel_0_100_s": 1.99,
+    "dc_charge_10_80_min": null
+  },
+  "images": [
+    "../assets/images/lucid-air-sapphire.jpg"
+  ],
+  "source": {
+    "official_url": "https://lucidmotors.com/air/air-sapphire",
+    "last_checked": null
+  },
+  "trims": [
+    {
+      "id": "sapphire-awd",
+      "name": "Sapphire AWD",
+      "availability": "Allocation dependent",
+      "specs": {
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": 1.99,
+        "drivetrain": "AWD",
+        "dc_charge_10_80_min": null
+      },
+      "notes": [
+        "Final UK-delivered spec confirmed per VIN",
+        "Published values vary by market and test method"
+      ]
+    }
+  ],
+  "oem": {
+    "meta_title": "Lucid Air Sapphire",
+    "meta_description": "Ultra-high performance electric luxury sedan with limited production availability."
+  },
+  "specs_meta": {
+    "range_standard": "TBC",
+    "specs_disclaimer_html": " *Specs shown are indicative and may vary by market, wheel and tire specification, ambient temperature, battery state, and software version. UK-delivered specification should be confirmed per VIN and official documentation."
+  }
+}
+

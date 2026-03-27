@@ -1,0 +1,537 @@
+/* ===== DevTools Detection ===== */
+
+(function () {
+
+  function detectDevTools() {
+
+    const threshold = 160;
+
+    const widthDiff = window.outerWidth - window.innerWidth;
+    const heightDiff = window.outerHeight - window.innerHeight;
+
+    if (widthDiff > threshold || heightDiff > threshold) {
+
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          height:100vh;
+          background:#0a0a0a;
+          color:#fff;
+          font-family:system-ui;
+          text-align:center;
+          padding:40px;
+        ">
+          <div>
+            <h1>Security Notice</h1>
+            <p>Developer tools are not permitted on this platform.</p>
+          </div>
+        </div>
+      `;
+
+    }
+
+  }
+
+  setInterval(detectDevTools, 1000);
+
+})();
+
+/* ===== Basic Site Protection ===== */
+
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.shiftKey && e.key === "J") ||
+    (e.ctrlKey && e.shiftKey && e.key === "C") ||
+    (e.ctrlKey && e.key === "U") ||
+    (e.ctrlKey && e.key === "S")
+  ) {
+    e.preventDefault();
+    return false;
+  }
+
+});
+/*========================================*/
+
+async function loadIndex() {
+
+  const cached = null; // disable cache for now
+
+  if(cached){
+    return JSON.parse(cached);
+  }
+
+  const res = await fetch("./data/models/index.json?v=4");
+
+  if (!res.ok) throw new Error("Failed to load models index");
+
+  const data = (await res.json()).models || [];
+
+  sessionStorage.setItem("ev_model_index", JSON.stringify(data));
+
+  return data;
+
+}
+
+function fmtRange(v) {
+  if (v == null) return "Range: TBC";
+  return `Range: ${v} km`;
+}
+function fmtAccel(v) {
+  if (v == null) return "0–100: TBC";
+  return `0–100: ${v}s`;
+}
+function fmtCharge(v) {
+  if (v == null) return "10–80: TBC";
+  return `10–80: ${v} min`;
+}
+
+function getCategoryOptions(models) {
+  const set = new Set(models.map(m => m.category).filter(Boolean));
+  return Array.from(set).sort((a, b) => a.localeCompare(b));
+}
+
+function matchesQuery(m, q) {
+  if (!q) return true;
+  const hay = `${m.brand} ${m.model} ${m.category} ${m.tagline}`.toLowerCase();
+  return hay.includes(q.toLowerCase());
+}
+
+function applySort(models, sortKey) {
+  const copy = [...models];
+  if (sortKey === "range_desc") {
+    copy.sort((a, b) => (b.specs?.range_wltp_km ?? -1) - (a.specs?.range_wltp_km ?? -1));
+    return copy;
+  }
+  if (sortKey === "accel_asc") {
+    copy.sort((a, b) => (a.specs?.accel_0_100_s ?? 999) - (b.specs?.accel_0_100_s ?? 999));
+    return copy;
+  }
+  copy.sort(
+    (a, b) =>
+      (a.brand || "").localeCompare(b.brand || "") ||
+      (a.model || "").localeCompare(b.model || "")
+  );
+  return copy;
+}
+
+const nav = document.querySelector(".nav");
+
+if(nav){
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  });
+}
+
+function computeLeaders(models){
+
+  const longestRange = [...models].sort(
+    (a,b)=>(b.specs?.range_wltp_km ?? 0)-(a.specs?.range_wltp_km ?? 0)
+  )[0]?.slug;
+
+  const fastestAccel = [...models].sort(
+    (a,b)=>(a.specs?.accel_0_100_s ?? 999)-(b.specs?.accel_0_100_s ?? 999)
+  )[0]?.slug;
+
+  const fastestCharge = [...models].sort(
+    (a,b)=>(a.specs?.dc_charge_10_80_min ?? 999)-(b.specs?.dc_charge_10_80_min ?? 999)
+  )[0]?.slug;
+
+  return {
+    longestRange,
+    fastestAccel,
+    fastestCharge
+  };
+
+}
+
+
+
+const COMPARE_KEY = "ev_compare_slugs";
+
+function getCompareSet() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(COMPARE_KEY) || "[]"));
+  } catch {
+    return new Set();
+  }
+}
+
+function saveCompareSet(set) {
+  localStorage.setItem(COMPARE_KEY, JSON.stringify(Array.from(set)));
+}
+
+function getSignalIcon(signal){
+
+  if(signal === "growth") return "↗";
+  if(signal === "strong") return "●";
+  if(signal === "stable") return "—";
+  if(signal === "emerging") return "△";
+
+  return "";
+}
+
+function cardHTML(m, compareSet, leaders) {
+
+    const displayCategory =
+    m.slug === "porsche-taycan-turbo-gt"
+      ? "Performance EV"
+      : (m.category || "EV Model");
+
+  const img = m.image ? `<img src="${m.image}" alt="${m.brand} ${m.model}" loading="lazy" decoding="async"/>` : "";
+  const range = fmtRange(m.specs?.range_wltp_km);
+  const accel = fmtAccel(m.specs?.accel_0_100_s);
+  const charge = fmtCharge(m.specs?.dc_charge_10_80_min);
+  const checked = compareSet.has(m.slug) ? "checked" : "";
+
+  const badges = [];
+
+  if(leaders.longestRange === m.slug){
+    badges.push(`<span class="metric-badge">Longest Range</span>`);
+  }
+
+  if(leaders.fastestAccel === m.slug){
+    badges.push(`<span class="metric-badge">Fastest EV</span>`);
+  }
+
+  if(leaders.fastestCharge === m.slug){
+    badges.push(`<span class="metric-badge">Fastest Charging</span>`);
+  }
+
+  return `
+    <div class="card">
+      <a href="./model.html?slug=${encodeURIComponent(m.slug)}" aria-label="Open ${m.brand} ${m.model}">
+        <div class="card-media">${img}</div>
+      </a>
+      <div class="card-body">
+
+        <div class="card-toprow">
+          <div class="kicker">${displayCategory}</div>
+
+          
+          ${m.signal ? `
+            <span class="signal-badge signal-${m.signal}">
+              ${m.signal.toUpperCase()}
+            </span>
+          ` : ""}
+
+          ${m.signal_score !== undefined ? `
+              <div class="signal-score signal-${m.signal}">
+                <span class="score">${m.signal_score}</span>
+                <span class="signal-text">${m.signal?.toUpperCase() || ""}</span>
+                <span class="label">Market Signal</span>
+              </div>
+
+              
+          ` : ""}
+
+
+          <label class="compare-toggle" title="Add to compare">
+            <input class="compare-checkbox" type="checkbox" data-slug="${m.slug}" ${checked}/>
+            Compare
+          </label>
+        </div>
+
+        <a href="./model.html?slug=${encodeURIComponent(m.slug)}">
+          <h3 class="title">${m.brand} ${m.model}</h3>
+
+          ${badges.length ? `<div class="metric-badges">${badges.join("")}</div>` : ""}
+
+          <p class="tagline">${m.tagline || ""}</p>
+        </a>
+
+        <div class="meta">
+          <span class="pill">${range}</span>
+          <span class="pill">${accel}</span>
+          <span class="pill">${charge}</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+const CATEGORY_MAP = {
+  "Executive Sedan": "Luxury Sedan",
+  "Luxury Sedan": "Luxury Sedan",
+
+  "Premium SUV": "Luxury SUV",
+  "Luxury SUV": "Luxury SUV",
+
+  "Performance EV": "Performance EV",
+  "Performance Sedan": "Performance EV",
+  "Performance Sports Sedan": "Performance EV",
+  "High-performance Executive Sedan": "Performance EV",
+  "Premium SUV": "Luxury SUV",
+
+  "Luxury Shooting Brake": "Specialist / Utility",
+  "Specialist / Utility": "Specialist / Utility"
+};
+
+function render(models, compareSet, leaders){
+
+  const grid = document.getElementById("grid");
+
+  const grouped = {};
+
+  models.forEach(m => {
+
+    const rawCategory = m.category || "Other";
+    const mapped = CATEGORY_MAP[rawCategory] || rawCategory;
+
+    const key = mapped.toLowerCase();
+
+    if(!grouped[key]){
+      grouped[key] = {
+        label: mapped,
+        items: []
+      };
+    }
+
+    grouped[key].items.push(m);
+
+  });
+
+  const categoryOrder = [
+    "luxury sedan",
+    "luxury suv",
+    "performance ev",
+    "specialist / utility"
+  ];
+
+  let html = "";
+
+  // Render known categories in order
+  categoryOrder.forEach(key => {
+
+    if(!grouped[key]) return;
+
+    const section = grouped[key];
+
+    html += `
+      <section class="ev-section">
+        <div class="ev-category">
+          <h2 class="ev-section-title">${section.label}</h2>
+        </div>
+
+        <div class="ev-grid">
+          ${section.items.map(m => cardHTML(m, compareSet, leaders)).join("")}
+        </div>
+      </section>
+    `;
+  });
+
+  // Render remaining categories (clean fallback)
+  Object.keys(grouped).forEach(key => {
+
+    if(categoryOrder.includes(key)) return;
+
+    const section = grouped[key];
+
+    html += `
+      <section class="ev-section">
+        <div class="ev-category">
+          <h2 class="ev-section-title">${section.label}</h2>
+        </div>
+
+        <div class="ev-grid">
+          ${section.items.map(m => cardHTML(m, compareSet, leaders)).join("")}
+        </div>
+      </section>
+    `;
+  });
+
+  grid.innerHTML = html;
+}
+
+async function initHome() {
+
+  const models = await loadIndex();
+
+  const leaders = computeLeaders(models);
+
+  const featured = models[0];
+
+  if(featured){
+
+    const img = document.getElementById("featured-image");
+    const title = document.getElementById("featured-title");
+    const tag = document.getElementById("featured-tagline");
+    const meta = document.getElementById("featured-meta");
+    const link = document.getElementById("featured-link");
+
+    if(img){
+      img.src = featured.image;
+      img.loading = "eager";
+      img.decoding = "sync";
+    }
+    if(title) title.textContent = `${featured.brand} ${featured.model}`;
+    if(tag) tag.textContent = featured.tagline;
+
+    if(meta){
+      meta.innerHTML = `
+        <span class="pill">Range ${featured.specs?.range_wltp_km ?? "TBC"} km</span>
+        <span class="pill">0-100 ${featured.specs?.accel_0_100_s ?? "TBC"} s</span>
+      `;
+    }
+
+    if(link){
+      link.href = `./model.html?slug=${featured.slug}`;
+    }
+
+  }
+
+  const q = document.getElementById("q");
+  const category = document.getElementById("category");
+  const sort = document.getElementById("sort");
+
+  for (const c of getCategoryOptions(models)) {
+    const opt = document.createElement("option");
+    opt.value = c;
+    opt.textContent = c;
+    category.appendChild(opt);
+  }
+
+  const compareBar = document.getElementById("compareBar");
+  const compareCount = document.getElementById("compareCount");
+  const compareChips = document.getElementById("compareChips");
+  const compareGo = document.getElementById("compareGo");
+  const compareClear = document.getElementById("compareClear");
+
+  const hasCompareUI = !!(compareBar && compareCount && compareChips && compareGo && compareClear);
+
+  let compareSet = getCompareSet();
+
+  function renderCompareBar() {
+    if (!hasCompareUI) return;
+
+    const slugs = Array.from(compareSet);
+
+    // Always keep body padding in sync with compare bar visibility
+    document.body.classList.toggle("has-comparebar", slugs.length > 0);
+
+    if (!slugs.length) {
+      compareBar.style.display = "none";
+      return;
+    }
+
+    compareBar.style.display = "block";
+    compareCount.textContent = `${slugs.length} selected`;
+
+    const selectedModels = slugs
+      .map(s => models.find(m => m.slug === s))
+      .filter(Boolean);
+
+    compareChips.innerHTML = selectedModels
+      .map(
+        m => `
+          <span class="comparechip">
+            ${m.brand} ${m.model}
+            <button type="button" class="chip-remove" data-slug="${m.slug}" aria-label="Remove">×</button>
+          </span>
+        `
+      )
+      .join("");
+
+    compareGo.href = `./compare.html?slugs=${encodeURIComponent(slugs.join(","))}`;
+  }
+
+  // Bind once: chips remove + clear
+  if (hasCompareUI) {
+    compareChips.addEventListener("click", (e) => {
+      const btn = e.target.closest(".chip-remove");
+      if (!btn) return;
+      const slug = btn.getAttribute("data-slug");
+      if (!slug) return;
+
+      compareSet.delete(slug);
+      saveCompareSet(compareSet);
+      update(); // re-render cards so checkboxes update
+    });
+
+    compareClear.addEventListener("click", () => {
+      compareSet = new Set();
+      saveCompareSet(compareSet);
+      update();
+    });
+  }
+
+  // Bind per-render: checkbox handlers only
+  function bindCheckboxHandlersOnly() {
+    if (!hasCompareUI) return;
+
+    document.querySelectorAll(".compare-checkbox").forEach(cb => {
+      cb.addEventListener("change", (e) => {
+        const slug = e.target.getAttribute("data-slug");
+        if (!slug) return;
+
+        if (e.target.checked) {
+          compareSet.add(slug);
+          if (compareSet.size > 3) {
+            compareSet.delete(slug);
+            e.target.checked = false;
+            alert("You can compare up to 3 models.");
+          }
+        } else {
+          compareSet.delete(slug);
+        }
+
+        saveCompareSet(compareSet);
+        renderCompareBar();
+      });
+    });
+  }
+
+  function update() {
+    const filtered = models
+      .filter(m => matchesQuery(m, q?.value || ""))
+
+
+      .filter(m => {
+        const effectiveCategory =
+          m.slug === "porsche-taycan-turbo-gt"
+            ? "Performance EV"
+            : m.category;
+
+        return !category?.value || effectiveCategory === category.value;
+      });
+
+    const sorted = applySort(filtered, sort?.value || "brand");
+
+    // remove featured vehicle from grid
+    const gridModels = sorted.filter(m => m.slug !== "lucid-air-sapphire");
+
+    compareSet = getCompareSet();
+    render(gridModels, compareSet, leaders);
+    renderCompareBar();
+    bindCheckboxHandlersOnly();
+  }
+
+  q?.addEventListener("input", update);
+  category?.addEventListener("change", update);
+  sort?.addEventListener("change", update);
+
+  update();
+
+}
+
+window.initHome = initHome;
+
+initHome().catch(err => {
+  console.error(err);
+  const grid = document.getElementById("grid");
+  if (grid) {
+    grid.innerHTML = `<div class="panel">Failed to load model index.</div>`;
+  }
+});

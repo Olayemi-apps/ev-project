@@ -1,0 +1,221 @@
+/* =========================================================
+STRATUM EV – LIVE INTELLIGENCE STREAM
+Dedicated stylesheet for the right-side feed
+========================================================= */
+
+#tab-stories .mi-stream-body{
+
+  display:flex;
+  flex-direction:column;
+
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.06);
+
+  border-radius:18px;
+
+  padding:18px;
+
+  min-height:420px;
+
+}
+
+/* ---------------------------------------------------------
+STREAM HEADER
+--------------------------------------------------------- */
+
+.mi-stream-header{
+  margin-bottom:16px;
+}
+
+.mi-stream-title{
+  font-size:14px;
+  font-weight:600;
+}
+
+.mi-stream-sub{
+  font-size:11px;
+  opacity:.55;
+  margin-top:2px;
+}
+
+/* ---------------------------------------------------------
+STREAM CONTAINER
+--------------------------------------------------------- */
+
+#mi-stream{
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+
+  overflow-y:auto;
+
+  scrollbar-width:thin;
+  scrollbar-color:rgba(255,255,255,0.15) transparent;
+
+}
+
+/* ---------------------------------------------------------
+STREAM CARD
+--------------------------------------------------------- */
+
+#tab-stories #mi-stream .mi-card{
+
+  display:grid;
+
+  grid-template-columns:56px 1fr;
+
+  gap:12px;
+
+  align-items:start;
+
+  padding:12px;
+
+  border-radius:12px;
+
+  background:rgba(255,255,255,0.025);
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  transition:all .18s ease;
+
+}
+
+#tab-stories #mi-stream .mi-card:hover{
+
+  background:rgba(255,255,255,0.05);
+
+  border-color:rgba(255,255,255,0.14);
+
+  transform:translateY(-1px);
+
+}
+
+/* ---------------------------------------------------------
+THUMBNAIL
+--------------------------------------------------------- */
+
+#tab-stories #mi-stream .mi-media{
+
+  width:56px;
+  height:56px;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+}
+
+#tab-stories #mi-stream .mi-media img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+}
+
+/* ---------------------------------------------------------
+STREAM CONTENT
+--------------------------------------------------------- */
+
+#tab-stories #mi-stream .mi-title{
+
+  font-size:13px;
+
+  font-weight:500;
+
+  line-height:1.45;
+
+}
+
+#tab-stories #mi-stream .mi-meta{
+
+  font-size:9.5px;
+
+  opacity:.35;
+
+  text-transform:uppercase;
+
+  letter-spacing:.12em;
+
+  margin-bottom:4px;
+
+}
+
+/* summaries hidden by default */
+
+#tab-stories #mi-stream .mi-summary{
+  display:none;
+}
+
+/* expanded mode */
+
+#mi-stream.expanded .mi-summary{
+
+  display:block;
+
+  font-size:13px;
+
+  line-height:1.55;
+
+  opacity:.8;
+
+}
+
+/* ---------------------------------------------------------
+HOVER LINK EFFECT
+--------------------------------------------------------- */
+
+#tab-stories #mi-stream .mi-title a{
+
+  position:relative;
+
+}
+
+#tab-stories #mi-stream .mi-title a::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+
+  bottom:-2px;
+
+  height:2px;
+
+  width:0%;
+
+  background:linear-gradient(
+    90deg,
+    #4DA3FF,
+    #5BE7C4
+  );
+
+  transition:width .35s ease;
+
+}
+
+#tab-stories #mi-stream .mi-card:hover .mi-title a::after{
+
+  width:100%;
+
+}
+
+/* ---------------------------------------------------------
+SCROLLBAR
+--------------------------------------------------------- */
+
+#mi-stream::-webkit-scrollbar{
+  width:6px;
+}
+
+#mi-stream::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+#mi-stream::-webkit-scrollbar-thumb{
+  background:rgba(255,255,255,0.15);
+  border-radius:10px;
+}

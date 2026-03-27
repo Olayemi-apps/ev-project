@@ -1,0 +1,34 @@
+{
+  "slug": "nio-et7",
+  "brand": "NIO",
+  "model": "ET7",
+  "category": "Executive Sedan",
+  "tagline": "Flagship electric sedan sourcing and UK import concierge.",
+  "highlights": [
+    "Premium cabin experience and technology focus",
+    "Ideal for clients who want something rare in the UK market"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Medium",
+    "notes": [
+      "IVA prep likely: rear fog configuration, mph speed display",
+      "Software features may vary by region, confirm on a per-vehicle basis",
+      "Warranty is typically export-limited, plan a UK support strategy"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD (variant dependent)",
+    "battery_kwh": null,
+    "range_wltp_km": null,
+    "accel_0_100_s": null,
+    "dc_charge_10_80_min": null
+  },
+  "images": [
+    "/assets/models/nio-et7/hero.jpg",
+    "/assets/models/nio-et7/interior.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.nio.com/et7",
+    "last_checked": "2026-01-27"
+  }
+}

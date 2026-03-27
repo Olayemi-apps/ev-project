@@ -1,0 +1,58 @@
+{
+  "slug": "porsche-taycan-turbo-gt",
+  "brand": "Porsche",
+  "model": "Taycan Turbo GT",
+  "category": "Performance Sports Sedan",
+  "tagline": "Track-focused electric grand tourer with Porsche motorsport pedigree.",
+  "highlights": [
+    "Track-focused flagship Taycan variant",
+    "Concierge-led sourcing, shipping, IVA preparation, and registration"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Low",
+    "notes": [
+      "UK and EU spec preferred to reduce compliance friction",
+      "Charging time varies with temperature and charger output"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": null,
+    "range_wltp_km": null,
+    "accel_0_100_s": 2.2,
+    "dc_charge_10_80_min": 18
+  },
+  "images": [
+    "./assets/images/porsche-taycan-turbo-gt-road.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.porsche.com",
+    "last_checked": null
+  },
+  "trims": [
+    {
+      "id": "turbo-gt-awd",
+      "name": "Turbo GT AWD",
+      "availability": "Allocation dependent",
+      "specs": {
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": 2.2,
+        "drivetrain": "AWD",
+        "dc_charge_10_80_min": 18
+      },
+      "notes": [
+        "Final UK-delivered spec confirmed per VIN",
+        "Range and charging vary by wheel and tire specification"
+      ]
+    }
+  ],
+  "oem": {
+    "meta_title": "Porsche Taycan Turbo GT",
+    "meta_description": "Track-focused Taycan flagship with motorsport-influenced engineering."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP (TBC)",
+    "specs_disclaimer_html": " *Specs shown are indicative and may vary by market, wheel and tire specification, ambient temperature, battery state, and software version. UK-delivered specification should be confirmed per VIN and official documentation."
+  }
+}

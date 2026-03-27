@@ -1,0 +1,58 @@
+{
+  "slug": "lucid-gravity",
+  "brand": "Lucid",
+  "model": "Gravity",
+  "category": "Luxury SUV",
+  "tagline": "Lucid’s flagship luxury electric SUV built for long-range efficiency and performance.",
+  "highlights": [
+    "Lucid’s first luxury SUV platform",
+    "Concierge-led sourcing, shipping, IVA preparation, and registration"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Medium",
+    "notes": [
+      "UK delivery expected following US launch",
+      "Charging time varies with charger power and temperature"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": 123,
+    "range_wltp_km": 708,
+    "accel_0_100_s": 3.5,
+    "dc_charge_10_80_min": 20
+  },
+  "images": [
+    "./assets/images/lucid-gravity.jpg"
+  ],
+  "source": {
+    "official_url": "https://lucidmotors.com",
+    "last_checked": null
+  },
+  "trims": [
+    {
+      "id": "gravity-awd",
+      "name": "Gravity AWD",
+      "availability": "Production expected",
+      "specs": {
+        "battery_kwh": 123,
+        "range_wltp_km": 708,
+        "accel_0_100_s": 3.5,
+        "drivetrain": "AWD",
+        "dc_charge_10_80_min": 20
+      },
+      "notes": [
+        "Final UK specification confirmed per VIN",
+        "Range and charging may vary by configuration"
+      ]
+    }
+  ],
+  "oem": {
+    "meta_title": "Lucid Gravity",
+    "meta_description": "Luxury electric SUV from Lucid with exceptional range and efficiency."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP (estimated)",
+    "specs_disclaimer_html": " *Specifications indicative and may vary by configuration and market."
+  }
+}

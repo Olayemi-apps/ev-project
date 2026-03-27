@@ -1,0 +1,91 @@
+{
+  "vehicle": "BYD Seal U",
+
+  "tagline": "Premium electric SUV engineered for comfort, safety and efficiency",
+
+  "model3d": "https://sketchfab.com/models/dda5d96fa79e42c290a279168126f247/embed?autostart=1&ui_theme=dark&ui_controls=1",
+
+  "range": "500 km WLTP",
+  "battery": "87 kWh",
+  "power": "218 hp",
+  "accel": "7.9 s",
+
+  "description": "The BYD Seal U represents BYD’s expansion into the European electric SUV market. Built on the company's advanced e-Platform 3.0 architecture, the vehicle uses BYD’s Blade Battery technology to prioritise safety, longevity and efficiency.",
+
+  "specs":[
+    "Blade Battery LFP architecture",
+    "15.6 inch rotating infotainment display",
+    "Panoramic glass roof",
+    "Vehicle-to-Load power capability",
+    "Advanced driver assistance systems",
+    "Over-the-air software updates"
+  ],
+
+  "expansion_regions": [
+    "China",
+    "Europe",
+    "UK",
+    "Latin America",
+    "Middle East"
+  ],
+
+  "expansionSignals": [
+    {
+      "region": "europe",
+      "label": "EUROPE EXPANSION",
+      "intensity": ["china","europe"]
+    },
+    {
+      "region": "uk",
+      "label": "UK MARKET ENTRY",
+      "intensity": ["china","europe","uk"]
+    },
+    {
+      "region": "me",
+      "label": "MIDDLE EAST EXPANSION",
+      "intensity": ["china","europe","uk","me"]
+    },
+    {
+      "region": "latam",
+      "label": "LATAM GROWTH",
+      "intensity": ["china","europe","uk","me","latam"]
+    }
+  ],
+
+  "weeklyIntel": {
+    "week": "Week 10",
+    "tone": "Expansion Acceleration",
+    "summary": "BYD continues aggressive expansion into Europe and UK markets, supported by pricing advantage and dealership rollout momentum.",
+    "signals": [
+      {
+        "region": "europe",
+        "headline": "Dealer network expansion accelerating",
+        "impact": "high"
+      },
+      {
+        "region": "uk",
+        "headline": "UK adoption driven by pricing advantage",
+        "impact": "high"
+      },
+      {
+        "region": "me",
+        "headline": "Strategic partnerships forming",
+        "impact": "medium"
+      },
+      {
+        "region": "latam",
+        "headline": "Early stage market penetration",
+        "impact": "low"
+      }
+    ]
+  },
+
+  "oem_line": "BYD Auto · e-Platform 3.0 · Blade Battery Architecture",
+
+  "oem_sales": {
+    "2022": 1.86,
+    "2023": 3.02,
+    "2024": 4.2,
+    "rank": 1
+  }
+}

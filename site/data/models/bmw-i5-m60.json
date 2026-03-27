@@ -1,0 +1,40 @@
+{
+  "slug": "bmw-i5-m60",
+  "brand": "BMW",
+  "model": "i5 M60",
+  "category": "Luxury Sedan",
+  "tagline": "High-performance electric executive sedan blending BMW M dynamics with luxury.",
+  "highlights": [
+    "BMW M Performance electric executive sedan",
+    "Balanced performance and daily usability"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Low",
+    "notes": [
+      "UK specification available"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": 84,
+    "range_wltp_km": 516,
+    "accel_0_100_s": 3.8,
+    "dc_charge_10_80_min": 30
+  },
+  "images": [
+    "./assets/images/bmw-i5.webp"
+  ],
+  "source": {
+    "official_url": "https://www.bmw.com",
+    "last_checked": null
+  },
+  "trims": [],
+  "oem": {
+    "meta_title": "BMW i5 M60",
+    "meta_description": "High-performance electric executive sedan from BMW M."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "specs_disclaimer_html": " *Specifications indicative and vary by configuration."
+  }
+}

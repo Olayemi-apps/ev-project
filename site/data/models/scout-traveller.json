@@ -1,0 +1,40 @@
+{
+  "slug": "scout-traveller",
+  "brand": "Scout Motors",
+  "model": "Traveller",
+  "category": "Specialist / Utility",
+  "tagline": "Heritage-inspired electric SUV designed for rugged capability and modern EV performance.",
+  "highlights": [
+    "Revival of Scout off-road heritage",
+    "Future EV platform under Volkswagen Group"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Unknown",
+    "notes": [
+      "Vehicle expected after 2027 launch"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": null,
+    "range_wltp_km": null,
+    "accel_0_100_s": null,
+    "dc_charge_10_80_min": null
+  },
+  "images": [
+    "./assets/images/scout-traveller.avif"
+  ],
+  "source": {
+    "official_url": "https://www.scoutmotors.com",
+    "last_checked": null
+  },
+  "trims": [],
+  "oem": {
+    "meta_title": "Scout Traveller",
+    "meta_description": "Upcoming rugged electric SUV revival of the Scout brand."
+  },
+  "specs_meta": {
+    "range_standard": "TBC",
+    "specs_disclaimer_html": " *Specifications subject to change prior to production."
+  }
+}

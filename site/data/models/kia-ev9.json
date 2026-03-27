@@ -1,0 +1,57 @@
+{
+  "slug": "kia-ev9",
+  "brand": "Kia",
+  "model": "EV9",
+  "category": "Luxury SUV",
+  "tagline": "Three-row electric SUV combining long-range capability with modern EV architecture.",
+  "highlights": [
+    "Three-row flagship electric SUV",
+    "Concierge-led sourcing and UK registration support"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Low",
+    "notes": [
+      "EU homologated model available",
+      "Charging speed depends on charger output"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": 99.8,
+    "range_wltp_km": 563,
+    "accel_0_100_s": 5.3,
+    "dc_charge_10_80_min": 24
+  },
+  "images": [
+    "./assets/images/kia-ev9.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.kia.com",
+    "last_checked": null
+  },
+  "trims": [
+    {
+      "id": "ev9-awd",
+      "name": "EV9 AWD",
+      "availability": "Production",
+      "specs": {
+        "battery_kwh": 99.8,
+        "range_wltp_km": 563,
+        "accel_0_100_s": 5.3,
+        "drivetrain": "AWD",
+        "dc_charge_10_80_min": 24
+      },
+      "notes": [
+        "Final specification confirmed per VIN"
+      ]
+    }
+  ],
+  "oem": {
+    "meta_title": "Kia EV9",
+    "meta_description": "Large three-row electric SUV built on Hyundai-Kia E-GMP platform."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "specs_disclaimer_html": " *Specifications indicative and vary by trim and market."
+  }
+}

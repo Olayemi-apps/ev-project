@@ -1,0 +1,33 @@
+{
+  "slug": "zeekr-001",
+  "brand": "Zeekr",
+  "model": "001",
+  "category": "Luxury Shooting Brake",
+  "tagline": "Rare, high-spec EV sourcing for UK collectors and executives.",
+  "highlights": [
+    "Distinctive body style with premium positioning",
+    "Great halo model for your concierge brand"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Medium",
+    "notes": [
+      "Check headlamp beam pattern and rear fog requirements",
+      "Confirm OTA update behavior outside home region",
+      "Insurance acceptance should be checked before shipment"
+    ]
+  },
+  "specs": {
+    "drivetrain": "RWD or AWD (variant dependent)",
+    "battery_kwh": null,
+    "range_wltp_km": null,
+    "accel_0_100_s": null,
+    "dc_charge_10_80_min": null
+  },
+  "images": [
+    "/assets/models/zeekr-001/hero.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.zeekr.eu/models/001",
+    "last_checked": "2026-01-27"
+  }
+}

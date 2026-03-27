@@ -1,0 +1,35 @@
+{
+  "slug": "porsche-macan-electric",
+  "brand": "Porsche",
+  "model": "Macan Electric",
+  "category": "Luxury SUV",
+  "tagline": "Next-generation electric performance SUV built on Porsche's PPE platform.",
+  "highlights": [],
+  "uk_readiness": {
+    "iva_risk": "Unknown",
+    "notes": []
+  },
+  "specs": {
+    "drivetrain": null,
+    "battery_kwh": 100,
+    "range_wltp_km": 613,
+    "accel_0_100_s": 3.3,
+    "dc_charge_10_80_min": 21
+  },
+  "images": [
+    "./assets/images/porsche-macan-electric.jpg"
+  ],
+  "source": {
+    "official_url": null,
+    "last_checked": null
+  },
+  "trims": [],
+  "oem": {
+    "meta_title": "Porsche Macan Electric",
+    "meta_description": "Next-generation electric performance SUV built on Porsche's PPE platform."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "specs_disclaimer_html": "*Specifications indicative and may vary by market, configuration and conditions."
+  }
+}

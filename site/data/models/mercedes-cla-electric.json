@@ -1,0 +1,40 @@
+{
+  "slug": "mercedes-cla-electric",
+  "brand": "Mercedes-Benz",
+  "model": "CLA Electric",
+  "category": "Luxury Sedan",
+  "tagline": "Next-generation ultra-efficient electric sedan built on Mercedes MMA architecture.",
+  "highlights": [
+    "Mercedes next-generation MMA platform",
+    "Ultra-efficient long-range architecture"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Low",
+    "notes": [
+      "Expected EU homologation"
+    ]
+  },
+  "specs": {
+    "drivetrain": "RWD",
+    "battery_kwh": 89,
+    "range_wltp_km": 750,
+    "accel_0_100_s": 4.0,
+    "dc_charge_10_80_min": 18
+  },
+  "images": [
+    "./assets/images/cla-electric.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.mercedes-benz.com",
+    "last_checked": null
+  },
+  "trims": [],
+  "oem": {
+    "meta_title": "Mercedes CLA Electric",
+    "meta_description": "Next-generation ultra-efficient electric sedan from Mercedes."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP estimate",
+    "specs_disclaimer_html": " *Specifications indicative and subject to change."
+  }
+}

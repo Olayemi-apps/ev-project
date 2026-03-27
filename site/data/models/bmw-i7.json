@@ -1,0 +1,57 @@
+{
+  "slug": "bmw-i7",
+  "brand": "BMW",
+  "model": "i7",
+  "category": "Luxury Sedan",
+  "tagline": "Flagship electric luxury sedan with executive comfort and advanced technology.",
+  "highlights": [
+    "BMW flagship electric limousine",
+    "Concierge-led sourcing and UK compliance support"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Low",
+    "notes": [
+      "EU and UK specification available",
+      "Charging time varies with charger output"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": 101.7,
+    "range_wltp_km": 625,
+    "accel_0_100_s": 4.7,
+    "dc_charge_10_80_min": 34
+  },
+  "images": [
+    "./assets/images/bmw-i7.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.bmw.com",
+    "last_checked": null
+  },
+  "trims": [
+    {
+      "id": "i7-xdrive60",
+      "name": "i7 xDrive60",
+      "availability": "Production",
+      "specs": {
+        "battery_kwh": 101.7,
+        "range_wltp_km": 625,
+        "accel_0_100_s": 4.7,
+        "drivetrain": "AWD",
+        "dc_charge_10_80_min": 34
+      },
+      "notes": [
+        "Final UK delivered spec confirmed per VIN"
+      ]
+    }
+  ],
+  "oem": {
+    "meta_title": "BMW i7",
+    "meta_description": "BMW’s flagship luxury electric limousine."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "specs_disclaimer_html": " *Specifications may vary by market and configuration."
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "nio-et7",
+  "brand": "NIO",
+  "model": "ET7",
+  "category": "Executive Sedan",
+  "tagline": "Flagship electric sedan sourcing and UK import concierge.",
+  "highlights": [
+    "Executive sedan positioning with premium cabin technology",
+    "Concierge-led sourcing, shipping, IVA preparation, and registration"
+  ],
+  "uk_readiness": {
+    "iva_risk": "TBC",
+    "notes": []
+  },
+  "specs": {
+    "drivetrain": null,
+    "battery_kwh": 150,
+    "range_wltp_km": null,
+    "accel_0_100_s": 3.8,
+    "dc_charge_10_80_min": null
+  },
+  "images": [
+    "https://cdn-udp-public.eu.nio.com/www-nio/cdn-static/mynio/nextjs/images/et7-2024/top-hero/top-hero-desktop.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.nio.com/et7",
+    "last_checked": null
+  },
+  "trims": [
+    {
+      "id": "150kwh-awd",
+      "name": "150 kWh AWD (CLTC)",
+      "availability": "China market",
+      "specs": {
+        "battery_kwh": 150,
+        "range_cltc_km": 1050,
+        "accel_0_100_s": 3.8,
+        "drivetrain": null,
+        "dc_charge_10_80_min": null
+      },
+      "notes": [
+        "CLTC test cycle",
+        "Final UK-delivered spec confirmed per VIN"
+      ]
+    }
+  ],
+  "oem": {
+    "meta_title": "NIO ET7: Our electric sedan with a range of up to 1000 km",
+    "meta_description": "Up to 1000 km range, futuristic technology and modern design: the future of electric cars. Discover NIO ET7, our electric sedan."
+  },
+  "specs_meta": {
+    "range_standard": "CLTC",
+    "range_cltc_km": 1050,
+    "specs_disclaimer_html": " *The driving range is an estimate simulated with a 150-kWh battery pack pursuant to the China Light-Duty Vehicle Test Cycle (CLTC) standards, which may vary due to factors including weather, road conditions, topography, driving habits, number of occupants, and loading. Therefore, the range filed in the official documents shall prevail. The 150kWh battery pack will be open in the form of flexible upgrade options in the future. <br /> **The acceleration and braking specs are based on the engineering test results, which may vary due to factors including road types, weather, road conditions, battery level, loading, and tires, and are hence for reference only."
+  }
+}

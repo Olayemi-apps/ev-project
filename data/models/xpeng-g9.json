@@ -1,0 +1,33 @@
+{
+  "slug": "xpeng-g9",
+  "brand": "XPeng",
+  "model": "G9",
+  "category": "Premium SUV",
+  "tagline": "Luxury SUV sourcing with end-to-end UK compliance support.",
+  "highlights": [
+    "Strong long-distance usability for executive travel",
+    "Comfort-first positioning with modern cabin tech"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Medium",
+    "notes": [
+      "Confirm lighting and rear fog compliance early",
+      "Ensure charging standards and connectors are UK-friendly",
+      "Validate infotainment language and services availability"
+    ]
+  },
+  "specs": {
+    "drivetrain": "RWD or AWD (variant dependent)",
+    "battery_kwh": null,
+    "range_wltp_km": null,
+    "accel_0_100_s": null,
+    "dc_charge_10_80_min": null
+  },
+  "images": [
+    "/assets/models/xpeng-g9/hero.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.xpeng.com/model/g9",
+    "last_checked": "2026-01-27"
+  }
+}

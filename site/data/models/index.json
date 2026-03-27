@@ -1,0 +1,331 @@
+{
+  "models": [
+    {
+      "slug": "audi-q8-etron",
+      "brand": "Audi",
+      "model": "SQ8 e-tron",
+      "category": "Luxury SUV",
+      "tagline": "Audi’s flagship electric SUV combining refinement, quattro performance and long-distance touring capability.",
+      "image": "./assets/images/audi-q8-etron.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": 114,
+        "range_wltp_km": 582,
+        "accel_0_100_s": 4.5,
+        "dc_charge_10_80_min": 31
+      },
+      "signal": "stable",
+      "signal_score": 72
+    },
+    {
+      "slug": "bmw-i5-m60",
+      "brand": "BMW",
+      "model": "i5 M60",
+      "category": "Luxury Sedan",
+      "tagline": "High-performance electric executive sedan blending BMW M dynamics with luxury.",
+      "image": "./assets/images/bmw-i5.webp",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": 84,
+        "range_wltp_km": 516,
+        "accel_0_100_s": 3.8,
+        "dc_charge_10_80_min": 30
+      },
+      "signal": "strong",
+      "signal_score": 88
+    },
+    {
+      "slug": "bmw-i7",
+      "brand": "BMW",
+      "model": "i7",
+      "category": "Luxury Sedan",
+      "tagline": "Flagship electric luxury sedan with executive comfort and advanced technology.",
+      "image": "./assets/images/bmw-i7.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": 101.7,
+        "range_wltp_km": 625,
+        "accel_0_100_s": 4.7,
+        "dc_charge_10_80_min": 34
+      },
+      "signal": "stable",
+      "signal_score": 74
+    },
+    {
+      "slug": "kia-ev9",
+      "brand": "Kia",
+      "model": "EV9",
+      "category": "Luxury SUV",
+      "tagline": "Three-row electric SUV combining long-range capability with modern EV architecture.",
+      "image": "./assets/images/kia-ev9.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": 99.8,
+        "range_wltp_km": 563,
+        "accel_0_100_s": 5.3,
+        "dc_charge_10_80_min": 24
+      },
+      "signal": "growth",
+      "signal_score": 81
+    },
+    {
+      "slug": "lucid-air-sapphire",
+      "brand": "Lucid",
+      "model": "Air Sapphire",
+      "category": "Executive Performance Sedan",
+      "tagline": "Ultra-luxury electric performance sedan with discreet, limited-production sourcing.",
+      "image": "../assets/images/lucid-air-sapphire.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": 1.99,
+        "dc_charge_10_80_min": null
+      },
+      "signal": "emerging",
+      "signal_score": 62
+    },
+    {
+      "slug": "lucid-air-touring",
+      "brand": "Lucid",
+      "model": "Air Touring",
+      "category": "Luxury Sedan",
+      "tagline": "Long-range luxury electric sedan balancing performance and efficiency.",
+      "image": "./assets/images/lucid-air-touring.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": 112,
+        "range_wltp_km": 653,
+        "accel_0_100_s": 3.4,
+        "dc_charge_10_80_min": 20
+      },
+      "signal": "growth",
+      "signal_score": 83
+    },
+    {
+      "slug": "lucid-gravity",
+      "brand": "Lucid",
+      "model": "Gravity",
+      "category": "Luxury SUV",
+      "tagline": "Lucid’s flagship luxury electric SUV built for long-range efficiency and performance.",
+      "image": "./assets/images/lucid-gravity.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": 123,
+        "range_wltp_km": 708,
+        "accel_0_100_s": 3.5,
+        "dc_charge_10_80_min": 20
+      },
+      "signal": "growth",
+      "signal_score": 84
+    },
+    {
+      "slug": "mercedes-cla-electric",
+      "brand": "Mercedes-Benz",
+      "model": "CLA Electric",
+      "category": "Luxury Sedan",
+      "tagline": "Next-generation ultra-efficient electric sedan built on Mercedes MMA architecture.",
+      "image": "./assets/images/cla-electric.jpg",
+      "specs": {
+        "drivetrain": "RWD",
+        "battery_kwh": 89,
+        "range_wltp_km": 750,
+        "accel_0_100_s": 4.0,
+        "dc_charge_10_80_min": 18
+      },
+      "signal": "emerging",
+      "signal_score": 64
+    },
+    {
+      "slug": "mercedes-eqs",
+      "brand": "Mercedes-Benz",
+      "model": "EQS",
+      "category": "Luxury Sedan",
+      "tagline": "Luxury electric flagship sedan with long-range efficiency and advanced interior technology.",
+      "image": "./assets/images/eqs.jpg",
+      "specs": {
+        "drivetrain": null,
+        "battery_kwh": 108,
+        "range_wltp_km": 720,
+        "accel_0_100_s": 4.3,
+        "dc_charge_10_80_min": 31
+      },
+      "signal": "stable",
+      "signal_score": 73
+    },
+    {
+      "slug": "nio-et7",
+      "brand": "NIO",
+      "model": "ET7",
+      "category": "Executive Sedan",
+      "tagline": "Flagship electric sedan sourcing and UK import concierge.",
+      "image": "https://cdn-udp-public.eu.nio.com/www-nio/cdn-static/mynio/nextjs/images/et7-2024/top-hero/top-hero-desktop.jpg",
+      "specs": {
+        "drivetrain": null,
+        "battery_kwh": 150,
+        "range_wltp_km": null,
+        "accel_0_100_s": 3.8,
+        "dc_charge_10_80_min": null
+      },
+      "last_checked": null,
+      "signal": "emerging",
+      "signal_score": 60
+    },
+    {
+      "slug": "polestar-5",
+      "brand": "Polestar",
+      "model": "5",
+      "category": "Performance EV",
+      "tagline": "High-performance electric GT built on Polestar’s next-generation aluminium platform.",
+      "image": "./assets/images/polestar-5.avif",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": 103,
+        "range_wltp_km": 600,
+        "accel_0_100_s": 3.2,
+        "dc_charge_10_80_min": 20
+      },
+      "signal": "growth",
+      "signal_score": 82
+    },
+    {
+      "slug": "porsche-macan-electric",
+      "brand": "Porsche",
+      "model": "Macan Electric",
+      "category": "Luxury SUV",
+      "tagline": "Next-generation electric performance SUV built on Porsche's PPE platform.",
+      "image": "./assets/images/porsche-macan-electric.jpg",
+      "specs": {
+        "drivetrain": null,
+        "battery_kwh": 100,
+        "range_wltp_km": 613,
+        "accel_0_100_s": 3.3,
+        "dc_charge_10_80_min": 21
+      },
+      "signal": "strong",
+      "signal_score": 87
+    },
+    {
+      "slug": "porsche-taycan-turbo-gt",
+      "brand": "Porsche",
+      "model": "Taycan Turbo GT",
+      "category": "Performance EV",
+      "tagline": "Track-focused electric grand tourer with Porsche motorsport pedigree.",
+      "image": "./assets/images/porsche-taycan-turbo-gt-road.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": 2.2,
+        "dc_charge_10_80_min": 18
+      },
+      "signal": "strong",
+      "signal_score": 90
+    },
+    {
+      "slug": "rivian-r1s",
+      "brand": "Rivian",
+      "model": "R1S",
+      "category": "Specialist EV",
+      "tagline": "All-electric adventure SUV combining off-road capability with premium EV technology.",
+      "image": "./assets/images/rivian-r1s.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": 135,
+        "range_wltp_km": 660,
+        "accel_0_100_s": 3.1,
+        "dc_charge_10_80_min": 25
+      },
+      "signal": "growth",
+      "signal_score": 80
+    },
+    {
+      "slug": "scout-traveller",
+      "brand": "Scout Motors",
+      "model": "Traveller",
+      "category": "Specialist EV",
+      "tagline": "Heritage-inspired electric SUV designed for rugged capability and modern EV performance.",
+      "image": "./assets/images/scout-traveller.avif",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": null,
+        "dc_charge_10_80_min": null
+      },
+      "signal": "emerging",
+      "signal_score": 58
+    },
+    {
+      "slug": "tesla-model-s-plaid",
+      "brand": "Tesla",
+      "model": "Model S Plaid",
+      "category": "Performance EV",
+      "tagline": "High-performance electric flagship with global infrastructure advantage.",
+      "image": "https://www.tesla.com/sites/default/files/modelsx-new/social/model-s-hero-social.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": 1.99,
+        "dc_charge_10_80_min": 15
+      },
+      "signal": "strong",
+      "signal_score": 92
+    },
+    {
+      "slug": "volvo-ex90",
+      "brand": "Volvo",
+      "model": "EX90",
+      "category": "Luxury SUV",
+      "tagline": "Scandinavian luxury electric SUV with advanced safety architecture.",
+      "image": "./assets/images/volvo-ex90.jpg",
+      "specs": {
+        "drivetrain": "AWD",
+        "battery_kwh": 111,
+        "range_wltp_km": 600,
+        "accel_0_100_s": 4.9,
+        "dc_charge_10_80_min": 30
+      },
+      "signal": "stable",
+      "signal_score": 71
+    },
+    {
+      "slug": "xpeng-g9",
+      "brand": "XPeng",
+      "model": "G9",
+      "category": "Premium SUV",
+      "tagline": "Luxury SUV sourcing with end-to-end UK compliance support.",
+      "image": "https://s-cdn.xpeng.com/commoncms/prod/2025-07-03/58c24ce528814a61abe60a6a23d19898.png",
+      "specs": {
+        "battery_kwh": null,
+        "range_wltp_km": 585,
+        "accel_0_100_s": 4.2,
+        "dc_charge_10_80_min": 12,
+        "drivetrain": "AWD"
+      },
+      "last_checked": "2026-03-25",
+
+      "signal": "growth",
+      "signal_score": 83
+    },
+    {
+      "slug": "zeekr-001",
+      "brand": "Zeekr",
+      "model": "001",
+      "category": "Specialist EV",
+      "tagline": "Luxury shooting brake sourcing with end-to-end UK compliance support.",
+      "image": "https://www.datocms-assets.com/128969/1744198973-001-pc4.png?auto=format",
+      "specs": {
+        "battery_kwh": null,
+        "range_wltp_km": 620,
+        "accel_0_100_s": 3.8,
+        "dc_charge_10_80_min": 30,
+        "drivetrain": "RWD or AWD (variant dependent)"
+      },
+      "last_checked": "2026-03-25",
+      "signal": "growth",
+      "signal_score": 81
+    }
+  ]
+}

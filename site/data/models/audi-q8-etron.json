@@ -1,0 +1,40 @@
+{
+  "slug": "audi-q8-etron",
+  "brand": "Audi",
+  "model": "SQ8 e-tron",
+  "category": "Luxury SUV",
+  "tagline": "Audi’s flagship electric SUV combining refinement, quattro performance and long-distance touring capability.",
+  "highlights": [
+    "Flagship Audi electric SUV",
+    "Quattro all-wheel-drive performance"
+  ],
+  "uk_readiness": {
+    "iva_risk": "Low",
+    "notes": [
+      "UK specification widely available"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": 114,
+    "range_wltp_km": 582,
+    "accel_0_100_s": 4.5,
+    "dc_charge_10_80_min": 31
+  },
+  "images": [
+    "./assets/images/audi-q8-etron.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.audi.com",
+    "last_checked": null
+  },
+  "trims": [],
+  "oem": {
+    "meta_title": "Audi SQ8 e-tron",
+    "meta_description": "Luxury electric SUV with quattro performance."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "specs_disclaimer_html": " *Specifications indicative and vary by configuration."
+  }
+}

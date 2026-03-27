@@ -1,0 +1,29 @@
+{
+  "feeds": [
+    {
+      "name": "Electrek",
+      "url": "https://electrek.co/feed/",
+      "default_category": "Industry",
+      "default_region": "Global"
+    },
+    {
+      "name": "InsideEVs",
+      "url": "https://insideevs.com/rss/",
+      "default_category": "Industry",
+      "default_region": "Global"
+    }
+  ],
+  "keywords": {
+    "Policy": ["regulation", "mandate", "subsidy", "ban", "tax", "tariff", "parliament", "EU", "commission", "DfT"],
+    "Charging": ["charging", "charger", "supercharger", "IONITY", "grid", "rapid", "ultra-rapid", "kW", "station"],
+    "OEM": ["Tesla", "BYD", "Volkswagen", "BMW", "Mercedes", "Audi", "Volvo", "Polestar", "Zeekr", "Rivian", "Lucid"],
+    "Battery": ["battery", "cell", "LFP", "NMC", "solid-state", "gigafactory", "cathode", "anode"],
+    "Investment": ["funding", "IPO", "raises", "valuation", "investment", "acquisition", "merger"]
+  },
+  "region_hints": {
+    "UK": ["UK", "Britain", "London", "Westminster", "DfT", "Ofgem"],
+    "EU": ["EU", "European", "Commission", "Germany", "France", "Italy", "Spain", "Netherlands", "Norway"],
+    "US": ["US", "U.S.", "United States", "Biden", "California", "EPA", "NHTSA"],
+    "China": ["China", "PRC", "Beijing", "Shanghai", "Shenzhen", "BYD", "CATL"]
+  }
+}

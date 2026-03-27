@@ -1,0 +1,53 @@
+{
+  "slug": "xpeng-g9",
+  "brand": "XPeng",
+  "model": "G9",
+  "category": "Premium SUV",
+  "tagline": "Luxury SUV sourcing with end-to-end UK compliance support.",
+  "highlights": [
+    "Comfort-first positioning for executive travel",
+    "Concierge-led sourcing, shipping, IVA preparation, and registration"
+  ],
+  "uk_readiness": {
+    "iva_risk": "TBC",
+    "notes": []
+  },
+  "specs": {
+    "battery_kwh": null,
+    "range_wltp_km": 585,
+    "accel_0_100_s": 4.2,
+    "dc_charge_10_80_min": 12,
+    "drivetrain": "AWD"
+  },
+  "images": [
+    "https://s-cdn.xpeng.com/commoncms/prod/2025-07-03/58c24ce528814a61abe60a6a23d19898.png"
+  ],
+  "source": {
+    "official_url": "https://www.xpeng.com/model/g9",
+    "last_checked": "2026-03-25"
+  },
+  "trims": [
+    {
+      "id": "headline",
+      "name": "Headline configuration (AWD)",
+      "availability": "Market dependent",
+      "specs": {
+        "battery_kwh": null,
+        "range_wltp_km": 585,
+        "range_cltc_km": null,
+        "accel_0_100_s": 4.2,
+        "drivetrain": "AWD",
+        "dc_charge_10_80_min": 12
+      },
+      "notes": [
+        "WLTP figures shown when provided by OEM page content",
+        "Final UK-delivered spec confirmed per VIN and build sheet"
+      ]
+    }
+  ],
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "range_cltc_km": null,
+    "specs_disclaimer_html": "All technical data are subject to type approval. Data has been obtained during internal testing. The actual range may differ from the calculated WLTP range depending on driving style, speed, load, outside temperature, use of air conditioning, terrain, and vehicle condition."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "tesla-model-s-plaid",
+  "brand": "Tesla",
+  "model": "Model S Plaid",
+  "category": "High-Performance Executive Sedan",
+  "tagline": "High-performance electric flagship with global infrastructure advantage.",
+  "highlights": [
+    "High-performance flagship with strong long-distance usability",
+    "Concierge-led sourcing, shipping, IVA preparation, and registration"
+  ],
+  "uk_readiness": {
+    "iva_risk": "TBC",
+    "notes": [
+      "Confirm connector and charging standard based on origin market",
+      "Validate region settings and connectivity support before shipment"
+    ]
+  },
+  "specs": {
+    "drivetrain": "AWD",
+    "battery_kwh": null,
+    "range_wltp_km": null,
+    "accel_0_100_s": 1.99,
+    "dc_charge_10_80_min": 15
+  },
+  "images": [
+    "https://www.tesla.com/sites/default/files/modelsx-new/social/model-s-hero-social.jpg"
+  ],
+  "source": {
+    "official_url": "https://www.tesla.com/models",
+    "last_checked": null
+  },
+  "trims": [
+    {
+      "id": "plaid-awd",
+      "name": "Plaid AWD",
+      "availability": "Region dependent",
+      "specs": {
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": 1.99,
+        "drivetrain": "AWD",
+        "dc_charge_10_80_min": 15
+      },
+      "notes": [
+        "Final UK-delivered spec confirmed per VIN",
+        "Charging time varies with temperature and charger output"
+      ]
+    }
+  ],
+  "oem": {
+    "meta_title": "Tesla Model S Plaid",
+    "meta_description": "High-performance electric flagship designed for long-distance usability and extreme acceleration."
+  },
+  "specs_meta": {
+    "range_standard": "WLTP (TBC)",
+    "specs_disclaimer_html": " *Specs shown are indicative and may vary by market, wheel and tire specification, ambient temperature, battery state, and software version. UK-delivered specification should be confirmed per VIN and official documentation."
+  }
+}

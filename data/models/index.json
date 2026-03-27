@@ -1,0 +1,49 @@
+{
+  "models": [
+    {
+      "slug": "nio-et7",
+      "brand": "NIO",
+      "model": "ET7",
+      "category": "Executive Sedan",
+      "tagline": "Flagship electric sedan sourcing and UK import concierge.",
+      "image": "/assets/models/nio-et7/hero.jpg",
+      "specs": {
+        "drivetrain": "AWD (variant dependent)",
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": null,
+        "dc_charge_10_80_min": null
+      }
+    },
+    {
+      "slug": "xpeng-g9",
+      "brand": "XPeng",
+      "model": "G9",
+      "category": "Premium SUV",
+      "tagline": "Luxury SUV sourcing with end-to-end UK compliance support.",
+      "image": "/assets/models/xpeng-g9/hero.jpg",
+      "specs": {
+        "drivetrain": "RWD or AWD (variant dependent)",
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": null,
+        "dc_charge_10_80_min": null
+      }
+    },
+    {
+      "slug": "zeekr-001",
+      "brand": "Zeekr",
+      "model": "001",
+      "category": "Luxury Shooting Brake",
+      "tagline": "Rare, high-spec EV sourcing for UK collectors and executives.",
+      "image": "/assets/models/zeekr-001/hero.jpg",
+      "specs": {
+        "drivetrain": "RWD or AWD (variant dependent)",
+        "battery_kwh": null,
+        "range_wltp_km": null,
+        "accel_0_100_s": null,
+        "dc_charge_10_80_min": null
+      }
+    }
+  ]
+}

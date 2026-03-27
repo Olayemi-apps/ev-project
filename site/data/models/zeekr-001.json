@@ -1,0 +1,53 @@
+{
+  "slug": "zeekr-001",
+  "brand": "Zeekr",
+  "model": "001",
+  "category": "Luxury Shooting Brake",
+  "tagline": "Luxury shooting brake sourcing with end-to-end UK compliance support.",
+  "highlights": [
+    "Performance-forward grand tourer positioning",
+    "Concierge-led sourcing, shipping, IVA preparation, and registration"
+  ],
+  "uk_readiness": {
+    "iva_risk": "TBC",
+    "notes": []
+  },
+  "specs": {
+    "battery_kwh": null,
+    "range_wltp_km": 620,
+    "accel_0_100_s": 3.8,
+    "dc_charge_10_80_min": 30,
+    "drivetrain": "RWD or AWD (variant dependent)"
+  },
+  "images": [
+    "https://www.datocms-assets.com/128969/1744198973-001-pc4.png?auto=format"
+  ],
+  "source": {
+    "official_url": "https://www.zeekr.eu/models/001",
+    "last_checked": "2026-03-25"
+  },
+  "trims": [
+    {
+      "id": "headline",
+      "name": "Headline configuration (market dependent)",
+      "availability": "EU market page",
+      "specs": {
+        "battery_kwh": null,
+        "range_wltp_km": 620,
+        "range_cltc_km": null,
+        "accel_0_100_s": 3.8,
+        "drivetrain": "RWD or AWD (variant dependent)",
+        "dc_charge_10_80_min": 30
+      },
+      "notes": [
+        "Headline figures extracted from Zeekr EU page content",
+        "Final UK-delivered spec confirmed per VIN and build sheet"
+      ]
+    }
+  ],
+  "specs_meta": {
+    "range_standard": "WLTP",
+    "range_cltc_km": null,
+    "specs_disclaimer_html": "Battery capacity varies by market and trim; confirm on build sheet."
+  }
+}
