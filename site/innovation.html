@@ -5,7 +5,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EV Innovation Primer: Batteries, Charging, Platforms | Stratum EV</title>
+
+  <link rel="icon" href="./favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./favicon/favicon-180x180.png">
+
   <meta name="description" content="Key EV innovations shaping ownership: batteries, thermal systems, charging architecture, and software-defined platforms." />
+  <meta name="theme-color" content="#0B0F1A">
+
+  <link rel="manifest" href="/manifest.json">
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -13,7 +24,7 @@
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/market-intelligence-drawer.css" />
   <link rel="stylesheet" href="./css/market-intelligence.css" />
-  <link rel="stylesheet" href="./css/app.css?v=11" />
+  <link rel="stylesheet" href="./css/app.css?v=12" />
 </head>
 <body data-page="innovation">
   <header class="nav">
@@ -35,7 +46,7 @@
         <a class="tab" href="./ev-history.html">EV History</a>
         <a class="tab" href="./ev-evolution.html">EV Evolution</a>
         <a class="tab is-active" href="./innovation.html">Innovation</a>
-        <a class="tab" href="https://www.shopify.com">Store</a>
+        <a class="tab" href="https://shop.stratumev.com">Store</a>
         <a class="tab" href="./contact.html">Contact</a>
         <!-- mobile only CTA -->
         <a class="tab tab-cta" href="./uk-compliance-led-sourcing.html">
@@ -106,23 +117,51 @@
     </section>
 
     <section class="panel section reveal">
-      <h2 class="h2">FAQ</h2>
-      <div class="faq">
-        <details>
-          <summary>Is peak charging speed the main metric?</summary>
-          <p class="p">No. Total time from 10–80 depends on the charge curve, heat control, and battery condition, not just peak kW.</p>
-        </details>
-        <details>
-          <summary>Do innovations affect UK imports?</summary>
-          <p class="p">Yes. Variant differences and market-specific hardware can affect documentation, charging compatibility, and feasibility.</p>
-        </details>
-        <details>
-          <summary>How do I use this insight?</summary>
-          <p class="p">Use Market Intelligence to shortlist, compare models, then request sourcing with your trim and timeline.</p>
-        </details>
-      </div>
-    </section>
-  </div>
+      <h2 class="h2">Frequently Asked Questions</h2>
+          <p class="faq-subtitle">
+            Innovation, the future of Electric Vehicles.
+          </p>
+
+          <div class="faq-accordion">
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Is peak charging speed the main metric?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  No. Total time from 10–80 depends on the charge curve, heat control, and battery condition, not just peak kW.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Do innovations affect UK imports?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  Yes. Variant differences and market-specific hardware can affect documentation, charging compatibility, and feasibility.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How do I use this insight?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  Use Market Intelligence to shortlist, compare models, then request sourcing with your trim and timeline.
+                </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
   <footer class="site-footer">
 
@@ -142,6 +181,8 @@
         <span>Faraday Future</span>
         <span>VinFast</span>
         <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
         <!-- duplicate for seamless loop -->
         <span>Lucid</span>
@@ -156,6 +197,8 @@
         <span>Faraday Future</span>
         <span>VinFast</span>
         <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
       </div>
     </div>
@@ -214,6 +257,7 @@
   <script src="./js/nav.js"></script>
   <script src="./js/reveal.js"></script>
   <script src="./js/ajax-nav.js"></script>
+  <script src="./js/app.js" defer></script>
 
   <!-- Market Intelligence Drawer -->
 <div id="mi-drawer" class="mi-drawer" aria-hidden="true">

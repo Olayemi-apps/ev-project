@@ -5,13 +5,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Model | Stratum EV</title>
+
+  <link rel="icon" href="./favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./favicon/favicon-180x180.png">
+
   <meta name="description" content="Model brief with headline specs, trims, and UK import readiness context." />
+  <meta name="theme-color" content="#0B0F1A">
+
+  <link rel="manifest" href="/manifest.json">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/market-intelligence-drawer.css" />
   <link rel="stylesheet" href="./css/market-intelligence.css" />
-  <link rel="stylesheet" href="./css/app.css?v=11" />
+  <link rel="stylesheet" href="./css/app.css?v=12" />
 </head>
 <body>
   <header class="nav">
@@ -28,18 +39,30 @@
         <a class="tab" href="./ev-history.html">EV History</a>
         <a class="tab" href="./ev-evolution.html">EV Evolution</a>
         <a class="tab" href="./innovation.html">Innovation</a>
-        <a class="tab" href="https://www.shopify.com">Store</a>
+        <a class="tab" href="https://shop.stratumev.com">Store</a>
         <a class="tab" href="./contact.html">Contact</a>
+
+        <!-- mobile only CTA -->
+        <a class="tab tab-cta" href="./uk-compliance-led-sourcing.html">
+          UK compliance-led sourcing
+        </a>
       </nav>
 
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
         <span></span><span></span><span></span>
       </button>
-
-      <!-- Model-only: dynamic “last checked” status chip -->
-      <span class="badge badge-status" id="lastChecked" aria-live="polite"></span>
     </div>
+
+    <!-- Desktop CTA (consistent with index.html) -->
+    <a class="badge badge-cta" href="./uk-compliance-led-sourcing.html">
+      UK compliance-led sourcing
+    </a>
+
+    <!-- Model-only: dynamic “last checked” status chip -->
+    <span class="badge badge-status" id="lastChecked" aria-live="polite"></span>
   </header>
+
+<div class="nav-open-overlay"></div>
 
 
   <main class="container page">
@@ -134,13 +157,91 @@
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>Built from official sources, updated via ingest snapshots.</div>
-      <div class="footer-links">
-        <a href="./index.html">Market Intelligence</a>
+        <footer class="site-footer">
+
+    <!-- EV Brand Strip -->
+    <div class="brand-strip">
+      <div class="brand-track">
+
+        <span>Lucid</span>
+        <span>BYD</span>
+        <span>Scout Motors</span>
+        <span>XPeng</span>
+        <span>NIO</span>
+        <span>Zeekr</span>
+        <span>Rivian</span>
+        <span>Polestar</span>
+        <span>Lotus EV</span>
+        <span>Faraday Future</span>
+        <span>VinFast</span>
+        <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
+
+        <!-- duplicate for seamless loop -->
+        <span>Lucid</span>
+        <span>BYD</span>
+        <span>Scout Motors</span>
+        <span>XPeng</span>
+        <span>NIO</span>
+        <span>Zeekr</span>
+        <span>Rivian</span>
+        <span>Polestar</span>
+        <span>Lotus EV</span>
+        <span>Faraday Future</span>
+        <span>VinFast</span>
+        <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
+
+      </div>
+    </div>
+
+    <div class="footer-inner">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <div class="footer-logo">STRATUM EV</div>
+        <div class="footer-tagline">
+          Rare, high-spec EV sourcing with UK compliance intelligence.
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Navigation</div>
+        <a href="./index.html">Home</a>
+        <a href="./market-intelligence.html">Market Intelligence</a>
         <a href="./services.html">Services</a>
+        <a href="./innovation.html">Innovation</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Research</div>
+        <a href="./ev-history.html">EV History</a>
+        <a href="./ev-evolution.html">EV Evolution</a>
+        <a href="./about.html">About Stratum EV</a>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-title">Contact</div>
         <a href="./contact.html">Contact</a>
+        <a href="./uk-compliance-led-sourcing.html">UK Compliance-Led EV Sourcing</a>
+        <div class="footer-meta">London · United Kingdom</div>
+      </div>
+
+    </div>
+
+      <div class="footer-bottom">
+
+        <div class="footer-copy">
+          © <span id="footer-year"></span> Stratum EV. All rights reserved.
+        </div>
+
+        <div class="footer-legal">
+          Built from official sources and structured market intelligence.
+        </div>
+
       </div>
     </div>
   </footer>

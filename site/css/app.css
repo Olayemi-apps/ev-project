@@ -1098,12 +1098,19 @@ GRID - UPDATED GRID
   max-height: 340px;
 }
 
-.heroimg img{
+.heroimg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: none;
+
+  border-radius: 16px;
+
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.heroimg img:hover {
+  transform: scale(1.02);
 }
 
 /* Porsche Taycan Turbo GT – match Zeekr composition */
@@ -1507,6 +1514,80 @@ textarea.input{
 
 .faq summary::-webkit-details-marker{ display:none; }
 .faq details p{ margin: 10px 0 0; }
+
+
+/*==== UPDATED FAQ =========*/
+
+/* FAQ Upgrade */
+.faq-section {
+  margin-top: 40px;
+}
+
+.faq-subtitle {
+  color: #9aa4b2;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+/* Accordion */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  background: rgba(20, 28, 40, 0.65);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+/* Question */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #e6edf3;
+  font-size: 15px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Icon */
+.faq-icon {
+  font-size: 16px;
+  color: #6ea8ff;
+  transition: transform 0.25s ease;
+}
+
+/* Answer */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 16px;
+}
+
+.faq-answer .p {
+  color: #b8c1cc;
+  padding-bottom: 14px;
+}
+
+/* Active */
+.faq-item.active .faq-answer {
+  max-height: 220px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+/*========================*/
 
 .bullets{
   display:grid;

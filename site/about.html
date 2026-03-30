@@ -5,7 +5,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About Stratum EV | UK Compliance-Led EV Sourcing</title>
+
+  <link rel="icon" href="./favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./favicon/favicon-180x180.png">
+
+
   <meta name="description" content="Stratum EV provides premium EV market intelligence and concierge sourcing with a UK compliance-led approach, focused on rare, high-spec models." />
+  <meta name="theme-color" content="#0B0F1A">
+
+  <link rel="manifest" href="/manifest.json">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -13,7 +24,7 @@
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/market-intelligence-drawer.css" />
   <link rel="stylesheet" href="./css/market-intelligence.css" />
-  <link rel="stylesheet" href="./css/app.css?v=11" />
+  <link rel="stylesheet" href="./css/app.css?v=12" />
 </head>
 <body data-page="about">
   <header class="nav">
@@ -31,7 +42,7 @@
             <a class="tab" href="./ev-history.html">EV History</a>
             <a class="tab" href="./ev-evolution.html">EV Evolution</a>
             <a class="tab" href="./innovation.html">Innovation</a>
-            <a class="tab" href="https://www.shopify.com">Store</a>
+            <a class="tab" href="https://shop.stratumev.com">Store</a>
             <a class="tab" href="./contact.html">Contact</a>
             <!-- mobile only CTA -->
             <a class="tab tab-cta" href="./uk-compliance-led-sourcing.html">
@@ -122,21 +133,53 @@
     </section>
 
     <section class="panel soft section reveal">
-      <h2 class="h2">FAQ</h2>
-      <div class="faq">
-        <details>
-          <summary>Are you a dealership?</summary>
-          <p class="p">No. Stratum EV is a market intelligence and concierge sourcing platform, designed to support informed decisions and structured requests.</p>
-        </details>
-        <details>
-          <summary>Do you only cover imports?</summary>
-          <p class="p">No. We support UK-market vehicles and cross-market sourcing when it makes sense for the buyer’s requirements.</p>
-        </details>
-        <details>
-          <summary>How do I start?</summary>
-          <p class="p">Browse the Market Intelligence page, open a Model Brief, then use “Request sourcing” to send a structured enquiry.</p>
-        </details>
-      </div>
+          <h2 class="h2">Frequently Asked Questions</h2>
+          <p class="faq-subtitle">
+            Clarity on platform scope, sourcing approach, and how to get started.
+          </p>
+
+          <div class="faq-accordion">
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Are you a dealership?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  No. Stratum EV is a market intelligence and concierge sourcing platform,
+                  designed to support informed decisions and structured requests, not a vehicle retailer.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Do you only cover imports?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  No. We support both UK-market vehicles and cross-market sourcing,
+                  recommending imports only when they provide a clear advantage for the buyer’s requirements.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>How do I start?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  Start by browsing the Market Intelligence page, open a Model Brief,
+                  then use “Request sourcing” to submit a structured enquiry with your requirements.
+                </p>
+    </div>
+  </div>
+
+</div>
     </section>
   </main>
 
@@ -158,6 +201,8 @@
         <span>Faraday Future</span>
         <span>VinFast</span>
         <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
         <!-- duplicate for seamless loop -->
         <span>Lucid</span>
@@ -172,6 +217,8 @@
         <span>Faraday Future</span>
         <span>VinFast</span>
         <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
       </div>
     </div>
@@ -229,6 +276,7 @@
   <script src="./js/market-intelligence.js"></script>
   <script src="./js/nav.js"></script>
   <script src="./js/ajax-nav.js"></script>
+  <script src="./js/app.js" defer></script>
 
 
   <!-- Market Intelligence Drawer -->

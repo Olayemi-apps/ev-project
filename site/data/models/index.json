@@ -74,7 +74,7 @@
       "model": "Air Sapphire",
       "category": "Executive Performance Sedan",
       "tagline": "Ultra-luxury electric performance sedan with discreet, limited-production sourcing.",
-      "image": "../assets/images/lucid-air-sapphire.jpg",
+      "image": "./assets/images/lucid-air-sapphire.jpg",
       "specs": {
         "drivetrain": "AWD",
         "battery_kwh": null,

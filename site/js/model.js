@@ -19,31 +19,29 @@ function specBlock(label, value) {
 
 function resolveImagePath(url) {
   if (!url) return "";
-  // Absolute URLs are fine
+
+  // External images
   if (/^https?:\/\//i.test(url)) return url;
 
-  // Already relative from /site/
-  if (url.startsWith("../")) return url;
+  // Always resolve relative to /site/
+  if (url.startsWith("./")) return url;
 
-  // Handle ./assets/... (common)
-  if (url.startsWith("./assets/")) return `..${url.slice(1)}`;
+  if (url.startsWith("assets/")) return `./${url}`;
 
-  // Handle assets/... (make it relative to /site/)
-  if (url.startsWith("assets/")) return `../${url}`;
-
-  // Handle /assets/... (make it relative to /site/)
-  if (url.startsWith("/assets/")) return `..${url}`;
-
-  return url;
+  return `./assets/images/${url}`;
 }
 
 (async function init() {
   const slug = qs("slug");
   if (!slug) throw new Error("Missing slug");
 
-  const res = await fetch(`./data/models/${encodeURIComponent(slug)}.json`, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load model json");
-  const m = await res.json();
+  const res = await fetch(`./data/models/index.json`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to load models index");
+
+  const data = await res.json();
+  const m = data.models.find(model => model.slug === slug);
+
+  if (!m) throw new Error(`Model not found for slug: ${slug}`);
 
   // Tag hero wrapper for per-model CSS crops
   const heroWrap = document.getElementById("heroWrap");
@@ -175,15 +173,16 @@ function resolveImagePath(url) {
   // Hero image
   const heroEl = document.getElementById("hero");
   let hero = (m.images && m.images[0]) || m.image || "";
-  hero = resolveImagePath(hero);
+  hero = hero;
 
   if (heroEl) {
-    if (hero) {
-      heroEl.src = hero;
-      heroEl.style.display = "block";
-    } else {
-      heroEl.style.display = "none";
-    }
+    heroEl.src = hero || "./assets/images/fallback.jpg";
+
+    heroEl.onerror = () => {
+      heroEl.src = "./assets/images/fallback.jpg";
+    };
+
+    heroEl.style.display = "block";
   }
 
   // Specs

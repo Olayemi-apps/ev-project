@@ -5,7 +5,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EV Concierge Services and Market Intelligence | Stratum EV</title>
+
+  <link rel="icon" href="./favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./favicon/favicon-180x180.png">
+
+
   <meta name="description" content="Premium EV market intelligence, model comparisons, and concierge sourcing, designed around UK compliance-led import feasibility." />
+  <meta name="theme-color" content="#0B0F1A">
+
+  <link rel="manifest" href="/manifest.json">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -13,7 +24,7 @@
   <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/market-intelligence-drawer.css" />
   <link rel="stylesheet" href="./css/market-intelligence.css" />
-  <link rel="stylesheet" href="./css/app.css?v=11" />
+  <link rel="stylesheet" href="./css/app.css?v=12" />
 </head>
 <body data-page="services">
   <header class="nav">
@@ -35,7 +46,7 @@
         <a class="tab" href="./ev-history.html">EV History</a>
         <a class="tab" href="./ev-evolution.html">EV Evolution</a>
         <a class="tab" href="./innovation.html">Innovation</a>
-        <a class="tab" href="https://www.shopify.com">Store</a>
+        <a class="tab" href="https://shop.stratumev.com">Store</a>
         <a class="tab" href="./contact.html">Contact</a>
         <!-- mobile only CTA -->
         <a class="tab tab-cta" href="./uk-compliance-led-sourcing.html">
@@ -137,21 +148,50 @@
     </section>
 
     <section class="panel section">
-      <h2 class="h2">FAQ</h2>
-      <div class="faq">
-        <details>
-          <summary>Do you offer pricing?</summary>
-          <p class="p">Pricing depends on the vehicle, the market, and the scope. Start with a sourcing request so we can scope correctly.</p>
-        </details>
-        <details>
-          <summary>Can you source limited-production models?</summary>
-          <p class="p">Yes, subject to availability and feasibility. The best results come from clear trim, budget, and timeline inputs.</p>
-        </details>
-        <details>
-          <summary>Do you support businesses?</summary>
-          <p class="p">Yes, including executive vehicles and specialist fleet requirements where compliance and configuration matter.</p>
-        </details>
-      </div>
+          <h2 class="h2">Frequently Asked Questions</h2>
+          <p class="faq-subtitle">
+            Clarity on services, that is offered as well as sourcing approach, and how to get started.
+          </p>
+
+          <div class="faq-accordion">
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Do you offer pricing?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  Pricing depends on the vehicle, the market, and the scope. Start with a sourcing request so we can scope correctly.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Can you source limited-production models?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  Yes, subject to availability and feasibility. The best results come from clear trim, budget, and timeline inputs.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Do you support businesses?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  Yes, including executive vehicles and specialist fleet requirements where compliance and configuration matter.
+                </p>
+            </div>
+          </div>
+
+        </div>
     </section>
   </div>
 
@@ -173,6 +213,8 @@
         <span>Faraday Future</span>
         <span>VinFast</span>
         <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
         <!-- duplicate for seamless loop -->
         <span>Lucid</span>
@@ -187,6 +229,8 @@
         <span>Faraday Future</span>
         <span>VinFast</span>
         <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
       </div>
     </div>
@@ -244,6 +288,7 @@
   <script src="./js/nav.js"></script>
   <script src="./js/reveal.js"></script>
   <script src="./js/ajax-nav.js"></script>
+  <script src="./js/app.js" defer></script>
 
   <!-- Market Intelligence Drawer -->
 <div id="mi-drawer" class="mi-drawer" aria-hidden="true">

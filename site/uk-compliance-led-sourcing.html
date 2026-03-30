@@ -5,52 +5,67 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>UK Compliance-Led EV Sourcing | Stratum EV</title>
+
+  <link rel="icon" href="./favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./favicon/favicon-180x180.png">
+
   <meta name="description" content="UK compliance-led EV sourcing for high-spec imports: charging compatibility, documentation, IVA risk, warranty, and real-world readiness checks." />
+  <meta name="theme-color" content="#0B0F1A">
+
+  <link rel="manifest" href="/manifest.json">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/market-intelligence-drawer.css" />
   <link rel="stylesheet" href="./css/market-intelligence.css" />
   <link rel="stylesheet" href="./css/app.css?v=12" />
 </head>
 
 <body data-page="uk-compliance">
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="./index.html" aria-label="Stratum EV home">
-        <img class="brand-logo" src="./assets/img/brand/stratum-ev-logo-clean-h48.png" alt="Stratum EV" />
-      </a>
+    <header class="nav">
+      <div class="container nav-inner">
 
-      <nav class="tabs" aria-label="Primary">
-        <a class="tab" href="./index.html">Home</a>
-        <a class="tab" href="./market-intelligence.html">Market Intelligence</a>
-        <a class="tab" href="./about.html">About Us</a>
-        <a class="tab" href="./services.html">Services</a>
-        <a class="tab" href="./ev-history.html">EV History</a>
-        <a class="tab" href="./ev-evolution.html">EV Evolution</a>
-        <a class="tab" href="./innovation.html">Innovation</a>
-        <a class="tab" href="https://www.shopify.com">Store</a>
-        <a class="tab" href="./contact.html">Contact</a>
-         <!-- mobile only CTA -->
-        <a class="tab tab-cta" href="./uk-compliance-led-sourcing.html">
-            UK compliance-led sourcing
+        <a class="brand" href="./index.html" aria-label="Stratum EV home">
+          <img class="brand-logo" src="./assets/img/brand/stratum-ev-logo-clean-h48.png" alt="Stratum EV" />
         </a>
-      </nav>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
-        <span></span><span></span><span></span>
-      </button>
+        <nav class="tabs" aria-label="Primary">
+          <a class="tab" href="./index.html">Home</a>
+          <a class="tab" href="./market-intelligence.html">Market Intelligence</a>
+          <a class="tab" href="./about.html">About Us</a>
+          <a class="tab" href="./services.html">Services</a>
+          <a class="tab" href="./ev-history.html">EV History</a>
+          <a class="tab" href="./ev-evolution.html">EV Evolution</a>
+          <a class="tab" href="./innovation.html">Innovation</a>
+          <a class="tab" href="https://shop.stratumev.com">Store</a>
+          <a class="tab" href="./contact.html">Contact</a>
 
-      <!-- CTA is "active" on this page -->
-      <a class="badge badge-cta is-current" href="./uk-compliance-led-sourcing.html">UK compliance-led sourcing</a>
-    </div>
-  </header>
+          <!-- mobile only CTA -->
+          <a class="tab tab-cta" href="./uk-compliance-led-sourcing.html">
+            UK compliance-led sourcing
+          </a>
+        </nav>
 
+        <!-- hamburger MUST be inside nav-inner -->
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+
+      <!-- CTA sits OUTSIDE nav-inner -->
+      <a class="badge badge-cta is-current" href="./uk-compliance-led-sourcing.html">
+        UK compliance-led sourcing
+      </a>
+    </header>
+  
   <div class="nav-open-overlay"></div>
 
-  <main class="page">
-    <div class="container">
+  <main class="container page">
       <!-- Hero -->
       <section class="compliance-hero">
         <div class="hero-media hero-mid">
@@ -230,21 +245,50 @@
 
       <!-- FAQ -->
       <section id="faq" class="section panel soft reveal">
-        <h2 class="h2">FAQ</h2>
-        <div class="faq" id="faqWrap">
-          <details id="faq-charging">
-            <summary>Will any EV charge reliably in the UK?</summary>
-            <p class="p">Not always. Connector type, protocol behaviour, and region-specific charging assumptions can affect usability.</p>
-          </details>
-          <details id="faq-docs">
-            <summary>What documentation matters most?</summary>
-            <p class="p">Provenance, compliance documents, recall status, and verified spec data matter most before you commit.</p>
-          </details>
-          <details id="faq-iva">
-            <summary>What is IVA risk?</summary>
-            <p class="p">IVA risk is the likelihood of additional testing or modifications being required for UK road legality.</p>
-          </details>
-        </div>
+            <h2 class="h2">Frequently Asked Questions</h2>
+          <p class="faq-subtitle">
+            UK  Compliance Led Sourcing, UK Regulations and Technical Specifications and Legal Requirements.
+          </p>
+
+          <div class="faq-accordion">
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Will any EV charge reliably in the UK?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  Not always. Connector type, protocol behaviour, and region-specific charging assumptions can affect usability.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What documentation matters most?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  Provenance, compliance documents, recall status, and verified spec data matter most before you commit.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>What is IVA risk?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p class="p">
+                  IVA risk is the likelihood of additional testing or modifications being required for UK road legality.
+                </p>
+              </div>
+            </div>
+
+          </div>
       </section>
 
       <section class="section compare-disclaimer">
@@ -253,7 +297,6 @@
         </div>
       </section>
 
-    </div>
   </main>
 
   <footer class="site-footer">
@@ -274,6 +317,8 @@
         <span>Faraday Future</span>
         <span>VinFast</span>
         <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
         <!-- duplicate for seamless loop -->
         <span>Lucid</span>
@@ -288,6 +333,8 @@
         <span>Faraday Future</span>
         <span>VinFast</span>
         <span>Hyundai EV</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
       </div>
     </div>
@@ -345,6 +392,7 @@
   <script src="./js/nav.js"></script>
   <script src="./js/compliance.js"></script>
   <script src="./js/ajax-nav.js"></script>
+  <script src="./js/app.js"></script>
 
   <!-- Market Intelligence Drawer -->
 <div id="mi-drawer" class="mi-drawer" aria-hidden="true">

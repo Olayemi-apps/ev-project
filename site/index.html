@@ -5,11 +5,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EV Market Intelligence and Concierge Sourcing | Stratum EV</title>
+
+  <link rel="icon" href="./favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./favicon/favicon-180x180.png">
+
   <meta name="description" content="Curated OEM data for premium EV models, tuned for UK import reality: performance, charging, range standards, and compliance context." />
+  <meta name="theme-color" content="#0B0F1A">
+
+  <link rel="manifest" href="/manifest.json">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="./assets/img/hero/contact.webp" fetchpriority="high">
+
+
 
   <link rel="preload" as="image" href="./assets/images/lucid-air-touring.jpg">
   <link rel="preload" as="image" href="./assets/images/lucid-air-sapphire.jpg">
@@ -19,7 +31,7 @@
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/market-intelligence-drawer.css" />
   <link rel="stylesheet" href="./css/market-intelligence.css" />
-  <link rel="stylesheet" href="./css/app.css?v=11" />
+  <link rel="stylesheet" href="./css/app.css?v=12" />
 </head>
 <body data-page="home">
   <header class="nav">
@@ -37,7 +49,7 @@
         <a class="tab" href="./ev-history.html">EV History</a>
         <a class="tab" href="./ev-evolution.html">EV Evolution</a>
         <a class="tab" href="./innovation.html">Innovation</a>
-        <a class="tab" href="https://www.shopify.com">Store</a>
+        <a class="tab" href="https://shop.stratumev.com">Store</a>
         <a class="tab" href="./contact.html">Contact</a>
         <!-- mobile only CTA -->
         <a class="tab tab-cta" href="./uk-compliance-led-sourcing.html">
@@ -125,22 +137,70 @@
     </div>
 
     <div class="container">
-      <section class="panel section" aria-labelledby="mi-faq">
-        <h2 class="h2" id="mi-faq">FAQ</h2>
-        <div class="faq">
-          <details>
-            <summary>What is “UK compliance-led sourcing”?</summary>
-            <p class="p">It means decisions are guided by UK import feasibility, documentation, and real-world charging usability, not just marketing figures.</p>
-          </details>
-          <details>
-            <summary>Is the data official?</summary>
-            <p class="p">Model briefs are built from official sources and updated via ingest snapshots, with the last-checked date shown on each model page.</p>
-          </details>
-          <details>
-            <summary>Can you help me source a specific trim?</summary>
-            <p class="p">Yes. Use “Request sourcing” on the model brief and include your target trim, budget range, and delivery timeline.</p>
-          </details>
+      <section class="panel section faq-section" aria-labelledby="mi-faq">
+        
+        <h2 class="h2" id="mi-faq">Frequently Asked Questions</h2>
+        <p class="faq-subtitle">
+          Clarity on data, sourcing, and how Stratum EV supports decision-making.
+        </p>
+
+        <div class="faq-accordion">
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What is “UK compliance-led sourcing”?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="p">
+                Every vehicle is assessed against UK import regulations, homologation requirements,
+                and real-world usability. We prioritise charging compatibility, documentation,
+                servicing viability, and ownership practicality, not just marketing specs.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is the data official?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="p">
+                Model intelligence is built from OEM disclosures, regulatory filings, and verified sources.
+                Each model includes a last-checked timestamp for transparency.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you cover vehicles not officially available in the UK?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="p">
+                Yes. We specialise in identifying import-viable vehicles and assess feasibility based on
+                compliance, infrastructure compatibility, and total cost of ownership.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can you help me source a specific trim?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p class="p">
+                Submit a sourcing request from a model page with your configuration, budget,
+                timeline, and location. We evaluate availability and delivery pathways.
+              </p>
+            </div>
+          </div>
+
         </div>
+
       </section>
     </div>
   </main>
@@ -164,6 +224,8 @@
         <span>VinFast</span>
         <span>Hyundai EV</span>
         <span>Omoda</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
         <!-- duplicate for seamless loop -->
         <span>Lucid</span>
@@ -179,6 +241,8 @@
         <span>VinFast</span>
         <span>Hyundai EV</span>
         <span>Omoda</span>
+        <span>Slate</span>
+        <span>Telo</span>
 
       </div>
     </div>
