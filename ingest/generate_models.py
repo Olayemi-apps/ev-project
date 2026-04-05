@@ -82,3 +82,8 @@ with open(INDEX_PATH, "w", encoding="utf-8") as f:
     json.dump({"models": all_models}, f, indent=2)
 
 print(f"Rebuilt index.json with {len(all_models)} models")
+
+import subprocess
+
+# Generate sitemap after models update
+subprocess.run(["python", "ingest/generate_sitemap.py"])
