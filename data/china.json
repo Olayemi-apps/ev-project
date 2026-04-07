@@ -1,0 +1,260 @@
+{
+  "models": [
+    {
+      "brand": "Xiaomi",
+      "model": "SU7",
+      "category": "Performance EV",
+      "tagline": "Hyper sedan challenger with Porsche-level performance targeting global expansion",
+      "slug": "xiaomi-su7",
+      "image": "./assets/images/xiaomi-su7.jpg",
+      "specs": {
+        "range_wltp_km": 800,
+        "accel_0_100_s": 2.78,
+        "dc_charge_10_80_min": 25
+      },
+      "signal": "growth",
+      "signal_score": 95,
+      "import_viability": "Import Viable",
+      "uk_readiness": "viable"
+    },
+    {
+        "brand": "NIO",
+        "model": "ET9",
+        "category": "Luxury Sedan",
+        "tagline": "Ultra-premium executive EV targeting S-Class dominance",
+        "slug": "nio-et9",
+        "image": "./assets/images/nio-et9.jpg",
+        "specs": {
+            "range_wltp_km": 700,
+            "accel_0_100_s": 3.8,
+            "dc_charge_10_80_min": 25
+        },
+        "signal": "strong",
+        "signal_score": 90,
+        "import_viability": "Import Viable",
+        "uk_readiness": "viable"
+    },
+    {
+        "brand": "Li Auto",
+        "model": "L9",
+        "category": "Luxury SUV",
+        "tagline": "Full-size luxury SUV dominating family EV segment in China",
+        "slug": "li-auto-l9",
+        "image": "./assets/images/li-auto-l9.avif",
+        "specs": {
+            "range_wltp_km": 600,
+            "accel_0_100_s": 5.3,
+            "dc_charge_10_80_min": 30
+        },
+        "signal": "strong",
+        "signal_score": 88,
+        "import_viability": "Complex Import",
+        "uk_readiness": "complex"
+    },
+    {
+        "brand": "Aito",
+        "model": "M9",
+        "category": "Luxury SUV",
+        "tagline": "Huawei-powered flagship SUV with advanced autonomous ecosystem",
+        "slug": "aito-m9",
+        "image": "./assets/images/aito-m9.webp",
+        "specs": {
+            "range_wltp_km": 630,
+            "accel_0_100_s": 4.5,
+            "dc_charge_10_80_min": 25
+        },
+        "signal": "growth",
+        "signal_score": 87,
+        "import_viability": "Import Viable",
+        "uk_readiness": "viable"
+    },
+    {
+        "brand": "XPeng",
+        "model": "G9 Performance",
+        "category": "Performance EV",
+        "tagline": "High-performance SUV with strong European market presence",
+        "slug": "xpeng-g9-performance",
+        "image": "./assets/images/xpeng-g9.webp",
+        "specs": {
+            "range_wltp_km": 570,
+            "accel_0_100_s": 3.9,
+            "dc_charge_10_80_min": 20
+        },
+        "signal": "growth",
+        "signal_score": 89,
+        "import_viability": "UK Ready",
+        "uk_readiness": "ready"
+    },
+    {
+        "brand": "Zeekr",
+        "model": "007",
+        "category": "Luxury Sedan",
+        "tagline": "High-performance electric sedan targeting Tesla Model 3 dominance",
+        "slug": "zeekr-007",
+        "image": "./assets/images/zeekr-007.webp",
+        "specs": {
+            "range_wltp_km": 700,
+            "accel_0_100_s": 2.84,
+            "dc_charge_10_80_min": 25
+        },
+        "signal": "strong",
+        "signal_score": 91,
+        "import_viability": "Import Viable",
+        "uk_readiness": "viable"
+    },
+    {
+        "brand": "NIO",
+        "model": "ES6",
+        "category": "Luxury SUV",
+        "tagline": "Premium electric SUV with strong European expansion and battery swap capability",
+        "slug": "nio-es6",
+        "image": "./assets/images/nio-es6.jpg",
+        "specs": {
+            "range_wltp_km": 610,
+            "accel_0_100_s": 4.5,
+            "dc_charge_10_80_min": 30
+        },
+        "signal": "strong",
+        "signal_score": 89,
+        "import_viability": "Import Viable",
+        "uk_readiness": "viable"
+    },
+    {
+        "brand": "NIO",
+        "model": "ET5 Touring",
+        "category": "Specialist EV",
+        "tagline": "Electric shooting brake blending performance with real-world practicality",
+        "slug": "nio-et5-touring",
+        "image": "./assets/images/nio-et5-touring.jpg",
+        "specs": {
+            "range_wltp_km": 560,
+            "accel_0_100_s": 4.0,
+            "dc_charge_10_80_min": 30
+        },
+        "signal": "strong",
+        "signal_score": 88,
+        "import_viability": "Import Viable",
+        "uk_readiness": "viable"
+    },
+    {
+        "brand": "Denza",
+        "model": "N7",
+        "category": "Specialist EV",
+        "tagline": "Premium electric SUV from BYD's luxury division targeting global markets",
+        "slug": "denza-n7",
+        "image": "./assets/images/denza-n7.webp",
+        "specs": {
+            "range_wltp_km": 570,
+            "accel_0_100_s": 3.9,
+            "dc_charge_10_80_min": 25
+        },
+        "signal": "growth",
+        "signal_score": 87,
+        "import_viability": "Import Viable",
+        "uk_readiness": "viable"
+    },
+    {
+        "brand": "Lotus",
+        "model": "Eletre",
+        "category": "Specialist EV",
+        "tagline": "Electric hyper-SUV combining Lotus performance DNA with luxury SUV practicality",
+        "slug": "lotus-eletre",
+        "image": "./assets/images/lotus-eletre.jpg",
+        "specs": {
+            "range_wltp_km": 600,
+            "accel_0_100_s": 2.95,
+            "dc_charge_10_80_min": 20
+        },
+        "signal": "strong",
+        "signal_score": 92,
+        "import_viability": "UK Ready",
+        "uk_readiness": "ready"
+    },
+    {
+        "brand": "XPeng",
+        "model": "P7+",
+        "category": "Luxury Sedan",
+        "tagline": "Next-generation premium electric sedan optimised for global markets with advanced driver assistance",
+        "slug": "xpeng-p7-plus",
+        "image": "./assets/images/xpeng-p7-plus.jpg",
+        "specs": {
+            "range_wltp_km": 650,
+            "accel_0_100_s": 4.1,
+            "dc_charge_10_80_min": 23
+        },
+        "signal": "growth",
+        "signal_score": 88,
+        "import_viability": "UK Ready",
+        "uk_readiness": "ready"
+    },
+    {
+        "brand": "NIO",
+        "model": "EP9",
+        "category": "Performance EV",
+        "tagline": "Track-focused electric hypercar engineered for record-breaking performance and aerodynamic efficiency",
+        "slug": "nio-ep9",
+        "image": "./assets/images/nio-ep9.jpg",
+        "specs": {
+            "range_wltp_km": 427,
+            "accel_0_100_s": 2.7,
+            "dc_charge_10_80_min": 45
+        },
+        "signal": "strong",
+        "signal_score": 93,
+        "import_viability": "Not Road Legal",
+        "uk_readiness": "complex"
+    },
+    {
+        "brand": "Lotus",
+        "model": "Emeya",
+        "category": "Performance EV",
+        "tagline": "High-performance electric sedan blending Lotus engineering with cutting-edge EV technology",
+        "slug": "lotus-emeya",
+        "image": "./assets/images/lotus-emeya.avif",
+        "specs": {
+            "range_wltp_km": 610,
+            "accel_0_100_s": 2.8,
+            "dc_charge_10_80_min": 18
+        },
+        "signal": "strong",
+        "signal_score": 92,
+        "import_viability": "UK Ready",
+        "uk_readiness": "ready"
+    },
+    {
+        "brand": "IM Motors",
+        "model": "L6",
+        "category": "Performance EV",
+        "tagline": "Next-generation high-performance electric sedan combining extreme acceleration with advanced intelligent driving systems",
+        "slug": "im-l6",
+        "image": "./assets/images/im-l6.jpg",
+        "specs": {
+            "range_wltp_km": 650,
+            "accel_0_100_s": 2.74,
+            "dc_charge_10_80_min": 20
+        },
+        "signal": "emerging",
+        "signal_score": 90,
+        "import_viability": "Import Viable",
+        "uk_readiness": "viable"
+    },
+    {
+        "brand": "Denza",
+        "model": "Z9 GT",
+        "category": "Performance EV",
+        "tagline": "Luxury electric GT combining high-speed performance with long-distance comfort and advanced driving technology",
+        "slug": "denza-z9-gt",
+        "image": "./assets/images/denza-z9-gt.webp",
+        "specs": {
+            "range_wltp_km": 630,
+            "accel_0_100_s": 3.4,
+            "dc_charge_10_80_min": 22
+        },
+        "signal": "growth",
+        "signal_score": 90,
+        "import_viability": "Import Viable",
+        "uk_readiness": "viable"
+    }
+
+  ]
+}

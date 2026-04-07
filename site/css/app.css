@@ -969,19 +969,24 @@ GRID - UPDATED GRID
 
 }
 .card-media{
-  height: 160px;
+  height: 180px; /* match visual standard */
+
+  overflow:hidden; /* ✅ prevents overflow bleed */
+
+  border-bottom:1px solid var(--line);
+
   background: radial-gradient(420px 200px at 20% 20%, rgba(110,231,255,0.20), transparent 55%),
               radial-gradient(420px 200px at 80% 30%, rgba(139,92,255,0.16), transparent 55%),
               rgba(255,255,255,0.02);
+
   display:flex;
   align-items:center;
   justify-content:center;
 }
+
 .card-media img{
-
   width:100%;
-
-  height:180px;
+  height:100%; /* ✅ match container */
 
   object-fit:cover;
 
@@ -989,7 +994,6 @@ GRID - UPDATED GRID
   display:block;
 
   transition:transform .6s ease;
-
 }
 
 .card:hover .card-media img{
@@ -2178,6 +2182,13 @@ NEW FOOTER STRUCTURE
   color: rgba(169,183,199,0.95);
 }
 
+.kicker {
+  color: #6ee7ff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 
 /* nicer long-form text rhythm */
 .prose p{
@@ -2973,6 +2984,244 @@ FURTHER NAV UPDATE - MOBILE
   display:none;
   text-align: center;
 }
+
+
+
+/*===========================
+TAB STYLING - CHINESE INTELLIGENCE ::
+=============================*/
+
+/* =========================
+DATA VIEW TABS
+========================= */
+
+.data-tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:20px;
+  padding:6px;
+
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
+  backdrop-filter:blur(8px);
+
+  width:fit-content;
+}
+
+.data-tab{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid transparent;
+
+  font-size:13px;
+  color:var(--muted);
+
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+
+.data-tab:hover{
+  color:var(--text);
+  border-color:rgba(255,255,255,0.10);
+  background:rgba(255,255,255,0.03);
+}
+
+.data-tab.is-active{
+  color:var(--text);
+  border-color:rgba(110,231,255,0.35);
+  background:rgba(110,231,255,0.12);
+
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* =========================
+   CHINA TAB GLOW EFFECT
+========================= */
+
+.data-tab[data-view="china"] {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Base glow */
+.data-tab[data-view="china"]::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    120deg,
+    rgba(110,231,255,0.0),
+    rgba(110,231,255,0.6),
+    rgba(139,92,255,0.6),
+    rgba(110,231,255,0.0)
+  );
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+/* Animated glow */
+.data-tab[data-view="china"].is-active::before {
+  opacity: 1;
+  animation: chinaGlow 2.5s linear infinite;
+}
+
+/* Glow animation */
+@keyframes chinaGlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Ensure text sits above glow */
+.data-tab[data-view="china"] span,
+.data-tab[data-view="china"] {
+  position: relative;
+  z-index: 1;
+}
+
+/*--- PREMIUM EFFECT ---*/
+
+.data-tab[data-view="china"].is-active {
+  box-shadow:
+    0 0 12px rgba(110,231,255,0.35),
+    0 0 24px rgba(139,92,255,0.25);
+}
+
+/*-----------------------*/
+
+/* =========================
+   CHINA INTELLIGENCE TAB (PREMIUM)
+========================= */
+
+.data-tab[data-view="china"] {
+  background: linear-gradient(
+    135deg,
+    rgba(15,23,42,0.9),
+    rgba(30,41,59,0.9)
+  );
+
+  border: 1px solid rgba(110,231,255,0.25);
+  color: #cbd5f5;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.04),
+    0 0 12px rgba(110,231,255,0.08);
+
+  transition: all 0.3s ease;
+}
+
+.data-tab[data-view="china"].is-active {
+  background: linear-gradient(
+    135deg,
+    rgba(14,165,233,0.18),
+    rgba(139,92,246,0.18)
+  );
+
+  border: 1px solid rgba(110,231,255,0.6);
+  color: #e0f2fe;
+
+  box-shadow:
+    0 0 16px rgba(110,231,255,0.25),
+    0 0 30px rgba(139,92,246,0.15);
+}
+
+.data-tab[data-view="china"].is-active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(110,231,255,0.25),
+    transparent
+  );
+
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/*=================================*/
+
+.ev-section {
+  margin-top: 28px;
+}
+
+.ev-section:first-of-type {
+  margin-top: 8px;
+}
+
+/*=================================*/
+
+
+.data-tab[data-view="china"]::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6ee7ff;
+  box-shadow: 0 0 8px #6ee7ff;
+}
+
+
+/*===============================
+CHINA SIGNAL SCORE PANEL
+================================*/
+
+
+.china-panel{
+  margin-bottom:20px;
+}
+
+.china-panel-inner{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+
+  padding:14px;
+  border-radius:16px;
+
+  border:1px solid rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.02);
+}
+
+.china-metric{
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02);
+}
+
+.china-metric .label{
+  font-size:10px;
+  opacity:.6;
+  text-transform:uppercase;
+}
+
+.china-metric .value{
+  font-size:18px;
+  font-weight:700;
+  margin-top:4px;
+}
+
+.china-metric.highlight{
+  border-color:rgba(110,231,255,0.35);
+  background:rgba(110,231,255,0.08);
+}
+
+
 
 /*===========================
 MOBILE - NAV STYLING

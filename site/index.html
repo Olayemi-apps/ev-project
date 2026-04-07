@@ -85,6 +85,15 @@
         </div>
 
         <div class="select-wrap">
+          <select id="uk-readiness" class="select">
+            <option value="">UK Readiness</option>
+            <option value="ready">UK Ready</option>
+            <option value="viable">Import Viable</option>
+            <option value="complex">Complex Import</option>
+          </select>
+        </div>
+
+        <div class="select-wrap">
           <select id="sort" class="select">
             <option value="brand">Sort: Brand</option>
             <option value="range_desc">Range (High → Low)</option>
@@ -117,7 +126,7 @@
 
           <div class="featured-content">
 
-            <div class="featured-kicker">Featured EV</div>
+            <div class="featured-kicker">TOP SIGNAL VEHICLE</div>
 
             <h2 id="featured-title"></h2>
 
@@ -133,7 +142,43 @@
     </div>
 
     <div class="container">
+
+      <!-- NEW: Data View Tabs -->
+      <div class="data-tabs">
+        <button class="data-tab is-active" data-view="all">All Models</button>
+        <button class="data-tab" data-view="china">China Intelligence</button>
+      </div>
+
+      <div id="china-panel" class="china-panel" style="display:none;">
+        <div class="china-panel-inner">
+
+          <div class="china-metric">
+            <div class="label">Market Momentum</div>
+            <div class="value">HIGH</div>
+          </div>
+
+          <div class="china-metric">
+            <div class="label">UK Readiness</div>
+            <div class="value">MODERATE</div>
+          </div>
+
+          <div class="china-metric">
+            <div class="label">Import Viability</div>
+            <div class="value">SELECTIVE</div>
+          </div>
+
+          <div class="china-metric highlight">
+            <div class="label">Signal Score</div>
+            <div class="value">88 / 100</div>
+          </div>
+
+        </div>
+      </div>
+
+
+
       <div id="grid" class="grid"></div>
+
     </div>
 
     <div class="container">

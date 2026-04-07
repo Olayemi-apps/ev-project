@@ -1,85 +1,33 @@
-/* ===== DevTools Detection ===== */
 
-(function () {
 
-  function detectDevTools() {
-
-    const threshold = 160;
-
-    const widthDiff = window.outerWidth - window.innerWidth;
-    const heightDiff = window.outerHeight - window.innerHeight;
-
-    if (widthDiff > threshold || heightDiff > threshold) {
-
-      document.body.innerHTML = `
-        <div style="
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          height:100vh;
-          background:#0a0a0a;
-          color:#fff;
-          font-family:system-ui;
-          text-align:center;
-          padding:40px;
-        ">
-          <div>
-            <h1>Security Notice</h1>
-            <p>Developer tools are not permitted on this platform.</p>
-          </div>
-        </div>
-      `;
-
-    }
-
-  }
-
-  setInterval(detectDevTools, 1000);
-
-})();
-
-/* ===== Basic Site Protection ===== */
-
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
-
-document.addEventListener("keydown", (e) => {
-
-  if (
-    e.key === "F12" ||
-    (e.ctrlKey && e.shiftKey && e.key === "I") ||
-    (e.ctrlKey && e.shiftKey && e.key === "J") ||
-    (e.ctrlKey && e.shiftKey && e.key === "C") ||
-    (e.ctrlKey && e.key === "U") ||
-    (e.ctrlKey && e.key === "S")
-  ) {
-    e.preventDefault();
-    return false;
-  }
-
-});
-/*========================================*/
+async function loadChinaModels(){
+  const res = await fetch("/data/china.json");
+  if (!res.ok) throw new Error("Failed to load china models");
+  const data = await res.json();
+  return data.models || [];
+}
 
 async function loadIndex() {
 
-  const cached = null; // disable cache for now
-
-  if(cached){
-    return JSON.parse(cached);
-  }
-
-  const res = await fetch("./data/models/index.json?v=4");
+  const res = await fetch("/site/data/models/index.json");
 
   if (!res.ok) throw new Error("Failed to load models index");
 
-  const data = (await res.json()).models || [];
+  const json = await res.json();
 
-  sessionStorage.setItem("ev_model_index", JSON.stringify(data));
+  // 🔥 FIX: support BOTH formats
+  const data = Array.isArray(json) ? json : json.models;
+
+  if (!Array.isArray(data)) {
+    throw new Error("Invalid index.json format");
+  }
 
   return data;
-
 }
+
+/*===========================
+          HELPERS
+============================*/
 
 function fmtRange(v) {
   if (v == null) return "Range: TBC";
@@ -93,6 +41,38 @@ function fmtCharge(v) {
   if (v == null) return "10–80: TBC";
   return `10–80: ${v} min`;
 }
+
+const compareBar = document.getElementById("compareBar");
+const compareCount = document.getElementById("compareCount");
+const compareGo = document.getElementById("compareGo");
+
+function renderCompareBar() {
+
+  if (!compareBar || !compareCount || !compareGo) return;
+
+  const compareSet = getCompareSet();
+  const slugs = Array.from(compareSet);
+
+  document.body.classList.toggle("has-comparebar", slugs.length > 0);
+
+  if (!slugs.length) {
+    compareBar.style.display = "none";
+    return;
+  }
+
+  compareBar.style.display = "block";
+  compareCount.textContent = `${slugs.length} selected`;
+
+  compareGo.href = `./compare.html?slugs=${encodeURIComponent(
+    slugs.join(",")
+  )}`;
+}
+
+const COMPARE_KEY = "ev_compare_slugs";
+
+
+
+/*========================================================*/
 
 function getCategoryOptions(models) {
   const set = new Set(models.map(m => m.category).filter(Boolean));
@@ -176,9 +156,6 @@ document.querySelectorAll(".faq-question").forEach((btn) => {
 /*+++++++++++++++++++++====*/
 
 
-
-const COMPARE_KEY = "ev_compare_slugs";
-
 function getCompareSet() {
   try {
     return new Set(JSON.parse(localStorage.getItem(COMPARE_KEY) || "[]"));
@@ -208,11 +185,14 @@ function cardHTML(m, compareSet, leaders) {
       ? "Performance EV"
       : (m.category || "EV Model");
 
-  const img = m.image ? `<img src="${m.image}" alt="${m.brand} ${m.model}" loading="lazy" decoding="async"/>` : "";
-  const range = fmtRange(m.specs?.range_wltp_km);
-  const accel = fmtAccel(m.specs?.accel_0_100_s);
-  const charge = fmtCharge(m.specs?.dc_charge_10_80_min);
+  const imgSrc = m.image || (m.images && m.images[0]) || "";
+  const img = imgSrc ? `<img src="${imgSrc}" alt="${m.brand} ${m.model}" loading="lazy"/>` : "";
+  const range = fmtRange(m.specs?.range_wltp_km || m.range_km);
+  const accel = fmtAccel(m.specs?.accel_0_100_s || m.accel);
+  const charge = fmtCharge(m.specs?.dc_charge_10_80_min || m.charge_time);
   const checked = compareSet.has(m.slug) ? "checked" : "";
+
+  // BADGES
 
   const badges = [];
 
@@ -226,6 +206,10 @@ function cardHTML(m, compareSet, leaders) {
 
   if(leaders.fastestCharge === m.slug){
     badges.push(`<span class="metric-badge">Fastest Charging</span>`);
+  }
+
+  if(m.import_viability){
+    badges.push(`<span class="metric-badge">${m.import_viability}</span>`);
   }
 
   return `
@@ -256,8 +240,14 @@ function cardHTML(m, compareSet, leaders) {
           ` : ""}
 
 
-          <label class="compare-toggle" title="Add to compare">
-            <input class="compare-checkbox" type="checkbox" data-slug="${m.slug}" ${checked}/>
+          <label class="compare-toggle" onclick="event.stopPropagation()">
+            <input 
+                  class="compare-checkbox" 
+                  type="checkbox" 
+                  data-slug="${m.slug}" 
+                  ${checked}
+                  onclick="event.stopPropagation()"
+                />
             Compare
           </label>
         </div>
@@ -373,27 +363,86 @@ function render(models, compareSet, leaders){
   grid.innerHTML = html;
 }
 
+document.addEventListener("change", function (e) {
+
+  if (!e.target.classList.contains("compare-checkbox")) return;
+
+  const slug = e.target.getAttribute("data-slug");
+  if (!slug) return;
+
+  let compareSet = getCompareSet();
+
+  if (e.target.checked) {
+    compareSet.add(slug);
+
+    if (compareSet.size > 3) {
+      compareSet.delete(slug);
+      e.target.checked = false;
+      return;
+    }
+
+  } else {
+    compareSet.delete(slug);
+  }
+
+  saveCompareSet(compareSet);
+  renderCompareBar();
+
+});
+  
+  
+
 async function initHome() {
 
-  const models = await loadIndex();
+  const grid = document.getElementById("grid");
+  grid.innerHTML = `<div class="panel">Loading models...</div>`;
 
-  const leaders = computeLeaders(models);
+  let models = [];
 
-  const featured = models[0];
+  try {
+    models = await loadIndex();
+  } catch (err) {
+  console.error("CRITICAL: index.json failed to load", err);
+  }
+
+  if (!models.length) {
+    throw new Error("index.json is empty or failed to load");
+  }
+
+  let currentView = "all";
+
+  let chinaModels = [];
+
+  try {
+    chinaModels = await loadChinaModels();
+  } catch (err) {
+    console.error("China models failed to load", err);
+    chinaModels = [];
+  }
+
+  let leaders = computeLeaders(models);
+
+  const featured = [...models]
+  .filter(m => {
+    const r = (m.uk_readiness || "").toLowerCase();
+    return r === "ready" || r === "viable" || r === "import viable";
+  })
+  .sort((a, b) => (b.signal_score ?? 0) - (a.signal_score ?? 0))[0]
+  || [...models].sort((a, b) => (b.signal_score ?? 0) - (a.signal_score ?? 0))[0];
+
+  if (!models.length) {
+    console.warn("Index empty, falling back to China models");
+    models = chinaModels;
+  }
 
   if(featured){
-
     const img = document.getElementById("featured-image");
     const title = document.getElementById("featured-title");
     const tag = document.getElementById("featured-tagline");
     const meta = document.getElementById("featured-meta");
     const link = document.getElementById("featured-link");
 
-    if(img){
-      img.src = featured.image;
-      img.loading = "eager";
-      img.decoding = "sync";
-    }
+    if(img) img.src = featured.image;
     if(title) title.textContent = `${featured.brand} ${featured.model}`;
     if(tag) tag.textContent = featured.tagline;
 
@@ -407,12 +456,12 @@ async function initHome() {
     if(link){
       link.href = `./model.html?slug=${featured.slug}`;
     }
-
   }
 
   const q = document.getElementById("q");
   const category = document.getElementById("category");
   const sort = document.getElementById("sort");
+  const ukReadiness = document.getElementById("uk-readiness");
 
   for (const c of getCategoryOptions(models)) {
     const opt = document.createElement("option");
@@ -421,101 +470,31 @@ async function initHome() {
     category.appendChild(opt);
   }
 
-  const compareBar = document.getElementById("compareBar");
-  const compareCount = document.getElementById("compareCount");
-  const compareChips = document.getElementById("compareChips");
-  const compareGo = document.getElementById("compareGo");
-  const compareClear = document.getElementById("compareClear");
-
-  const hasCompareUI = !!(compareBar && compareCount && compareChips && compareGo && compareClear);
-
   let compareSet = getCompareSet();
 
-  function renderCompareBar() {
-    if (!hasCompareUI) return;
+  const tabs = document.querySelectorAll(".data-tab");
 
-    const slugs = Array.from(compareSet);
-
-    // Always keep body padding in sync with compare bar visibility
-    document.body.classList.toggle("has-comparebar", slugs.length > 0);
-
-    if (!slugs.length) {
-      compareBar.style.display = "none";
-      return;
-    }
-
-    compareBar.style.display = "block";
-    compareCount.textContent = `${slugs.length} selected`;
-
-    const selectedModels = slugs
-      .map(s => models.find(m => m.slug === s))
-      .filter(Boolean);
-
-    compareChips.innerHTML = selectedModels
-      .map(
-        m => `
-          <span class="comparechip">
-            ${m.brand} ${m.model}
-            <button type="button" class="chip-remove" data-slug="${m.slug}" aria-label="Remove">×</button>
-          </span>
-        `
-      )
-      .join("");
-
-    compareGo.href = `./compare.html?slugs=${encodeURIComponent(slugs.join(","))}`;
-  }
-
-  // Bind once: chips remove + clear
-  if (hasCompareUI) {
-    compareChips.addEventListener("click", (e) => {
-      const btn = e.target.closest(".chip-remove");
-      if (!btn) return;
-      const slug = btn.getAttribute("data-slug");
-      if (!slug) return;
-
-      compareSet.delete(slug);
-      saveCompareSet(compareSet);
-      update(); // re-render cards so checkboxes update
-    });
-
-    compareClear.addEventListener("click", () => {
-      compareSet = new Set();
-      saveCompareSet(compareSet);
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("is-active"));
+      tab.classList.add("is-active");
+      currentView = tab.dataset.view;
       update();
     });
-  }
-
-  // Bind per-render: checkbox handlers only
-  function bindCheckboxHandlersOnly() {
-    if (!hasCompareUI) return;
-
-    document.querySelectorAll(".compare-checkbox").forEach(cb => {
-      cb.addEventListener("change", (e) => {
-        const slug = e.target.getAttribute("data-slug");
-        if (!slug) return;
-
-        if (e.target.checked) {
-          compareSet.add(slug);
-          if (compareSet.size > 3) {
-            compareSet.delete(slug);
-            e.target.checked = false;
-            alert("You can compare up to 3 models.");
-          }
-        } else {
-          compareSet.delete(slug);
-        }
-
-        saveCompareSet(compareSet);
-        renderCompareBar();
-      });
-    });
-  }
+  });
 
   function update() {
-    const filtered = models
+
+    const activeModels = currentView === "china" ? chinaModels : models;
+
+    leaders = computeLeaders(activeModels);
+
+    const filtered = activeModels
       .filter(m => matchesQuery(m, q?.value || ""))
-
-
+      .filter(m => {
+        if(!ukReadiness?.value) return true;
+        return (m.uk_readiness || "").toLowerCase() === ukReadiness.value;
+      })
       .filter(m => {
         const effectiveCategory =
           m.slug === "porsche-taycan-turbo-gt"
@@ -527,22 +506,26 @@ async function initHome() {
 
     const sorted = applySort(filtered, sort?.value || "brand");
 
-    // remove featured vehicle from grid
     const gridModels = sorted.filter(m => m.slug !== "lucid-air-sapphire");
 
     compareSet = getCompareSet();
+
     render(gridModels, compareSet, leaders);
-    renderCompareBar();
     bindCheckboxHandlersOnly();
+    renderCompareBar(); // 🔥 REQUIRED
   }
 
   q?.addEventListener("input", update);
   category?.addEventListener("change", update);
   sort?.addEventListener("change", update);
+  ukReadiness?.addEventListener("change", update);
 
-  update();
-
+  setTimeout(update, 0);
 }
+
+/* ========================= */
+/* REPLACE ENDS HERE */
+/* ========================= */
 
 window.initHome = initHome;
 
@@ -550,6 +533,8 @@ initHome().catch(err => {
   console.error(err);
   const grid = document.getElementById("grid");
   if (grid) {
-    grid.innerHTML = `<div class="panel">Failed to load model index.</div>`;
+    grid.innerHTML = `<div class="panel">No models available.</div>`;
   }
 });
+
+
