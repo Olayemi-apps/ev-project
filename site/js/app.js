@@ -1,7 +1,7 @@
 
 
 async function loadChinaModels(){
-  const res = await fetch("./data/china.json");
+  const res = await fetch("../data/china.json");
   if (!res.ok) throw new Error("Failed to load china models");
   const data = await res.json();
   return data.models || [];
