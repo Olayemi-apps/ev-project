@@ -1,7 +1,7 @@
 
 
 async function loadChinaModels(){
-  const res = await fetch("/data/china.json");
+  const res = await fetch("./data/china.json");
   if (!res.ok) throw new Error("Failed to load china models");
   const data = await res.json();
   return data.models || [];
@@ -9,7 +9,7 @@ async function loadChinaModels(){
 
 async function loadIndex() {
 
-  const res = await fetch("/site/data/models/index.json");
+  const res = await fetch("./data/models/index.json");
 
   if (!res.ok) throw new Error("Failed to load models index");
 
@@ -402,22 +402,19 @@ async function initHome() {
   try {
     models = await loadIndex();
   } catch (err) {
-  console.error("CRITICAL: index.json failed to load", err);
+    console.error("Index failed, falling back", err);
   }
-
-  if (!models.length) {
-    throw new Error("index.json is empty or failed to load");
-  }
-
-  let currentView = "all";
 
   let chinaModels = [];
 
   try {
     chinaModels = await loadChinaModels();
   } catch (err) {
-    console.error("China models failed to load", err);
-    chinaModels = [];
+    console.error("China models failed", err);
+  }
+
+  if (!models.length) {
+    models = chinaModels;
   }
 
   let leaders = computeLeaders(models);
@@ -511,7 +508,6 @@ async function initHome() {
     compareSet = getCompareSet();
 
     render(gridModels, compareSet, leaders);
-    bindCheckboxHandlersOnly();
     renderCompareBar(); // 🔥 REQUIRED
   }
 
