@@ -4,7 +4,9 @@ async function loadChinaModels(){
   const url = "./data/china.json";
   console.log("Fetching:", url);
 
-  const res = await fetch(url);
+  const res = await fetch(url, {
+    cache: "force-cache"
+  });
   console.log("Status:", res.status);
 
   if (!res.ok) throw new Error("Failed to load china models");
@@ -17,7 +19,9 @@ async function loadChinaModels(){
 
 async function loadIndex() {
 
-  const res = await fetch("./data/models/index.json");
+  const res = await fetch("./data/models/index.json", {
+    cache: "force-cache"
+  });
 
   if (!res.ok) throw new Error("Failed to load models index");
 
@@ -404,22 +408,30 @@ async function initHome() {
 
   let currentView = "all"; // 🔥 REQUIRED
 
-  // ===== PROTECTION =====
-  document.addEventListener("contextmenu", (e) => {
-    if (e.target.tagName === "IMG") {
-      e.preventDefault();
-    }
-  });
+ // ===== PROTECTION =====
 
-  document.addEventListener("keydown", (e) => {
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
-      (e.ctrlKey && e.key === "U")
-    ) {
-      e.preventDefault();
-    }
-  });
+// Disable ALL right click
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+// Block dev shortcuts
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+  }
+});
+
+// Prevent image drag/download
+document.addEventListener("dragstart", (e) => {
+  if (e.target.tagName === "IMG") {
+    e.preventDefault();
+  }
+});
 
   const grid = document.getElementById("grid");
   grid.innerHTML = `<div class="panel">Loading models...</div>`;

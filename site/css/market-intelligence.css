@@ -297,10 +297,15 @@ STORIES PANEL STYLING
   pointer-events: none;
 }
 
+.mi-carousel::before,
+.mi-carousel::after{
+  pointer-events: none;
+}
+
 /*--Pointer events--*/
 
 .mi-col-body::after{
-  pointer-events: auto;
+  pointer-events: none;
 }
 
 .mi-scroll-hint{
@@ -1358,6 +1363,7 @@ STORIES UPDATE
   min-height:0;
 }
 
+
 .mi-carousel::before{
   left:0;
   background:linear-gradient(to right, rgba(10,14,20,1), rgba(10,14,20,0));
@@ -1842,7 +1848,230 @@ STORIES UPDATE
   scroll-snap-align: start;
 }
 
+.mi-carousel__track {
+  pointer-events: none;
+}
+
+.mi-carousel__track > * {
+  pointer-events: auto;
+}
+
+.mi-watchcard,
+.mi-watchcard a {
+  position: relative;
+  z-index: 2;
+}
+
+.mi-carbtn {
+  pointer-events: auto;
+}
+
+.mi-carousel__track {
+  z-index: 1;
+}
+
+/* ===== CLICK FIX PATCH ===== */
+
+.mi-col-body::after {
+  pointer-events: none !important;
+}
+
+.mi-carousel::before,
+.mi-carousel::after {
+  pointer-events: none !important;
+}
+
+/* KEY FIX */
+.mi-carousel__track {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mi-carousel__track > * {
+  pointer-events: auto;
+}
+
+/* Ensure cards sit above */
+.mi-watchcard,
+.mi-watchcard a {
+  position: relative;
+  z-index: 2;
+}
+
+/*=============================
+DRAWER
+===============================*/
+
+.mi-drawer-section {
+  margin-top: 16px;
+}
+
+.mi-drawer-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.mi-drawer-text {
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.mi-drawer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.mi-drawer-metrics {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+
 /*------------------------------*/
+
+/* =========================
+   STRATUM SIGNAL STRIP
+========================= */
+
+.mi-signal-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* base card */
+.mi-signal-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+/* label */
+.mi-signal-label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* value */
+.mi-signal-value {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* =========================
+   RISK STATES
+========================= */
+
+.mi-signal-item.low {
+  border-left: 3px solid #27ae60;
+}
+
+.mi-signal-item.moderate {
+  border-left: 3px solid #f2c94c;
+}
+
+.mi-signal-item.elevated {
+  border-left: 3px solid #eb5757;
+}
+
+/* =========================
+   CAPITAL INTENSITY
+========================= */
+
+.mi-signal-item.capital-low {
+  border-left: 3px solid #6c7a89;
+}
+
+.mi-signal-item.capital-medium {
+  border-left: 3px solid #4da3ff;
+}
+
+.mi-signal-item.capital-high {
+  border-left: 3px solid #9b51e0;
+}
+
+/* =========================
+   OUTLOOK
+========================= */
+
+.mi-signal-item.outlook-positive {
+  border-left: 3px solid #27ae60;
+}
+
+.mi-signal-item.outlook-neutral {
+  border-left: 3px solid #9fb3c8;
+}
+
+.mi-signal-item.outlook-cautious {
+  border-left: 3px solid #ff6b6b;
+}
+
+/* =========================
+   HORIZON (subtle)
+========================= */
+
+.mi-signal-item.horizon {
+  border-left: 3px solid rgba(255,255,255,0.2);
+}
+
+/*==========================
+PROFESSIONAL
+===========================*/
+.mi-signal-item.elevated {
+  box-shadow: 0 0 12px rgba(235,87,87,0.25);
+}
+
+.mi-signal-item.capital-high {
+  box-shadow: 0 0 12px rgba(155,81,224,0.25);
+}
+
+/*=============================
+TOP CARD POINTER
+==============================*/
+
+.mi-card {
+  cursor: pointer;
+}
+
+.mi-story-card {
+  cursor: pointer;
+}
+
+.mi-story-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(110,231,255,0.25);
+}
+
+/*==========================
+FEATURED CARD
+==========================*/
+
+.mi-featured-card {
+  cursor: pointer;
+}
+
+.mi-featured-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+}
 
 /* ===== Trend Chart Professional Upgrade ===== */
 

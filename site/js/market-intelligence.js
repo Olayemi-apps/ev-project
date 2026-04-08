@@ -561,12 +561,15 @@ function normalizeStory(a){
     id: a.id || a.slug || Math.random().toString(36),
     title: a.title || "",
     summary: a.summary || "",
-    category: normSignalCategory(a.category), // ✅ FIXED
+    category: normSignalCategory(a.category),
     region: a.region || "",
     source: a.source || "",
     published: a.published || "",
     stratum_impact_index: a.stratum_impact_index || 0,
-    signal_sentiment: a.signal_sentiment || null
+    signal_sentiment: a.signal_sentiment || null,
+
+    // ✅ ADD THIS LINE
+    analysis: a.analysis || null
   };
 }
 
@@ -659,9 +662,14 @@ sorted.forEach((raw, i) => {
       signal >= 6 ? "medium" :
       "low";
 
+       // ⚠️ IMPORTANT:
+      // This handler opens the story drawer.
+     // Do NOT remove the anchor check below,
+    // or links inside cards/carousels will stop working.  
+
     const card = el(`
 
-    <article class="mi-card mi-signal-${strength}" data-category="${a.category}" data-story-rendered="${a.id}">
+    <article class="mi-card mi-signal-${strength}" data-category="${a.category}" data-story-rendered="${a.id}" data-story-id="${a.id}">
 
         <div class="mi-card-header">
 
@@ -675,9 +683,9 @@ sorted.forEach((raw, i) => {
 
         </div>
 
-        <h3 class="mi-card-title mi-story-open" role="button" data-story-id="${a.id}">
+        <a href="story.html?id=${a.id}" class="mi-card-title">
           ${a.title}
-        </h3>
+        </a>
 
         ${a.summary ? `<p class="mi-card-summary">${a.summary}</p>` : ""}
 
@@ -783,7 +791,8 @@ function renderPaginatedStream(rows){
       container.appendChild(el(`
         <article class="mi-stream-item
             ${impactScore(a) > 3 ? "impact-high" : ""}
-            ${a.id === topSignalId ? "mi-stream-top" : ""}">
+            ${a.id === topSignalId ? "mi-stream-top" : ""}"
+            data-story-id="${a.id}">
 
             <div class="mi-stream-left">
 
@@ -791,9 +800,7 @@ function renderPaginatedStream(rows){
                 ${a.category || "Industry"}
               </span>
 
-              <span class="mi-stream-headline mi-story-open"
-                  role="button"
-                  data-story-id="${a.id}">
+              <span class="mi-stream-headline">
                 ${a.title}
 
                 <span class="mi-stream-score">
@@ -803,9 +810,9 @@ function renderPaginatedStream(rows){
 
             </div>
 
-          <div class="mi-stream-meta">
-            ${a.region || "Global"} · ${a.source} · ${a.published ? fmtDate(a.published) : ""}
-          </div>
+            <div class="mi-stream-meta">
+              ${a.region || "Global"} · ${a.source} · ${a.published ? fmtDate(a.published) : ""}
+            </div>
 
         </article>
       `));
@@ -1481,6 +1488,10 @@ function wireCarousels() {
     let startScroll = 0;
 
     track.addEventListener("pointerdown", (e) => {
+
+      // allow links to work
+      if (e.target.closest("a, button")) return;
+
       isDown = true;
       startX = e.clientX;
       startScroll = track.scrollLeft;
@@ -1716,7 +1727,7 @@ function renderStoriesMiniCharts(rows){
       if (!story) return;
 
       const card = `
-        <div class="mi-story-card">
+        <div class="mi-story-card" data-story-id="${story.id}">
           <div class="mi-story-title">${story.title}</div>
           <div class="mi-story-summary">${story.summary || ""}</div>
         </div>
@@ -1886,24 +1897,27 @@ const applyPresetLocal = (view) => {
 
       heroHost.innerHTML = `
 
-      <div class="mi-featured-meta">
-        ${hero.category} · ${hero.region || "Global"} · ${hero.source || ""}
-      </div>
+      <div class="mi-featured-card" data-story-id="${hero.id}">
 
-      <div class="mi-featured-impact">
-        ${impact}
-      </div>
-
-      <div class="mi-featured-title mi-story-open"
-          data-story-id="${hero.id}">
-        ${hero.title}
-      </div>
-
-      ${hero.summary ? `
-        <div class="mi-featured-summary">
-          ${hero.summary}
+        <div class="mi-featured-meta">
+          ${hero.category} · ${hero.region || "Global"} · ${hero.source || ""}
         </div>
-      ` : ""}
+
+        <div class="mi-featured-impact">
+          ${impact}
+        </div>
+
+        <div class="mi-featured-title">
+          ${hero.title}
+        </div>
+
+        ${hero.summary ? `
+          <div class="mi-featured-summary">
+            ${hero.summary}
+          </div>
+        ` : ""}
+
+      </div>
 
     `;
     }
@@ -2870,8 +2884,11 @@ document.addEventListener("click", e=>{
 ========================= */
 
 document.addEventListener("click", e => {
-  const trigger = e.target.closest(".mi-story-open");
+  const trigger = e.target.closest("[data-story-id]");
   if (!trigger) return;
+
+  // allow ctrl/cmd click to open link, otherwise use drawer
+  if (e.target.closest("a") && (e.metaKey || e.ctrlKey)) return;
 
   const id = trigger.dataset.storyId;
   const story = (window.marketStories || []).find(s => String(s.id) === String(id));
@@ -2879,6 +2896,8 @@ document.addEventListener("click", e => {
 
   const drawer = document.getElementById("mi-story-drawer");
   const body = document.getElementById("mi-drawer-body");
+
+  story.analysis = story.analysis || {};
 
   const signal = scoreTopStory(story);
 
@@ -2922,6 +2941,74 @@ document.addEventListener("click", e => {
     <p class="mi-drawer-summary">
       ${story.summary || "No summary available."}
     </p>
+
+    ${story.analysis ? `
+
+      <div class="mi-drawer-section">
+        <div class="mi-drawer-label">Executive Summary</div>
+        <div class="mi-drawer-text">
+          ${story.analysis.executive_summary}
+        </div>
+      </div>
+
+      <div class="mi-drawer-section">
+        <div class="mi-drawer-label">Market Implication</div>
+        <div class="mi-drawer-text">
+          ${story.analysis.market_implication}
+        </div>
+    </div>
+
+    <div class="mi-drawer-grid">
+
+      <div>
+        <div class="mi-drawer-label">Capital Signal</div>
+        <div class="mi-drawer-text">
+          ${story.analysis.capital_signal}
+        </div>
+      </div>
+
+      <div>
+        <div class="mi-drawer-label">Strategic Impact</div>
+        <div class="mi-drawer-text">
+          ${story.analysis.strategic_impact}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mi-signal-strip">
+
+      <div class="mi-signal-item ${story.analysis.risk_level.toLowerCase()}">
+        <span class="mi-signal-label">Risk</span>
+        <span class="mi-signal-value">
+          ${story.analysis.risk_level}
+        </span>
+      </div>
+
+      <div class="mi-signal-item capital-${story.analysis.capital_intensity.toLowerCase()}">
+        <span class="mi-signal-label">Capital</span>
+        <span class="mi-signal-value">
+          ${story.analysis.capital_intensity}
+        </span>
+      </div>
+
+      <div class="mi-signal-item horizon">
+        <span class="mi-signal-label">Horizon</span>
+        <span class="mi-signal-value">
+          ${story.analysis.signal_horizon}
+        </span>
+      </div>
+
+      <div class="mi-signal-item outlook-${story.analysis.outlook_3_6m.toLowerCase()}">
+        <span class="mi-signal-label">Outlook</span>
+        <span class="mi-signal-value">
+          ${story.analysis.outlook_3_6m}
+        </span>
+      </div>
+
+    </div>
+
+    ` : ""}
 
     ${
       story.link || story.url
