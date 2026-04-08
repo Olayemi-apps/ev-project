@@ -126,7 +126,14 @@
           <div class="modal-actions form-actions">
             <button class="btn" type="submit">Send email</button>
             <a class="btn btn-ghost" href="mailto:info@stratumev.com">Email directly</a>
+            <a class="btn btn-ghost" href="https://calendly.com/stratumev-consultant" target="_blank">
+              Book a call
+            </a>
           </div>
+
+          <p class="small muted">
+            Prefer direct contact? Email <strong>info@stratumev.com</strong>
+          </p>
 
           <p class="small muted form-note">
             This form opens your email client, it does not submit to a server.
@@ -290,6 +297,8 @@
         ].join("\n");
 
         window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        alert("Your email client will open. If nothing happens, email info@stratumev.com directly.");
       });
     })();
   </script>
