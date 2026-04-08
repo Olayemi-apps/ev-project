@@ -1,65 +1,4 @@
-/* ===== DevTools Detection ===== */
 
-(function () {
-
-  function detectDevTools() {
-
-    const threshold = 160;
-
-    const widthDiff = window.outerWidth - window.innerWidth;
-    const heightDiff = window.outerHeight - window.innerHeight;
-
-    if (widthDiff > threshold || heightDiff > threshold) {
-
-      document.body.innerHTML = `
-        <div style="
-          display:flex;
-          align-items:center;
-          justify-content:center;
-          height:100vh;
-          background:#0a0a0a;
-          color:#fff;
-          font-family:system-ui;
-          text-align:center;
-          padding:40px;
-        ">
-          <div>
-            <h1>Security Notice</h1>
-            <p>Developer tools are not permitted on this platform.</p>
-          </div>
-        </div>
-      `;
-
-    }
-
-  }
-
-  setInterval(detectDevTools, 1000);
-
-})();
-
-/* ===== Basic Site Protection ===== */
-
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
-
-document.addEventListener("keydown", (e) => {
-
-  if (
-    e.key === "F12" ||
-    (e.ctrlKey && e.shiftKey && e.key === "I") ||
-    (e.ctrlKey && e.shiftKey && e.key === "J") ||
-    (e.ctrlKey && e.shiftKey && e.key === "C") ||
-    (e.ctrlKey && e.key === "U") ||
-    (e.ctrlKey && e.key === "S")
-  ) {
-    e.preventDefault();
-    return false;
-  }
-
-});
-/*========================================*/
 
 async function loadChinaModels(){
   const url = "./data/china.json";
@@ -463,6 +402,25 @@ document.addEventListener("change", function (e) {
 
 async function initHome() {
 
+  let currentView = "all"; // 🔥 REQUIRED
+
+  // ===== PROTECTION =====
+  document.addEventListener("contextmenu", (e) => {
+    if (e.target.tagName === "IMG") {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+    }
+  });
+
   const grid = document.getElementById("grid");
   grid.innerHTML = `<div class="panel">Loading models...</div>`;
 
@@ -549,6 +507,22 @@ async function initHome() {
     });
   });
 
+  const compareClear = document.getElementById("compareClear");
+
+  if (compareClear) {
+    compareClear.addEventListener("click", () => {
+
+      localStorage.removeItem(COMPARE_KEY);
+
+      document.querySelectorAll(".compare-checkbox").forEach(cb => {
+        cb.checked = false;
+      });
+
+      renderCompareBar();
+      update(); // 🔥 IMPORTANT, keeps UI in sync
+    });
+  }
+
   function update() {
 
     const activeModels = currentView === "china" ? chinaModels : models;
@@ -580,12 +554,13 @@ async function initHome() {
     renderCompareBar(); // 🔥 REQUIRED
   }
 
+
   q?.addEventListener("input", update);
   category?.addEventListener("change", update);
   sort?.addEventListener("change", update);
   ukReadiness?.addEventListener("change", update);
 
-  setTimeout(update, 0);
+  update();
 }
 
 /* ========================= */
