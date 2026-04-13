@@ -36,6 +36,7 @@ const evMap = {
   "ioniq 5": "hyundai-ioniq5",
   "ioniq5": "hyundai-ioniq5",
   "hyundai": "hyundai-kona",
+  
 
   // KIA
   "ev6": "kia-ev6",
@@ -46,18 +47,55 @@ const evMap = {
   "eqa": "mercedes-eqa",
   "eqc": "mercedes-eqc",
   "mercedes": "mercedes-eqc"
+
+  
 };
 
+function updateAdapterForEV(evValue) {
+  const adapterEl = document.getElementById("bundle-adapter");
+  if (!adapterEl) return;
+
+  const isTesla = evValue && evValue.includes("tesla");
+
+  adapterEl.checked = isTesla;
+
+  // 🔥 FORCE UI SYNC
+  adapterEl.click();
+
+  console.log("ADAPTER FORCE SYNC:", {
+    ev: evValue,
+    isTesla,
+    checked: adapterEl.checked
+  });
+}
+
 function getBotReply(input) {
-  const text = input.toLowerCase();
+  const text = input.toLowerCase().replace(/[^\w\s]/g, "");
+
+  // Delete this console log before deployment
+  console.log("USER INPUT:", text);
 
   let actions = [];
   let response = [];
 
-  for (const key in evMap) {
-    if (text.includes(key)) {
+   if (text.includes("tesla") && !text.includes("model")) {
+    console.log("TESLA DEFAULT TRIGGERED");
+    selectOption("ev-select", "tesla-model-3");
+  }
 
-      selectOption("ev-select", evMap[key]);
+  for (const key in evMap) {
+
+    const cleanKey = key.replace(".", "");
+
+    if (text.includes(cleanKey)) {
+
+      console.log("EV MATCHED:", key, evMap[key]);
+
+      const evValue = evMap[key];
+
+      selectOption("ev-select", evValue);
+      updateAdapterForEV(evValue); // ✅ ADD THIS
+
       actions.push("ev");
 
       const caseEl = document.getElementById("bundle-case");
@@ -88,14 +126,16 @@ function getBotReply(input) {
       const label = cleanNames[key] || key.charAt(0).toUpperCase() + key.slice(1);
       response.push(label + " selected");
 
-      if (caseEl && caseEl.checked) caseEl.click();
-      if (adapterEl && adapterEl.checked) adapterEl.click();
+      // ✅ ALWAYS keep carry case ON
+      if (caseEl) {
+        caseEl.checked = true;
+        caseEl.dispatchEvent(new Event("change", { bubbles: true }));
+      }
 
-      if (label.includes("Tesla")) {
-        if (adapterEl && !adapterEl.checked) adapterEl.click();
-        response.push("Tesla detected, adapter recommended for full compatibility.");
+      if (evValue.includes("tesla")) {
+        response.push("Tesla detected, adapter added for full compatibility.");
       } else {
-        response.push("No adapter required, this vehicle is fully compatible with UK Type 2 charging.");
+        response.push("No adapter required. You're saving £29 with this setup.");
       }
 
       if (label.includes("BMW") || label.includes("Mercedes")) {
@@ -163,18 +203,22 @@ function getBotReply(input) {
     response.push("Carry case added");
   }
 
-  const evSelected = document.querySelector("#ev-select .selected");
+  // --- FULL SETUP BLOCK (FIXED) ---
 
-    if (
-    text.includes("adapter") &&
-    evSelected &&
-    evSelected.dataset.value.includes("tesla") &&
-    !document.getElementById("bundle-adapter").checked
-    ) {
+  if (text.includes("full setup") || text.includes("everything")) {
+
+    const caseEl = document.getElementById("bundle-case");
     const adapterEl = document.getElementById("bundle-adapter");
-    if (adapterEl && !adapterEl.checked) adapterEl.click();
-    response.push("Tesla adapter added");
-    }
+    const evSelected = document.querySelector("#ev-select .selected");
+
+    if (caseEl && !caseEl.checked) caseEl.click();
+
+    updateAdapterForEV(evSelected?.dataset.value);
+
+    response.push("Full setup added: cable and case");
+  }
+
+ 
 
   if (text.includes("recommend") || text.includes("best")) {
     selectOption("power-select", "7kw");
@@ -182,29 +226,6 @@ function getBotReply(input) {
     response.push("Recommended setup applied: 7kW + 5m");
   }
 
-    if (text.includes("full setup") || text.includes("everything")) {
-
-        const caseEl = document.getElementById("bundle-case");
-        if (caseEl && !caseEl.checked) {
-            caseEl.checked = true;
-        }
-
-        const adapterEl = document.getElementById("bundle-adapter");
-
-        // ✅ ONLY enable adapter for Tesla
-        const evSelected = document.querySelector("#ev-select .selected");
-
-        if (
-            evSelected &&
-            evSelected.dataset.value.includes("tesla") &&
-            adapterEl &&
-            !adapterEl.checked
-        ) {
-            adapterEl.click();
-        }
-
-        response.push("Full setup added: cable and case");
-    }
 
   if (text.includes("price") || text.includes("buy")) {
     document.getElementById("buy-btn")?.classList.remove("disabled");
@@ -244,11 +265,8 @@ function selectOption(groupId, value) {
   const options = group.querySelectorAll(".selector-option");
 
   options.forEach(opt => {
-    opt.classList.remove("selected");
-
     if (opt.dataset.value === value) {
-      opt.classList.add("selected");
-      opt.click();
+      opt.click(); // let UI handle state
     }
   });
 }
@@ -267,39 +285,34 @@ function triggerCheckoutFlow() {
   const evSelected = document.querySelector("#ev-select .selected");
   const adapterEl = document.getElementById("bundle-adapter");
 
-  // 🚨 HARD ENFORCEMENT (final source of truth)
-  if (adapterEl) {
+  // ✅ 🔥 PLACE IT RIGHT HERE (REPLACES OLD BLOCK)
+  setTimeout(() => {
 
-    const isTesla = evSelected && evSelected.dataset.value.includes("tesla");
+    if (!adapterEl) return;
 
-    // Always reset first
-    if (adapterEl.checked) {
-      adapterEl.click();
-    }
+    updateAdapterForEV(evSelected?.dataset.value);
 
-    // Only enable for Tesla
-    if (isTesla && !adapterEl.checked) {
-      adapterEl.click();
-    }
-  }
+    console.log("FINAL FIX APPLIED:", {
+      ev: evSelected?.dataset.value,
+      adapter: adapterEl.checked
+    });
+
+  }, 100);
 
   // Enable button
   buyBtn.classList.remove("disabled");
 
-  // Scroll to product panel
   document.querySelector(".product-panel")?.scrollIntoView({
     behavior: "smooth",
     block: "center"
   });
 
-  // Highlight CTA
   buyBtn.classList.add("pulse");
 
   setTimeout(() => {
     buyBtn.classList.remove("pulse");
   }, 2000);
 
-  // Urgency message
   setTimeout(() => {
     const messages = document.getElementById("chatbot-messages");
     if (messages) {
@@ -383,7 +396,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const adapterEl = document.getElementById("bundle-adapter");
 
     if (caseEl && caseEl.checked) caseEl.click();
-    if (adapterEl && adapterEl.checked) adapterEl.click();
+    if (adapterEl) {
+      if (adapterEl.checked) 
+      adapterEl.dispatchEvent(new Event("change", { bubbles: true }));
+    }
 
     const buyBtn = document.getElementById("buy-btn");
     if (buyBtn) buyBtn.classList.add("disabled");

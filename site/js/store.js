@@ -157,13 +157,16 @@ function updateProduct() {
     if (caseEl) caseEl.checked = true;
   }
 
-  // 🔥 HIGH VALUE: DEFAULT BOTH FOR PREMIUM FEEL
-  if (ev?.includes("tesla") || ev?.includes("bmw")) {
+  // 🔥 TESLA ONLY gets adapter
+  if (ev?.includes("tesla")) {
     if (adapterEl) adapterEl.checked = true;
+  }
+
+  // BMW / AUDI get case only
+  if (ev?.includes("bmw") || ev?.includes("audi")) {
     if (caseEl) caseEl.checked = true;
   }
 
-  if ((ev?.includes("bmw") || ev?.includes("audi")) && caseEl) caseEl.checked = true;
 
   if (!power || !length) return;
 
