@@ -1,91 +1,342 @@
 {
-  "vehicle": "BYD Seal U",
+  "current": "lucid_air",
 
-  "tagline": "Premium electric SUV engineered for comfort, safety and efficiency",
+  "vehicles": {
 
-  "model3d": "https://sketchfab.com/models/dda5d96fa79e42c290a279168126f247/embed?autostart=1&ui_theme=dark&ui_controls=1",
+    "lucid_air": {
+      "vehicle": "Lucid Air Sapphire",
+      "slug": "lucid-air-sapphire",
+      "tagline": "Ultra-high performance luxury EV redefining electric speed",
 
-  "range": "500 km WLTP",
-  "battery": "87 kWh",
-  "power": "218 hp",
-  "accel": "7.9 s",
+      "model3d": "https://sketchfab.com/models/4aed4cf6799b4325992178cbc57c9105/embed?autostart=1&ui_theme=dark&ui_controls=1",
 
-  "description": "The BYD Seal U represents BYD’s expansion into the European electric SUV market. Built on the company's advanced e-Platform 3.0 architecture, the vehicle uses BYD’s Blade Battery technology to prioritise safety, longevity and efficiency.",
+      "range": "694 km WLTP",
+      "battery": "118 kWh",
+      "power": "1200+ hp",
+      "accel": "2.0 s",
 
-  "specs":[
-    "Blade Battery LFP architecture",
-    "15.6 inch rotating infotainment display",
-    "Panoramic glass roof",
-    "Vehicle-to-Load power capability",
-    "Advanced driver assistance systems",
-    "Over-the-air software updates"
-  ],
+      "description": "The Lucid Air Sapphire represents the peak of electric performance engineering, combining ultra-high output tri-motor architecture with luxury refinement and long-range capability.",
 
-  "expansion_regions": [
-    "China",
-    "Europe",
-    "UK",
-    "Latin America",
-    "Middle East"
-  ],
+      "specs":[
+        "Tri-motor AWD system",
+        "Glass canopy roof",
+        "Ultra-high efficiency drivetrain",
+        "Advanced ADAS",
+        "Over-the-air updates"
+      ],
+      "technology": [
+        {
+          "title": "Tri-Motor Powertrain",
+          "desc": "Ultra-high performance tri-motor system delivering extreme acceleration."
+        },
+        {
+          "title": "Lucid Air Architecture",
+          "desc": "High-efficiency platform optimised for range and performance."
+        },
+        {
+          "title": "Glass Canopy",
+          "desc": "Panoramic roof enhancing luxury cabin experience."
+        }
+      ],
 
-  "expansionSignals": [
-    {
-      "region": "europe",
-      "label": "EUROPE EXPANSION",
-      "intensity": ["china","europe"]
-    },
-    {
-      "region": "uk",
-      "label": "UK MARKET ENTRY",
-      "intensity": ["china","europe","uk"]
-    },
-    {
-      "region": "me",
-      "label": "MIDDLE EAST EXPANSION",
-      "intensity": ["china","europe","uk","me"]
-    },
-    {
-      "region": "latam",
-      "label": "LATAM GROWTH",
-      "intensity": ["china","europe","uk","me","latam"]
-    }
-  ],
+      "insight": "The Air Sapphire reinforces Lucid’s positioning as a technology-led disruptor in the ultra-premium EV segment, prioritising engineering dominance over scale. While its performance benchmarks rival or exceed traditional OEM leaders, Lucid’s constrained production capacity and limited global footprint signal a deliberate strategy focused on brand equity and margin preservation rather than volume. In the near term, the model acts as a halo vehicle to validate Lucid’s drivetrain and battery architecture, with broader market impact dependent on the company’s ability to translate this technology into scalable platforms and expand distribution across Europe and Asia.",
 
-  "weeklyIntel": {
-    "week": "Week 10",
-    "tone": "Expansion Acceleration",
-    "summary": "BYD continues aggressive expansion into Europe and UK markets, supported by pricing advantage and dealership rollout momentum.",
-    "signals": [
-      {
-        "region": "europe",
-        "headline": "Dealer network expansion accelerating",
-        "impact": "high"
+     "comparison": [
+        {
+          "name": "Lucid Air Sapphire",
+          "range": "694 km",
+          "battery": "118 kWh",
+          "power": "1200+ hp",
+          "accel": "2.0 s",
+          "featured": true
+        },
+        
+        {
+          "name": "Tesla Model S Plaid",
+          "range": "637 km",
+          "battery": "100 kWh",
+          "power": "1020 hp",
+          "accel": "2.1 s"
+        },
+        {
+          "name": "Porsche Taycan Turbo S",
+          "range": "450 km",
+          "battery": "93 kWh",
+          "power": "761 hp",
+          "accel": "2.8 s"
+        },
+        {
+          "name": "Mercedes-AMG EQS 53",
+          "range": "586 km",
+          "battery": "108 kWh",
+          "power": "751 hp",
+          "accel": "3.4 s"
+        }
+      ],
+        "momentum": {
+        "globalDemand": 75,
+        "technologyLeadership": 95,
+        "marketExpansion": 60,
+        "pricingStrategy": 55
       },
-      {
-        "region": "uk",
-        "headline": "UK adoption driven by pricing advantage",
-        "impact": "high"
+      "market": {
+        "segment": "Luxury high-performance EV",
+        "competitors": [
+          "Tesla Model S Plaid",
+          "Porsche Taycan Turbo S",
+          "Mercedes EQS AMG",
+          "BMW i7 M70"
+        ],
+        "strategy": "Ultra-premium performance positioning with industry-leading acceleration and range."
       },
-      {
-        "region": "me",
-        "headline": "Strategic partnerships forming",
-        "impact": "medium"
+
+      "expansionSummary": "Lucid is expanding selectively across premium EV markets, focusing on North America, Europe and the Middle East with a luxury-first strategy.",
+
+      "signals": [
+        { "type": "positive", "text": "Lucid pushing ultra-performance EV segment" },
+        { "type": "positive", "text": "Luxury EV demand rising globally" },
+        { "type": "neutral", "text": "Production scaling remains a constraint" }
+      ],
+
+      "tech": [
+        { "title": "Tri-Motor System", "desc": "Ultra-high performance drivetrain delivering extreme acceleration." },
+        { "title": "Lucid Efficiency", "desc": "Industry-leading range per kWh efficiency." },
+        { "title": "Glass Canopy", "desc": "Full-length panoramic roof design." }
+      ],
+
+      "expansionSignals": [],
+      "weeklyIntel": {
+        "week": "Week 10",
+        "tone": "Performance Benchmark Shift",
+        "summary": "Lucid positions itself at the extreme high-performance end of the EV market, redefining luxury EV benchmarks.",
+        "signals": []
       },
-      {
-        "region": "latam",
-        "headline": "Early stage market penetration",
-        "impact": "low"
+
+      "readiness": [
+        {
+          "region": "Europe",
+          "score": 90,
+          "meta": "Luxury EV demand · Charging maturity"
+        },
+        {
+          "region": "United Kingdom",
+          "score": 85,
+          "meta": "Urban adoption · Premium segment"
+        },
+        {
+          "region": "Middle East",
+          "score": 75,
+          "meta": "High income · Emerging EV infra"
+        },
+        {
+          "region": "Latin America",
+          "score": 60,
+          "meta": "Early adoption stage"
+        }
+      ],
+
+      "oem_line": "Lucid Motors · Sapphire Platform · Tri-Motor Architecture",
+
+      "oem_sales": {
+        "2022": 0.007,
+        "2023": 0.008,
+        "2024": 0.01,
+        "rank": 15
       }
-    ]
-  },
+    },
 
-  "oem_line": "BYD Auto · e-Platform 3.0 · Blade Battery Architecture",
+    "byd_seal_u": {
+      "vehicle": "BYD Seal U",
+      "slug": "byd-seal-u",
+      "tagline": "Premium electric SUV engineered for comfort, safety and efficiency",
 
-  "oem_sales": {
-    "2022": 1.86,
-    "2023": 3.02,
-    "2024": 4.2,
-    "rank": 1
+      "model3d": "https://sketchfab.com/models/dda5d96fa79e42c290a279168126f247/embed?autostart=1&ui_theme=dark&ui_controls=1",
+
+      "range": "500 km WLTP",
+      "battery": "87 kWh",
+      "power": "218 hp",
+      "accel": "7.9 s",
+
+      "description": "The BYD Seal U represents BYD’s expansion into the European electric SUV market. Built on the company's advanced e-Platform 3.0 architecture, the vehicle uses BYD’s Blade Battery technology to prioritise safety, longevity and efficiency.",
+
+      "specs":[
+        "Blade Battery LFP architecture",
+        "15.6 inch rotating infotainment display",
+        "Panoramic glass roof",
+        "Vehicle-to-Load power capability",
+        "Advanced driver assistance systems",
+        "Over-the-air software updates"
+      ],
+      "technology": [
+          {
+            "title": "Blade Battery",
+            "desc": "BYD’s LFP battery architecture engineered for enhanced safety, longevity and thermal stability."
+          },
+          {
+            "title": "e-Platform 3.0",
+            "desc": "Dedicated EV platform improving efficiency, structural integration and intelligent control systems."
+          },
+          {
+            "title": "Vehicle-to-Load (V2L)",
+            "desc": "Enables the vehicle to supply power to external devices, supporting flexible energy use cases."
+          }
+        ],
+
+        "insight": "The Seal U represents BYD’s transition from domestic scale leader to global volume contender, targeting high-demand SUV segments across Europe and the UK. Unlike performance-focused competitors, BYD’s strategy centres on cost efficiency, vertical integration and rapid market entry, enabled by its Blade Battery platform and manufacturing scale. The model’s competitive pricing and solid WLTP range position it as a direct challenger to established Western OEMs, with expansion momentum indicating continued pressure on mid-market EV pricing. Over the next phase, BYD’s success will depend on strengthening brand perception, aftersales infrastructure and regulatory alignment in mature markets.",
+
+        "comparison": [
+          {
+            "name": "BYD Seal U",
+            "range": "500 km",
+            "battery": "87 kWh",
+            "power": "218 hp",
+            "accel": "7.9 s",
+            "featured": true
+          },
+          {
+            "name": "Tesla Model Y",
+            "range": "533 km",
+            "battery": "75 kWh",
+            "power": "384 hp",
+            "accel": "5.0 s"
+          },
+          {
+            "name": "Hyundai Ioniq 5",
+            "range": "507 km",
+            "battery": "77.4 kWh",
+            "power": "225 hp",
+            "accel": "7.4 s"
+          },
+          {
+            "name": "Kia EV6",
+            "range": "528 km",
+            "battery": "77.4 kWh",
+            "power": "229 hp",
+            "accel": "7.3 s"
+          }
+        ],
+        "momentum": {
+          "globalDemand": 90,
+          "technologyLeadership": 85,
+          "marketExpansion": 95,
+          "pricingStrategy": 92
+        },
+        "market": {
+        "segment": "Mid-size electric SUV",
+          "competitors": [
+            "Tesla Model Y",
+            "Hyundai Ioniq 5",
+            "Kia EV6",
+            "Volkswagen ID.4"
+          ],
+          "strategy": "Value-driven premium SUV offering strong range, practicality and advanced battery safety."
+        },
+
+        "expansionSummary": "BYD is executing rapid global expansion across Europe, UK and emerging markets, supported by strong supply chain control and pricing advantage.",
+
+        "signals": [
+          { "type": "positive", "text": "BYD global EV sales up significantly year-on-year" },
+          { "type": "positive", "text": "European expansion accelerating through dealer network rollout" },
+          { "type": "positive", "text": "Blade Battery recognised for safety leadership" },
+          { "type": "neutral", "text": "UK adoption driven by competitive pricing strategy" }
+      ],
+
+      "tech": [
+        { "title": "Blade Battery", "desc": "LFP battery focused on safety and longevity." },
+        { "title": "e-Platform 3.0", "desc": "Dedicated EV architecture." },
+        { "title": "Vehicle-to-Load", "desc": "External power supply capability." }
+      ],
+
+      "expansion_regions": [
+        "China",
+        "Europe",
+        "UK",
+        "Latin America",
+        "Middle East"
+      ],
+
+      "expansionSignals": [
+        {
+          "region": "europe",
+          "label": "EUROPE EXPANSION",
+          "intensity": ["china","europe"]
+        },
+        {
+          "region": "uk",
+          "label": "UK MARKET ENTRY",
+          "intensity": ["china","europe","uk"]
+        },
+        {
+          "region": "me",
+          "label": "MIDDLE EAST EXPANSION",
+          "intensity": ["china","europe","uk","me"]
+        },
+        {
+          "region": "latam",
+          "label": "LATAM GROWTH",
+          "intensity": ["china","europe","uk","me","latam"]
+        }
+      ],
+
+      "weeklyIntel": {
+        "week": "Week 10",
+        "tone": "Expansion Acceleration",
+        "summary": "BYD continues aggressive expansion into Europe and UK markets, supported by pricing advantage and dealership rollout momentum.",
+        "signals": [
+          {
+            "region": "europe",
+            "headline": "Dealer network expansion accelerating",
+            "impact": "high"
+          },
+          {
+            "region": "uk",
+            "headline": "UK adoption driven by pricing advantage",
+            "impact": "high"
+          },
+          {
+            "region": "me",
+            "headline": "Strategic partnerships forming",
+            "impact": "medium"
+          },
+          {
+            "region": "latam",
+            "headline": "Early stage market penetration",
+            "impact": "low"
+          }
+        ]
+      },
+     "readiness": [
+        {
+          "region": "Europe",
+          "score": 92,
+          "meta": "Infrastructure · Policy · Demand"
+        },
+        {
+          "region": "United Kingdom",
+          "score": 88,
+          "meta": "Incentives · Charging · Urban adoption"
+        },
+        {
+          "region": "Middle East",
+          "score": 72,
+          "meta": "Early stage · High investment"
+        },
+        {
+          "region": "Latin America",
+          "score": 65,
+          "meta": "Emerging · Infrastructure gaps"
+        }
+      ],
+
+      "oem_line": "BYD Auto · e-Platform 3.0 · Blade Battery Architecture",
+
+      "oem_sales": {
+        "2022": 1.86,
+        "2023": 3.02,
+        "2024": 4.2,
+        "rank": 1
+      }
+    }
+
   }
 }

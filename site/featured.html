@@ -118,9 +118,8 @@
                 <div class="featured-tagline"
                     id="featured-tagline"></div>
 
-                 <div class="featured-oem">
-                    BYD Auto · e-Platform 3.0 · Blade Battery Architecture
-                </div>   
+                 <div class="featured-oem" id="featured-oem"></div>
+                    
 
                 <div class="featured-indicators">
 
@@ -157,32 +156,7 @@
 
         <h2>Market Signals</h2>
 
-        <div class="signals-grid">
-
-            <div class="signal positive" data-region="europe">
-            <span class="signal-live-tag">LIVE</span>
-            <span class="signal-icon">▲</span>
-            BYD global EV sales up 62% year-on-year
-            </div>
-
-            <div class="signal positive" data-region="uk">
-            <span class="signal-live-tag">LIVE</span>
-            <span class="signal-icon">▲</span>
-            Seal U launched across key European markets
-            </div>
-
-            <div class="signal positive" data-region="latam">
-            <span class="signal-live-tag">LIVE</span>
-            <span class="signal-icon">▲</span>
-            Blade Battery recognised for safety leadership
-            </div>
-
-            <div class="signal neutral" data-region="me">
-            <span class="signal-icon">●</span>
-            BYD expanding European dealership network
-            </div>
-
-        </div>
+        <div class="signals-grid"></div>
 
     </section>
 
@@ -192,41 +166,7 @@
 
         <h2>Market Momentum</h2>
 
-        <div class="momentum-grid">
-
-        <div class="momentum-item">
-        <span class="momentum-label">Global EV Demand</span>
-        <div class="momentum-bar">
-        <div class="momentum-fill" style="width:92%"></div>
-        </div>
-        <span class="momentum-score">92</span>
-        </div>
-
-        <div class="momentum-item">
-        <span class="momentum-label">Technology Leadership</span>
-        <div class="momentum-bar">
-        <div class="momentum-fill" style="width:90%"></div>
-        </div>
-        <span class="momentum-score">90</span>
-        </div>
-
-        <div class="momentum-item">
-        <span class="momentum-label">Market Expansion</span>
-        <div class="momentum-bar">
-        <div class="momentum-fill" style="width:84%"></div>
-        </div>
-        <span class="momentum-score">84</span>
-        </div>
-
-        <div class="momentum-item">
-        <span class="momentum-label">Pricing Strategy</span>
-        <div class="momentum-bar">
-        <div class="momentum-fill" style="width:78%"></div>
-        </div>
-        <span class="momentum-score">78</span>
-        </div>
-
-        </div>
+        <div class="momentum-grid" id="momentum-grid"></div>
 
     </section>
 
@@ -236,49 +176,7 @@
 
         <h2>Segment Comparison</h2>
 
-        <div class="compare-grid">
-
-        <div class="compare-card featured">
-        <h3>BYD Seal U</h3>
-        <ul>
-        <li><span>Range</span> 500 km</li>
-        <li><span>Battery</span> 87 kWh</li>
-        <li><span>Power</span> 218 hp</li>
-        <li><span>0–100</span> 7.9 s</li>
-        </ul>
-        </div>
-
-        <div class="compare-card">
-        <h3>Tesla Model Y</h3>
-        <ul>
-        <li><span>Range</span> 533 km</li>
-        <li><span>Battery</span> 75 kWh</li>
-        <li><span>Power</span> 384 hp</li>
-        <li><span>0–100</span> 5.0 s</li>
-        </ul>
-        </div>
-
-        <div class="compare-card">
-        <h3>Hyundai Ioniq 5</h3>
-        <ul>
-        <li><span>Range</span> 507 km</li>
-        <li><span>Battery</span> 77.4 kWh</li>
-        <li><span>Power</span> 225 hp</li>
-        <li><span>0–100</span> 7.4 s</li>
-        </ul>
-        </div>
-
-        <div class="compare-card">
-        <h3>Kia EV6</h3>
-        <ul>
-        <li><span>Range</span> 528 km</li>
-        <li><span>Battery</span> 77.4 kWh</li>
-        <li><span>Power</span> 229 hp</li>
-        <li><span>0–100</span> 7.3 s</li>
-        </ul>
-        </div>
-
-        </div>
+        <div class="compare-grid" id="compare-grid"></div>
 
     </section>
 
@@ -288,33 +186,7 @@
 
         <h2>Global EV Sales Snapshot</h2>
 
-        <div class="sales-grid">
-
-            <div class="sales-card">
-            <span class="sales-year">2022</span>
-            <strong id="sales-2022"></strong>
-            <span class="sales-label">EVs delivered globally</span>
-            </div>
-
-            <div class="sales-card">
-            <span class="sales-year">2023</span>
-            <strong id="sales-2023"></strong>
-            <span class="sales-label">EVs delivered globally</span>
-            </div>
-
-            <div class="sales-card">
-            <span class="sales-year">2024</span>
-            <strong id="sales-2024"></strong>
-            <span class="sales-label">Projected global EV deliveries</span>
-            </div>
-
-            <div class="sales-card highlight">
-            <span class="sales-year">Market Rank</span>
-            <strong id="sales-rank"></strong>
-            <span class="sales-label">Global EV manufacturer</span>
-            </div>
-
-        </div>
+        <div class="sales-grid"></div>
 
     </section>
 
@@ -335,10 +207,7 @@
 
         <h2>Manufacturer Expansion</h2>
 
-        <p class="expansion-summary">
-            Explore BYD’s global expansion footprint, including key markets, entry timeline, and distribution routes. 
-            Hover over regions to see how the manufacturer is scaling internationally and how supply flows from China into global markets.
-        </p>
+        <p class="expansion-summary" id="expansion-summary"></p>
 
             <div class="expansion-live">
              <span class="live-dot"></span>
@@ -355,7 +224,7 @@
             </div>
 
             <div class="expansion-data">
-                <h3>BYD Global Expansion</h3>
+                <h3 id="expansion-title"></h3>
 
                 <p class="expansion-hint">
                     Hover over the regions below to explore BYD’s global expansion.
@@ -408,31 +277,7 @@
             EV Market Readiness
             </div>
 
-            <div class="readiness-grid">
-
-                <div class="readiness-card score-high" data-region="europe">
-                    <div class="readiness-title">Europe</div>
-                    <div class="readiness-score">92</div>
-                    <div class="readiness-meta">Infrastructure · Policy · Demand</div>
-                    </div>
-
-                    <div class="readiness-card score-high" data-region="uk">
-                    <div class="readiness-title">United Kingdom</div>
-                    <div class="readiness-score">88</div>
-                    <div class="readiness-meta">Incentives · Charging · Urban adoption</div>
-                    </div>
-
-                    <div class="readiness-card score-mid" data-region="me">
-                    <div class="readiness-title">Middle East</div>
-                    <div class="readiness-score">72</div>
-                    <div class="readiness-meta">Early stage · High investment</div>
-                    </div>
-
-                    <div class="readiness-card score-low" data-region="latam">
-                    <div class="readiness-title">Latin America</div>
-                    <div class="readiness-score">65</div>
-                    <div class="readiness-meta">Emerging · Infrastructure gaps</div>
-                </div>
+            <div class="readiness-grid" id="readiness-grid"></div>
 
             </div>
 
@@ -447,22 +292,7 @@
 
         <h2>Technology Highlights</h2>
 
-        <div class="tech-grid">
-
-        <div class="tech-card">
-        <h3>Blade Battery</h3>
-        <p>BYD’s LFP battery architecture engineered for enhanced safety and longevity.</p>
-        </div>
-
-        <div class="tech-card">
-        <h3>e-Platform 3.0</h3>
-        <p>Dedicated EV platform improving thermal efficiency and drivetrain integration.</p>
-        </div>
-
-        <div class="tech-card">
-        <h3>Vehicle-to-Load</h3>
-        <p>Allows the vehicle battery to power external electrical devices.</p>
-        </div>
+        <div class="tech-grid" id="tech-grid"></div>
 
         </div>
 
@@ -492,17 +322,26 @@
 
     <section class="featured-market">
 
-        <h2>Market Position</h2>
+      <h2>Market Position</h2>
 
-        <ul class="market-list">
+      <ul class="market-list">
 
-        <li><strong>Segment:</strong> Mid-size electric SUV</li>
+        <li>
+          <strong>Segment:</strong>
+          <span id="market-segment"></span>
+        </li>
 
-        <li><strong>Key Competitors:</strong> Tesla Model Y, Hyundai Ioniq 5, Kia EV6</li>
+        <li>
+          <strong>Key Competitors:</strong>
+          <span id="market-competitors"></span>
+        </li>
 
-        <li><strong>Market Strategy:</strong> High-value premium EV offering strong range and technology.</li>
+        <li>
+          <strong>Market Strategy:</strong>
+          <span id="market-strategy"></span>
+        </li>
 
-        </ul>
+      </ul>
 
     </section>
 
@@ -514,12 +353,23 @@
 
         <h2>Stratum EV Insight</h2>
 
-        <p>
-        The Seal U represents BYD’s strategic expansion into the European mid-size electric SUV market. 
-        With competitive WLTP range, strong value positioning and the Blade Battery platform, the vehicle 
-        is positioned to compete directly with established EV leaders while offering a compelling 
-        technology-driven alternative.
-        </p>
+        <p id="insight-text"></p>
+
+    </section>
+
+    <hr class="featured-divider">
+
+    <section class="featured-archive">
+
+      <h2>Archive</h2>
+
+      <div class="archive-wrapper">
+
+        <button class="archive-arrow left pulse" id="archive-left">‹</button>
+        <div class="archive-grid" id="archive-grid"></div>
+        <button class="archive-arrow right pulse" id="archive-right">›</button>
+
+      </div>
 
     </section>
 

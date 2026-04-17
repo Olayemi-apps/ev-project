@@ -48,6 +48,159 @@ CINEMATIC HERO
   left:0;
 }
 
+/*========================
+MOMENTUM FILL
+=========================*/
+
+.momentum-fill {
+  transition: width 1.2s ease;
+}
+
+/*=========================
+FEATURED EV - HIHLIGHT + PULSE
+===========================*/
+
+.readiness-card.active {
+  border-color: #00d4ff;
+  box-shadow: 0 0 18px rgba(0,212,255,0.25);
+  transform: translateY(-2px);
+}
+
+.readiness-card.active .readiness-score {
+  animation: pulseScore 1.2s ease;
+}
+
+@keyframes pulseScore {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/*==========================
+FEATURED EV - ARCHIVE
+===========================*/
+/* =========================
+ARCHIVE SECTION
+========================= */
+
+.featured-archive {
+  margin-top: 40px;
+}
+
+.archive-grid {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* hide ugly scrollbar (optional but recommended) */
+.archive-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.archive-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.archive-grid::-webkit-scrollbar-thumb {
+  background: rgba(0, 212, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* CARD */
+.archive-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(12,18,28,0.9), rgba(6,10,16,0.95));
+  border: 1px solid rgba(0, 212, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  min-width: 280px;
+  max-width: 280px;
+  flex-shrink: 0;
+
+  scroll-snap-align: start;
+}
+
+/* subtle glow on hover */
+.archive-card:hover {
+  border-color: rgba(0, 212, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+/* inner layout */
+.archive-card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* HEADER */
+.archive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.archive-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e6f1ff;
+}
+
+/* TAG */
+.archive-tag {
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(0, 212, 255, 0.08);
+  color: #00d4ff;
+}
+
+/* DESCRIPTION */
+.archive-desc {
+  font-size: 13px;
+  color: #9fb3c8;
+  line-height: 1.5;
+}
+
+/* BUTTON */
+.archive-btn {
+  align-self: flex-start;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: transparent;
+  color: #00d4ff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.archive-btn:hover {
+  background: rgba(0, 212, 255, 0.1);
+  border-color: #00d4ff;
+}
+
+/* subtle top accent line */
+.archive-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+  opacity: 0.4;
+}
+
 /* dark cinematic gradient */
 
 .featured-overlay{
@@ -120,6 +273,91 @@ CINEMATIC HERO
     border-color:rgba(24,227,255,0.35);
     box-shadow:0 0 20px rgba(24,227,255,0.12);
     transform:translateY(-2px);
+}
+
+.featured-archive {
+  position: relative;
+}
+
+.featured-archive::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  pointer-events: none;
+
+  background: linear-gradient(to right, transparent, #0b0f1a);
+}
+
+.archive-card:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+/*=========================================
+DRAG SCROLL
+==========================================*/
+
+.archive-grid {
+  cursor: grab;
+}
+
+.archive-grid.dragging {
+  cursor: grabbing;
+}
+
+/* WRAPPER */
+.archive-wrapper {
+  position: relative;
+}
+
+/* ARROWS */
+.archive-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: rgba(10, 15, 25, 0.8);
+  color: #00d4ff;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  animation: arrowPulse 2.2s ease-in-out infinite;
+}
+
+/* positions */
+.archive-arrow.left {
+  left: -10px;
+}
+
+.archive-arrow.right {
+  right: -10px;
+}
+
+.archive-arrow.pulse {
+  animation: arrowPulse 2.2s ease-in-out infinite;
+}
+
+/* hover */
+.archive-arrow:hover {
+  animation: none;
+  background: rgba(0, 212, 255, 0.1);
+  border-color: #00d4ff;
+}
+
+/* hide on mobile if needed */
+@media(max-width: 768px){
+  .archive-arrow {
+    display: none;
+  }
 }
 
 /* ---------------------------------------------------------
