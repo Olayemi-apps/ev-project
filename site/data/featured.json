@@ -1,5 +1,5 @@
 {
-  "current": "lucid_air",
+  "current": "zeekr_001",
 
   "vehicles": {
 
@@ -142,6 +142,67 @@
         "2023": 0.008,
         "2024": 0.01,
         "rank": 15
+      },
+      "expansionDetail": {
+        "europe": {
+          "strategy": "Direct-to-consumer with flagship showroom positioning",
+          "focus": "Luxury performance EV segment",
+          "risk": "Low brand awareness vs legacy OEMs"
+        },
+        "uk": {
+          "strategy": "Selective premium rollout with compliance-first models",
+          "focus": "High-income urban buyers",
+          "risk": "Infrastructure + insurance positioning"
+        },
+        "me": {
+          "strategy": "High-margin luxury expansion",
+          "focus": "Performance + prestige buyers",
+          "risk": "Market volatility"
+        },
+        "latam": {
+          "strategy": "Limited presence",
+          "focus": "Brand awareness only",
+          "risk": "Low EV readiness"
+        }
+      },
+
+      "supplyChain": {
+        "origin": "USA manufacturing (Arizona)",
+        "routes": [
+          "USA → Europe via ocean freight",
+          "USA → Middle East direct export"
+        ],
+        "notes": "Lower scale than competitors, high logistics cost per unit"
+      },
+
+      "expansionRisk": {
+        "europe": 35,
+        "uk": 40,
+        "me": 30,
+        "latam": 65
+      },
+
+      "intel": {
+        "positioning": "Ultra-premium performance EV leader",
+        "edge": "Industry-leading powertrain efficiency and acceleration",
+        "risk": "Low production scale and niche positioning",
+        "outlook": "High prestige, limited volume scalability"
+      },
+
+      "competitionIntel": {
+        "pressureFrom": [
+          "Tesla (scale + software)",
+          "Porsche (handling + brand)",
+          "Mercedes (luxury + distribution)"
+        ],
+        "advantage": "Best-in-class acceleration and efficiency",
+        "threat": "Legacy OEM electrification catching up"
+      },
+
+      "buyerSignal": {
+        "type": "Performance-led luxury buyer",
+        "priority": ["Acceleration", "Range", "Exclusivity"],
+        "tradeoff": "Price vs infrastructure + service network"
       }
     },
 
@@ -336,7 +397,213 @@
         "2024": 4.2,
         "rank": 1
       }
-    }
+    },
+    "zeekr_001": {
+    "vehicle": "Zeekr 001",
+    "slug": "zeekr-001",
+    "tagline": "Premium electric shooting brake blending performance, range and advanced technology",
 
+    "model3d": "https://sketchfab.com/models/f566ab43f8724c0cb343bbdcdeea8068/embed?autostart=1&ui_theme=dark&ui_controls=1",
+
+    "range": "620 km WLTP",
+    "battery": "100 kWh",
+    "power": "544 hp",
+    "accel": "3.8 s",
+
+    "description": "The Zeekr 001 is a premium electric shooting brake built on Geely’s SEA platform, combining long-range capability, high-performance dual-motor architecture and advanced digital integration to compete in the upper mid-market EV segment.",
+
+    "specs":[
+      "Dual-motor AWD system",
+      "SEA (Sustainable Experience Architecture)",
+      "Air suspension system",
+      "Advanced driver assistance suite",
+      "Over-the-air software updates"
+    ],
+
+    "technology": [
+      {
+        "title": "SEA Platform",
+        "desc": "Geely’s scalable EV architecture supporting high performance and long-range efficiency."
+      },
+      {
+        "title": "Dual-Motor AWD",
+        "desc": "All-wheel drive system delivering strong acceleration and dynamic handling."
+      },
+      {
+        "title": "Adaptive Air Suspension",
+        "desc": "Enhances ride comfort and driving dynamics across different road conditions."
+      }
+    ],
+
+    "insight": "The Zeekr 001 positions itself as a premium disruptor in the upper mid-market EV segment, leveraging Geely’s SEA platform to combine performance, range and technology at a competitive price point. Unlike traditional luxury OEMs, Zeekr focuses on digital-first integration, rapid product iteration and strong hardware capability. Its shooting brake design differentiates it in a crowded SUV-dominated market, while its performance credentials place it between mass-market EVs and high-end luxury models. Continued success will depend on brand expansion in Europe and the company’s ability to build trust in aftersales and long-term ownership experience.",
+
+    "comparison": [
+      {
+        "name": "Zeekr 001",
+        "range": "620 km",
+        "battery": "100 kWh",
+        "power": "544 hp",
+        "accel": "3.8 s",
+        "featured": true
+      },
+      {
+        "name": "Tesla Model Y Performance",
+        "range": "533 km",
+        "battery": "75 kWh",
+        "power": "534 hp",
+        "accel": "3.7 s"
+      },
+      {
+        "name": "BMW i4 M50",
+        "range": "510 km",
+        "battery": "83.9 kWh",
+        "power": "544 hp",
+        "accel": "3.9 s"
+      },
+      {
+        "name": "Polestar 2 Performance",
+        "range": "520 km",
+        "battery": "82 kWh",
+        "power": "476 hp",
+        "accel": "4.2 s"
+      }
+    ],
+
+    "momentum": {
+      "globalDemand": 85,
+      "technologyLeadership": 88,
+      "marketExpansion": 80,
+      "pricingStrategy": 82
+    },
+
+    "market": {
+      "segment": "Premium performance EV",
+      "competitors": [
+        "Tesla Model Y Performance",
+        "BMW i4 M50",
+        "Polestar 2",
+        "Audi Q4 e-tron"
+      ],
+      "strategy": "Premium performance positioning with strong value proposition and advanced platform technology."
+    },
+
+    "expansionSummary": "Zeekr is expanding into Europe and select global markets, leveraging Geely’s infrastructure to scale distribution and brand presence in premium EV segments.",
+
+    "signals": [
+      { "type": "positive", "text": "Zeekr expanding into European markets" },
+      { "type": "positive", "text": "SEA platform enabling rapid model rollout" },
+      { "type": "neutral", "text": "Brand recognition still developing outside China" }
+    ],
+
+    "tech": [
+      { "title": "SEA Platform", "desc": "Scalable EV architecture enabling performance and flexibility." },
+      { "title": "Dual-Motor AWD", "desc": "Balanced performance and traction system." },
+      { "title": "Smart Cockpit", "desc": "Advanced digital interface and connected features." }
+    ],
+
+    "expansionSignals": [],
+
+    "weeklyIntel": {
+      "week": "Week 10",
+      "tone": "Premium Expansion Phase",
+      "summary": "Zeekr is positioning itself as a premium EV contender, expanding beyond China into Europe with a strong platform and performance offering.",
+      "signals": []
+    },
+
+    "readiness": [
+      {
+        "region": "Europe",
+        "score": 88,
+        "meta": "Premium demand · Infrastructure maturity"
+      },
+      {
+        "region": "United Kingdom",
+        "score": 82,
+        "meta": "Early premium adoption"
+      },
+      {
+        "region": "Middle East",
+        "score": 70,
+        "meta": "High income · Emerging EV infra"
+      },
+      {
+        "region": "Latin America",
+        "score": 60,
+        "meta": "Early stage EV adoption"
+      }
+    ],
+
+    "oem_line": "Zeekr · Geely SEA Platform · Dual-Motor Architecture",
+
+    "oem_sales": {
+      "2022": 0.07,
+      "2023": 0.12,
+      "2024": 0.18,
+      "rank": 8
+    }
+  },
+    "expansionDetail": {
+      "europe": {
+        "strategy": "Aggressive price-led market entry via distributors",
+        "focus": "Mid-size SUV segment",
+        "risk": "Brand perception vs established OEMs"
+      },
+      "uk": {
+        "strategy": "Volume expansion through affordability + efficiency",
+        "focus": "Mainstream EV adoption",
+        "risk": "Dealer network maturity"
+      },
+      "me": {
+        "strategy": "Rapid expansion with government partnerships",
+        "focus": "Fleet + infrastructure-backed growth",
+        "risk": "Market fragmentation"
+      },
+      "latam": {
+        "strategy": "Early mover advantage",
+        "focus": "Affordable EV penetration",
+        "risk": "Infrastructure limitations"
+      }
+    },
+
+    "supplyChain": {
+      "origin": "China (integrated manufacturing)",
+      "routes": [
+        "China → Europe (bulk shipping)",
+        "China → UK via EU hubs"
+      ],
+      "notes": "Highly optimized vertically integrated supply chain"
+    },
+
+    "expansionRisk": {
+      "europe": 30,
+      "uk": 35,
+      "me": 40,
+      "latam": 55
+    },
+
+    "intel": {
+      "positioning": "Mass-market EV disruptor",
+      "edge": "Battery integration and cost efficiency",
+      "risk": "Brand perception in premium markets",
+      "outlook": "Strong global volume growth potential"
+    },
+
+    "competitionIntel": {
+      "pressureFrom": [
+        "Tesla (brand + ecosystem)",
+        "Hyundai/Kia (design + tech)",
+        "Volkswagen (scale + trust)"
+      ],
+      "advantage": "Price-to-performance dominance",
+      "threat": "Tariffs and regulatory pressure"
+    },
+
+    "buyerSignal": {
+      "type": "Value-driven EV buyer",
+      "priority": ["Price", "Range", "Efficiency"],
+      "tradeoff": "Brand prestige vs cost advantage"
+    }
+    
   }
+
 }

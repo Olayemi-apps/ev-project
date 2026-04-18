@@ -295,6 +295,78 @@ ARCHIVE SECTION
   transform: translateY(-4px) scale(1.02);
 }
 
+/*===============================
+ADDITIONAL STYLING
+================================*/
+.archive-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.archive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.08);
+}
+
+.featured-3d-container {
+  background: radial-gradient(circle at center, rgba(0,212,255,0.08), transparent 70%);
+}
+
+.featured-insight {
+  border: 1px solid rgba(0,212,255,0.2);
+  background: linear-gradient(180deg, rgba(0,212,255,0.05), transparent);
+}
+
+
+/*================================
+SPACING 
+=====================================*/
+
+#market-competitors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/*===================================
+LOADING css
+====================================*/
+
+.loading .featured-wrapper {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+/*=======================================
+UPDATE MANUFACTURER EXPANSION / STRATUM INTELLIGENCE
+=========================================*/
+
+.intel-grid{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:16px;
+  margin-top:16px;
+}
+
+.intel-block{
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(0,212,255,0.15);
+  padding:14px;
+  border-radius:10px;
+}
+
+.intel-block h4{
+  font-size:12px;
+  color:#00d4ff;
+  margin-bottom:6px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+
+.intel-block p{
+  font-size:13px;
+  opacity:0.85;
+}
+
 /*=========================================
 DRAG SCROLL
 ==========================================*/

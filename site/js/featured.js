@@ -1,3 +1,4 @@
+let cachedVehicles = null;
 /* --------------------------
 3D Model Loader + DATA
 --------------------------- */
@@ -8,8 +9,10 @@ async function loadFeatured(){
 try{
 
 const res = await fetch("./data/featured.json");
-
 const raw = await res.json();
+
+cachedVehicles = raw.vehicles; //  STORE ONCE
+
 const params = new URLSearchParams(window.location.search);
 const urlCar = params.get("car");
 
@@ -126,9 +129,16 @@ function buildArchive(vehicles, currentKey){
 
   container.innerHTML = "";
 
-  Object.entries(vehicles).forEach(([key, v]) => {
+ Object.entries(vehicles).forEach(([key, v]) => {
 
   if(key === currentKey) return;
+  // 🔥 REQUIRED FIX (prevents undefined cards)
+  if(!v || typeof v !== "object" || !v.vehicle) return;
+
+
+  const vehicleName = v.vehicle || "";
+  const tagline = v.tagline || "";
+  const segment = v.market?.segment || "ARCHIVED";
 
   const card = document.createElement("div");
   card.className = "archive-card";
@@ -137,11 +147,11 @@ function buildArchive(vehicles, currentKey){
     <div class="archive-card-inner">
 
       <div class="archive-header">
-        <h3>${v.vehicle}</h3>
-          <span class="archive-tag">${v.market?.segment || "ARCHIVED"}</span>
+        <h3>${vehicleName}</h3>
+        <span class="archive-tag">${segment}</span>
       </div>
 
-      <p class="archive-desc">${v.tagline}</p>
+      <p class="archive-desc">${tagline}</p>
 
       <button class="archive-btn" data-key="${key}">
         View Model →
@@ -152,13 +162,24 @@ function buildArchive(vehicles, currentKey){
 
   container.appendChild(card);
 
-  });
+});
 
   /* CLICK HANDLER */
   document.querySelectorAll(".archive-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         switchVehicle(btn.dataset.key);
     });
+
+    // 🔥 PREFETCH (hover)
+    btn.addEventListener("mouseenter", () => {
+      const key = btn.dataset.key;
+
+      if(cachedVehicles && cachedVehicles[key]){
+        // Touch data so it's already in memory
+        const _ = cachedVehicles[key];
+      }
+    });
+
   });
 
 }
@@ -462,10 +483,16 @@ SWITCH VEHICLE
 
 async function switchVehicle(key){
 
+
+// 🔥 START LOADING STATE
+document.body.classList.add("loading");  
+
 const res = await fetch("./data/featured.json");
 const raw = await res.json();
 
-const data = raw.vehicles[key];
+window.scrollTo({ top: 0, behavior: "smooth" });  
+
+const data = cachedVehicles[key];
 
 // 🔗 Update URL using slug
 if(data.slug){
@@ -534,7 +561,10 @@ setTimeout(() => {
 /* OPTIONAL: restart engine cleanly */
 engineStep = 0;
 
-buildArchive(raw.vehicles, key);
+buildArchive(cachedVehicles, key);
+
+  // 🔥 END LOADING STATE
+  document.body.classList.remove("loading");
 
 }
 
