@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "charging-gap",
+    "title": "The UK Charging Gap Is Bigger Than It Looks",
+    "category": "Infrastructure",
+    "date": "2026-04-08",
+    "readTime": "5 min read",
+    "image": "../assets/img/articles/charging-gap.webp"
+  },
+  {
+    "slug": "ev-platforms",
+    "title": "Why EV Platforms Will Win Over Marketplaces",
+    "category": "Platform",
+    "date": "2026-04-04",
+    "readTime": "4 min read",
+    "image": "../assets/img/articles/ev-platforms.webp"
+  },
+  {
+    "slug": "supply-chain",
+    "title": "The Hidden Carbon Cost of EV Supply Chains",
+    "category": "Sustainability",
+    "date": "2026-04-01",
+    "readTime": "6 min read",
+    "image": "../assets/img/articles/supply-chain.webp"
+  }
+]
