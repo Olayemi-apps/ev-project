@@ -668,6 +668,135 @@ READ NEXT
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
+/*=================================
+FEATURED ARTICLE SECTION
+==================================*/
+
+/* FEATURED GRID */
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+/* IMAGE */
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
+.featured-image img:hover {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+/* EXTRA INFO */
+.featured-extra {
+  display: flex;
+  gap: 10px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+
+.mini-pill {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  color: #9fb3c8;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-image img {
+    max-height: 180px;
+  }
+}
+
+/*==============================
+GRADIENT OVERLAY
+================================*/
+.featured-image {
+  position: relative;
+}
+
+.featured-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    to left,
+    rgba(0,0,0,0.6),
+    transparent
+  );
+}
+
+/*==============================
+BACK LINK - FEATURED ARTICLES
+===============================*/
+
+.back-link {
+  display:inline-block;
+  margin-bottom:16px;
+  color:#7dd3fc;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.back-link:hover {
+  opacity:0.8;
+}
+
+/*================================
+FEATURED PAGE FURTHER STYLING
+=================================*/
+
+.article-nav-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nav-card {
+  flex: 1;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-card:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.nav-card.right {
+  text-align: right;
+}
+
+.nav-label {
+  font-size: 12px;
+  color: #7dd3fc;
+  margin-bottom: 6px;
+}
+
+.nav-title {
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+
 /* ================================
 PREMIUM SELECT DROPDOWNS
 ================================ */

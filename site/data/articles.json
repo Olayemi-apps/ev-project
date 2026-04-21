@@ -1,26 +1,48 @@
-[
-  {
-    "slug": "charging-gap",
-    "title": "The UK Charging Gap Is Bigger Than It Looks",
-    "category": "Infrastructure",
-    "date": "2026-04-08",
-    "readTime": "5 min read",
-    "image": "../assets/img/articles/charging-gap.webp"
-  },
-  {
-    "slug": "ev-platforms",
-    "title": "Why EV Platforms Will Win Over Marketplaces",
-    "category": "Platform",
-    "date": "2026-04-04",
-    "readTime": "4 min read",
-    "image": "../assets/img/articles/ev-platforms.webp"
-  },
-  {
-    "slug": "supply-chain",
-    "title": "The Hidden Carbon Cost of EV Supply Chains",
-    "category": "Sustainability",
-    "date": "2026-04-01",
-    "readTime": "6 min read",
-    "image": "../assets/img/articles/supply-chain.webp"
-  }
-]
+{
+  "articles": [
+    {
+      "slug": "ev-range",
+      "title": "Why Most EV Range Figures Are Misleading in the UK Market",
+      "category": "Analysis",
+      "date": "2026-04-21",
+      "day": "Tue",
+      "read": "6 min read",
+      "image": "./assets/img/articles/ev-range-figures.webp",
+      "excerpt": "Why official EV range figures fail to reflect real-world UK driving conditions and what actually matters.",
+      "featured": true
+    },
+    {
+      "slug": "charging-gap",
+      "title": "The UK Charging Gap Is Bigger Than It Looks",
+      "category": "Infrastructure",
+      "date": "2026-04-08",
+      "day": "Mon",
+      "read": "5 min read",
+      "image": "./assets/img/articles/charging-gap.webp",
+      "excerpt": "Distribution and usability gaps reveal deeper infrastructure issues.",
+      "featured": false
+    },
+    {
+      "slug": "ev-platforms",
+      "title": "Why EV Platforms Will Win Over Marketplaces",
+      "category": "Platform",
+      "date": "2026-04-04",
+      "day": "Thu",
+      "read": "4 min read",
+      "image": "./assets/img/articles/ev-platforms.webp",
+      "excerpt": "Platforms will dominate through data and ecosystem control.",
+      "featured": false
+    },
+    {
+      "slug": "supply-chain",
+      "title": "The Hidden Carbon Cost of EV Supply Chains",
+      "category": "Sustainability",
+      "date": "2026-04-01",
+      "day": "Tue",
+      "read": "6 min read",
+      "image": "./assets/img/articles/supply-chain.webp",
+      "excerpt": "Supply chains are the next sustainability battleground.",
+      "featured": false
+    }
+  ]
+}
