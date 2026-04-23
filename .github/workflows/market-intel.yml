@@ -1,0 +1,32 @@
+name: Update Market Intelligence
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # every Monday 6AM
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install deps
+        run: pip install -r requirements.txt || true
+
+      - name: Run market intel build
+        run: python ingest/market_intel_build.py
+
+      - name: Commit & push
+        run: |
+          git config --global user.name "bot"
+          git config --global user.email "bot@github.com"
+          git add .
+          git commit -m "Auto अपडेट market intel" || echo "No changes"
+          git push

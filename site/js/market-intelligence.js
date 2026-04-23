@@ -2366,11 +2366,15 @@ function renderInnovationIntelligence(rows, anchorDate){
 let __miStoryCache = null;
 
 async function loadMarketIntel() {
-  const res = await fetch("./data/market-intel.json", { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load market-intel.json");
-  const data = await res.json();
+  const url = `./data/market-intel.json?v=${Date.now()}`;
 
-  window.marketIntelData = data;
+  const res = await fetch(url, { cache: "no-store" });
+
+  if (!res.ok) throw new Error("Failed to load market-intel.json");
+
+  const data = await res.json(); // ✅ store data
+
+  window.marketIntelData = data; // now runs
 
   renderBrief(data);
   renderKpis(data.kpis || {});
