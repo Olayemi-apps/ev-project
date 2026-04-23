@@ -796,6 +796,61 @@ FEATURED PAGE FURTHER STYLING
   color: #e2e8f0;
 }
 
+/*====================================
+ARTICLE - PANEL SECTION - MID SECTION STYLED
+================================= */
+.perf-panel {
+  margin: 32px 0;
+  padding: 28px;
+}
+
+.perf-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.perf-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+
+  padding: 14px 16px;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+
+  transition: all 0.25s ease;
+}
+
+.perf-row:hover {
+  background: rgba(0, 200, 255, 0.05);
+  border-color: rgba(0, 200, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.perf-label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #d6e2f0;
+}
+
+.perf-value {
+  font-size: 14px;
+  color: #8fa3b8;
+  text-align: right;
+}
+
+.perf-label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #00d4ff;
+}
 
 /* ================================
 PREMIUM SELECT DROPDOWNS
