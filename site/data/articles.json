@@ -1,6 +1,17 @@
 {
   "articles": [
     {
+      "slug": "charging-curve",
+      "title": "The Hidden Metric That Will Decide the EV Market",
+      "category": "Infrastructure",
+      "date": "23 Apr 2026",
+      "day": "Thu",
+      "read": "5 min read",
+      "image": "./assets/img/articles/charging-curve.webp",
+      "excerpt": "Charging curve performance is emerging as the most critical factor in real-world EV usability.",
+      "featured": true
+    },
+    {
       "slug": "ev-range",
       "title": "Why Most EV Range Figures Are Misleading in the UK Market",
       "category": "Analysis",
@@ -9,7 +20,7 @@
       "read": "6 min read",
       "image": "./assets/img/articles/ev-range-figures.webp",
       "excerpt": "Why official EV range figures fail to reflect real-world UK driving conditions and what actually matters.",
-      "featured": true
+      "featured": false
     },
     {
       "slug": "charging-gap",
