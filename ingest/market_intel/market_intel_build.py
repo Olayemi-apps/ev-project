@@ -590,12 +590,86 @@ def build():
         f"Bias skew: {top_bias}."
     )
 
+    # --------------------------------------
+    # EXECUTIVE INSIGHT GENERATION (NEW)
+    # --------------------------------------
+
+    policy_count = kpis["by_category_7d"].get("Policy", 0)
+
+    risk_signals = [
+        a for a in last7
+        if a.get("signal_sentiment", {}).get("label") == "risk"
+    ]
+
+    risk_ratio = len(risk_signals) / len(last7) if last7 else 0
+
+    if policy_count > 10 and risk_ratio > 0.4:
+        risk_text = "Policy tightening risk emerging across key regions."
+    elif risk_ratio > 0.3:
+        risk_text = "Elevated execution and regulatory risk detected across the EV ecosystem."
+    else:
+        risk_text = "No material systemic risk signals detected."
+
+    capital_count = kpis["by_category_7d"].get("Investment", 0)
+
+    opp_signals = [
+        a for a in last7
+        if a.get("signal_sentiment", {}).get("label") == "opportunity"
+    ]
+
+    opp_ratio = len(opp_signals) / len(last7) if last7 else 0
+
+    if capital_count > 8 and opp_ratio > 0.4:
+        opp_text = "Capital inflows and infrastructure expansion are accelerating EV market development."
+    elif opp_ratio > 0.3:
+        opp_text = "Selective growth signals emerging across EV ecosystem segments."
+    else:
+        opp_text = "Opportunity signals remain limited in the current cycle."   
+
+    # --------------------------------------
+    # CONFIDENCE SCORE
+    # --------------------------------------
+
+    total_signals = len(last7)
+
+    if total_signals:
+        dominant = max(len(risk_signals), len(opp_signals))
+        confidence = int((dominant / total_signals) * 100)
+    else:
+        confidence = 0     
+
+    # --------------------------------------
+    # SIGNAL STRENGTH
+    # --------------------------------------
+
+    avg_signal_score = (
+        int(sum(a["signal_score"] for a in last7) / total_signals)
+        if total_signals else 0
+    )
+
+    if avg_signal_score >= 60:
+        signal_strength = "High"
+    elif avg_signal_score >= 35:
+        signal_strength = "Medium"
+    else:
+        signal_strength = "Low"
+
+
+
     out = {
         "updated": now.isoformat(),
         "brief": brief,
         "kpis": kpis,
         "articles": articles[:120]
     }
+
+    out["executive_insight"] = {
+        "risk_factor": risk_text,
+        "opportunity_signal": opp_text,
+        "confidence": confidence,
+        "signal_strength": signal_strength
+    }
+
 
     tmp_fd, tmp_path = tempfile.mkstemp(prefix="market-intel-", suffix=".json", dir=str(DATA_DIR))
     try:

@@ -7,6 +7,22 @@ function fmtDate(iso) {
   }
 }
 
+function getISOWeek(dateStr) {
+  const d = new Date(dateStr);
+  d.setHours(0,0,0,0);
+
+  // Thursday trick (ISO standard)
+  d.setDate(d.getDate() + 3 - ((d.getDay() + 6) % 7));
+
+  const week1 = new Date(d.getFullYear(), 0, 4);
+
+  const weekNo = 1 + Math.round(
+    ((d - week1) / 86400000 - 3 + ((week1.getDay() + 6) % 7)) / 7
+  );
+
+  return `${d.getFullYear()}-W${String(weekNo).padStart(2, "0")}`;
+}
+
 document.querySelectorAll(".mi-density-toggle").forEach(btn=>{
   btn.addEventListener("click",()=>{
     document.querySelectorAll(".mi-density-toggle")
@@ -157,19 +173,95 @@ function renderBrief(data) {
     briefDate.textContent = fmtDate(updated);
   }
 
-  // Executive Insight injection
-  if (data.executive_insight) {
-    const riskEl = document.getElementById("miRiskText");
-    const oppEl = document.getElementById("miOpportunityText");
+ // Executive Insight injection
+if (data.executive_insight) {
 
+  const riskEl = document.getElementById("miRiskText");
+  const oppEl = document.getElementById("miOpportunityText");
+  const strengthEl = document.getElementById("miSignalStrength");
+  const confEl = document.getElementById("miConfidence");
+
+  // --- TEXT FIRST (primary content) ---
     if (riskEl) {
       riskEl.textContent =
-        data.executive_insight?.risk_factor || "No systemic risk signals detected this cycle.";
+        data.executive_insight?.risk_factor ||
+        "No systemic risk signals detected this cycle.";
     }
 
     if (oppEl) {
       oppEl.textContent =
-        data.executive_insight?.opportunity_signal || "Infrastructure expansion and battery innovation continue to support EV adoption momentum.";
+        data.executive_insight?.opportunity_signal ||
+        "Infrastructure expansion and battery innovation continue to support EV adoption momentum.";
+    }
+
+    // --- SIGNAL STRENGTH ---
+    if (strengthEl) {
+      const strength = data.executive_insight?.signal_strength || "";
+
+      strengthEl.textContent = strength;
+
+      // Reset classes
+      strengthEl.classList.remove("high", "medium", "low");
+
+      if (strength === "High") strengthEl.classList.add("high");
+      if (strength === "Medium") strengthEl.classList.add("medium");
+      if (strength === "Low") strengthEl.classList.add("low");
+    }
+
+    // --- CONFIDENCE ---
+    if (confEl) {
+      const conf = data.executive_insight?.confidence;
+
+      confEl.textContent =
+        conf != null ? `Confidence: ${conf}%` : "";
+
+      // Reset classes
+      confEl.classList.remove("high", "medium", "low");
+
+      // Only apply styling if value exists
+      if (conf != null) {
+        if (conf >= 70) confEl.classList.add("high");
+        else if (conf >= 40) confEl.classList.add("medium");
+        else confEl.classList.add("low");
+      }
+    } 
+
+    // --- MARKET REGIME ---
+    const regimeBar = document.getElementById("mi-regime-bar");
+    const regimeText = document.getElementById("mi-regime-text");
+
+    if (regimeBar && regimeText) {
+
+      const conf = data.executive_insight?.confidence;
+      const strength = data.executive_insight?.signal_strength;
+
+      // Reset
+      regimeBar.classList.remove("high","medium","low");
+
+      let label = "Neutral market conditions";
+
+      if (conf != null && strength) {
+
+        if (conf >= 70 && strength === "High") {
+          label = "High conviction environment, strong signal alignment";
+          regimeBar.classList.add("high");
+        }
+
+        else if (conf >= 40 && strength !== "Low") {
+          label = "Moderate conviction environment, signals building";
+          regimeBar.classList.add("medium");
+        }
+
+        else {
+          label = "Low conviction environment, limited signal strength";
+          regimeBar.classList.add("low");
+        }
+      }
+
+      regimeText.innerHTML = label.replace(
+        "environment",
+        "<span class='mi-regime-key'>environment</span>"
+      );
     }
   }
 }
@@ -882,7 +974,9 @@ function renderLatestBriefCard(pointer, kpis) {
   const host = document.getElementById("mi-latest-brief");
   if (!host) return;
 
-  const week = pointer?.week || "TBC";
+  const week = window.marketIntelData?.updated
+  ? getISOWeek(window.marketIntelData.updated)
+  : (pointer?.week || "TBC");
   const url = pointer?.url || "./data/briefs/latest.pdf";
   const total = kpis?.total_7d ?? 0;
 
@@ -2389,7 +2483,12 @@ async function loadMarketIntel() {
 
   const weekPill = document.getElementById("mi-pill-week");
   const updPill = document.getElementById("mi-pill-updated");
-  if (weekPill) weekPill.textContent = `Week: ${pointer?.week || "–"}`;
+
+  if (weekPill && data.updated) {
+    const dynamicWeek = getISOWeek(data.updated);
+    weekPill.textContent = `Week: ${dynamicWeek}`;
+  }
+
   if (updPill) updPill.textContent = `Updated: ${data.updated ? fmtDate(data.updated) : "–"}`;
 
   // Charts should run even if watchlists fail

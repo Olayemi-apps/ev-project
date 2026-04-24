@@ -2060,6 +2060,85 @@ TOP CARD POINTER
   border-color: rgba(110,231,255,0.25);
 }
 
+/*=================================
+META INSIGHT STYLING
+==================================*/
+
+.mi-insight-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.mi-confidence {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.mi-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/*FURTHER STYLING */
+
+.mi-badge.high { background:#1db954; }
+.mi-badge.medium { background:#f5a623; }
+.mi-badge.low { background:#ff4d4f; }
+
+/*=========================
+MARKET INTELLIGENCE - REGIME-BAR
+===========================*/
+.mi-regime-bar {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mi-regime-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.55;
+}
+
+.mi-regime-key {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.mi-regime-text {
+  font-weight: 500;
+  font-size: 13.5px;
+  letter-spacing: 0.2px;
+  color: rgba(255,255,255,0.88);
+}
+
+/* STATES */
+.mi-regime-bar.high {
+  border-color: rgba(0,255,180,0.4);
+  background: rgba(0,255,180,0.06);
+}
+
+.mi-regime-bar.medium {
+  border-color: rgba(255,200,0,0.4);
+  background: rgba(255,200,0,0.06);
+}
+
+.mi-regime-bar.low {
+  border-color: rgba(255,80,80,0.4);
+  background: rgba(255,80,80,0.06);
+}
+
+
 /*==========================
 FEATURED CARD
 ==========================*/

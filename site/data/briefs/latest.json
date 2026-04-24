@@ -1,6 +1,11 @@
 {
-  "file": "Stratum-Weekly-Brief-2026-W07.pdf",
-  "week": "2026-W07",
-  "updated": "2026-02-12T13:27:53.778449+00:00",
-  "url": "./data/briefs/Stratum-Weekly-Brief-2026-W07.pdf"
+  "file": "Stratum-Weekly-Brief-2026-W17.pdf",
+  "week": "2026-W17",
+  "updated": "2026-04-24T14:27:26.353383+00:00",
+  "url": "./data/briefs/Stratum-Weekly-Brief-2026-W17.pdf",
+  "kpis": {
+    "total_7d": 40,
+    "top_cat": "OEM",
+    "top_reg": "US"
+  }
 }
