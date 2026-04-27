@@ -2,7 +2,7 @@ name: Update Market Intelligence
 
 on:
   schedule:
-    - cron: "0 6 * * 1"  # every Monday 6AM
+    - cron: "0 6 * * 1"
   workflow_dispatch:
 
 jobs:
@@ -15,18 +15,36 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
+      #  Safe install
       - name: Install deps
-        run: pip install -r requirements.txt || true
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
 
+      #  BUILD DATA
       - name: Run market intel build
-        run: python ingest/market_intel_build.py
+        run: python ingest/market_intel/market_intel_build.py
 
+      #  BUILD PDF
+      - name: Generate weekly PDF
+        run: python ingest/market_intel/weekly_brief_build.py
+
+      # 🔍 DEBUG (you’ll thank yourself later)
+      - name: Show generated files
+        run: ls -R site/data/
+
+      #  COMMIT + PUSH (HARDENED)
       - name: Commit & push
         run: |
           git config --global user.name "bot"
           git config --global user.email "bot@github.com"
-          git add .
-          git commit -m "Auto अपडेट market intel" || echo "No changes"
+
+          git add -A site/data/
+
+          git commit -m "Auto update market intel + PDF" || echo "No changes"
+
+          git pull origin main --rebase
           git push

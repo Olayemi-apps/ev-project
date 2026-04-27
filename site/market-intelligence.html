@@ -173,32 +173,55 @@
 
         <section id="mi-latest-brief" class="mi-latest"></section>
 
-        <section class="mi-kpis" id="mi-kpis"></section>
+        <section class="mi-kpis" id="mi-kpis">
+
+          <!-- EXISTING KPIs (auto-rendered by JS) -->
+          <div class="mi-kpi-card">
+            <div class="mi-kpi-label">Market Tone</div>
+            <div id="market-tone" class="mi-kpi-value"></div>
+          </div>
+
+        </section>
 
         <!-- Weekly Volume Trend -->
         <section class="mi-panel mi-trend-panel">
-          <h2>Weekly Volume Trend</h2>
-          <div class="mi-regime" id="mi-regime"></div>
+            <h2>Weekly Volume Trend</h2>
 
-          <div class="mi-trend-desc">
-            Story volume over the most recent 7-day window, anchored to latest publication date.
-          </div>
+            <!--  CLEAN VERSION -->
+            <div class="mi-trend-header">
 
-          <div class="mi-trend-toggle">
-            <button class="mi-chip is-active" data-trend="7">7D</button>
-            <button class="mi-chip" data-trend="30">30D</button>
-          </div>
+              <div class="mi-panel-title">Weekly Trend</div>
 
-          <div class="mi-trend-summary" id="mi-trend-summary"></div>
-          <div class="mi-anomaly-insight" id="mi-anomaly-insight"></div>
+              <div id="mi-trend-summary" class="mi-panel-text"></div>
 
-          <div class="mi-trend-wrap">
-            <div class="mi-trend-y"></div>
-            <div>
-              <div class="mi-trend-chart" id="mi-chart-trend"></div>
-              <div class="mi-trend-x" id="mi-trend-x"></div>
+              <div class="mi-kpi">
+                <span><span class="delta-triangle">Δ</span> vs last week:</span>
+                <strong id="trend-delta"></strong>
+              </div>
+
             </div>
-          </div>
+
+
+            <div class="mi-regime" id="mi-regime"></div>
+
+            <div class="mi-trend-desc">
+              Story volume over the most recent 7-day window, anchored to latest publication date.
+            </div>
+
+            <div class="mi-trend-toggle">
+              <button class="mi-chip is-active" data-trend="7">7D</button>
+              <button class="mi-chip" data-trend="30">30D</button>
+            </div>
+
+            <div class="mi-anomaly-insight" id="mi-anomaly-insight"></div>
+
+            <div class="mi-trend-wrap">
+              <div class="mi-trend-y"></div>
+              <div>
+                <div class="mi-trend-chart" id="mi-chart-trend"></div>
+                <div class="mi-trend-x" id="mi-trend-x"></div>
+              </div>
+            </div>
         </section>
 
         <!-- COVERAGE MIX -->

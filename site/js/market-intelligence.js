@@ -123,6 +123,16 @@ function renderKpis(kpis) {
     1
   );
 
+  const trend = kpis?.trend;
+
+  if (trend) {
+    const summaryEl = document.getElementById("mi-trend-summary");
+    const deltaEl = document.getElementById("trend-delta");
+
+    if (summaryEl) summaryEl.innerText = trend.summary;
+    if (deltaEl) deltaEl.innerText = trend.delta;
+  }
+
   const cards = [
     { label: "Stories, last 7 days", value: total, sub: `${delta >= 0 ? "+" : ""}${delta} vs prior 7 days`, count: total },
     { label: "Top Category", value: topCat ? topCat[0] : "TBC", sub: topCat ? `${topCat[1]} stories` : "", count: topCat?.[1] || 0 },
@@ -2472,6 +2482,13 @@ async function loadMarketIntel() {
 
   renderBrief(data);
   renderKpis(data.kpis || {});
+
+  const tone = data.kpis?.market_tone;
+  const toneEl = document.getElementById("market-tone");
+
+  if (tone && toneEl) {
+    toneEl.innerText = tone.label;
+  }
 
   if (document.body.getAttribute("data-mi-tab") === "stories") {
     applyPresetLocal("top");

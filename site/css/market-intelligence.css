@@ -2207,6 +2207,50 @@ FEATURED CARD
   margin-top: 6px;
 }
 
+/*=========================
+INDICATOR PULSE 
+============================*/
+.delta-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.delta-triangle {
+  display: inline-block;
+  font-size: 12px;
+  color: #8b93a7;
+  position: relative;
+}
+
+.delta-triangle::after {
+  content: "";
+  position: absolute;
+  pointer-events: none; /* avoids weird hover issues */
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: rgba(139, 147, 167, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.8s infinite ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.5;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /*------------------------------*/
 
 /* ===== Signal Intensity Professional Layout ===== */
@@ -3806,41 +3850,6 @@ EXECUTIVE BRIEF HEADER
 /*---------------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*----- Footer -----*/
 
 .mi-footer{
@@ -3864,3 +3873,188 @@ EXECUTIVE BRIEF HEADER
 }
 
 /*---------------------------------*/
+
+/* =========================
+   RESPONSIVE REFINEMENT
+   ========================= */
+
+/* =========================
+   FINAL FURTHER RESPONSIVE PATCH
+   ========================= */
+
+/* KPI balance fix */
+@media (max-width: 980px){
+  .mi-kpis{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px){
+  .mi-kpis{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Signal strip safe grid */
+@media (max-width: 640px){
+  .mi-signal-strip{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px){
+  .mi-signal-strip{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Improve mobile scroll feel */
+.mi-stream-body{
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent text breaking layouts */
+.mi-title,
+.mi-watchcard__title{
+  word-break: break-word;
+}
+
+/* Tablet optimisation */
+@media (max-width: 1024px){
+
+  .mi {
+    padding: 20px 14px 48px;
+  }
+
+  .mi-panel {
+    padding: 18px;
+  }
+
+  .mi-kpi-value {
+    font-size: 1.4rem;
+  }
+
+  .mi-grid {
+    gap: 18px;
+  }
+
+  .mi-analytics {
+    gap: 20px;
+  }
+
+  .mi-watch-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .mi-watch-head-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Mobile optimisation */
+@media (max-width: 640px){
+
+  /* Layout tightening */
+  .mi {
+    padding: 16px 12px 40px;
+  }
+
+  .mi-panel {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  /* KPI stack */
+  .mi-kpis {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Typography scaling */
+  .mi h1 {
+    font-size: 24px;
+  }
+
+  .mi-title,
+  .mi-watchcard__title {
+    font-size: 13px;
+  }
+
+  .mi-sub {
+    font-size: 12px;
+  }
+
+  /* Cards */
+  .mi-card {
+    padding: 12px;
+  }
+
+  /* Buttons + controls */
+  .mi-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .mi-btn,
+  .mi-controls select,
+  .mi-controls input {
+    width: 100%;
+  }
+
+  /* Watchlist header */
+  .mi-watch-head {
+    gap: 8px;
+  }
+
+  .mi-watch-head-right {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Signal strip stack */
+  .mi-signal-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  /* Trend chart */
+  .mi-trend-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .mi-trend-y {
+    display: none;
+  }
+
+  /* Carousel arrows smaller */
+  .mi-carbtn {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Reduce visual noise */
+  .mi-hero::before {
+    opacity: 0.4;
+    filter: blur(40px);
+  }
+}
+
+/* Ultra small devices */
+@media (max-width: 420px){
+
+  .mi h1 {
+    font-size: 20px;
+  }
+
+  .mi-kpi-value {
+    font-size: 1.2rem;
+  }
+
+  .mi-signal-strip {
+    grid-template-columns: 1fr;
+  }
+}

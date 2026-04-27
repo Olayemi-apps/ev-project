@@ -547,14 +547,75 @@ def build():
         for r in rows:
             d[r[field]] += 1
         return dict(sorted(d.items(), key=lambda x: x[1], reverse=True))
+    
+    # =========================
+    # MARKET TONE CALCULATION
+    # =========================
+
+    total_risk = 0
+    total_opportunity = 0
+
+    for a in articles:
+        sentiment = a.get("signal_sentiment", {})
+        total_risk += sentiment.get("risk_score", 0)
+        total_opportunity += sentiment.get("opportunity_score", 0)
+
+    net_score = total_opportunity - total_risk
+
+    if net_score > 5:
+        tone_label = "Bullish"
+    elif net_score < -5:
+        tone_label = "Risk-Off"
+    elif abs(net_score) < 2:
+        tone_label = "Neutral"
+    else:
+        tone_label = "Balanced"
 
     kpis = {
-    "total_7d": len(last7),
-    "total_7d_delta": len(last7) - len(prev7),
-    "by_category_7d": count_by("category", last7),
-    "by_region_7d": count_by("region", last7),
-    "top_sources_7d": count_by("source", last7)
+        "total_7d": len(last7),
+        "total_7d_delta": delta_raw,
+
+        "market_tone": {
+            "label": tone_label,
+            "score": round(net_score, 2)
+        },
+
+        "trend": {
+            "summary": trend_summary,
+            "delta": trend_delta
+        },
+
+        "by_category_7d": count_by("category", last7),
+        "by_region_7d": count_by("region", last7),
+        "top_sources_7d": count_by("source", last7)
     }
+
+    
+    # =========================
+    # TREND CALCULATION
+    # =========================
+
+    delta_raw = len(last7) - len(prev7)
+
+    if len(prev7) == 0:
+        trend_delta = "N/A"
+        trend_summary = "No prior data available for comparison."
+
+    else:
+        pct_change = (delta_raw / len(prev7)) * 100
+        trend_delta = f"{pct_change:+.0f}%"
+
+        # 🔥 REPLACE OLD SUMMARY LOGIC WITH THIS
+        if pct_change > 50:
+            trend_summary = "Sharp increase in signal volume, indicating accelerating market activity."
+        elif pct_change > 0:
+            trend_summary = "Moderate increase in signal volume vs prior week."
+        elif pct_change < -50:
+            trend_summary = "Sharp decline in signal volume, indicating contraction in market activity."
+        elif pct_change < 0:
+            trend_summary = "Moderate decline in signal volume vs prior week."
+        else:
+            trend_summary = "Signal volume unchanged vs prior week."
 
     # ------------------------------------------------
     # SIGNAL MOMENTUM (week over week narrative shift)
@@ -571,6 +632,35 @@ def build():
         momentum[c] = cat_now.get(c, 0) - cat_prev.get(c, 0)
 
     kpis["category_momentum"] = dict(sorted(momentum.items(), key=lambda x: x[1], reverse=True))
+
+    # ======================================
+    # TREND VS LAST WEEK (NEW)
+    # ======================================
+
+    total_now = len(last7)
+    total_prev = len(prev7)
+    delta = total_now - total_prev
+
+    if delta > 3:
+        direction = "up"
+    elif delta < -3:
+        direction = "down"
+    else:
+        direction = "flat"
+
+    # Top moving category
+    top_mover = next(iter(kpis["category_momentum"].keys()), "Industry")
+
+    trend_summary = (
+        f"Activity {'increased' if delta > 0 else 'declined' if delta < 0 else 'remained stable'} "
+        f"vs last week, driven by {top_mover} signals."
+    )
+
+    kpis["trend"] = {
+        "direction": direction,
+        "delta": delta,
+        "summary": trend_summary
+    }
     
     # ---- Executive Brief ----
     top_cat = next(iter(kpis["by_category_7d"].keys()), "Industry")
@@ -583,6 +673,32 @@ def build():
         bias_count[label] += 1
 
     top_bias = max(bias_count, key=bias_count.get) if bias_count else "neutral"
+
+    # ======================================
+    # MARKET TONE (NEW)
+    # ======================================
+
+    risk = bias_count.get("risk", 0)
+    opp = bias_count.get("opportunity", 0)
+    neutral = bias_count.get("neutral", 0)
+
+    total = risk + opp + neutral if (risk + opp + neutral) else 1
+
+    risk_ratio = risk / total
+    opp_ratio = opp / total
+
+    if opp_ratio > 0.45:
+        market_tone = "Bullish"
+    elif risk_ratio > 0.45:
+        market_tone = "Risk-Off"
+    else:
+        market_tone = "Neutral"
+
+    kpis["market_tone"] = {
+        "label": market_tone,
+        "risk_pct": int(risk_ratio * 100),
+        "opportunity_pct": int(opp_ratio * 100)
+    }
 
     brief = (
         f"This week’s signal environment shows dominant activity in {top_cat}, "
@@ -657,7 +773,8 @@ def build():
 
 
     out = {
-        "updated": now.isoformat(),
+        "updated": datetime.utcnow().isoformat(),  #  force fresh timestamp every run
+        "build_id": datetime.utcnow().strftime("%Y%m%d%H%M%S"),  #  guarantees change
         "brief": brief,
         "kpis": kpis,
         "articles": articles[:120]
