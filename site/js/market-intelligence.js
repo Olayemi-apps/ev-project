@@ -133,6 +133,15 @@ function renderKpis(kpis) {
     if (deltaEl) deltaEl.innerText = trend.delta;
   }
 
+  const tone = kpis?.market_tone;
+
+  if (tone) {
+    const toneEl = document.getElementById("market-tone");
+    if (toneEl) {
+      toneEl.innerText = `${tone.label} (${tone.score})`;
+    }
+  }
+
   const cards = [
     { label: "Stories, last 7 days", value: total, sub: `${delta >= 0 ? "+" : ""}${delta} vs prior 7 days`, count: total },
     { label: "Top Category", value: topCat ? topCat[0] : "TBC", sub: topCat ? `${topCat[1]} stories` : "", count: topCat?.[1] || 0 },
@@ -1504,6 +1513,10 @@ function renderWatchlist(containerId, rows, limit) {
 }
 
 function wireCarousels() {
+
+   //  DISABLE ON MOBILE
+  if (window.innerWidth <= 768) return;
+
   document.querySelectorAll("[data-mi-carousel]").forEach(root => {
     if (root.dataset.miBound === "1") return;
     root.dataset.miBound = "1";

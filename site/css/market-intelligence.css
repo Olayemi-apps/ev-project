@@ -1842,14 +1842,8 @@ STORIES UPDATE
   position: relative;
 }
 
-.mi-carousel__track > *{
-  flex: 0 0 100%;
-  max-width: 100%;
-  scroll-snap-align: start;
-}
-
 .mi-carousel__track {
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .mi-carousel__track > * {
@@ -4058,3 +4052,267 @@ EXECUTIVE BRIEF HEADER
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   MOBILE CAROUSEL OVERRIDE
+========================= */
+
+@media (max-width: 768px) {
+
+  .mi-carousel__track {
+    display: flex;
+    overflow-x: auto;
+    gap: 14px;
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 16px;
+
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+
+    transform: none !important;
+  }
+
+  .mi-carousel__track > * {
+    flex: 0 0 88%;
+    max-width: 88%;
+    scroll-snap-align: start;
+  }
+
+  .mi-carousel__track::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+/*========================
+WATCH CARDS
+========================*/
+@media (max-width: 768px) {
+
+  .mi-watchcard {
+    padding: 0 12px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .mi-watch-card {
+    width: 100%;
+  }
+}
+
+/* Paragraphs */
+
+@media (max-width: 768px) {
+
+  .mi-watch-card p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+}
+
+/*========================
+HIDE ARROWS
+=========================*/
+
+@media (max-width: 768px) {
+  .mi-carbtn {
+    display: none;
+  }
+}
+
+/* =========================
+   MOBILE WATCHLIST FIX
+========================= */
+
+@media (max-width: 768px) {
+
+  .mi-watchlists {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}
+
+/*===========================
+MI WATCH UPDATE
+============================*/
+
+@media (max-width: 768px) {
+  .mi-watch {
+    width: 100%;
+  }
+}
+
+/*=========================
+EDGE FADE
+==========================*/
+
+@media (max-width: 768px) {
+
+  .mi-carousel {
+    position: relative;
+  }
+
+  .mi-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+
+    background: linear-gradient(
+      to right,
+      rgba(11, 15, 26, 0),
+      rgba(11, 15, 26, 1)
+    );
+
+    pointer-events: none;
+  }
+
+}
+
+/*==============================
+EDGE FADE
+=============================*/
+
+@media (max-width: 768px) {
+
+  .mi-carousel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 100%;
+
+    background: linear-gradient(
+      to left,
+      rgba(11, 15, 26, 0),
+      rgba(11, 15, 26, 1)
+    );
+
+    pointer-events: none;
+  }
+
+}
+
+/*==========================
+PREMIUM MOMENTUM
+===========================*/
+
+@media (max-width: 768px) {
+
+  .mi-carousel__track {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+}
+
+/*========================
+COVERAGE MIX PANEL - MOBILE
+========================*/
+
+@media (max-width: 768px) {
+
+  /* Main coverage panel becomes vertical */
+  #mi-coverage-panel .mi-charts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Each chart block full width */
+  #mi-coverage-panel .mi-chart {
+    width: 100%;
+  }
+
+  /* Pie + legend stack cleanly */
+  .mi-pieWrap {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Region bars spacing */
+  .mi-bar {
+    margin: 12px 0;
+  }
+
+  /* Insight card alignment */
+  #mi-coverage-insight {
+    margin-top: 12px;
+  }
+
+  #mi-coverage-insight .mi-coverage-card {
+    width: 100%;
+    padding: 14px;
+  }
+
+}
+
+/*===========================
+TYPOGRAPHY - COVERAGE MIX
+============================*/
+
+@media (max-width: 768px) {
+
+  .mi-chart__title {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  .mi-coverage-text {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+}
+
+/*==========================
+ADDITIONAL
+===========================*/
+
+.mi-intensity-row:first-child .mi-intensity-name {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.mi-intensity-fill {
+  transition: width 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#mi-coverage-insight .mi-coverage-card {
+  position: relative;
+}
+
+#mi-coverage-insight .mi-coverage-card::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(110,231,255,0.6),
+    rgba(139,92,255,0.6)
+  );
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  #mi-coverage-panel {
+    padding: 16px;
+  }
+}
+
+
+

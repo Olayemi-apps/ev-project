@@ -1,34 +1,44 @@
 {
-  "updated": "2026-04-27T11:15:46.085549",
-  "build_id": "20260427111546",
-  "brief": "This week’s signal environment shows dominant activity in Industry, with concentration in US. Average signal intensity scored 6. Bias skew: neutral.",
+  "updated": "2026-04-28T12:35:39.604875",
+  "build_id": "20260428123539",
+  "brief": "This week’s signal environment shows dominant activity in Industry, with concentration in US. Average signal intensity scored 3. Bias skew: neutral.",
   "kpis": {
     "total_7d": 40,
     "total_7d_delta": 40,
+    "market_tone": {
+      "label": "Balanced",
+      "score": 3.0
+    },
     "by_category_7d": {
-      "Industry": 11,
-      "OEM": 10,
-      "Policy": 8,
-      "Charging": 5,
-      "Investment": 3,
-      "Battery": 3
+      "Industry": 14,
+      "OEM": 8,
+      "Battery": 7,
+      "Policy": 6,
+      "Charging": 3,
+      "Investment": 2
     },
     "by_region_7d": {
-      "US": 31,
-      "Global": 5,
-      "EU": 3,
-      "China": 1
+      "US": 23,
+      "Global": 8,
+      "EU": 4,
+      "China": 4,
+      "UK": 1
     },
     "top_sources_7d": {
       "Electrek": 40
     },
     "category_momentum": {
-      "Industry": 11,
-      "OEM": 10,
-      "Policy": 8,
-      "Charging": 5,
-      "Battery": 3,
-      "Investment": 3
+      "Industry": 14,
+      "OEM": 8,
+      "Battery": 7,
+      "Policy": 6,
+      "Charging": 3,
+      "Investment": 2
+    },
+    "trend": {
+      "direction": "up",
+      "delta": "+0%",
+      "summary": "Signal volume unchanged vs prior week."
     }
   },
   "articles": [
@@ -63,96 +73,6 @@
       "stratum_impact_index": 50
     },
     {
-      "id": "electrek-tesla-tsla-maxes-out-5-8-billion-chinese-bank-debt-facility-as-china-sa",
-      "title": "Tesla (TSLA) maxes out $5.8 billion Chinese bank debt facility as China sales crash",
-      "link": "https://electrek.co/2026/04/23/tesla-tsla-maxes-out-5-8-billion-chinese-bank-debt-facility-10q/",
-      "source": "Electrek",
-      "category": "Policy",
-      "region": "US",
-      "published": "2026-04-23T22:47:13+00:00",
-      "week": "2026-W17",
-      "summary": "Tesla has fully drawn down its China Working Capital Facility to $5.8 billion, according to its Q1 2026 10-Q filing — a 35% increase in a single quarter. The facility, which didn’t exist two years ago, now represents 64% of all Tesla’s non-recourse debt. The company tapped every available dollar from the Chinese credit line while sitting on $44.7 billion in cash and short-term investments in the US — and while its retail sales in China crashed 16% year-over-year. more…",
-      "analysis": {
-        "executive_summary": "Fresh capital deployment underscores sustained investor conviction in long-duration EV growth trajectories.",
-        "market_implication": "Incremental funding strengthens balance sheet resilience and enhances capacity expansion flexibility.",
-        "capital_signal": "Private capital inflows reinforce sector attractiveness and sustain elevated competitive intensity.",
-        "strategic_impact": "Enhanced liquidity buffers extend execution runway and mitigate near-term scaling risk.",
-        "executive_takeaway": "Capital momentum remains supportive of medium-term EV expansion dynamics.",
-        "risk_level": "Low",
-        "capital_intensity": "High",
-        "signal_horizon": "Structural",
-        "outlook_3_6m": "Positive"
-      },
-      "signal_score": 25,
-      "signal_sentiment": {
-        "label": "risk",
-        "confidence": 62,
-        "risk_score": 10.0,
-        "opportunity_score": 6.0
-      },
-      "stratum_impact_index": 50
-    },
-    {
-      "id": "electrek-tesla-claims-boost-giga-berlin-production-20-but-numbers-don-t-add-up",
-      "title": "Tesla claims boost Giga Berlin production 20%, but numbers don’t add up",
-      "link": "https://electrek.co/2026/04/23/tesla-giga-berlin-production-increase-still-below-capacity/",
-      "source": "Electrek",
-      "category": "Charging",
-      "region": "US",
-      "published": "2026-04-23T23:11:52+00:00",
-      "week": "2026-W17",
-      "summary": "Tesla lists Giga Berlin’s Model Y production capacity at more than 375,000 units per year — roughly 93,000 per quarter. The plant manager just celebrated a “record” Q1 2026 of 61,000 units and announced a 20% production increase. None of that adds up. André Thierig, Tesla’s senior director of manufacturing at Gigafactory Berlin, announced today that the plant will increase Model Y production by 20% starting in July, hire approximately 1,000 new employees beginning in May, and convert 500 temporary workers to permanent positions. more…",
-      "analysis": {
-        "executive_summary": "Demand acceleration reinforces adoption momentum and strengthens revenue visibility across leading OEM platforms.",
-        "market_implication": "Sustained volume growth may pressure lagging competitors and intensify capacity scaling requirements.",
-        "capital_signal": "Improved throughput enhances internal capital generation capacity.",
-        "strategic_impact": "Operating leverage compounds as scale advantages expand.",
-        "executive_takeaway": "Adoption momentum strengthens structural EV penetration trajectory.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Positive"
-      },
-      "signal_score": 30,
-      "signal_sentiment": {
-        "label": "opportunity",
-        "confidence": 95,
-        "risk_score": 0.0,
-        "opportunity_score": 4.4
-      },
-      "stratum_impact_index": 40
-    },
-    {
-      "id": "electrek-china-shipped-a-record-68-gw-of-solar-in-march-here-s-why-it-matters",
-      "title": "China shipped a record 68 GW of solar in March – here’s why it matters",
-      "link": "https://electrek.co/2026/04/22/china-shipped-a-record-68-gw-of-solar-in-march-heres-why-it-matters/",
-      "source": "Electrek",
-      "category": "Industry",
-      "region": "US",
-      "published": "2026-04-23T00:00:00+00:00",
-      "week": "2026-W17",
-      "summary": "China’s solar exports surged to unprecedented levels in March as a global energy shock is pushing countries to rapidly pivot away from fossil fuels. more…",
-      "analysis": {
-        "executive_summary": "Demand acceleration reinforces adoption momentum and strengthens revenue visibility across leading OEM platforms.",
-        "market_implication": "Sustained volume growth may pressure lagging competitors and intensify capacity scaling requirements.",
-        "capital_signal": "Improved throughput enhances internal capital generation capacity.",
-        "strategic_impact": "Operating leverage compounds as scale advantages expand.",
-        "executive_takeaway": "Adoption momentum strengthens structural EV penetration trajectory.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Positive"
-      },
-      "signal_score": 30,
-      "signal_sentiment": {
-        "label": "opportunity",
-        "confidence": 95,
-        "risk_score": 0.0,
-        "opportunity_score": 4.4
-      },
-      "stratum_impact_index": 40
-    },
-    {
       "id": "electrek-electric-haul-trucks-could-save-fortescue-over-400-million-in-fuel-per-",
       "title": "Electric haul trucks could save Fortescue over $400 million in fuel per year [update]",
       "link": "https://electrek.co/2026/04/26/electric-haul-trucks-could-save-fortescue-over-400-million-in-fuel-per-year/",
@@ -183,96 +103,6 @@
       "stratum_impact_index": 35
     },
     {
-      "id": "electrek-this-solar-farm-almost-stalled-microsoft-suppliers-helped-save-it",
-      "title": "This solar farm almost stalled – Microsoft suppliers helped save it",
-      "link": "https://electrek.co/2026/04/23/solar-farm-almost-stalled-microsoft-suppliers-helped-save-it/",
-      "source": "Electrek",
-      "category": "Policy",
-      "region": "US",
-      "published": "2026-04-23T22:31:24+00:00",
-      "week": "2026-W17",
-      "summary": "A group of Microsoft suppliers just helped push a small solar farm over the finish line in North Carolina – and it shows how corporate buyers can band together and boost projects that might otherwise stall. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 25,
-      "signal_sentiment": {
-        "label": "risk",
-        "confidence": 95,
-        "risk_score": 10.0,
-        "opportunity_score": 0.0
-      },
-      "stratum_impact_index": 30
-    },
-    {
-      "id": "electrek-tesla-tsla-quietly-discloses-2-billion-ai-hardware-company-acquisition-",
-      "title": "Tesla (TSLA) quietly discloses $2 billion AI hardware company acquisition buried in filing",
-      "link": "https://electrek.co/2026/04/23/tesla-tsla-quietly-discloses-2-billion-ai-hardware-acquisition-10q/",
-      "source": "Electrek",
-      "category": "Investment",
-      "region": "US",
-      "published": "2026-04-23T10:57:03+00:00",
-      "week": "2026-W17",
-      "summary": "Tesla agreed to acquire an unnamed AI hardware company for up to $2 billion in stock and equity awards, according to a single sentence buried in its Q1 2026 10-Q filing. The company never mentioned the deal in its shareholders’ letter or during last night’s earnings call. The disclosure appeared in Note 14 — Subsequent Events, the very last note in the financial statements, in what may be the most expensive one-sentence disclosure Tesla has ever made. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 25,
-      "signal_sentiment": {
-        "label": "opportunity",
-        "confidence": 95,
-        "risk_score": 0.0,
-        "opportunity_score": 2.0
-      },
-      "stratum_impact_index": 30
-    },
-    {
-      "id": "electrek-tesla-will-build-factories-just-to-retrofit-millions-of-hw3-cars-it-sai",
-      "title": "Tesla will build factories just to retrofit millions of HW3 cars it said could do FSD",
-      "link": "https://electrek.co/2026/04/22/tesla-will-build-factories-just-to-retrofit-hw3-cars-it-said-could-do-fsd-but-cant/",
-      "source": "Electrek",
-      "category": "Policy",
-      "region": "US",
-      "published": "2026-04-22T23:06:58+00:00",
-      "week": "2026-W17",
-      "summary": "There are millions of Tesla vehicles on the road today which were sold on the promise of full autonomy, but without hardware capable of doing so. Tesla CEO Elon Musk just proposed the company could build “microfactories” in urban areas in order to upgrade the computers and cameras in those videos, adding high costs for a company that is already running thin on profitability – but we’ll see if it actually happens. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 25,
-      "signal_sentiment": {
-        "label": "risk",
-        "confidence": 95,
-        "risk_score": 10.0,
-        "opportunity_score": 0.0
-      },
-      "stratum_impact_index": 30
-    },
-    {
       "id": "electrek-ford-s-2-200-hp-electric-mustang-runs-6-87-sec-quarter-mile-smashes-ev-",
       "title": "Ford’s 2,200-HP electric Mustang runs 6.87-sec quarter mile, smashes EV record",
       "link": "https://electrek.co/2026/04/26/ford-cobra-jet-2200-electric-drag-racing-record-quarter-mile/",
@@ -301,6 +131,66 @@
         "opportunity_score": 3.2
       },
       "stratum_impact_index": 25
+    },
+    {
+      "id": "electrek-the-uncomfortable-reality-behind-rivian-s-new-billion-dollar-e-bike-bra",
+      "title": "The uncomfortable reality behind Rivian’s new ‘billion-dollar’ e-bike brand",
+      "link": "https://electrek.co/2026/04/28/the-uncomfortable-reality-behind-rivians-new-billion-dollar-e-bike-brand/",
+      "source": "Electrek",
+      "category": "Investment",
+      "region": "Global",
+      "published": "2026-04-28T11:56:00+00:00",
+      "week": "2026-W18",
+      "summary": "A billion-dollar valuation is a headline that’s hard to ignore. And when it’s attached to a new e-bike brand spun out of a company like Rivian, it’s even harder not to get swept up in the excitement. But zoom out for a moment, and a more complicated picture starts to emerge. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 10,
+      "signal_sentiment": {
+        "label": "opportunity",
+        "confidence": 95,
+        "risk_score": 0.0,
+        "opportunity_score": 1.4
+      },
+      "stratum_impact_index": 15
+    },
+    {
+      "id": "electrek-kia-is-slashing-ev-prices-to-keep-pace-with-low-cost-rivals",
+      "title": "Kia is slashing EV prices to keep pace with low-cost rivals",
+      "link": "https://electrek.co/2026/04/27/kia-slashing-ev-prices-low-cost-rivals/",
+      "source": "Electrek",
+      "category": "Policy",
+      "region": "EU",
+      "published": "2026-04-27T14:03:33+00:00",
+      "week": "2026-W18",
+      "summary": "Kia is cutting prices in the US, Europe, and other key markets in response to a wave of new low-cost rivals. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 10,
+      "signal_sentiment": {
+        "label": "risk",
+        "confidence": 95,
+        "risk_score": 4.2,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 15
     },
     {
       "id": "electrek-tesla-finally-launches-robotaxi-app-on-android-nearly-a-year-after-ios",
@@ -423,15 +313,45 @@
       "stratum_impact_index": 15
     },
     {
-      "id": "electrek-tesla-announces-hw4-plus-with-doubled-memory-will-hw4-follow-hw3-to-the",
-      "title": "Tesla announces HW4 Plus with doubled memory — will HW4 follow HW3 to the grave?",
-      "link": "https://electrek.co/2026/04/23/tesla-hw4-plus-upgrade-will-hw4-follow-hw3/",
+      "id": "electrek-toyota-s-ev-sales-rise-139-in-march-as-drivers-seek-relief-from-surging",
+      "title": "Toyota’s EV sales rise 139% in March as drivers seek relief from surging gas prices",
+      "link": "https://electrek.co/2026/04/27/toyotas-ev-sales-surge-139-drivers-seek-gas-alternatives/",
       "source": "Electrek",
-      "category": "Investment",
-      "region": "US",
-      "published": "2026-04-23T09:33:22+00:00",
-      "week": "2026-W17",
-      "summary": "During Tesla’s Q1 2026 earnings call, CEO Elon Musk revealed that Tesla is planning an “AI4.1 or AI4 Plus” upgrade to its self-driving computer that doubles the RAM from 16 gigabytes to 32 gigabytes per chip — taking the total system memory to 64 gigabytes. The announcement came on the same call where Musk confirmed (or rather reconfirmed after backing away from the admision last year) that HW3 “simply does not have the capability” for unsupervised FSD.  For the millions of Tesla owners currently driving HW4 cars, the timing raises an uncomfortable question. more…",
+      "category": "Industry",
+      "region": "Global",
+      "published": "2026-04-27T16:12:46+00:00",
+      "week": "2026-W18",
+      "summary": "As drivers look for alternatives amid rising gas prices, Toyota has been an unexpected winner, with EV sales more than doubling in March. more…",
+      "analysis": {
+        "executive_summary": "Demand acceleration reinforces adoption momentum and strengthens revenue visibility across leading OEM platforms.",
+        "market_implication": "Sustained volume growth may pressure lagging competitors and intensify capacity scaling requirements.",
+        "capital_signal": "Improved throughput enhances internal capital generation capacity.",
+        "strategic_impact": "Operating leverage compounds as scale advantages expand.",
+        "executive_takeaway": "Adoption momentum strengthens structural EV penetration trajectory.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Positive"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 10
+    },
+    {
+      "id": "electrek-pv5-electric-van-sales-are-so-hot-kia-is-ramping-up-production-plans",
+      "title": "PV5 electric van sales are so hot, Kia is ramping up production plans",
+      "link": "https://electrek.co/2026/04/28/pv5-electric-van-sales-are-so-hot-kia-is-ramping-up-production-plans/",
+      "source": "Electrek",
+      "category": "Industry",
+      "region": "UK",
+      "published": "2026-04-28T11:27:41+00:00",
+      "week": "2026-W18",
+      "summary": "The new PV5 is Kia’s first entry into the commercial vehicle space, and the company had ambitious plans to sell some 4,000 of the boxy EVs to UK fleets in 2026. Well, it’s April – and it looks like Kia is going to have to build a lot more than that if it’s going to meet demand. more…",
       "analysis": {
         "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
         "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
@@ -443,14 +363,314 @@
         "signal_horizon": "Cyclical",
         "outlook_3_6m": "Neutral"
       },
-      "signal_score": 10,
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-catl-says-sodium-batteries-are-mainstream-ready-signs-massive-60-gwh-de",
+      "title": "CATL says sodium batteries are mainstream-ready, signs massive 60 GWh deal",
+      "link": "https://electrek.co/2026/04/27/catl-sodium-ion-battery-60gwh-energy-storage-deal/",
+      "source": "Electrek",
+      "category": "Battery",
+      "region": "US",
+      "published": "2026-04-28T00:39:37+00:00",
+      "week": "2026-W18",
+      "summary": "CATL, the world’s largest battery maker, signed a 60 GWh sodium-ion battery deal with energy storage integrator HyperStrong — the largest sodium-ion battery order ever placed. The three-year agreement is equivalent to half of all energy storage batteries CATL delivered in 2025. The deal marks what CATL calls proof that it has “overcome the challenges of the entire sodium-ion battery mass production chain.” Industry observers are already calling it a potential “DeepSeek moment” for the global energy storage industry. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-oregon-boosts-ev-road-trips-with-24-new-fast-charging-sites",
+      "title": "Oregon boosts EV road trips with 24 new fast-charging sites",
+      "link": "https://electrek.co/2026/04/27/oregon-boosts-ev-road-trips-with-24-new-fast-charging-sites/",
+      "source": "Electrek",
+      "category": "Charging",
+      "region": "Global",
+      "published": "2026-04-27T22:02:24+00:00",
+      "week": "2026-W18",
+      "summary": "Oregon is getting ready to deploy another round of fast-charging stations along the highways, and it’s a meaningful step toward making EV road trips easier across the state. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-eia-80-gw-of-new-solar-wind-storage-capacity-coming-in-2026",
+      "title": "EIA: 80 GW of new solar, wind + storage capacity coming in 2026",
+      "link": "https://electrek.co/2026/04/27/eia-80-gw-of-new-solar-wind-storage-capacity-coming-in-2026/",
+      "source": "Electrek",
+      "category": "Battery",
+      "region": "US",
+      "published": "2026-04-27T20:50:16+00:00",
+      "week": "2026-W18",
+      "summary": "Utility-scale solar, wind, and battery storage will add more than 80 gigawatts (GW) of new generating capacity in the US by February 28, 2027, while total fossil fuel and nuclear power capacity will fall by almost 5 GW, according to data just released by the US Energy Information Administration (EIA), which was reviewed by the SUN DAY Campaign. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-here-s-our-first-look-at-the-hyundai-ioniq-3-in-real-life-video-",
+      "title": "Here’s our first look at the Hyundai IONIQ 3 in real life [video]",
+      "link": "https://electrek.co/2026/04/27/hyundai-ioniq-3-spotted-in-real-life-first-time-video/",
+      "source": "Electrek",
+      "category": "Industry",
+      "region": "Global",
+      "published": "2026-04-27T20:38:48+00:00",
+      "week": "2026-W18",
+      "summary": "A week after its official debut, Hyundai’s electric hatchback was captured in public for the first time as a standard model. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-lectric-e-bikes-with-up-to-894-savings-jackery-72-hour-flash-sale-ecofl",
+      "title": "Lectric e-bikes with up to $894 savings, Jackery 72-hour flash sale, EcoFlow 512Wh RIVER 2 Max power station $269 low, Aiper, more",
+      "link": "https://electrek.co/2026/04/27/lectric-e-bikes-jackery-flash-sale-ecoflow-512wh-river-2-max-power-station-aiper-more/",
+      "source": "Electrek",
+      "category": "Battery",
+      "region": "US",
+      "published": "2026-04-27T18:00:00+00:00",
+      "week": "2026-W18",
+      "summary": "Our Monday Green Deals are here, headlined by the final hours of Lectric’s Lightning Deal Sale with up to $894 e-bike bundle savings starting from $799. We also have Jackery’s 72-hour flash sale with offers like the HomePower 3600 Plus Portable Power Station and a 500W solar panel at its second-best $2,299 price + other flash deals and the brand’s newly launched Mother’s Day Sale. You can find the EcoFlow 512Wh RIVER 2 Max Portable Power Station down at its $269 low, as well as Aiper’s latest IrriSense 2 Smart Irrigation System hitting a new $400 low, EGO’s 56V 5.0Ah Battery at its best price of the last year, and more waiting for you down below.  Head below for other New Green Deals we’ve found today and, of course, Electrek’s best EV buying and leasing deals. Also, check out the new Electrek Tesla Shop for the best deals on Tesla accessories. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
       "signal_sentiment": {
         "label": "opportunity",
         "confidence": 95,
         "risk_score": 0.0,
-        "opportunity_score": 1.4
+        "opportunity_score": 2.0
       },
-      "stratum_impact_index": 15
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-byd-s-flagship-electric-suv-secures-30-000-orders-in-24-hrs-and-its-sta",
+      "title": "BYD’s flagship electric SUV secures 30,000+ orders in 24 hrs, and its starts at under $40K",
+      "link": "https://electrek.co/2026/04/27/byds-flagship-electric-suv-secures-over-30000-orders-in-24-hours/",
+      "source": "Electrek",
+      "category": "OEM",
+      "region": "China",
+      "published": "2026-04-27T17:54:15+00:00",
+      "week": "2026-W18",
+      "summary": "The stunning three-row electric SUV can drive up to 590 miles (950 km) and is equipped with BYD’s new 5-minute Flash Charging. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-vacuum-company-shows-concept-rocket-boosted-ev-that-does-0-60-in-0-9-se",
+      "title": "Vacuum company shows concept rocket-boosted EV that does 0-60 in 0.9 sec",
+      "link": "https://electrek.co/2026/04/27/vacuum-company-shows-concept-rocket-car-that-does-0-60-in-under-a-second/",
+      "source": "Electrek",
+      "category": "Industry",
+      "region": "Global",
+      "published": "2026-04-27T17:00:00+00:00",
+      "week": "2026-W18",
+      "summary": "Dreame, a Chinese company known for robot vacuums and other home appliances, is back with another electric supercar concept, this time with some actually unbelievable numbers. Try this one on for size: 0-62mph (0-100km/h) in 0.9 seconds. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-first-drive-next-gen-xiaomi-su7-shows-how-fast-chinese-evs-are-improvin",
+      "title": "First drive: next-gen Xiaomi SU7 shows how fast Chinese EVs are improving",
+      "link": "https://electrek.co/2026/04/27/first-drive-next-gen-xiaomi-su7-902-km-range-800v-charging/",
+      "source": "Electrek",
+      "category": "OEM",
+      "region": "China",
+      "published": "2026-04-27T14:05:37+00:00",
+      "week": "2026-W18",
+      "summary": "I got behind the wheel of the next-generation Xiaomi SU7, and the upgrades are significant. The refreshed electric sedan delivers up to 902 km (560 miles) of CLTC range, 800V charging architecture across all trims, and standard LiDAR — all while still undercutting the Tesla Model 3 in China. Xiaomi started deliveries of its updated best-seller in April after securing over 100,000 pre-orders, building on the 381,000 first-gen SU7s sold since the original launch in March 2024. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 2.0,
+        "opportunity_score": 2.0
+      },
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-another-us-state-wants-to-force-registration-for-all-e-bikes",
+      "title": "Another US state wants to force registration for all e-bikes",
+      "link": "https://electrek.co/2026/04/27/another-us-state-wants-to-force-registration-for-all-e-bikes/",
+      "source": "Electrek",
+      "category": "Industry",
+      "region": "US",
+      "published": "2026-04-27T12:00:52+00:00",
+      "week": "2026-W18",
+      "summary": "As electric bicycles continue to grow in popularity and grab headlines, regulatory debates are heating up. More states are clamping down on how and where e-bikes can be ridden, and even what constitutes an e-bike. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 5
+    },
+    {
+      "id": "electrek-byd-seal-08-debuts-with-blade-battery-2-0-1-000-km-range-5-min-charging",
+      "title": "BYD Seal 08 debuts with Blade Battery 2.0: 1,000 km range, 5-min charging, 684 hp",
+      "link": "https://electrek.co/2026/04/27/byd-seal-08-blade-battery-2-1000km-range-beijing-auto-show/",
+      "source": "Electrek",
+      "category": "Battery",
+      "region": "China",
+      "published": "2026-04-27T11:52:49+00:00",
+      "week": "2026-W18",
+      "summary": "BYD unveiled the Seal 08, its new flagship electric sedan, at the Beijing Auto Show this weekend. The vehicle packs BYD’s second-generation Blade Battery targeting over 1,000 km of CLTC range and megawatt-level flash charging that adds 400 km of range in five minutes. It marks the first time the Blade Battery 2.0 and flash charging combination land in a full-size sedan, positioning it as a direct challenger to higher-end electric sedans. more…",
+      "analysis": {
+        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
+        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
+        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
+        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
+        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
+        "risk_level": "Low",
+        "capital_intensity": "Medium",
+        "signal_horizon": "Cyclical",
+        "outlook_3_6m": "Neutral"
+      },
+      "signal_score": 0,
+      "signal_sentiment": {
+        "label": "neutral",
+        "confidence": 50,
+        "risk_score": 0.0,
+        "opportunity_score": 0.0
+      },
+      "stratum_impact_index": 5
     },
     {
       "id": "electrek-tesla-files-to-deliver-elon-musk-s-56-billion-pay-package-ending-the-sa",
@@ -1021,222 +1241,12 @@
         "opportunity_score": 0.0
       },
       "stratum_impact_index": 5
-    },
-    {
-      "id": "electrek-the-ev-charger-buildout-has-a-weak-link-nyc-is-going-after-it",
-      "title": "The EV charger buildout has a weak link – NYC is going after it",
-      "link": "https://electrek.co/2026/04/23/the-ev-charger-buildout-has-a-weak-link-nyc-is-going-after-it/",
-      "source": "Electrek",
-      "category": "Charging",
-      "region": "Global",
-      "published": "2026-04-23T20:25:13+00:00",
-      "week": "2026-W17",
-      "summary": "New York is putting more money behind a key piece of the EV transition that often gets overlooked: the people who keep chargers running. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 0,
-      "signal_sentiment": {
-        "label": "neutral",
-        "confidence": 50,
-        "risk_score": 0.0,
-        "opportunity_score": 0.0
-      },
-      "stratum_impact_index": 5
-    },
-    {
-      "id": "electrek-navee-34-mile-g5-pro-electric-scooter-560-amazon-low-meross-smart-elect",
-      "title": "NAVEE 34-mile G5 Pro electric scooter $560 Amazon low, meross smart electrical panel energy monitor $160, more",
-      "link": "https://electrek.co/2026/04/23/green-deals-apr-24/",
-      "source": "Electrek",
-      "category": "OEM",
-      "region": "US",
-      "published": "2026-04-23T18:00:00+00:00",
-      "week": "2026-W17",
-      "summary": "Today’s 9to5Toys Green Deals is headlined by meross’ recently-released 18-circuit electrical panel monitor as well as Amazon undercutting beating out the official NAVEE sale on its own 34-mile G5 Pro electric scooter. That’s just a couple of the headliners you’ll find, so continue reading to see them all. Head below for other Green Deals we’ve found today and, of course, Electrek‘s best EV buying and leasing deals. Also, check out the new Electrek Tesla Shop for the best deals on Tesla accessories. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 0,
-      "signal_sentiment": {
-        "label": "risk",
-        "confidence": 95,
-        "risk_score": 2.0,
-        "opportunity_score": 0.0
-      },
-      "stratum_impact_index": 5
-    },
-    {
-      "id": "electrek-tesla-model-yl-prototype-spotted-on-us-roads-for-the-first-time",
-      "title": "Tesla Model YL prototype spotted on US roads for the first time",
-      "link": "https://electrek.co/2026/04/23/tesla-model-yl-prototype-spotted-us-roads-first-time/",
-      "source": "Electrek",
-      "category": "OEM",
-      "region": "US",
-      "published": "2026-04-23T12:12:56+00:00",
-      "week": "2026-W17",
-      "summary": "A Tesla Model YL test mule has been spotted driving on Interstate 280 in the San Francisco Bay Area, marking the first time the longer-wheelbase, 6-seat SUV has been photographed on American roads. The sighting comes despite CEO Elon Musk’s suggestion that the Model YL might never come to the US — and it strongly suggests Tesla is actively preparing the vehicle for the North American market. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 0,
-      "signal_sentiment": {
-        "label": "neutral",
-        "confidence": 50,
-        "risk_score": 0.0,
-        "opportunity_score": 0.0
-      },
-      "stratum_impact_index": 5
-    },
-    {
-      "id": "electrek-ev-fast-charging-is-stabilizing-in-the-us-here-s-what-changed",
-      "title": "EV fast charging is stabilizing in the US – here’s what changed",
-      "link": "https://electrek.co/2026/04/23/ev-fast-charging-is-stabilizing-in-the-us-heres-what-changed/",
-      "source": "Electrek",
-      "category": "Charging",
-      "region": "US",
-      "published": "2026-04-23T12:00:00+00:00",
-      "week": "2026-W17",
-      "summary": "US EV fast-charging networks are heading into 2026 looking… steady, with reliability up, pricing stable, and utilization holding in a tight range even as more chargers come online. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 0,
-      "signal_sentiment": {
-        "label": "neutral",
-        "confidence": 50,
-        "risk_score": 0.0,
-        "opportunity_score": 0.0
-      },
-      "stratum_impact_index": 5
-    },
-    {
-      "id": "electrek-this-new-pedal-by-wire-e-bike-motor-wants-to-revolutionize-electric-bik",
-      "title": "This new ‘pedal-by-wire’ e-bike motor wants to revolutionize electric bikes",
-      "link": "https://electrek.co/2026/04/23/this-new-pedal-by-wire-e-bike-motor-wants-to-revolutionize-electric-bikes/",
-      "source": "Electrek",
-      "category": "Industry",
-      "region": "Global",
-      "published": "2026-04-23T11:04:41+00:00",
-      "week": "2026-W17",
-      "summary": "A new e-bike drive system in development is aiming to do something pretty radical: get rid of the mechanical connection between your pedals and the rear wheel entirely and replace it with a copper wire. Or more accurately, a few copper wires. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 0,
-      "signal_sentiment": {
-        "label": "neutral",
-        "confidence": 50,
-        "risk_score": 0.0,
-        "opportunity_score": 0.0
-      },
-      "stratum_impact_index": 5
-    },
-    {
-      "id": "electrek-tesla-confirms-cybercab-production-has-started-despite-delays-in-unsupe",
-      "title": "Tesla confirms Cybercab production has started despite delays in unsupervised driving",
-      "link": "https://electrek.co/2026/04/23/tesla-cybercab-production-starts-no-nhtsa-2500-vehicle-cap/",
-      "source": "Electrek",
-      "category": "OEM",
-      "region": "US",
-      "published": "2026-04-23T07:09:26+00:00",
-      "week": "2026-W17",
-      "summary": "CEO Elon Musk confirmed during Tesla’s Q1 2026 earnings call that Cybercab production has officially begun at Giga Texas. VP of Vehicle Engineering Lars Moravy confirmed that the Cybercab will not be subject to NHTSA’s 2,500-vehicle annual production cap for autonomous vehicles. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 0,
-      "signal_sentiment": {
-        "label": "risk",
-        "confidence": 95,
-        "risk_score": 2.0,
-        "opportunity_score": 0.0
-      },
-      "stratum_impact_index": 5
-    },
-    {
-      "id": "electrek-tesla-pushes-optimus-v3-reveal-later-this-year-again",
-      "title": "Tesla pushes Optimus V3 reveal later this year – again",
-      "link": "https://electrek.co/2026/04/22/tesla-optimus-production-fremont-model-sx-line/",
-      "source": "Electrek",
-      "category": "OEM",
-      "region": "US",
-      "published": "2026-04-23T00:15:59+00:00",
-      "week": "2026-W17",
-      "summary": "During Tesla’s Q1 2026 earnings call today, CEO Elon Musk confirmed that Optimus robot production will begin at Fremont in late July or August — just four months after the last Model S and X roll off the line in early May. Musk warned, however, that initial output will be “quite slow,” calling it “literally impossible to predict” the production rate this year given Optimus has 10,000 unique parts across an entirely new production line. more…",
-      "analysis": {
-        "executive_summary": "The development reflects a material shift within the EV ecosystem, with implications for capital allocation, competitive positioning, and medium-term structural dynamics across OEMs and the supply chain.",
-        "market_implication": "Signal suggests incremental sector evolution rather than immediate structural disruption.",
-        "capital_signal": "Capital positioning appears stable, with no immediate evidence of systemic reallocation.",
-        "strategic_impact": "Supports gradual competitive recalibration within existing industry structures.",
-        "executive_takeaway": "Development reinforces steady sector progression with contained risk profile.",
-        "risk_level": "Low",
-        "capital_intensity": "Medium",
-        "signal_horizon": "Cyclical",
-        "outlook_3_6m": "Neutral"
-      },
-      "signal_score": 0,
-      "signal_sentiment": {
-        "label": "neutral",
-        "confidence": 50,
-        "risk_score": 0.0,
-        "opportunity_score": 0.0
-      },
-      "stratum_impact_index": 5
     }
   ],
   "executive_insight": {
     "risk_factor": "No material systemic risk signals detected.",
     "opportunity_signal": "Opportunity signals remain limited in the current cycle.",
-    "confidence": 25,
+    "confidence": 17,
     "signal_strength": "Low"
   }
 }
