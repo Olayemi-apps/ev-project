@@ -1,7 +1,218 @@
 {
-  "current": "zeekr_001",
+  "current": "xpeng_g6",
 
   "vehicles": {
+
+      "xpeng_g6": {
+      "vehicle": "XPeng G6",
+      "slug": "xpeng-g6",
+      "tagline": "Mid-market electric SUV focused on efficiency, charging performance, and software-led user experience",
+
+      "video": "https://www.youtube.com/embed/UjnRDXMGsf0",
+
+      "image": "./assets/img/vehicles/xpeng-g6.jpg",
+
+      "model3d": "",
+
+      "range": "570 km WLTP",
+      "battery": "87.5 kWh",
+      "power": "476 hp",
+      "accel": "4.1 s",
+
+      "description": "The XPeng G6 represents the brand’s expansion into the European mid-market SUV segment, combining aerodynamic efficiency, fast-charging capability, and a software-centric driving experience. Built on XPeng’s next-generation platform, the G6 is designed to deliver strong real-world usability across motorway driving, urban environments, and public charging networks.",
+
+      "specs": [
+        "800V high-voltage architecture",
+        "Fast DC charging (10–80% ~20 min)",
+        "XPILOT advanced driver assistance",
+        "Aerodynamic coupe SUV design",
+        "OTA software updates"
+      ],
+
+      "technology": [
+        {
+          "title": "800V Platform",
+          "desc": "High-voltage architecture enabling faster charging and improved efficiency."
+        },
+        {
+          "title": "XPILOT System",
+          "desc": "AI-driven driver assistance platform enhancing safety and usability."
+        },
+        {
+          "title": "Aerodynamic Design",
+          "desc": "Optimised body structure for improved range and motorway efficiency."
+        }
+      ],
+
+      "insight": "What stands out in the data is how XPeng is positioning the G6 around charging performance and system efficiency rather than peak specifications alone. This reflects a broader shift in the EV market, where real-world usability and infrastructure interaction are becoming key differentiators. As the brand scales across Europe, the G6 is likely to play a central role in establishing XPeng’s presence within the competitive mid-market SUV segment.",
+
+      "comparison": [
+        {
+          "name": "XPeng G6",
+          "range": "570 km",
+          "battery": "87.5 kWh",
+          "power": "476 hp",
+          "accel": "4.1 s",
+          "featured": true
+        },
+        {
+          "name": "Tesla Model Y Long Range",
+          "range": "533 km",
+          "battery": "75 kWh",
+          "power": "384 hp",
+          "accel": "5.0 s"
+        },
+        {
+          "name": "Hyundai Ioniq 5 AWD",
+          "range": "507 km",
+          "battery": "77.4 kWh",
+          "power": "320 hp",
+          "accel": "5.2 s"
+        },
+        {
+          "name": "Kia EV6 AWD",
+          "range": "528 km",
+          "battery": "77.4 kWh",
+          "power": "325 hp",
+          "accel": "5.2 s"
+        }
+      ],
+
+      "momentum": {
+        "globalDemand": 82,
+        "technologyLeadership": 86,
+        "marketExpansion": 88,
+        "pricingStrategy": 84
+      },
+
+      "market": {
+        "segment": "Mid-size electric SUV",
+        "competitors": [
+          "Tesla Model Y",
+          "Hyundai Ioniq 5",
+          "Kia EV6",
+          "Volkswagen ID.5"
+        ],
+        "strategy": "XPeng is targeting the European mid-market EV segment with a focus on charging performance, efficiency, and software differentiation, positioning the G6 as a scalable volume model for UK and EU expansion."
+      },
+
+      "expansionSummary": "XPeng is accelerating its European rollout, using the G6 as a high-volume platform to establish presence across key EV markets including the UK, Nordics, and Western Europe.",
+
+      "signals": [
+        { "type": "positive", "text": "XPeng expanding rapidly into Europe" },
+        { "type": "positive", "text": "Strong charging performance positioning" },
+        { "type": "neutral", "text": "Brand awareness still developing in UK market" }
+      ],
+
+      "tech": [
+        { "title": "800V Architecture", "desc": "Ultra-fast charging capability and improved energy efficiency." },
+        { "title": "XPILOT", "desc": "Advanced driver assistance powered by AI systems." },
+        { "title": "Efficiency Design", "desc": "Optimised aerodynamics for improved range and motorway performance." }
+      ],
+
+      "expansionSignals": [],
+
+      "weeklyIntel": {
+        "week": "Week 18",
+        "tone": "Platform Expansion & Charging Leadership",
+        "summary": "This analysis evaluates how the vehicle performs within UK and European driving conditions, focusing on efficiency under motorway usage, charging consistency across public infrastructure, and overall system integration. The findings highlight how performance is shaped not only by vehicle specifications, but by interaction with real-world conditions, including climate, charging availability, and software optimisation. This provides a clearer view of how XPeng is positioning the G6 through charging performance, aerodynamic efficiency, and software integration within the evolving European EV market.",
+        "signals": []
+      },
+
+      "readiness": [
+        {
+          "region": "Europe",
+          "score": 88,
+          "meta": "High EV adoption · Infrastructure maturity"
+        },
+        {
+          "region": "United Kingdom",
+          "score": 82,
+          "meta": "Growing adoption · Charging variability"
+        },
+        {
+          "region": "Nordics",
+          "score": 92,
+          "meta": "Advanced EV ecosystem"
+        },
+        {
+          "region": "Middle East",
+          "score": 65,
+          "meta": "Emerging EV infrastructure"
+        }
+      ],
+
+      "oem_line": "XPeng · SEPA 2.0 Platform · 800V Architecture",
+
+      "oem_sales": {
+        "2022": 0.12,
+        "2023": 0.16,
+        "2024": 0.20,
+        "rank": 8
+      },
+
+      "expansionDetail": {
+        "europe": {
+          "strategy": "Direct-to-consumer + retail partnerships",
+          "focus": "Mid-market EV segment",
+          "risk": "Brand awareness vs legacy OEMs"
+        },
+        "uk": {
+          "strategy": "Entry via key EV adoption regions",
+          "focus": "Urban + commuter buyers",
+          "risk": "Charging infrastructure variability"
+        },
+        "me": {
+          "strategy": "Selective expansion",
+          "focus": "Premium + tech buyers",
+          "risk": "Infrastructure maturity"
+        },
+        "latam": {
+          "strategy": "Early stage",
+          "focus": "Exploratory entry",
+          "risk": "Low EV readiness"
+        }
+      },
+
+      "supplyChain": {
+        "origin": "China manufacturing",
+        "routes": [
+          "China → Europe via ocean freight",
+          "China → UK via import distribution"
+        ],
+        "notes": "Cost-efficient manufacturing with scaling logistics across Europe"
+      },
+
+      "expansionRisk": {
+        "europe": 30,
+        "uk": 40,
+        "me": 45,
+        "latam": 65
+      },
+
+      "intel": {
+        "positioning": "High-efficiency mid-market EV challenger",
+        "edge": "Charging performance and software integration",
+        "risk": "Brand awareness and distribution scaling",
+        "outlook": "Strong growth potential in European EV market"
+      },
+
+      "competitionIntel": {
+        "pressureFrom": [
+          "Tesla (scale + charging network)",
+          "Hyundai/Kia (platform maturity)",
+          "Volkswagen (distribution)"
+        ],
+        "advantage": "Fast charging + software integration",
+        "threat": "Established OEM ecosystems"
+      },
+
+      "buyerSignal": {
+        "type": "Tech-focused EV buyer",
+        "priority": ["Charging speed", "Efficiency", "Technology"],
+        "tradeoff": "Brand familiarity vs performance value"
+      }
+    },
 
     "lucid_air": {
       "vehicle": "Lucid Air Sapphire",
@@ -108,7 +319,7 @@
       "weeklyIntel": {
         "week": "Week 10",
         "tone": "Performance Benchmark Shift",
-        "summary": "Lucid positions itself at the extreme high-performance end of the EV market, redefining luxury EV benchmarks.",
+        "summary": "This analysis evaluates how the vehicle performs within UK and European driving conditions, focusing on efficiency under motorway usage, charging consistency across public infrastructure, and overall system integration. The findings highlight how performance is shaped not only by vehicle specifications, but by interaction with real-world conditions, including climate, charging availability, and software optimisation. This provides a clearer view of how the vehicle is positioned within the evolving EV market landscape.",
         "signals": []
       },
 
@@ -342,7 +553,7 @@
       "weeklyIntel": {
         "week": "Week 10",
         "tone": "Expansion Acceleration",
-        "summary": "BYD continues aggressive expansion into Europe and UK markets, supported by pricing advantage and dealership rollout momentum.",
+        "summary": "This analysis evaluates how the vehicle performs within UK and European driving conditions, focusing on efficiency under motorway usage, charging consistency across public infrastructure, and overall system integration. The findings highlight how performance is shaped not only by vehicle specifications, but by interaction with real-world conditions, including climate, charging availability, and software optimisation. This provides a clearer view of how the vehicle is positioned within the evolving EV market landscape.",
         "signals": [
           {
             "region": "europe",
@@ -506,7 +717,7 @@
     "weeklyIntel": {
       "week": "Week 10",
       "tone": "Premium Expansion Phase",
-      "summary": "Zeekr is positioning itself as a premium EV contender, expanding beyond China into Europe with a strong platform and performance offering.",
+      "summary": "This analysis evaluates how the vehicle performs within UK and European driving conditions, focusing on efficiency under motorway usage, charging consistency across public infrastructure, and overall system integration. The findings highlight how performance is shaped not only by vehicle specifications, but by interaction with real-world conditions, including climate, charging availability, and software optimisation. This provides a clearer view of how the vehicle is positioned within the evolving EV market landscape.",
       "signals": []
     },
 
@@ -540,8 +751,8 @@
       "2023": 0.12,
       "2024": 0.18,
       "rank": 8
-    }
-  },
+    },
+
     "expansionDetail": {
       "europe": {
         "strategy": "Aggressive price-led market entry via distributors",
@@ -603,6 +814,7 @@
       "priority": ["Price", "Range", "Efficiency"],
       "tradeoff": "Brand prestige vs cost advantage"
     }
+  }
     
   }
 

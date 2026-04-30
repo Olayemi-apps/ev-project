@@ -46,7 +46,7 @@
         <a class="tab" href="./market-intelligence.html">Market Intelligence</a>
         <a class="tab" href="./articles.html">Articles</a>
 
-        <a class="tab is-active" href="./featured.html">Featured EV</a>
+        <a class="tab is-active" href="./featured.html">Featured Analysis</a>
         <a class="tab" href="./store.html">Store</a>
 
         <!-- PLATFORM DROPDOWN -->
@@ -93,26 +93,62 @@
 
 <main class="featured-wrapper">
 
+    <section class="featured-intro">
+
+      <h1 class="featured-title">Featured EV Analysis</h1>
+
+      <p class="featured-intro-text">
+        Stratum EV provides data-led analysis of electric vehicles operating within the UK and European market. 
+        Each featured model is evaluated beyond headline specifications, focusing on real-world performance, 
+        charging behaviour, and integration with public infrastructure.
+      </p>
+
+      <p class="featured-intro-text">
+        The platform examines how vehicles perform under actual usage conditions, including motorway efficiency, 
+        charging consistency, and software interaction. This enables a clearer understanding of how EVs translate 
+        from specification to real-world usability.
+      </p>
+
+      <div class="featured-programme">
+        Stratum EV Evaluation Programme – 2026
+      </div>
+
+    </section>
+
 
 
     <section class="featured-hero">
 
-        <div class="featured-3d-container">
-        
+        <div class="featured-media-container">
 
+            <!-- VIDEO (PRIMARY) -->
             <iframe
-                id="featured-3d"
+                id="featured-video"
+                class="media-layer"
                 data-src=""
-                title="Featured EV 3D Model"
                 frameborder="0"
-                allow="autoplay; fullscreen; xr-spatial-tracking"
-                allowfullscreen
-                mozallowfullscreen="true"
-                webkitallowfullscreen="true">
+                allow="autoplay; fullscreen"
+                allowfullscreen>
             </iframe>
 
-            <div class="model-credit">
-                3D model courtesy of Sketchfab creator
+            <!-- 3D MODEL (SECONDARY) -->
+            <iframe
+                id="featured-3d"
+                class="media-layer"
+                data-src=""
+                frameborder="0"
+                allow="autoplay; fullscreen; xr-spatial-tracking"
+                allowfullscreen>
+            </iframe>
+
+            <!-- IMAGE (FALLBACK) -->
+            <img id="featured-image" 
+                  class="media-layer" 
+                  alt="Featured EV"
+            />
+
+            <div class="media-credit" id="media-credit">
+                3D model courtesy of Sketchfab creator | Video courtesy of YouTube creator 
             </div>
 
         </div>
@@ -121,7 +157,7 @@
 
             <div class="featured-hero-panel">
                 <div class="featured-badge">
-                    FEATURED EV
+                    FEATURED EV ANALYSIS
                 </div>
 
                 <h1 id="featured-name"></h1>
@@ -129,7 +165,11 @@
                 <div class="featured-tagline"
                     id="featured-tagline"></div>
 
-                 <div class="featured-oem" id="featured-oem"></div>
+                  <div class="featured-oem" id="featured-oem"></div>
+
+                  <div class="featured-context">
+                    Platform analysis based on real-world UK performance, charging behaviour, and market positioning.
+                  </div>
                     
 
                 <div class="featured-indicators">
@@ -195,7 +235,7 @@
 
     <section class="featured-sales">
 
-        <h2>Global EV Sales Snapshot</h2>
+        <h2>Stratum Intelligence Summary</h2>
 
         <div class="sales-grid"></div>
 
@@ -206,7 +246,7 @@
     <section class="intel-panel">
 
         <div class="intel-header">
-            STRATUM INTELLIGENCE
+            STRATUM INTELLIGENCE SUMMARY
         </div>
 
         <div class="intel-summary" id="intel-summary"></div>
@@ -217,6 +257,10 @@
     <section class="featured-expansion">
 
         <h2>Manufacturer Expansion</h2>
+
+          <h3 class="expansion-subtitle">
+            Real-time OEM expansion intelligence
+          </h3>
 
         <p class="expansion-summary" id="expansion-summary"></p>
 
@@ -298,6 +342,43 @@
     </section>
 
     <hr class="featured-divider">
+
+    <hr class="featured-divider">
+
+    <section class="featured-forward featured-insight">
+
+      <div class="forward-tag">STRATUM OUTLOOK</div>
+
+      <h2>Forward View</h2>
+
+        <p>
+          As EV platforms mature, competitive advantage is shifting away from peak specifications towards 
+          <strong>real-world system performance</strong>. The vehicles that lead in the UK and European market will be those that deliver consistent 
+          <strong>charging behaviour</strong>, stable <strong>thermal efficiency</strong>, and seamless 
+          <strong>software integration</strong> under everyday conditions.
+        </p>
+
+      <p>
+        For manufacturers scaling within the UK, success will increasingly depend on how effectively vehicles align with 
+        infrastructure realities. This includes maintaining efficiency at motorway speeds, reducing charging variability across 
+        networks, and delivering predictable performance in colder climates. These factors now play a direct role in customer 
+        confidence and long-term adoption.
+      </p>
+
+      <p>
+        What stands out in the data is how performance is no longer defined in isolation. 
+        Vehicles must operate as part of a wider ecosystem, where infrastructure compatibility, 
+        software optimisation, and energy management collectively determine usability.
+      </p>
+
+      <p>
+        Stratum EV analysis will continue to track how next-generation platforms improve across 
+        these dimensions, with a particular focus on charging consistency and system integration as the primary 
+        indicators of market leadership.
+
+      </p>
+
+    </section>
 
     <section class="featured-tech">
 

@@ -56,16 +56,19 @@ updateInsight(data);
 updateExpansion(data);
 updateMomentum(data);
 
-/* 3D MODEL */
-const viewer = document.getElementById("featured-3d");
-if(viewer && data.model3d){
-viewer.src = data.model3d;
+const hint = document.querySelector(".expansion-hint");
+if (hint) {
+  hint.textContent =
+    `Hover over the regions below to explore ${data.vehicle}’s global expansion.`;
 }
+
+/* 3D MODEL */
+updateMedia(data);
 
 /* INTEL SUMMARY */
 const intelSummary = document.getElementById("intel-summary");
 if(intelSummary && window.weeklyIntel.summary){
-intelSummary.textContent = window.weeklyIntel.summary;
+  intelSummary.innerHTML = `<p>${window.weeklyIntel.summary}</p>`;
 }
 
 /* GLOBAL EXPANSION UPDATE*/
@@ -514,6 +517,12 @@ updateInsight(data);
 updateExpansion(data);
 updateMomentum(data);
 
+const hint = document.querySelector(".expansion-hint");
+if (hint) {
+  hint.textContent =
+    `Hover over the regions below to explore ${data.vehicle}’s global expansion.`;
+}
+
 
 const signalsSection = document.querySelector(".featured-signals");
 
@@ -525,7 +534,7 @@ if(!data.expansionSignals.length){
 
 const intelSummary = document.getElementById("intel-summary");
 if(intelSummary && window.weeklyIntel.summary){
-  intelSummary.textContent = window.weeklyIntel.summary;
+  intelSummary.innerHTML = `<p>${window.weeklyIntel.summary}</p>`;
 }
 
 const list = document.getElementById("featured-specs");
@@ -552,11 +561,7 @@ document.getElementById("featured-accel").textContent = data.accel;
 
 document.getElementById("featured-oem").textContent = data.oem_line;
 
-const viewer = document.getElementById("featured-3d");
-viewer.src = "";
-setTimeout(() => {
-  viewer.src = data.model3d;
-}, 50);
+updateMedia(data);
 
 /* OPTIONAL: restart engine cleanly */
 engineStep = 0;
@@ -566,6 +571,75 @@ buildArchive(cachedVehicles, key);
   // 🔥 END LOADING STATE
   document.body.classList.remove("loading");
 
+}
+
+/*============================= ==============
+UPDATED MEDIA FEATURE - 3D | Video | IMAGE |
+==============================   ============*/
+
+function updateMedia(data){
+
+  const video = document.getElementById("featured-video");
+  const model = document.getElementById("featured-3d");
+  const image = document.getElementById("featured-image");
+  const credit = document.getElementById("media-credit");
+
+  if(!video || !model || !image) return;
+
+  // reset all
+  video.classList.remove("active");
+  model.classList.remove("active");
+  image.classList.remove("active");
+
+  video.src = "";
+  model.src = "";
+  image.src = "";
+
+  // PRIORITY: VIDEO → 3D → IMAGE
+
+  if(data.video){
+
+    const videoId = data.video.split("embed/")[1];
+
+    video.src = data.video +
+      "?autoplay=1&mute=1&controls=0&loop=1" +
+      "&playlist=" + videoId +
+      "&modestbranding=1&rel=0&iv_load_policy=3&fs=0";
+
+    video.classList.add("active");
+
+    if(credit){
+      credit.innerHTML = `
+        Video source:
+        <a href="https://youtube.com/watch?v=${videoId}" target="_blank">
+          External creator (YouTube)
+        </a>
+      `;
+    }
+
+  } else if(data.model3d){
+
+    model.src = data.model3d;
+    model.classList.add("active");
+
+    if(credit){
+      credit.innerHTML = `
+        3D model courtesy of 
+        <a href="https://sketchfab.com" target="_blank">
+          Sketchfab creator
+        </a>
+      `;
+    }
+
+  } else {
+
+    image.src = data.image;
+    image.classList.add("active");
+
+    if(credit){
+      credit.textContent = "Image: OEM media";
+    }
+  }
 }
 
 
@@ -914,6 +988,3 @@ arrows.forEach(btn => {
     arrows.forEach(a => a.classList.remove("pulse"));
   });
 });
-
-
-
