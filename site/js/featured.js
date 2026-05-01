@@ -8,7 +8,7 @@ async function loadFeatured(){
 
 try{
 
-const res = await fetch("./data/featured.json");
+const res = await fetch("./data/featured.json?v=2");
 const raw = await res.json();
 
 cachedVehicles = raw.vehicles; //  STORE ONCE
@@ -31,6 +31,8 @@ if(urlCar){
 
 
 const data = raw.vehicles[currentKey];
+
+renderAnalysisCharts(data.analysis);
 
 /* GLOBAL DATA */
 window.expansionSignals = data.expansionSignals || [];
@@ -55,6 +57,8 @@ updateMarket(data);
 updateInsight(data);
 updateExpansion(data);
 updateMomentum(data);
+renderAnalysisCharts(data.analysis);
+renderAnalysisInsight(data.analysis);
 
 const hint = document.querySelector(".expansion-hint");
 if (hint) {
@@ -88,11 +92,13 @@ document.getElementById("featured-accel").textContent = data.accel;
 /* SPECS */
 const list = document.getElementById("featured-specs");
 list.innerHTML = "";
-data.specs.forEach(spec => {
-const li = document.createElement("li");
-li.textContent = spec;
-list.appendChild(li);
-});
+if(Array.isArray(data.specs)){
+  data.specs.forEach(spec => {
+    const li = document.createElement("li");
+    li.textContent = spec;
+    list.appendChild(li);
+  });
+}
 
 /* READINESS COLORS */
 document.querySelectorAll(".readiness-card").forEach(card => {
@@ -497,6 +503,8 @@ window.scrollTo({ top: 0, behavior: "smooth" });
 
 const data = cachedVehicles[key];
 
+renderAnalysisCharts(data.analysis);
+
 // 🔗 Update URL using slug
 if(data.slug){
   history.pushState(null, "", `?car=${data.slug}`);
@@ -516,6 +524,8 @@ updateMarket(data);
 updateInsight(data);
 updateExpansion(data);
 updateMomentum(data);
+renderAnalysisCharts(data.analysis);
+renderAnalysisInsight(data.analysis);
 
 const hint = document.querySelector(".expansion-hint");
 if (hint) {

@@ -1,0 +1,154 @@
+.analysis-charts {
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.analysis-charts canvas {
+  background: #111;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.analysis-charts canvas {
+  height: 280px;
+}
+
+.analysis-charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.analysis-charts canvas {
+  width: 100% !important;
+  height: 260px !important;
+}
+
+.analysis-insight {
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: rgba(0, 200, 255, 0.05);
+  border-left: 3px solid #00c8ff;
+  border-radius: 8px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.chart-card h4 {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.chart-card {
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 10px;
+}
+
+.analysis-insight p {
+  margin-bottom: 10px;
+}
+
+.analysis-insight:empty {
+  display: none;
+}
+
+.analysis-insight {
+  min-height: auto;
+  padding: 16px;
+}
+
+.analysis-insight p:last-child {
+  margin-bottom: 0;
+}
+
+.insight-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #00c8ff;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   ANALYSIS INSIGHT PANEL
+========================= */
+
+.analysis-insight {
+  margin-top: 24px;
+  padding: 20px 22px;
+
+  background: linear-gradient(135deg, rgba(0, 200, 255, 0.08), rgba(0, 120, 180, 0.05));
+  border: 1px solid rgba(0, 200, 255, 0.15);
+  border-left: 3px solid #00c8ff;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d6e2ea;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+}
+
+/* LABEL */
+.analysis-insight .insight-label {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #00c8ff;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* PARAGRAPHS */
+.analysis-insight p {
+  margin: 8px 0;
+  color: #cfd8dc;
+}
+
+/* STRONG HIGHLIGHTS */
+.analysis-insight strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* METRIC HIGHLIGHT */
+.analysis-insight strong.pulse {
+  color: #00e0ff;
+  font-weight: 700;
+}
+
+/* SUBTLE DIVIDER (optional spacing effect) */
+.analysis-insight p:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding-bottom: 6px;
+}
+
+/* HOVER EFFECT (premium feel) */
+.analysis-insight:hover {
+  border-color: rgba(0, 200, 255, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 200, 255, 0.08);
+}
+
+/*==========================================*/
+
+.analysis-insight {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

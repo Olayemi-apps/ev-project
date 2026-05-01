@@ -16,8 +16,27 @@
 
       "range": "570 km WLTP",
       "battery": "87.5 kWh",
+      "battery_kwh": 87.5,
       "power": "476 hp",
       "accel": "4.1 s",
+
+      "analysis": {
+        "radar": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [88, 92, 85, 90, 87]
+        },
+        "breakdown": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [88, 92, 85, 90, 87]
+        },
+        "charging_curve": [
+            { "soc": 10, "kw": 220 },
+            { "soc": 30, "kw": 200 },
+            { "soc": 50, "kw": 160 },
+            { "soc": 70, "kw": 110 },
+            { "soc": 90, "kw": 60 }
+          ]
+      },
 
       "description": "The XPeng G6 represents the brand’s expansion into the European mid-market SUV segment, combining aerodynamic efficiency, fast-charging capability, and a software-centric driving experience. Built on XPeng’s next-generation platform, the G6 is designed to deliver strong real-world usability across motorway driving, urban environments, and public charging networks.",
 
@@ -223,8 +242,27 @@
 
       "range": "694 km WLTP",
       "battery": "118 kWh",
+      "battery_kwh": 112,
       "power": "1200+ hp",
       "accel": "2.0 s",
+
+        "analysis": {
+        "radar": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [98, 85, 99, 95, 70]
+        },
+        "breakdown": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [98, 85, 99, 95, 70]
+        },
+        "charging_curve": [
+          { "soc": 10, "kw": 300 },
+          { "soc": 30, "kw": 280 },
+          { "soc": 50, "kw": 220 },
+          { "soc": 70, "kw": 150 },
+          { "soc": 90, "kw": 80 }
+        ]
+      },
 
       "description": "The Lucid Air Sapphire represents the peak of electric performance engineering, combining ultra-high output tri-motor architecture with luxury refinement and long-range capability.",
 
@@ -426,8 +464,27 @@
 
       "range": "500 km WLTP",
       "battery": "87 kWh",
+      "battery_kwh": 71.8,
       "power": "218 hp",
       "accel": "7.9 s",
+
+        "analysis": {
+        "radar": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [80, 75, 65, 85, 95]
+        },
+        "breakdown": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [80, 75, 65, 85, 95]
+        },
+        "charging_curve": [
+          { "soc": 10, "kw": 115 },
+          { "soc": 30, "kw": 110 },
+          { "soc": 50, "kw": 95 },
+          { "soc": 70, "kw": 70 },
+          { "soc": 90, "kw": 35 }
+        ]
+      },
 
       "description": "The BYD Seal U represents BYD’s expansion into the European electric SUV market. Built on the company's advanced e-Platform 3.0 architecture, the vehicle uses BYD’s Blade Battery technology to prioritise safety, longevity and efficiency.",
 
@@ -618,8 +675,27 @@
 
     "range": "620 km WLTP",
     "battery": "100 kWh",
+    "battery_kwh": 100,
     "power": "544 hp",
     "accel": "3.8 s",
+
+    "analysis": {
+      "radar": {
+        "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+        "values": [90, 85, 88, 82, 84]
+      },
+      "breakdown": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [90, 85, 88, 82, 84]
+        },
+        "charging_curve": [
+          { "soc": 10, "kw": 200 },
+          { "soc": 30, "kw": 180 },
+          { "soc": 50, "kw": 140 },
+          { "soc": 70, "kw": 95 },
+          { "soc": 90, "kw": 45 }
+        ]
+    },
 
     "description": "The Zeekr 001 is a premium electric shooting brake built on Geely’s SEA platform, combining long-range capability, high-performance dual-motor architecture and advanced digital integration to compete in the upper mid-market EV segment.",
 

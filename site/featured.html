@@ -28,6 +28,7 @@
 
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/featured.css">
+  <link rel="stylesheet" href="./css/featured-analysis.css">
   <link rel="stylesheet" href="./css/app.css?v=12" />
 </head>
 
@@ -207,7 +208,7 @@
 
         <h2>Market Signals</h2>
 
-        <div class="signals-grid"></div>
+        <div class="signals-grid" id="signals-grid"></div>
 
     </section>
 
@@ -228,6 +229,35 @@
         <h2>Segment Comparison</h2>
 
         <div class="compare-grid" id="compare-grid"></div>
+
+    </section>
+
+    <hr class="featured-divider">
+
+    <section class="featured-analysis">
+
+      <h2>Performance Analysis</h2>
+
+      <div class="analysis-charts">
+
+        <div class="chart-card">
+          <h4>Performance Profile</h4>
+          <canvas id="radarChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h4>Charging Curve (kW vs SOC)</h4>
+          <canvas id="chargingChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+          <h4>Performance Breakdown</h4>
+          <canvas id="tcoChart"></canvas>
+        </div>
+
+      </div>
+
+        <div class="analysis-insight" id="analysis-insight"></div>
 
     </section>
 
@@ -606,6 +636,10 @@
   </footer>
 
 <script src="https://unpkg.com/globe.gl"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="./js/featured-analysis.js"></script>
 
 <script src="./js/featured.js"></script>
 <script src="./js/nav.js"></script>
