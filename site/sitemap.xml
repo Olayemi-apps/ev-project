@@ -2,168 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://stratumev.com</loc>
+    <loc>https://stratumev.com/</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/about.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/services.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/market-intelligence.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/featured.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/store.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/compare.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/contact.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/model.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/story.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/uk-compliance-led-sourcing.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/ev-evolution.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/ev-history.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://stratumev.com/innovation.html</loc>
     <lastmod>2026-04-03</lastmod>
-    <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=audi-q8-etron</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=bmw-i5-m60</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=bmw-i7</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=kia-ev9</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=lucid-air-sapphire</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=lucid-air-touring</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=lucid-gravity</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=mercedes-cla-electric</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=mercedes-eqs</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=nio-et7</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=polestar-5</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=porsche-macan-electric</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=porsche-taycan-turbo-gt</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=rivian-r1s</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=scout-traveller</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=tesla-model-s-plaid</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=volvo-ex90</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=xpeng-g9</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stratumev.com/model.html?slug=zeekr-001</loc>
-    <lastmod>2026-04-03</lastmod>
-    <priority>0.9</priority>
-  </url>
+
 </urlset>
