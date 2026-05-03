@@ -25,6 +25,25 @@
   height: 260px !important;
 }
 
+/*FURTHER STYLING */
+
+.signal-pill {
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  color: #cfefff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+/* ACTIVE STATE */
+.signal-pill.active {
+  background: rgba(0, 212, 255, 0.18);
+  border-color: #00d4ff;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.25);
+}
+
 /* CHIP STYLING*/
 
 .chip{
