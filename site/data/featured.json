@@ -2,6 +2,371 @@
   "current": "xpeng_g6",
 
   "vehicles": {
+      "jaecoo_7": {
+      "vehicle": "Chery JAECOO 7",
+      "slug": "chery-jaecoo-7",
+      "tagline": "Premium off-road capable SUV blending rugged design with modern electrified architecture",
+
+      "model3d": "https://sketchfab.com/models/02e3ca1e9a8f4c7aad40617bd0693615/embed?autostart=1&ui_theme=dark&ui_controls=1",
+
+      "range": "500 km WLTP (est)",
+      "battery": "65 kWh (est)",
+      "battery_kwh": 65,
+      "power": "204 hp",
+      "accel": "8.0 s",
+
+      "analysis": {
+        "radar": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [75, 70, 68, 72, 88]
+        },
+        "breakdown": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [75, 70, 68, 72, 88]
+        },
+        "charging_curve": [
+          { "soc": 10, "kw": 110 },
+          { "soc": 30, "kw": 95 },
+          { "soc": 50, "kw": 85 },
+          { "soc": 70, "kw": 60 },
+          { "soc": 90, "kw": 35 }
+        ]
+      },
+
+      "description": "The JAECOO 7 represents Chery’s push into premium SUV segments under its new global sub-brand, combining rugged off-road styling with electrified powertrains and a technology-focused interior aimed at international markets.",
+
+      "specs": [
+        "All-wheel drive capability",
+        "Rugged SUV platform",
+        "Advanced infotainment system",
+        "Driver assistance technologies",
+        "Over-the-air updates"
+      ],
+
+      "technology": [
+        {
+          "title": "Electrified AWD Platform",
+          "desc": "Designed for both on-road efficiency and off-road capability."
+        },
+        {
+          "title": "Smart Cabin Interface",
+          "desc": "Digital cockpit focused on connectivity and driver experience."
+        },
+        {
+          "title": "Adaptive Drive Modes",
+          "desc": "Multiple terrain modes enhancing versatility across environments."
+        }
+      ],
+
+      "insight": "What stands out in the data is how Chery is positioning JAECOO as a premium off-road capable brand aimed at global SUV demand, rather than purely urban EV segments. The JAECOO 7 combines rugged design language with electrified architecture, targeting buyers who want versatility without sacrificing technology or efficiency. This reflects a broader shift where Chinese OEMs are expanding beyond city-focused EVs into lifestyle-oriented segments, using design differentiation and value positioning to enter competitive international markets.",
+
+      "comparison": [
+        {
+          "name": "Chery JAECOO 7",
+          "range": "500 km",
+          "battery": "65 kWh",
+          "power": "204 hp",
+          "accel": "8.0 s",
+          "featured": true
+        },
+        {
+          "name": "Toyota bZ4X",
+          "range": "516 km",
+          "battery": "71.4 kWh",
+          "power": "201 hp",
+          "accel": "7.5 s"
+        },
+        {
+          "name": "Subaru Solterra",
+          "range": "465 km",
+          "battery": "71.4 kWh",
+          "power": "215 hp",
+          "accel": "6.9 s"
+        },
+        {
+          "name": "Hyundai Kona Electric",
+          "range": "490 km",
+          "battery": "65 kWh",
+          "power": "204 hp",
+          "accel": "7.8 s"
+        }
+      ],
+
+      "momentum": {
+        "globalDemand": 80,
+        "technologyLeadership": 75,
+        "marketExpansion": 88,
+        "pricingStrategy": 90
+      },
+
+      "market": {
+        "segment": "Mid-size electric SUV",
+        "competitors": [
+          "Toyota bZ4X",
+          "Subaru Solterra",
+          "Hyundai Kona Electric",
+          "Nissan Ariya"
+        ],
+        "strategy": "Premium rugged SUV positioning with strong value proposition and global expansion focus."
+      },
+
+      "expansionSummary": "JAECOO is being introduced as a global brand targeting Europe, the UK and emerging markets, focusing on premium SUV demand and off-road capable positioning.",
+
+      "signals": [
+        { "type": "positive", "text": "Chery expanding new JAECOO brand globally" },
+        { "type": "positive", "text": "SUV demand remains strong across global markets" },
+        { "type": "neutral", "text": "Brand recognition still building internationally" }
+      ],
+
+      "tech": [
+        { "title": "AWD Platform", "desc": "All-terrain capable drivetrain." },
+        { "title": "Digital Cockpit", "desc": "Connected and intuitive user interface." },
+        { "title": "Drive Modes", "desc": "Terrain adaptability for multiple environments." }
+      ],
+
+      "expansion_regions": [
+        "China",
+        "Europe",
+        "United Kingdom",
+        "Latin America",
+        "Middle East"
+      ],
+
+      "expansionSignals": [
+        {
+          "region": "europe",
+          "label": "EUROPE ENTRY",
+          "intensity": ["china","europe"]
+        },
+        {
+          "region": "uk",
+          "label": "UK MARKET ENTRY",
+          "intensity": ["china","europe","uk"]
+        },
+        {
+          "region": "latam",
+          "label": "LATAM EXPANSION",
+          "intensity": ["china","europe","uk","latam"]
+        },
+        {
+          "region": "me",
+          "label": "MIDDLE EAST ENTRY",
+          "intensity": ["china","europe","uk","latam","me"]
+        }
+      ],
+
+      "weeklyIntel": {
+        "week": "Week 18",
+        "tone": "Brand Expansion Phase",
+        "summary": "JAECOO highlights how OEMs are entering global SUV markets with rugged, lifestyle-oriented EVs designed to broaden appeal beyond urban mobility.",
+        "signals": [],
+        "signalLayer": {
+          "marketTone": "Bullish Expansion",
+          "momentum": "High",
+          "phase": "Global Entry",
+          "focus": "SUV Segment Penetration"
+        }
+      },
+
+      "readiness": [
+        { "region": "Europe", "score": 82, "meta": "SUV demand · Infrastructure maturity" },
+        { "region": "United Kingdom", "score": 80, "meta": "Premium SUV adoption" },
+        { "region": "Latin America", "score": 70, "meta": "Emerging demand" },
+        { "region": "Middle East", "score": 68, "meta": "SUV preference · Early EV adoption" }
+      ],
+
+      "oem_line": "Chery · JAECOO Platform · Electrified SUV Architecture",
+
+      "oem_sales": {
+        "2022": 0.9,
+        "2023": 1.3,
+        "2024": 1.8,
+        "rank": 5
+      }
+    },
+      "omoda_5": {
+      "vehicle": "Chery Omoda 5 EV",
+      "slug": "chery-omoda-5",
+      "tagline": "Tech-led compact electric SUV targeting global urban markets",
+
+      "model3d": "https://sketchfab.com/models/d9ff826c2bf14d81a4fa3c9b6b707376/embed?autostart=1&ui_theme=dark&ui_controls=1",
+
+      "range": "450 km WLTP",
+      "battery": "61 kWh",
+      "battery_kwh": 61,
+      "power": "204 hp",
+      "accel": "7.5 s",
+
+      "analysis": {
+        "radar": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [72, 70, 65, 78, 90]
+        },
+        "breakdown": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [72, 70, 65, 78, 90]
+        },
+        "charging_curve": [
+          { "soc": 10, "kw": 100 },
+          { "soc": 30, "kw": 95 },
+          { "soc": 50, "kw": 80 },
+          { "soc": 70, "kw": 60 },
+          { "soc": 90, "kw": 30 }
+        ]
+      },
+
+      "description": "The Chery Omoda 5 EV represents the brand’s global expansion strategy into compact electric SUV segments, combining affordability, modern design, and digital-first user experience aimed at urban and emerging EV markets.",
+
+      "specs": [
+        "Front-wheel drive platform",
+        "Advanced infotainment interface",
+        "Compact urban SUV design",
+        "Driver assistance systems",
+        "Over-the-air updates"
+      ],
+
+      "technology": [
+        {
+          "title": "Smart Cockpit",
+          "desc": "Integrated digital interface designed for urban connectivity and usability."
+        },
+        {
+          "title": "Efficient Battery System",
+          "desc": "Optimised for cost efficiency and real-world range in city driving conditions."
+        },
+        {
+          "title": "Compact Platform",
+          "desc": "Lightweight architecture improving efficiency and manoeuvrability."
+        }
+      ],
+
+      "insight": "What stands out in the data is how Chery is positioning the Omoda 5 EV as a volume-driven global entry model rather than a performance-led offering. The focus is clearly on affordability, design appeal, and digital integration, targeting younger urban buyers and emerging EV markets. This aligns with a broader trend where Chinese OEMs are scaling internationally through cost-efficient platforms, using value positioning to gain early market share in Europe and developing regions.",
+
+      "comparison": [
+        {
+          "name": "Chery Omoda 5 EV",
+          "range": "450 km",
+          "battery": "61 kWh",
+          "power": "204 hp",
+          "accel": "7.5 s",
+          "featured": true
+        },
+        {
+          "name": "MG4 EV",
+          "range": "450 km",
+          "battery": "64 kWh",
+          "power": "201 hp",
+          "accel": "7.9 s"
+        },
+        {
+          "name": "BYD Dolphin",
+          "range": "427 km",
+          "battery": "60 kWh",
+          "power": "204 hp",
+          "accel": "7.0 s"
+        },
+        {
+          "name": "Volkswagen ID.3",
+          "range": "426 km",
+          "battery": "58 kWh",
+          "power": "204 hp",
+          "accel": "7.3 s"
+        }
+      ],
+
+      "momentum": {
+        "globalDemand": 78,
+        "technologyLeadership": 70,
+        "marketExpansion": 85,
+        "pricingStrategy": 92
+      },
+
+      "market": {
+        "segment": "Compact electric SUV",
+        "competitors": [
+          "MG4 EV",
+          "BYD Dolphin",
+          "Volkswagen ID.3",
+          "Peugeot e-2008"
+        ],
+        "strategy": "Affordable global EV strategy focused on urban buyers, design appeal, and rapid international rollout."
+      },
+
+      "expansionSummary": "Chery is expanding aggressively into Europe, the UK, and emerging markets, positioning Omoda as a youth-focused global EV brand.",
+
+      "signals": [
+        { "type": "positive", "text": "Chery accelerating global EV expansion" },
+        { "type": "positive", "text": "Strong value positioning in compact EV segment" },
+        { "type": "neutral", "text": "Brand awareness still developing in Europe" }
+      ],
+
+      "tech": [
+        { "title": "Smart Cockpit", "desc": "Connected digital interface." },
+        { "title": "Efficient Platform", "desc": "Cost-efficient EV architecture." },
+        { "title": "Urban Design", "desc": "Compact design optimised for city use." }
+      ],
+      
+      "expansion_regions": [
+        "China",
+        "Europe",
+        "United Kingdom",
+        "Latin America",
+        "Middle East"
+      ],
+
+      "expansionSignals": [
+        {
+          "region": "europe",
+          "label": "EUROPE ENTRY",
+          "intensity": ["china","europe"]
+        },
+        {
+          "region": "uk",
+          "label": "UK MARKET ENTRY",
+          "intensity": ["china","europe","uk"]
+        },
+        {
+          "region": "latam",
+          "label": "LATAM EXPANSION",
+          "intensity": ["china","europe","uk","latam"]
+        },
+        {
+          "region": "me",
+          "label": "MIDDLE EAST ENTRY",
+          "intensity": ["china","europe","uk","latam","me"]
+        }
+      ],
+
+        "weeklyIntel": {
+          "week": "Week 18",
+          "tone": "Global Entry Expansion",
+          "summary": "This model highlights how emerging OEMs are entering global EV markets through compact, cost-efficient platforms focused on urban usability and pricing advantage.",
+          "signals": [],
+          "signalLayer": {
+            "marketTone": "Expansion Acceleration",
+            "momentum": "High",
+            "phase": "Scaling",
+            "focus": "Infrastructure alignment and distribution growth"
+          }
+        },
+
+        "readiness": [
+          { "region": "Europe", "score": 80, "meta": "Growing demand · Competitive pricing" },
+          { "region": "United Kingdom", "score": 78, "meta": "Urban adoption focus" },
+          { "region": "Latin America", "score": 72, "meta": "Emerging EV markets" },
+          { "region": "Middle East", "score": 65, "meta": "Early EV adoption stage" }
+        ],
+
+        "oem_line": "Chery · Omoda Platform · Compact EV Architecture",
+
+        "oem_sales": {
+          "2022": 0.9,
+          "2023": 1.3,
+          "2024": 1.8,
+          "rank": 5
+        }
+      },
+
 
       "xpeng_g6": {
       "vehicle": "XPeng G6",
@@ -135,7 +500,13 @@
         "week": "Week 18",
         "tone": "Platform Expansion & Charging Leadership",
         "summary": "This analysis evaluates how the vehicle performs within UK and European driving conditions, focusing on efficiency under motorway usage, charging consistency across public infrastructure, and overall system integration. The findings highlight how performance is shaped not only by vehicle specifications, but by interaction with real-world conditions, including climate, charging availability, and software optimisation. This provides a clearer view of how XPeng is positioning the G6 through charging performance, aerodynamic efficiency, and software integration within the evolving European EV market.",
-        "signals": []
+        "signals": [],
+        "signalLayer": {
+          "marketTone": "Expansion Acceleration",
+          "momentum": "High",
+          "phase": "Scaling",
+          "focus": "Infrastructure alignment and distribution growth"
+        }
       },
 
       "readiness": [
@@ -353,12 +724,24 @@
         { "title": "Glass Canopy", "desc": "Full-length panoramic roof design." }
       ],
 
-      "expansionSignals": [],
+      "expansionSignals": [
+        {
+          "region": "china",
+          "label": "BASE MARKET PRESENCE",
+          "intensity": ["china"]
+        }
+      ],
       "weeklyIntel": {
         "week": "Week 10",
         "tone": "Performance Benchmark Shift",
         "summary": "This analysis evaluates how the vehicle performs within UK and European driving conditions, focusing on efficiency under motorway usage, charging consistency across public infrastructure, and overall system integration. The findings highlight how performance is shaped not only by vehicle specifications, but by interaction with real-world conditions, including climate, charging availability, and software optimisation. This provides a clearer view of how the vehicle is positioned within the evolving EV market landscape.",
-        "signals": []
+        "signals": [],
+        "signalLayer": {
+          "marketTone": "Expansion Acceleration",
+          "momentum": "High",
+          "phase": "Scaling",
+          "focus": "Infrastructure alignment and distribution growth"
+        }
       },
 
       "readiness": [
@@ -632,7 +1015,13 @@
             "headline": "Early stage market penetration",
             "impact": "low"
           }
-        ]
+        ],
+        "signalLayer": {
+          "marketTone": "Expansion Acceleration",
+          "momentum": "High",
+          "phase": "Scaling",
+          "focus": "Infrastructure alignment and distribution growth"
+        }
       },
      "readiness": [
         {
@@ -788,13 +1177,25 @@
       { "title": "Smart Cockpit", "desc": "Advanced digital interface and connected features." }
     ],
 
-    "expansionSignals": [],
+    "expansionSignals": [
+      {
+        "region": "china",
+        "label": "BASE MARKET PRESENCE",
+        "intensity": ["china"]
+      }
+    ],
 
     "weeklyIntel": {
       "week": "Week 10",
       "tone": "Premium Expansion Phase",
       "summary": "This analysis evaluates how the vehicle performs within UK and European driving conditions, focusing on efficiency under motorway usage, charging consistency across public infrastructure, and overall system integration. The findings highlight how performance is shaped not only by vehicle specifications, but by interaction with real-world conditions, including climate, charging availability, and software optimisation. This provides a clearer view of how the vehicle is positioned within the evolving EV market landscape.",
-      "signals": []
+      "signals": [],
+      "signalLayer": {
+        "marketTone": "Expansion Acceleration",
+        "momentum": "High",
+        "phase": "Scaling",
+        "focus": "Infrastructure alignment and distribution growth"
+      }
     },
 
     "readiness": [

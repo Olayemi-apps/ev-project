@@ -13,11 +13,16 @@ const raw = await res.json();
 
 cachedVehicles = raw.vehicles; //  STORE ONCE
 
+// ==========================
+// VEHICLE RESOLUTION LOGIC
+// ==========================
+
 const params = new URLSearchParams(window.location.search);
 const urlCar = params.get("car");
 
 let currentKey = raw.current;
 
+// 1. URL PARAM (highest priority)
 if(urlCar){
   const match = Object.keys(raw.vehicles).find(k => {
     const v = raw.vehicles[k];
@@ -29,10 +34,30 @@ if(urlCar){
   }
 }
 
+// 2. ROTATION (only if NO URL param)
+else{
+
+  const keys = Object.keys(raw.vehicles);
+
+  // rotate every 6 hours
+  const index = Math.floor(Date.now() / (1000 * 60 * 60 * 6)) % keys.length;
+
+  currentKey = keys[index];
+}
+
 
 const data = raw.vehicles[currentKey];
 
-renderAnalysisCharts(data.analysis);
+/*  FALLBACK FOR EXPANSION SIGNALS */
+if(!data.expansionSignals || data.expansionSignals.length === 0){
+  data.expansionSignals = [
+    {
+      region: "china",
+      label: "BASE MARKET PRESENCE",
+      intensity: ["china"]
+    }
+  ];
+}
 
 /* GLOBAL DATA */
 window.expansionSignals = data.expansionSignals || [];
@@ -48,7 +73,6 @@ if(signalsSection){
   }
 }
 
-updateReadiness(data);
 buildReadiness(data);
 updateTech(data);
 updateComparison(data);
@@ -57,8 +81,10 @@ updateMarket(data);
 updateInsight(data);
 updateExpansion(data);
 updateMomentum(data);
-renderAnalysisCharts(data.analysis);
-renderAnalysisInsight(data.analysis);
+if(data.analysis && Object.keys(data.analysis).length){
+  renderAnalysisCharts(data.analysis);
+  renderAnalysisInsight(data.analysis);
+}
 
 const hint = document.querySelector(".expansion-hint");
 if (hint) {
@@ -73,6 +99,16 @@ updateMedia(data);
 const intelSummary = document.getElementById("intel-summary");
 if(intelSummary && window.weeklyIntel.summary){
   intelSummary.innerHTML = `<p>${window.weeklyIntel.summary}</p>`;
+}
+
+const liveLabel = document.getElementById("live-label");
+
+if(liveLabel){
+  if(window.weeklyIntel?.tone){
+    liveLabel.textContent = `LIVE: ${window.weeklyIntel.tone}`;
+  } else {
+    liveLabel.textContent = "LIVE: Featured EV Rotation";
+  }
 }
 
 /* GLOBAL EXPANSION UPDATE*/
@@ -99,17 +135,6 @@ if(Array.isArray(data.specs)){
     list.appendChild(li);
   });
 }
-
-/* READINESS COLORS */
-document.querySelectorAll(".readiness-card").forEach(card => {
-const score = parseInt(card.querySelector(".readiness-score").textContent);
-
-card.classList.remove("score-high","score-mid","score-low");
-
-if(score >= 85) card.classList.add("score-high");
-else if(score >= 70) card.classList.add("score-mid");
-else card.classList.add("score-low");
-});
 
 buildArchive(raw.vehicles, currentKey);
 
@@ -140,9 +165,8 @@ function buildArchive(vehicles, currentKey){
 
  Object.entries(vehicles).forEach(([key, v]) => {
 
-  if(key === currentKey) return;
-  // 🔥 REQUIRED FIX (prevents undefined cards)
-  if(!v || typeof v !== "object" || !v.vehicle) return;
+ if(!v || typeof v !== "object" || !v.vehicle) return;
+ if(key === currentKey) return;
 
 
   const vehicleName = v.vehicle || "";
@@ -236,7 +260,7 @@ function buildReadiness(data){
 }
 
 /*===================================*
-UPDATR MOMENTUM
+UPDATE MOMENTUM
 ====================================*/
 
 function updateMomentum(data){
@@ -292,7 +316,7 @@ function updateMomentum(data){
 
       const increment = Math.ceil(target / 30);
       const duration = 800;
-      const stepTime = Math.max(Math.floor(duration / target), 15);
+      const stepTime = target > 0 ? Math.max(Math.floor(duration / target), 15) : 15;
 
       setTimeout(() => {
 
@@ -312,38 +336,6 @@ function updateMomentum(data){
 
     });
   }, 150);
-
-}
-
-/*===================================
-UPDATE READINESS
-=====================================*/
-
-function updateReadiness(data){
-
-  const container = document.getElementById("readiness-grid");
-  if(!container || !data.readiness) return;
-
-  container.innerHTML = "";
-
-  data.readiness.forEach(item => {
-
-  let cls = "score-low";
-  if(item.score >= 85) cls = "score-high";
-  else if(item.score >= 70) cls = "score-mid";
-
-  const card = document.createElement("div");
-  card.className = `readiness-card ${cls}`;
-
-  card.innerHTML = `
-    <div class="readiness-title">${item.region}</div>
-    <div class="readiness-score">${item.score}</div>
-    <div class="readiness-meta">${item.meta}</div>
-  `;
-
-  container.appendChild(card);
-
-  });
 
 }
 
@@ -381,9 +373,57 @@ UPDATE INSIGHT
 function updateInsight(data){
 
   const el = document.getElementById("insight-text");
-  if(!el || !data.insight) return;
+  if(el && data.insight){
+    el.textContent = data.insight;
+  }
 
-  el.textContent = data.insight;
+  /* =========================
+     STRATUM SIGNAL LAYER
+  ========================= */
+
+  const toneEl = document.getElementById("signal-tone");
+  const momentumEl = document.getElementById("signal-momentum");
+  const phaseEl = document.getElementById("signal-phase");
+  const focusEl = document.getElementById("signal-focus");
+
+  const layer = data.weeklyIntel?.signalLayer;
+
+  //  RESET STATE (CRITICAL)
+  toneEl.classList.remove("active");
+
+  if(layer && (layer.marketTone || layer.momentum || layer.phase)){
+
+    // SET TEXT
+    toneEl.textContent = layer.marketTone || "";
+    momentumEl.textContent = layer.momentum || "";
+    phaseEl.textContent = layer.phase || "";
+    focusEl.textContent = layer.focus || "";
+
+    // 🎯 APPLY ACTIVE STATE
+    if(layer.marketTone){
+      toneEl.classList.add("active");
+    }
+
+    // 🎯 MOMENTUM COLOR
+    if(layer.momentum === "High"){
+      momentumEl.style.color = "#00d4ff";
+    }
+    else if(layer.momentum === "Medium"){
+      momentumEl.style.color = "#8aa6ff";
+    }
+    else{
+      momentumEl.style.color = "#aaa";
+    }
+
+  }
+  else {
+
+    toneEl.textContent = "No signal data";
+    momentumEl.textContent = "";
+    phaseEl.textContent = "";
+    focusEl.textContent = "";
+
+  }
 
 }
 
@@ -493,17 +533,30 @@ SWITCH VEHICLE
 async function switchVehicle(key){
 
 
-// 🔥 START LOADING STATE
+//  START LOADING STATE
 document.body.classList.add("loading");  
 
-const res = await fetch("./data/featured.json");
-const raw = await res.json();
+if(!cachedVehicles || !cachedVehicles[key]){
+  console.error("Vehicle not found:", key);
+  document.body.classList.remove("loading"); //  add this
+  return;
+}
+
+const data = cachedVehicles[key]; //  REQUIRED
 
 window.scrollTo({ top: 0, behavior: "smooth" });  
 
-const data = cachedVehicles[key];
+/*  FALLBACK FOR EXPANSION SIGNALS */
+if(!data.expansionSignals || data.expansionSignals.length === 0){
+  data.expansionSignals = [
+    {
+      region: "china",
+      label: "BASE MARKET PRESENCE",
+      intensity: ["china"]
+    }
+  ];
+}
 
-renderAnalysisCharts(data.analysis);
 
 // 🔗 Update URL using slug
 if(data.slug){
@@ -515,7 +568,6 @@ if(data.slug){
 window.expansionSignals = data.expansionSignals || [];
 window.weeklyIntel = data.weeklyIntel || {};
 
-updateReadiness(data);
 buildReadiness(data);
 updateTech(data);
 updateComparison(data);
@@ -524,8 +576,10 @@ updateMarket(data);
 updateInsight(data);
 updateExpansion(data);
 updateMomentum(data);
-renderAnalysisCharts(data.analysis);
-renderAnalysisInsight(data.analysis);
+if(data.analysis && Object.keys(data.analysis).length){
+  renderAnalysisCharts(data.analysis);
+  renderAnalysisInsight(data.analysis);
+}
 
 const hint = document.querySelector(".expansion-hint");
 if (hint) {
@@ -541,6 +595,8 @@ if(!data.expansionSignals.length){
 } else {
   signalsSection.style.display = "block";
 }
+
+
 
 const intelSummary = document.getElementById("intel-summary");
 if(intelSummary && window.weeklyIntel.summary){
@@ -582,6 +638,8 @@ buildArchive(cachedVehicles, key);
   document.body.classList.remove("loading");
 
 }
+
+
 
 /*============================= ==============
 UPDATED MEDIA FEATURE - 3D | Video | IMAGE |
