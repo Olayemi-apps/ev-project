@@ -1335,7 +1335,8 @@ CREDIT FOR IMAGES | VIDEO | 3D MODEL
   bottom: 14px;
   right: 18px;
   font-size: 11px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
   letter-spacing: 0.4px;
 }
 

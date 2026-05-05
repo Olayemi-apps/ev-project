@@ -16,6 +16,7 @@
       "accel": "8.0 s",
 
       "analysis": {
+        "themeColor": "#d4af37",
         "radar": {
           "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
           "values": [75, 70, 68, 72, 88]
@@ -31,6 +32,24 @@
           { "soc": 70, "kw": 60 },
           { "soc": 90, "kw": 35 }
         ]
+      },
+
+      "intelligence": {
+        "systemBehaviour": {
+          "chargingProfile": "Front-loaded power delivery",
+          "efficiencyProfile": "Balanced real-world efficiency",
+          "performanceProfile": "Linear acceleration curve"
+        },
+        "operationalInterpretation": {
+          "chargingImplication": "Reduced dwell time at rapid chargers",
+          "efficiencyImplication": "Stable motorway consumption",
+          "performanceImplication": "Predictable power delivery"
+        },
+        "environmentFit": {
+          "urban": "Strong suitability",
+          "motorway": "High efficiency stability",
+          "coldClimate": "Moderate impact on range"
+        }
       },
 
       "description": "The JAECOO 7 represents Chery’s push into premium SUV segments under its new global sub-brand, combining rugged off-road styling with electrified powertrains and a technology-focused interior aimed at international markets.",
@@ -198,6 +217,7 @@
       "accel": "7.5 s",
 
       "analysis": {
+        "themeColor": "#4cc9f0",
         "radar": {
           "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
           "values": [72, 70, 65, 78, 90]
@@ -213,6 +233,24 @@
           { "soc": 70, "kw": 60 },
           { "soc": 90, "kw": 30 }
         ]
+      },
+
+      "intelligence": {
+        "systemBehaviour": {
+          "chargingProfile": "Front-loaded power delivery",
+          "efficiencyProfile": "Balanced real-world efficiency",
+          "performanceProfile": "Linear acceleration curve"
+        },
+        "operationalInterpretation": {
+          "chargingImplication": "Reduced dwell time at rapid chargers",
+          "efficiencyImplication": "Stable motorway consumption",
+          "performanceImplication": "Predictable power delivery"
+        },
+        "environmentFit": {
+          "urban": "Strong suitability",
+          "motorway": "High efficiency stability",
+          "coldClimate": "Moderate impact on range"
+        }
       },
 
       "description": "The Chery Omoda 5 EV represents the brand’s global expansion strategy into compact electric SUV segments, combining affordability, modern design, and digital-first user experience aimed at urban and emerging EV markets.",
@@ -386,6 +424,7 @@
       "accel": "4.1 s",
 
       "analysis": {
+        "themeColor": "#00c8ff",
         "radar": {
           "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
           "values": [88, 92, 85, 90, 87]
@@ -401,6 +440,23 @@
             { "soc": 70, "kw": 110 },
             { "soc": 90, "kw": 60 }
           ]
+      },
+      "intelligence": {
+        "systemBehaviour": {
+          "chargingProfile": "Front-loaded power delivery",
+          "efficiencyProfile": "Balanced real-world efficiency",
+          "performanceProfile": "Linear acceleration curve"
+        },
+        "operationalInterpretation": {
+          "chargingImplication": "Reduced dwell time at rapid chargers",
+          "efficiencyImplication": "Stable motorway consumption",
+          "performanceImplication": "Predictable power delivery"
+        },
+        "environmentFit": {
+          "urban": "Strong suitability",
+          "motorway": "High efficiency stability",
+          "coldClimate": "Moderate impact on range"
+        }
       },
 
       "description": "The XPeng G6 represents the brand’s expansion into the European mid-market SUV segment, combining aerodynamic efficiency, fast-charging capability, and a software-centric driving experience. Built on XPeng’s next-generation platform, the G6 is designed to deliver strong real-world usability across motorway driving, urban environments, and public charging networks.",
@@ -618,6 +674,7 @@
       "accel": "2.0 s",
 
         "analysis": {
+        "themeColor": "#ffd166",
         "radar": {
           "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
           "values": [98, 85, 99, 95, 70]
@@ -633,6 +690,24 @@
           { "soc": 70, "kw": 150 },
           { "soc": 90, "kw": 80 }
         ]
+      },
+
+      "intelligence": {
+        "systemBehaviour": {
+          "chargingProfile": "Front-loaded power delivery",
+          "efficiencyProfile": "Balanced real-world efficiency",
+          "performanceProfile": "Linear acceleration curve"
+        },
+        "operationalInterpretation": {
+          "chargingImplication": "Reduced dwell time at rapid chargers",
+          "efficiencyImplication": "Stable motorway consumption",
+          "performanceImplication": "Predictable power delivery"
+        },
+        "environmentFit": {
+          "urban": "Strong suitability",
+          "motorway": "High efficiency stability",
+          "coldClimate": "Moderate impact on range"
+        }
       },
 
       "description": "The Lucid Air Sapphire represents the peak of electric performance engineering, combining ultra-high output tri-motor architecture with luxury refinement and long-range capability.",
@@ -852,6 +927,7 @@
       "accel": "7.9 s",
 
         "analysis": {
+        "themeColor": "#00e676",
         "radar": {
           "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
           "values": [80, 75, 65, 85, 95]
@@ -867,6 +943,24 @@
           { "soc": 70, "kw": 70 },
           { "soc": 90, "kw": 35 }
         ]
+      },
+
+      "intelligence": {
+        "systemBehaviour": {
+          "chargingProfile": "Front-loaded power delivery",
+          "efficiencyProfile": "Balanced real-world efficiency",
+          "performanceProfile": "Linear acceleration curve"
+        },
+        "operationalInterpretation": {
+          "chargingImplication": "Reduced dwell time at rapid chargers",
+          "efficiencyImplication": "Stable motorway consumption",
+          "performanceImplication": "Predictable power delivery"
+        },
+        "environmentFit": {
+          "urban": "Strong suitability",
+          "motorway": "High efficiency stability",
+          "coldClimate": "Moderate impact on range"
+        }
       },
 
       "description": "The BYD Seal U represents BYD’s expansion into the European electric SUV market. Built on the company's advanced e-Platform 3.0 architecture, the vehicle uses BYD’s Blade Battery technology to prioritise safety, longevity and efficiency.",
@@ -1069,6 +1163,7 @@
     "accel": "3.8 s",
 
     "analysis": {
+      "themeColor": "#5df2c1",
       "radar": {
         "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
         "values": [90, 85, 88, 82, 84]
@@ -1085,6 +1180,24 @@
           { "soc": 90, "kw": 45 }
         ]
     },
+
+    "intelligence": {
+        "systemBehaviour": {
+          "chargingProfile": "Front-loaded power delivery",
+          "efficiencyProfile": "Balanced real-world efficiency",
+          "performanceProfile": "Linear acceleration curve"
+        },
+        "operationalInterpretation": {
+          "chargingImplication": "Reduced dwell time at rapid chargers",
+          "efficiencyImplication": "Stable motorway consumption",
+          "performanceImplication": "Predictable power delivery"
+        },
+        "environmentFit": {
+          "urban": "Strong suitability",
+          "motorway": "High efficiency stability",
+          "coldClimate": "Moderate impact on range"
+        }
+      },
 
     "description": "The Zeekr 001 is a premium electric shooting brake built on Geely’s SEA platform, combining long-range capability, high-performance dual-motor architecture and advanced digital integration to compete in the upper mid-market EV segment.",
 

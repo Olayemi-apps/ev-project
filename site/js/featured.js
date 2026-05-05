@@ -48,6 +48,8 @@ else{
 
 const data = raw.vehicles[currentKey];
 
+window.currentVehicleData = data;
+
 /*  FALLBACK FOR EXPANSION SIGNALS */
 if(!data.expansionSignals || data.expansionSignals.length === 0){
   data.expansionSignals = [
@@ -81,9 +83,13 @@ updateMarket(data);
 updateInsight(data);
 updateExpansion(data);
 updateMomentum(data);
-if(data.analysis && Object.keys(data.analysis).length){
+console.log("ANALYSIS DATA:", data.analysis);
+
+if(data.analysis){
   renderAnalysisCharts(data.analysis);
   renderAnalysisInsight(data.analysis);
+} else {
+  console.error("NO ANALYSIS FOUND FOR:", data.vehicle);
 }
 
 const hint = document.querySelector(".expansion-hint");
@@ -544,6 +550,9 @@ if(!cachedVehicles || !cachedVehicles[key]){
 
 const data = cachedVehicles[key]; //  REQUIRED
 
+
+window.currentVehicleData = data;
+
 window.scrollTo({ top: 0, behavior: "smooth" });  
 
 /*  FALLBACK FOR EXPANSION SIGNALS */
@@ -832,12 +841,12 @@ function runEngine(){
 
 const engineSequence = window.expansionSignals || [];
 
-/* 🔥 HARD STOP */
+/*  HARD STOP */
 if(engineSequence.length === 0){
   return;
 }
 
-/* 🔥 SAFETY CHECK */
+/*  SAFETY CHECK */
 if(!engineSequence[engineStep]){
   engineStep = 0;
 }
@@ -847,11 +856,21 @@ if(userInteracting || signalInteracting) return;
 const stepData = engineSequence[engineStep];
 const key = stepData.region;
 
-// 🔥 SYNC READINESS WITH GLOBE
+//  SYNC READINESS WITH GLOBE
 
 document.querySelectorAll(".readiness-card").forEach(card => {
   card.classList.remove("active");
 });
+
+document.querySelectorAll(".expansion-list li").forEach(li => {
+  li.classList.remove("active");
+});
+
+const activeRegion = document.querySelector(`.expansion-list li[data-region="${key}"]`);
+if(activeRegion){
+  activeRegion.classList.add("active");
+}
+
 
 const activeCard = document.querySelector(`.readiness-card[data-region="${key}"]`);
 

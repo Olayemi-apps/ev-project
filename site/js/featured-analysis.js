@@ -5,19 +5,32 @@
 function renderAnalysisCharts(analysis){
   if(!analysis) return;
 
-  renderRadar(analysis.radar);
-  renderChargingCurve(analysis.charging_curve);
-  renderBreakdownChart(analysis.breakdown);
+  const color = analysis.themeColor || "#00c8ff";
+
+  renderRadar(analysis.radar, color);
+  renderChargingCurve(analysis.charging_curve, color);
+  renderBreakdownChart(analysis.breakdown, color);
 }
 
 /* ============================
    RADAR CHART
 ============================ */
 
-function renderRadar(radar){
+function renderRadar(radar, color){
 
   const canvas = document.getElementById("radarChart");
-  if(!canvas || !radar) return;
+  if(
+    !canvas ||
+    !radar ||
+    !Array.isArray(radar.labels) ||
+    !Array.isArray(radar.values)
+  ) {
+    console.warn("Radar data invalid:", radar);
+    return;
+  }
+
+  //  HARD RESET (goes BEFORE destroy)
+  canvas.width = canvas.width;
 
   if(window.radarChart && typeof window.radarChart.destroy === "function"){
     window.radarChart.destroy();
@@ -30,10 +43,10 @@ function renderRadar(radar){
       datasets: [{
         label: "Performance Profile",
         data: radar.values,
-        backgroundColor: "rgba(0, 200, 255, 0.2)",
-        borderColor: "#00c8ff",
+        backgroundColor: color + "33", // transparency
+        borderColor: color,
         borderWidth: 2,
-        pointBackgroundColor: "#00c8ff"
+        pointBackgroundColor: color
       }]
     },
     options: {
@@ -52,11 +65,11 @@ function renderRadar(radar){
           },
 
           grid: {
-            color: "rgba(255,255,255,0.08)"
+            color: color + "22"
           },
 
           angleLines: {
-            color: "rgba(255,255,255,0.08)"
+            color: color + "22"
           },
 
           pointLabels: {
@@ -83,10 +96,15 @@ function renderRadar(radar){
    CHARGING CURVE
 ============================ */
 
-function renderChargingCurve(curve){
+function renderChargingCurve(curve, color){
 
   const canvas = document.getElementById("chargingChart");
-  if(!canvas || !curve) return;
+
+  // ✅ DATA GUARD (goes HERE)
+  if(!canvas || !Array.isArray(curve) || curve.length === 0) return;
+
+  //  HARD RESET
+  canvas.width = canvas.width;
 
   if(window.chargingChart && typeof window.chargingChart.destroy === "function"){
     window.chargingChart.destroy();
@@ -99,12 +117,32 @@ function renderChargingCurve(curve){
       datasets: [{
         label: "Charging Power (kW)",
         data: curve.map(p => p.kw),
-        tension: 0.3
+        tension: 0.35,
+        borderColor: color,
+        borderWidth: 2,
+        fill: true,
+        backgroundColor: color + "22",
+        pointBackgroundColor: color,
+        pointRadius: 3
       }]
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false
+      maintainAspectRatio: false,
+      scales: {
+          x: {
+            ticks: { color: "#aaa" },
+            grid: {
+              color: color + "22"
+            }
+          },
+          y: {
+            ticks: { color: "#aaa" },
+            grid: {
+              color: color + "22"
+            }
+          }
+      },
     }
   });
 }
@@ -113,10 +151,13 @@ function renderChargingCurve(curve){
 BREAKDOWN CHART
 ===================================*/
 
-function renderBreakdownChart(breakdown){
+function renderBreakdownChart(breakdown, color){
 
   const canvas = document.getElementById("tcoChart");
   if(!canvas || !breakdown) return;
+
+  //  HARD RESET
+  canvas.width = canvas.width;
 
   if(window.breakdownChart && typeof window.breakdownChart.destroy === "function"){
     window.breakdownChart.destroy();
@@ -129,7 +170,7 @@ function renderBreakdownChart(breakdown){
       datasets: [{
         label: "Score",
         data: breakdown.values,
-        backgroundColor: "#00c8ff"
+        backgroundColor: color
       }]
     },
     options: {
@@ -138,15 +179,19 @@ function renderBreakdownChart(breakdown){
       scales: {
         x: {
           ticks: { color: "#aaa" },
-          grid: { color: "rgba(255,255,255,0.05)" }
-        },
+            grid: {
+              color: color + "22"
+            }
+          },
         y: {
           min: 0,
           max: 100,
           ticks: { color: "#aaa" },
-          grid: { color: "rgba(255,255,255,0.05)" }
+           grid: {
+            color: color + "22"
+          }
         }
-      },
+        },
       plugins: {
         legend: {
           labels: { color: "#ddd" }
@@ -166,9 +211,10 @@ function renderAnalysisInsight(input){
   if(!el || !input) return;
 
   //  Handle BOTH cases
-  const data = input.analysis ? input : { analysis: input };
+  const analysis = input;
+  const vehicleData = window.currentVehicleData || {};
 
-  const analysis = data.analysis;
+  const intelligence = vehicleData.intelligence || null;
 
   let peak = null;
   let peakSOC = null;
@@ -203,7 +249,7 @@ function renderAnalysisInsight(input){
     }
 
     /* 🔋 10–80% CHARGE TIME */
-    if(data.battery_kwh){
+    if(vehicleData.range_km && vehicleData.battery_kwh){
 
       let totalTimeHours = 0;
 
@@ -220,7 +266,7 @@ function renderAnalysisInsight(input){
         const socSpan = endSOC - startSOC;
         if(socSpan <= 0) continue;
 
-        const energy = (socSpan / 100) * data.battery_kwh;
+        const energy = (socSpan / 100) * vehicleData.battery_kwh;
         const power = current.kw;
 
         totalTimeHours += energy / power;
@@ -233,8 +279,8 @@ function renderAnalysisInsight(input){
   /* ⚡ EFFICIENCY */
   let efficiency = null;
 
-  if(data.range_km && data.battery_kwh){
-    efficiency = Math.round((data.range_km / data.battery_kwh) * 10) / 10;
+  if(vehicleData.range_km && vehicleData.battery_kwh){
+    efficiency = Math.round((vehicleData.range_km / vehicleData.battery_kwh) * 10) / 10;
   }
 
   /* 📊 RADAR INSIGHTS */
@@ -253,50 +299,104 @@ function renderAnalysisInsight(input){
   }
 
     /*  OUTPUT */
-    el.innerHTML = `
-        <p class="insight-label">Performance Interpretation</p>
+    if(el){
+      el.innerHTML = `
+        <div class="insight-header">
+          STRATUM INTELLIGENCE FRAMEWORK
+        </div>
 
-        <p><strong>Key Strength:</strong> ${strongest}</p>
-        <p><strong>Constraint:</strong> ${weakest}</p>
+        ${intelligence ? `
+          <div class="insight-section">
+            <p class="insight-sub">System Behaviour</p>
 
-        ${peak !== null && peakSOC !== null ? `
-        <p>
-            Peak charging reaches <strong>${peak} kW</strong> at approximately 
-            <strong>${peakSOC}% SOC</strong>.
-        </p>` : `
-        <p>
-            Charging performance data is limited, but peak delivery behaviour remains a key indicator of real-world usability.
-        </p>`}
+            <p class="insight-row">
+              <span class="insight-label">Charging</span>
+              <span class="insight-value">${intelligence?.systemBehaviour?.chargingProfile || ""}</span>
+            </p>
 
-        ${avgPower !== null ? `
-        <p>
-            Average charging power of <strong>${avgPower} kW</strong> 
-            indicates ${avgPower > 220 
-            ? "high sustained charging performance" 
-            : avgPower > 150 
-                ? "balanced charging consistency" 
-                : "limited sustained charging performance"}.
-        </p>` : `
-        <p>
-            Sustained charging performance varies across the curve, reflecting how power delivery reduces as the battery fills.
-        </p>`}
+            <p class="insight-row">
+              <span class="insight-label">Efficiency</span>
+              <span class="insight-value">${intelligence.systemBehaviour.efficiencyProfile}</span>
+            </p>
 
-        ${chargeTime !== null ? `
-        <p>
-            Estimated 10–80% charging time is approximately 
-            <strong class="pulse">${chargeTime} mins</strong>.
-        </p>` : `
-        <p>
-            Charging time depends on battery size and curve behaviour, with most vehicles showing slower rates beyond 70% SOC.
-        </p>`}
+            <p class="insight-row">
+              <span class="insight-label">Performance</span>
+              <span class="insight-value">${intelligence.systemBehaviour.performanceProfile}</span>
+            </p>
+          </div>
 
-        ${efficiency !== null ? `
-        <p>
-            Efficiency is approximately 
-            <strong>${efficiency} km/kWh</strong>.
-        </p>` : `
-        <p>
-            Efficiency reflects how effectively the vehicle converts stored energy into usable range under real-world conditions.
-        </p>`}
-    `;
+          <div class="insight-section">
+            <p class="insight-sub">Operational Interpretation</p>
+
+            <p class="insight-row">
+              <span class="insight-value">${intelligence.operationalInterpretation.chargingImplication}</span>
+            </p>
+
+            <p class="insight-row">
+              <span class="insight-value">${intelligence.operationalInterpretation.efficiencyImplication}</span>
+            </p>
+
+            <p class="insight-row">
+              <span class="insight-value">${intelligence.operationalInterpretation.performanceImplication}</span>
+            </p>
+          </div>
+
+          <div class="insight-section">
+            <p class="insight-sub">Environment Fit</p>
+
+            <p class="insight-row">
+              <span class="insight-label">Urban</span>
+              <span class="insight-value">${intelligence.environmentFit.urban}</span>
+            </p>
+
+            <p class="insight-row">
+              <span class="insight-label">Motorway</span>
+              <span class="insight-value">${intelligence.environmentFit.motorway}</span>
+            </p>
+
+            <p class="insight-row">
+              <span class="insight-label">Cold Climate</span>
+              <span class="insight-value">${intelligence.environmentFit.coldClimate}</span>
+            </p>
+          </div>
+        ` : ``}
+
+        <div class="insight-section">
+          <p class="insight-sub">Data Interpretation</p>
+
+          <p class="insight-row">
+            <span class="insight-label">Primary Characteristic</span>
+            <span class="insight-value">${strongest}</span>
+          </p>
+          <p class="insight-row">
+            <span class="insight-label">Operational Trade-off</span>
+            <span class="insight-value">${weakest}</span>
+          </p>
+
+          ${peak !== null && peakSOC !== null ? `
+          <p class="insight-row">
+            <span class="insight-label">Peak Charging</span>
+            <span class="insight-value">${peak} kW @ ${peakSOC}%</span>
+          </p>` : ``}
+
+          ${avgPower !== null ? `
+          <p class="insight-row">
+            <span class="insight-label">Avg Charging Power</span>
+            <span class="insight-value">${avgPower} kW</span>
+          </p>` : ``}
+
+          ${chargeTime !== null ? `
+          <p class="insight-row">
+            <span class="insight-label">10–80% Time</span>
+            <span class="insight-value pulse">${chargeTime} mins</span>
+          </p>` : ``}
+
+          ${efficiency !== null ? `
+          <p class="insight-row">
+            <span class="insight-label">Efficiency</span>
+            <span class="insight-value">${efficiency} km/kWh</span>
+          </p>` : ``}
+        </div>
+      `;
+    }
 }

@@ -227,3 +227,488 @@ STRATUM SIGNAL LAYER
   font-size: 12px;
   color: #aaa;
 }
+
+/*===========================
+RESPONSIVE - MOBILE 
+============================*/
+
+@media (max-width: 768px){
+
+  body{
+    font-size: 15px;
+  }
+
+  h2{
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  section{
+    padding: 24px 16px;
+  }
+
+}
+
+/*===================
+STACKING - HIGHLIGHTS
+====================*/
+
+@media (max-width: 768px){
+
+  #tech-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tech-card{
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .tech-card h3{
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .tech-card p{
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+}
+
+/*======================
+PERFORMANCE ANALYSIS UPDATE
+========================*/
+
+@media (max-width: 768px){
+
+  .analysis-charts{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .analysis-card{
+    width: 100%;
+    padding: 16px;
+  }
+
+  canvas{
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+}
+
+/*========================
+PERFORMANCE INTERPRETATION
+========================*/
+
+@media (max-width: 768px){
+
+  .performance-interpretation{
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .performance-interpretation h3{
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .performance-interpretation p{
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+}
+
+/*==========================
+SEGMENT COMPARISON - FIX
+===========================*/
+
+@media (max-width: 768px){
+
+  #compare-grid{
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .compare-card{
+    min-width: 220px;
+    flex: 0 0 auto;
+    padding: 16px;
+  }
+
+  .compare-card h3{
+    font-size: 16px;
+  }
+
+  .compare-card li{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .compare-card li span{
+    opacity: 0.7;
+  }
+
+}
+
+/*========================
+FURTHER UPDATE
+=========================*/
+
+@media (max-width: 768px){
+
+  section{
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 24px;
+  }
+
+}
+
+/*========================
+SPACING FIGURES
+==========================*/
+
+.compare-card li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.compare-card li span {
+  opacity: 0.6;
+}
+
+/*===========================
+STACK PERFORMANCE - ANALYSIS
+============================*/
+
+@media (max-width: 768px){
+
+  /*  CORRECT CONTAINER */
+  .analysis-charts{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /*  CARDS FULL WIDTH */
+  .chart-card{
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  /*  FIX CANVAS SIZE (CRITICAL) */
+  .chart-card canvas{
+    width: 100% !important;
+    height: 220px !important;
+  }
+
+}
+
+.chart-card h4{
+  margin-bottom: 12px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/*==============================
+SCROLL BAR STYLING
+==============================*/
+
+/*  SCROLLBAR STYLING */
+#compare-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+#compare-grid::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+#compare-grid::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #00d4ff, #18e3ff);
+  border-radius: 10px;
+}
+
+/* HOVER EFFECT */
+#compare-grid::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+/* FURTHER IMPROVEMENT */
+
+#compare-grid{
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+
+.compare-card{
+  scroll-snap-align: start;
+}
+
+/*  FURTHER RESPONSIVENESS */
+
+@media (max-width: 768px){
+  #compare-grid::-webkit-scrollbar{
+    display: none;
+  }
+}
+
+/*==========================  =============== ==
+INSIGHT SECTION - STRATUM FRAMEWORK SECTION
+============================  =============== === */
+
+.insight-section {
+  padding: 14px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.insight-section::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: #00c8ff;
+  opacity: 0.3;
+  margin-bottom: 10px;
+}
+
+.insight-sub {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #6f8fa6;
+  margin-bottom: 10px;
+}
+
+.insight-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  gap: 12px;
+}
+
+.insight-label {
+  color: #9fb3c8;
+  font-size: 13px;
+  min-width: 120px;
+}
+
+.insight-value {
+  color: #e6f1ff;
+  font-size: 13px;
+  text-align: right;
+  max-width: 65%;
+}
+
+.insight-section:last-child {
+  margin-top: 10px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,200,255,0.15);
+}
+
+.analysis-insight strong {
+  color: #00d4ff;
+  font-weight: 500;
+}
+
+.analysis-insight {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 200, 255, 0.04),
+    rgba(0, 200, 255, 0.01)
+  );
+
+  border: 1px solid rgba(0, 200, 255, 0.15);
+  border-radius: 10px;
+
+  padding: 18px 20px;
+  margin-top: 20px;
+
+  backdrop-filter: blur(6px);
+}
+
+
+
+
+/*==========================
+FURTHER MOBILE - RESPONSIVENESS
+==========================*/
+
+@media (max-width: 768px){
+
+  /* SECTION PADDING */
+  .featured-expansion{
+    padding: 20px 16px;
+  }
+
+  /* HEADER CLEANUP */
+  .featured-expansion h2{
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .expansion-subtitle{
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 14px;
+  }
+
+  .expansion-summary{
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  /* LIVE BAR */
+  .expansion-live{
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  /*  STACK GRID */
+  .expansion-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /*  GLOBE CONTAINER */
+  .expansion-globe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #expansion-globe{
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  /*  DATA PANEL */
+  .expansion-data{
+    text-align: center;
+  }
+
+  #expansion-title{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .expansion-hint{
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 16px;
+  }
+
+  /*  REGION LIST → BUTTON STYLE */
+  .expansion-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .expansion-list li{
+    list-style: none;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,212,255,0.1);
+    font-size: 13px;
+    text-align: center;
+    transition: all 0.25s ease;
+  }
+
+  .expansion-list li:hover{
+    background: rgba(0,212,255,0.08);
+    border-color: rgba(0,212,255,0.4);
+  }
+
+  /*  ACTIVE STATE (ENGINE SYNC) */
+  .expansion-list li.active{
+    background: rgba(0,212,255,0.15);
+    border-color: #00d4ff;
+    color: #00d4ff;
+  }
+
+  /* TOOLTIP CLEANUP */
+  .expansion-tooltip{
+    display: none;
+  }
+
+}
+
+/*=========================
+SEGMENT COMPARISON SECTION
+==========================*/
+
+.compare-grid{
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.compare-card{
+  min-width: 260px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/*  PREMIUM DARK SCROLLBAR */
+.compare-grid::-webkit-scrollbar{
+  height: 8px;
+}
+
+.compare-grid::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.compare-grid::-webkit-scrollbar-thumb{
+  background: linear-gradient(90deg, #00d4ff, #18e3ff);
+  border-radius: 10px;
+}
+
+.compare-grid::-webkit-scrollbar-thumb:hover{
+  background: #00d4ff;
+}
+
+.compare-grid{
+  -webkit-overflow-scrolling: touch;
+}
+
+.compare-grid{
+  scrollbar-color: #00d4ff rgba(255,255,255,0.05);
+  scrollbar-width: thin;
+}
+
+@media (max-width: 768px){
+
+  .compare-grid{
+    padding-left: 8px;
+  }
+
+  .compare-card{
+    min-width: 85%;
+  }
+
+}
+
