@@ -368,6 +368,7 @@ function renderAnalysisInsight(input){
             <span class="insight-label">Primary Characteristic</span>
             <span class="insight-value">${strongest}</span>
           </p>
+
           <p class="insight-row">
             <span class="insight-label">Operational Trade-off</span>
             <span class="insight-value">${weakest}</span>

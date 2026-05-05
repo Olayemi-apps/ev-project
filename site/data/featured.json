@@ -41,9 +41,9 @@
           "performanceProfile": "Linear acceleration curve"
         },
         "operationalInterpretation": {
-          "chargingImplication": "Reduced dwell time at rapid chargers",
-          "efficiencyImplication": "Stable motorway consumption",
-          "performanceImplication": "Predictable power delivery"
+            "chargingImplication": "Front-loaded charging reduces dwell time at high-power DC infrastructure",
+            "efficiencyImplication": "Balanced efficiency profile supports stable motorway consumption",
+            "performanceImplication": "Linear power delivery enables predictable real-world acceleration"
         },
         "environmentFit": {
           "urban": "Strong suitability",
@@ -242,9 +242,9 @@
           "performanceProfile": "Linear acceleration curve"
         },
         "operationalInterpretation": {
-          "chargingImplication": "Reduced dwell time at rapid chargers",
-          "efficiencyImplication": "Stable motorway consumption",
-          "performanceImplication": "Predictable power delivery"
+            "chargingImplication": "Front-loaded charging reduces dwell time at high-power DC infrastructure",
+            "efficiencyImplication": "Balanced efficiency profile supports stable motorway consumption",
+            "performanceImplication": "Linear power delivery enables predictable real-world acceleration"
         },
         "environmentFit": {
           "urban": "Strong suitability",
@@ -448,9 +448,9 @@
           "performanceProfile": "Linear acceleration curve"
         },
         "operationalInterpretation": {
-          "chargingImplication": "Reduced dwell time at rapid chargers",
-          "efficiencyImplication": "Stable motorway consumption",
-          "performanceImplication": "Predictable power delivery"
+            "chargingImplication": "Front-loaded charging reduces dwell time at high-power DC infrastructure",
+            "efficiencyImplication": "Balanced efficiency profile supports stable motorway consumption",
+            "performanceImplication": "Linear power delivery enables predictable real-world acceleration"
         },
         "environmentFit": {
           "urban": "Strong suitability",
@@ -699,9 +699,9 @@
           "performanceProfile": "Linear acceleration curve"
         },
         "operationalInterpretation": {
-          "chargingImplication": "Reduced dwell time at rapid chargers",
-          "efficiencyImplication": "Stable motorway consumption",
-          "performanceImplication": "Predictable power delivery"
+            "chargingImplication": "Front-loaded charging reduces dwell time at high-power DC infrastructure",
+            "efficiencyImplication": "Balanced efficiency profile supports stable motorway consumption",
+            "performanceImplication": "Linear power delivery enables predictable real-world acceleration"
         },
         "environmentFit": {
           "urban": "Strong suitability",
@@ -952,9 +952,9 @@
           "performanceProfile": "Linear acceleration curve"
         },
         "operationalInterpretation": {
-          "chargingImplication": "Reduced dwell time at rapid chargers",
-          "efficiencyImplication": "Stable motorway consumption",
-          "performanceImplication": "Predictable power delivery"
+            "chargingImplication": "Front-loaded charging reduces dwell time at high-power DC infrastructure",
+            "efficiencyImplication": "Balanced efficiency profile supports stable motorway consumption",
+            "performanceImplication": "Linear power delivery enables predictable real-world acceleration"
         },
         "environmentFit": {
           "urban": "Strong suitability",
@@ -1188,9 +1188,9 @@
           "performanceProfile": "Linear acceleration curve"
         },
         "operationalInterpretation": {
-          "chargingImplication": "Reduced dwell time at rapid chargers",
-          "efficiencyImplication": "Stable motorway consumption",
-          "performanceImplication": "Predictable power delivery"
+            "chargingImplication": "Front-loaded charging reduces dwell time at high-power DC infrastructure",
+            "efficiencyImplication": "Balanced efficiency profile supports stable motorway consumption",
+            "performanceImplication": "Linear power delivery enables predictable real-world acceleration"
         },
         "environmentFit": {
           "urban": "Strong suitability",

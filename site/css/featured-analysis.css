@@ -506,6 +506,10 @@ INSIGHT SECTION - STRATUM FRAMEWORK SECTION
   min-width: 120px;
 }
 
+.analysis-insight {
+  border-left: 2px solid #00c8ff;
+}
+
 .insight-value {
   color: #e6f1ff;
   font-size: 13px;
