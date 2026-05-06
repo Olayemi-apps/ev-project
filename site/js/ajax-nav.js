@@ -66,6 +66,11 @@ function loadPage(url, push = true){
       // re-init core scripts
       initPage();
 
+      /*  update page */
+      if(window.updateActiveNav){
+        updateActiveNav();
+      }
+
     })
     .catch(err => {
       console.error("AJAX load error:", err);

@@ -1,11 +1,30 @@
 // /site/js/nav.js
 (function () {
   // Active tab highlighting
-  const path = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
-  document.querySelectorAll(".tabs .tab").forEach(a => {
-    const href = (a.getAttribute("href") || "").split("/").pop().toLowerCase();
-    if (href === path) a.classList.add("is-active");
-  });
+  window.updateActiveNav = function(){
+
+    const currentPath = window.location.pathname;
+
+    document.querySelectorAll(".tabs .tab").forEach(tab => {
+
+      tab.classList.remove("is-active");
+
+      const href = tab.getAttribute("href");
+      if(!href) return;
+
+      const cleanHref = href.replace("./", "");
+
+      if(
+        (cleanHref === "index.html" && (currentPath === "/" || currentPath.endsWith("index.html"))) ||
+        currentPath.endsWith(cleanHref)
+      ){
+        tab.classList.add("is-active");
+      }
+
+    });
+  }
+
+  updateActiveNav();
 
   // Mobile hamburger toggle
   const toggle = document.querySelector(".nav-toggle");

@@ -2,6 +2,210 @@
   "current": "xpeng_g6",
 
   "vehicles": {
+      "byd_sealion_7": {
+      "vehicle": "BYD SEALION 7",
+      "slug": "byd-sealion-7",
+      "tagline": "Next-generation performance SUV combining BYD scale, efficiency and high-voltage charging capability",
+
+      "model3d": "https://sketchfab.com/models/4eb4a93ae47b47f4b213dd89a0ad89f0/embed?autostart=1&ui_theme=dark&ui_controls=1",
+
+      "range": "520 km WLTP (est)",
+      "battery": "91 kWh (est)",
+      "battery_kwh": 91,
+      "power": "530 hp (dual motor)",
+      "accel": "4.0 s",
+
+      "analysis": {
+        "themeColor": "#00bcd4",
+        "radar": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [85, 90, 88, 86, 92]
+        },
+        "breakdown": {
+          "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+          "values": [85, 90, 88, 86, 92]
+        },
+        "charging_curve": [
+          { "soc": 10, "kw": 230 },
+          { "soc": 30, "kw": 210 },
+          { "soc": 50, "kw": 170 },
+          { "soc": 70, "kw": 120 },
+          { "soc": 90, "kw": 65 }
+        ]
+      },
+
+      "intelligence": {
+        "systemBehaviour": {
+          "chargingProfile": "High-power front-loaded charging curve",
+          "efficiencyProfile": "Balanced efficiency across mixed driving conditions",
+          "performanceProfile": "Strong dual-motor acceleration with stable delivery"
+        },
+        "operationalInterpretation": {
+          "chargingImplication": "High peak charging enables reduced dwell time on high-power DC infrastructure",
+          "efficiencyImplication": "Balanced efficiency supports consistent motorway range performance",
+          "performanceImplication": "Dual-motor system delivers stable and predictable acceleration under load"
+        },
+        "environmentFit": {
+          "urban": "Moderate suitability",
+          "motorway": "High efficiency stability",
+          "coldClimate": "Moderate efficiency impact"
+        }
+      },
+
+      "description": "The BYD Sealion 7 represents the brand’s expansion into the global performance SUV segment, combining its vertically integrated battery technology with dual-motor capability and high-voltage charging architecture. Positioned above the Seal U, the model reflects BYD’s move into higher-performance and higher-margin segments while maintaining its core focus on efficiency and cost control.",
+
+      "specs": [
+        "Dual-motor AWD system",
+        "Blade Battery LFP architecture",
+        "High-voltage charging capability",
+        "Advanced driver assistance systems",
+        "Over-the-air updates"
+      ],
+
+      "technology": [
+        {
+          "title": "Blade Battery",
+          "desc": "BYD’s LFP battery architecture focused on safety, longevity and thermal stability."
+        },
+        {
+          "title": "e-Platform 3.0+",
+          "desc": "Enhanced EV architecture supporting performance, efficiency and system integration."
+        },
+        {
+          "title": "Dual-Motor AWD",
+          "desc": "Performance-focused drivetrain delivering strong acceleration and traction."
+        }
+      ],
+
+      "insight": "What stands out in the data is how BYD is extending its platform strategy into higher-performance segments without abandoning its core advantage in cost efficiency and vertical integration. The Sealion 7 demonstrates a shift towards performance-oriented SUVs while maintaining strong charging capability and balanced efficiency. This reflects a broader transition where large-scale EV manufacturers are moving upmarket, combining volume manufacturing strength with higher-margin product positioning across global markets.",
+
+      "comparison": [
+        {
+          "name": "BYD Sealion 7",
+          "range": "520 km",
+          "battery": "91 kWh",
+          "power": "530 hp",
+          "accel": "4.0 s",
+          "featured": true
+        },
+        {
+          "name": "Tesla Model Y Performance",
+          "range": "533 km",
+          "battery": "75 kWh",
+          "power": "534 hp",
+          "accel": "3.7 s"
+        },
+        {
+          "name": "XPeng G6 AWD",
+          "range": "570 km",
+          "battery": "87.5 kWh",
+          "power": "476 hp",
+          "accel": "4.1 s"
+        },
+        {
+          "name": "Hyundai Ioniq 5 N Line",
+          "range": "507 km",
+          "battery": "77.4 kWh",
+          "power": "325 hp",
+          "accel": "5.1 s"
+        }
+      ],
+
+      "momentum": {
+        "globalDemand": 92,
+        "technologyLeadership": 88,
+        "marketExpansion": 96,
+        "pricingStrategy": 90
+      },
+
+      "market": {
+        "segment": "Performance electric SUV",
+        "competitors": [
+          "Tesla Model Y Performance",
+          "XPeng G6",
+          "Hyundai Ioniq 5",
+          "Kia EV6"
+        ],
+        "strategy": "Performance-oriented SUV expansion leveraging BYD’s scale, charging capability and cost efficiency."
+      },
+
+      "expansionSummary": "BYD continues to accelerate global expansion, with higher-performance models like the Sealion 7 strengthening its presence in Europe and the UK while reinforcing its position as a vertically integrated EV leader.",
+
+      "signals": [
+        { "type": "positive", "text": "BYD expanding into performance SUV segment" },
+        { "type": "positive", "text": "High-voltage charging capability improving usability" },
+        { "type": "positive", "text": "Global expansion accelerating across Europe and UK" }
+      ],
+
+      "tech": [
+        { "title": "Blade Battery", "desc": "Safety-focused LFP battery architecture." },
+        { "title": "Dual-Motor AWD", "desc": "Performance and traction optimisation." },
+        { "title": "High-Voltage Charging", "desc": "Reduced charging time and improved usability." }
+      ],
+
+      "expansionSignals": [
+        {
+          "region": "europe",
+          "label": "EUROPE EXPANSION",
+          "intensity": ["china","europe"]
+        },
+        {
+          "region": "uk",
+          "label": "UK MARKET ENTRY",
+          "intensity": ["china","europe","uk"]
+        },
+        {
+          "region": "me",
+          "label": "MIDDLE EAST EXPANSION",
+          "intensity": ["china","europe","uk","me"]
+        }
+      ],
+
+      "weeklyIntel": {
+        "week": "Week 20",
+        "tone": "Performance Segment Expansion",
+        "summary": "This model highlights how large-scale EV manufacturers are extending into higher-performance SUV segments while maintaining efficiency, charging capability and cost advantage. The Sealion 7 demonstrates how platform scalability can support both volume and performance positioning within global EV markets.",
+        "signals": [],
+        "signalLayer": {
+          "marketTone": "Expansion Acceleration",
+          "momentum": "High",
+          "phase": "Segment Expansion",
+          "focus": "Performance SUV positioning"
+        }
+      },
+
+      "readiness": [
+        {
+          "region": "Europe",
+          "score": 92,
+          "meta": "High EV adoption · Performance demand"
+        },
+        {
+          "region": "United Kingdom",
+          "score": 88,
+          "meta": "Growing premium EV demand"
+        },
+        {
+          "region": "Middle East",
+          "score": 75,
+          "meta": "Performance segment growth"
+        },
+        {
+          "region": "Latin America",
+          "score": 65,
+          "meta": "Emerging EV adoption"
+        }
+      ],
+
+      "oem_line": "BYD Auto · e-Platform 3.0+ · Blade Battery Architecture",
+
+      "oem_sales": {
+        "2022": 1.86,
+        "2023": 3.02,
+        "2024": 4.2,
+        "rank": 1
+      }
+    },
       "jaecoo_7": {
       "vehicle": "Chery JAECOO 7",
       "slug": "chery-jaecoo-7",

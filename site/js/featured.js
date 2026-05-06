@@ -13,6 +13,10 @@ const raw = await res.json();
 
 cachedVehicles = raw.vehicles; //  STORE ONCE
 
+if(window.buildOEMDashboard){
+  buildOEMDashboard(raw.vehicles);
+}
+
 // ==========================
 // VEHICLE RESOLUTION LOGIC
 // ==========================
@@ -699,15 +703,31 @@ function updateMedia(data){
     model.src = data.model3d;
     model.classList.add("active");
 
+    //  Extract model ID from embed URL
+    let modelId = null;
+
+    try {
+      const parts = data.model3d.split("/models/");
+      if(parts[1]){
+        modelId = parts[1].split("/")[0];
+      }
+    } catch(e){
+      console.warn("Sketchfab ID extraction failed");
+    }
+
+    //  Build correct public link
+    const modelLink = modelId
+      ? `https://sketchfab.com/3d-models/${modelId}`
+      : "https://sketchfab.com";
+
     if(credit){
       credit.innerHTML = `
         3D model courtesy of 
-        <a href="https://sketchfab.com" target="_blank">
+        <a href="${modelLink}" target="_blank">
           Sketchfab creator
         </a>
       `;
     }
-
   } else {
 
     image.src = data.image;

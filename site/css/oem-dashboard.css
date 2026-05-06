@@ -1,0 +1,583 @@
+/* =========================
+OEM DASHBOARD WRAPPER
+========================= */
+
+.oem-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* =========================
+HERO
+========================= */
+
+.oem-hero {
+  margin-bottom: 40px;
+}
+
+.oem-hero h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.oem-hero p {
+  color: #9fb3cc;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+/* =========================
+SECTION CONTAINER
+========================= */
+
+.oem-dashboard-section {
+  margin-top: 30px;
+  padding: 28px;
+
+  border-radius: 16px;
+  border: 1px solid rgba(0,212,255,0.08);
+
+  background:
+    radial-gradient(circle at 30% 20%, rgba(0,212,255,0.05), transparent 60%),
+    linear-gradient(180deg, rgba(8,16,30,0.95), rgba(4,8,18,0.98));
+
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+GRID
+========================= */
+
+.oem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* =========================
+CARD
+========================= */
+
+.oem-card {
+  background: linear-gradient(180deg, rgba(10,20,40,0.9), rgba(5,10,20,0.95));
+  border: 1px solid rgba(0,212,255,0.08);
+  border-radius: 14px;
+  padding: 18px;
+
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.oem-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,212,255,0.25);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* subtle signal edge */
+.oem-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, #00d4ff, transparent);
+  opacity: 0.4;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.oem-header h1 {
+  font-size: 28px;
+}
+
+.oem-header p {
+  font-size: 14px;
+  max-width: 700px;
+}
+
+.oem-header h3 {
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.oem-segment {
+  font-size: 11px;
+  color: #00d4ff;
+  opacity: 0.8;
+}
+
+/* =========================
+SECTIONS
+========================= */
+
+.oem-section {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.oem-sub {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6a7c95;
+  margin-bottom: 10px;
+}
+
+/* =========================
+ROW SYSTEM
+========================= */
+
+.oem-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0;
+  font-size: 12.5px;
+  padding: 5px 0;
+}
+
+.oem-row span:first-child {
+  color: #8fa3c0;
+}
+
+.oem-row span:last-child {
+  color: #e6f2ff;
+  font-weight: 500;
+}
+
+.oem-row span:first-child {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.oem-row span:last-child {
+  text-align: right;
+  font-size: 13px;
+}
+
+/*========================
+HEADER
+==========================*/
+
+.oem-section-header {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: #00d4ff;
+  margin-bottom: 20px;
+}
+
+/*========================
+FILTER ON OEM PAGE
+=========================*/
+
+.oem-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.oem-controls select {
+  background: rgba(10,20,40,0.9);
+  border: 1px solid rgba(0,212,255,0.1);
+  color: #cfe6ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.oem-controls select:hover {
+  border-color: rgba(0,212,255,0.3);
+}
+
+/*=========================
+CARD STYLING
+==========================*/
+
+.oem-signals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 12px;
+}
+
+.signal-pill {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  background: rgba(0,212,255,0.1);
+  color: #00d4ff;
+}
+
+/*==========================
+DEEP DIVE
+===========================*/
+
+.oem-deep-dive {
+  margin-top: 60px;
+  padding: 28px;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0,212,255,0.08),
+    rgba(0,40,80,0.4)
+  );
+
+  border: 1px solid rgba(0,212,255,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glow */
+.oem-deep-dive::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(0,212,255,0.2),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.oem-deep-dive-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.oem-deep-dive-tag {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #00d4ff;
+  margin-bottom: 10px;
+}
+
+.oem-deep-dive h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #e6f6ff;
+}
+
+.oem-deep-dive p {
+  font-size: 13px;
+  color: #b6d9ff;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.oem-deep-dive-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+
+  background: rgba(0,212,255,0.12);
+  border: 1px solid rgba(0,212,255,0.3);
+
+  color: #00d4ff;
+  font-size: 12px;
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+.oem-deep-dive-btn:hover {
+  background: rgba(0,212,255,0.2);
+  transform: translateY(-1px);
+}
+
+.oem-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.oem-card-link:active .oem-card {
+  transform: scale(0.98);
+}
+
+.oem-card-link:hover .oem-card {
+  transform: translateY(-6px);
+  border-color: rgba(0,212,255,0.4);
+  box-shadow: 0 0 25px rgba(0,212,255,0.15);
+}
+
+.oem-card-link {
+  cursor: pointer;
+}
+
+/*=======================
+FURTHER STYLING
+========================*/
+
+.oem-deep-dive-btn {
+  transition: all 0.25s ease;
+}
+
+.oem-deep-dive-btn:hover {
+  transform: translateX(4px);
+}
+
+/*==========================
+STRATEGY STYLING
+============================*/
+
+.oem-strategy {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 10px;
+
+  background: rgba(0, 212, 255, 0.05);
+
+  border: 1px solid rgba(0,212,255,0.12);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.oem-strategy-headline {
+  font-size: 12px;
+  font-weight: 600;
+  color: #00d4ff;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* subtle glow accent */
+.oem-strategy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(0,212,255,0.15),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.oem-strategy-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #00d4ff;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+
+.oem-strategy-text {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #d6ecff;
+  font-weight: 400;
+}
+
+.oem-strategy-text strong {
+  color: #00d4ff;
+  font-weight: 500;
+}
+
+/*============================
+HEATMAP 
+============================*/
+
+#oem-heatmap {
+  margin-bottom: 40px;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.heatmap-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(10,20,40,0.7);
+  border: 1px solid rgba(0,212,255,0.08);
+}
+
+.heatmap-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.heatmap-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(0,212,255,0.08);
+}
+
+/* =========================
+STRATEGY BLOCK
+========================= */
+
+.oem-strategy {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+
+  font-size: 12.5px;
+  color: #9fb3cc;
+  line-height: 1.5;
+}
+
+/* =========================
+SIGNAL ALIGNMENT
+========================= */
+
+.signal-phase {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+}
+
+.phase-expansion {
+  background: rgba(0,212,255,0.15);
+  color: #00d4ff;
+}
+
+.phase-scaling {
+  background: rgba(120,140,255,0.15);
+  color: #8aa6ff;
+}
+
+.phase-entry {
+  background: rgba(255,180,80,0.15);
+  color: #ffb450;
+}
+
+.signal-value.high { color: #00d4ff; }
+.signal-value.mid { color: #8aa6ff; }
+.signal-value.low { color: #aaa; }
+
+/*===============================
+RESPONSIVE + MOBILE + TABLET
+===============================*/
+
+/* =========================
+OEM GRID RESPONSIVE SYSTEM
+========================= */
+
+.oem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 30px;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .oem-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .oem-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Mobile refinement */
+@media (max-width: 640px) {
+  .oem-card {
+    padding: 16px;
+  }
+
+  .oem-card h3 {
+    font-size: 16px;
+  }
+}
+
+/* Mobile stacking for readability */
+@media (max-width: 480px) {
+  .oem-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .oem-row span:last-child {
+    text-align: left;
+  }
+}
+
+/* Mobile readability boost */
+@media (max-width: 640px) {
+  .oem-strategy-text {
+    font-size: 13px;
+  }
+}
+
+.oem-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Mobile scroll instead of wrapping */
+@media (max-width: 640px) {
+  .oem-filters {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .oem-filters::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .oem-filters::-webkit-scrollbar-thumb {
+    background: rgba(0,212,255,0.3);
+    border-radius: 10px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .oem-header h1 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .oem-header h1 {
+    font-size: 20px;
+  }
+
+  .oem-header p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  .oem-card {
+    backdrop-filter: blur(6px);
+  }
+}
