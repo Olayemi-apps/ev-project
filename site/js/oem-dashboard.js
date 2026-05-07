@@ -19,7 +19,9 @@ async function loadOEMDashboard(){
     const raw = await res.json();
 
     oemVehicles = Object.values(raw.vehicles);
+
     buildOEMDashboard(oemVehicles);
+    buildOEMCharts(oemVehicles);
     buildOEMHeatmap(oemVehicles);
     initOEMControls();
 
@@ -108,6 +110,222 @@ function buildOEMDashboard(vehicles){
   `;
 }
 
+function generateInsights(vehicles){
+
+  if(!vehicles || !vehicles.length){
+    return {
+      positioning: "No data available for current selection.",
+      charging: "No charging behaviour identified.",
+      phase: "No market phase distribution available."
+    };
+  }
+
+  // =========================
+  // POSITIONING INSIGHT
+  // =========================
+  const avgExpansion = vehicles.reduce((sum, v) =>
+    sum + (v.momentum?.marketExpansion ?? 0), 0
+  ) / vehicles.length;
+
+  const avgTech = vehicles.reduce((sum, v) =>
+    sum + (v.momentum?.technologyLeadership ?? 0), 0
+  ) / vehicles.length;
+
+  const positioning =
+    avgExpansion > 85 && avgTech > 80
+      ? "Vehicles are concentrated in the high-expansion, high-technology quadrant, indicating strong platform scalability and innovation alignment."
+      : "Positioning is distributed across expansion and technology ranges, reflecting varied strategic approaches across manufacturers.";
+
+  // =========================
+  // CHARGING INSIGHT
+  // =========================
+  const frontLoadedCount = vehicles.filter(v =>
+    v.intelligence?.systemBehaviour?.chargingProfile?.includes("front-loaded")
+  ).length;
+
+  const charging =
+    frontLoadedCount / vehicles.length > 0.6
+      ? "Front-loaded charging strategies dominate, reflecting a focus on reducing dwell time and maximising high-power infrastructure efficiency."
+      : "Charging strategies are mixed, indicating varied optimisation approaches across vehicle platforms.";
+
+  // =========================
+  // PHASE INSIGHT
+  // =========================
+  const phaseCounts = {};
+
+  vehicles.forEach(v => {
+    const phase = v.weeklyIntel?.signalLayer?.phase || "Unknown";
+    phaseCounts[phase] = (phaseCounts[phase] || 0) + 1;
+  });
+
+  const dominantPhase = Object.keys(phaseCounts).reduce((a, b) =>
+    phaseCounts[a] > phaseCounts[b] ? a : b
+  );
+
+  const phase =
+    dominantPhase === "Scaling"
+      ? "The dataset is dominated by scaling-phase vehicles, indicating a transition toward volume expansion and market consolidation."
+      : `Vehicles are primarily in the ${dominantPhase} phase, reflecting early-stage or targeted expansion strategies.`;
+
+  return { positioning, charging, phase };
+}
+
+function buildOEMCharts(vehicles){
+
+  // =========================
+  // DESTROY PREVIOUS CHARTS
+  // =========================
+  if(window.oemCharts){
+    Object.values(window.oemCharts).forEach(chart => {
+      if(chart && typeof chart.destroy === "function"){
+        chart.destroy();
+      }
+    });
+  }
+
+  // RESET STORE
+  window.oemCharts = {};
+
+  // =========================
+  // DATA PREP
+  // =========================
+  const labels = vehicles.map(v => v.vehicle);
+
+  const expansion = vehicles.map(v => v.momentum?.marketExpansion ?? 0);
+  const technology = vehicles.map(v => v.momentum?.technologyLeadership ?? 0);
+
+  // =========================
+  // 1. POSITIONING SCATTER
+  // =========================
+  const positioningCtx = document.getElementById("positioningChart");
+
+  if(positioningCtx){
+    window.oemCharts.positioning = new Chart(positioningCtx, {
+      type: "scatter",
+      data: {
+        datasets: [{
+          label: "OEM Positioning",
+          data: vehicles.map(v => ({
+            x: v.momentum?.marketExpansion ?? 0,
+            y: v.momentum?.technologyLeadership ?? 0,
+            label: v.vehicle
+          })),
+          backgroundColor: "#00d4ff"
+        }]
+      },
+      options: {
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: ctx => ctx.raw.label
+            }
+          }
+        },
+        scales: {
+          x: { title: { display: true, text: "Expansion" }},
+          y: { title: { display: true, text: "Technology" }}
+        }
+      }
+    });
+  }
+
+  // =========================
+  // 2. CHARGING DISTRIBUTION
+  // =========================
+  const chargingColorMap = {
+    "Front-loaded": "#00d4ff",   // speed / responsiveness
+    "High-power": "#ff5c7a",     // infrastructure / capability
+    "Other": "#7a8aa0"           // neutral
+  };
+
+  const chargingCounts = {};
+
+  vehicles.forEach(v => {
+
+    const typeRaw = v.intelligence?.systemBehaviour?.chargingProfile || "Unknown";
+
+    const type =
+      typeRaw.includes("front-loaded") ? "Front-loaded" :
+      typeRaw.includes("high-power") ? "High-power" :
+      "Other";
+
+    chargingCounts[type] = (chargingCounts[type] || 0) + 1;
+
+  });
+
+  const chargingCtx = document.getElementById("chargingChart");
+
+  if(chargingCtx){
+
+    //  destroy previous chart (important for filters)
+    if(window.oemCharts?.charging){
+      window.oemCharts.charging.destroy();
+    }
+
+    // fallback if empty
+    const labels = Object.keys(chargingCounts).length
+      ? Object.keys(chargingCounts)
+      : ["No Data"];
+
+    const values = Object.values(chargingCounts).length
+      ? Object.values(chargingCounts)
+      : [1];
+
+    window.oemCharts.charging = new Chart(chargingCtx, {
+      type: "doughnut",
+      data: {
+        labels: Object.keys(chargingCounts),
+        datasets: [{
+          data: Object.values(chargingCounts),
+          backgroundColor: Object.keys(chargingCounts).map(
+            key => chargingColorMap[key] || "#7a8aa0"
+          ),
+          borderWidth: 1
+        }]
+      },
+      options: {
+        cutout: "70%",
+        radius: "85%",
+        plugins: {
+          legend: {
+            position: "top",
+            labels: {
+              color: "#cfe8ff",
+              font: { size: 11 }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // =========================
+  // 3. PHASE DISTRIBUTION
+  // =========================
+  const phaseCounts = {};
+
+  vehicles.forEach(v => {
+    const phase = v.weeklyIntel?.signalLayer?.phase || "Unknown";
+    phaseCounts[phase] = (phaseCounts[phase] || 0) + 1;
+  });
+
+  const phaseCtx = document.getElementById("phaseChart");
+
+  if(phaseCtx){
+    new Chart(phaseCtx, {
+      type: "bar",
+      data: {
+        labels: Object.keys(phaseCounts).map(l => l || "Unknown Phase"),
+        datasets: [{
+          data: Object.values(phaseCounts),
+          backgroundColor: "#00d4ff"
+        }]
+      }
+    });
+  }
+
+}
+
 function buildHeadline(v){
 
   const strategy = (v.market?.strategy || "").toLowerCase();
@@ -123,6 +341,21 @@ function buildHeadline(v){
   return "Balanced market expansion strategy";
 }
 
+function mapSegmentToFilter(segment){
+
+  if(!segment) return "Other";
+
+  segment = segment.toLowerCase();
+
+  if(segment.includes("mid-size")) return "Mid-size SUV";
+  if(segment.includes("compact")) return "Compact SUV";
+  if(segment.includes("premium performance")) return "Premium";
+  if(segment.includes("luxury")) return "Luxury";
+
+  return "Other";
+}
+
+
 function initOEMControls(){
 
   const segmentFilter = document.getElementById("filter-segment");
@@ -131,6 +364,34 @@ function initOEMControls(){
 
   if(!segmentFilter || !phaseFilter || !sortSelect) return;
 
+  // =========================
+  // BUILD SEGMENT COUNTS
+  // =========================
+  const segmentCounts = {};
+
+  oemVehicles.forEach(v => {
+    const seg = mapSegmentToFilter(v.market?.segment);
+    segmentCounts[seg] = (segmentCounts[seg] || 0) + 1;
+  });
+
+  // =========================
+  // POPULATE DROPDOWN
+  // =========================
+  segmentFilter.innerHTML = `<option value="all">All Segments</option>`;
+
+  Object.entries(segmentCounts)
+    .sort((a, b) => b[1] - a[1]) // optional: biggest first
+    .forEach(([seg, count]) => {
+
+      const opt = document.createElement("option");
+
+      opt.value = seg;                //  used for filtering
+      opt.textContent = `${seg} (${count})`; //  display
+
+      segmentFilter.appendChild(opt);
+
+    });
+
   function applyFilters(){
 
     let filtered = [...oemVehicles];
@@ -138,7 +399,7 @@ function initOEMControls(){
     // SEGMENT FILTER
     if(segmentFilter.value !== "all"){
       filtered = filtered.filter(v =>
-        v.market?.segment === segmentFilter.value
+        mapSegmentToFilter(v.market?.segment) === segmentFilter.value
       );
     }
 
@@ -148,6 +409,12 @@ function initOEMControls(){
         v.weeklyIntel?.signalLayer?.phase === phaseFilter.value
       );
     }
+
+    const insights = generateInsights(filtered);
+
+    document.getElementById("positioningInsight").textContent = insights.positioning;
+    document.getElementById("chargingInsight").textContent = insights.charging;
+    document.getElementById("phaseInsight").textContent = insights.phase;
 
     // SORTING
     if(sortSelect.value === "expansion"){
@@ -165,6 +432,7 @@ function initOEMControls(){
     }
 
     buildOEMDashboard(filtered);
+    buildOEMCharts(filtered);
   }
 
   segmentFilter.addEventListener("change", applyFilters);

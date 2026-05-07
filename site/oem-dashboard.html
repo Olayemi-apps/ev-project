@@ -94,49 +94,79 @@
   </header>
 
 <main class="oem-wrapper">
-
   <section class="oem-hero">
     <div class="oem-section-header">
-        STRATUM OEM INTELLIGENCE
+      STRATUM OEM INTELLIGENCE
     </div>
+
     <p>
       Cross-manufacturer analysis of EV system behaviour, expansion strategy, 
       and technology positioning across UK and European markets.
     </p>
   </section>
 
-    <section class="oem-dashboard-section">
 
-        <div class="oem-controls">
+        <section class="oem-dashboard-section">
 
-            <select id="filter-segment">
-                <option value="all">All Segments</option>
-                <option value="Premium performance EV">Premium</option>
-                <option value="Mid-size electric SUV">Mid-size SUV</option>
-                <option value="Compact electric SUV">Compact SUV</option>
-                <option value="Luxury high-performance EV">Luxury</option>
-            </select>
+          <!-- CONTROLS -->
+          <div class="oem-controls">
+            <div class="oem-filters-wrapper">
+              <div class="oem-filters">
 
-            <select id="filter-phase">
-                <option value="all">All Phases</option>
-                <option value="Global Entry">Global Entry</option>
-                <option value="Segment Expansion">Expansion</option>
-                <option value="Scaling">Scaling</option>
-            </select>
+                <select id="filter-segment">
+                  <option value="all">All Segments</option>
+                  <option value="Premium">Premium</option>
+                  <option value="Mid-size SUV">Mid-size SUV</option>
+                  <option value="Compact SUV">Compact SUV</option>
+                  <option value="Luxury">Luxury</option>
+                </select>
 
-            <select id="sort-by">
-                <option value="none">Sort</option>
-                <option value="expansion">Expansion Score</option>
-                <option value="technology">Technology Score</option>
-            </select>
+                <select id="filter-phase">
+                  <option value="all">All Phases</option>
+                  <option value="Global Entry">Global Entry</option>
+                  <option value="Segment Expansion">Expansion</option>
+                  <option value="Scaling">Scaling</option>
+                </select>
 
-        </div>
+                <select id="sort-by">
+                  <option value="none">Sort</option>
+                  <option value="expansion">Expansion Score</option>
+                  <option value="technology">Technology Score</option>
+                </select>
 
-        <div id="oem-heatmap"></div>
-        <div id="oem-dashboard"></div>
+              </div>
+            </div>
+          </div>
 
-        <div class="oem-deep-dive">
+          <!--  CHARTS (CORRECT POSITION) -->
+          <div class="oem-charts">
 
+            <div class="oem-chart">
+              <canvas id="positioningChart"></canvas>
+
+                <p id="positioningInsight" class="oem-chart-insight"></p>
+            </div>
+
+            <div class="oem-chart">
+              <canvas id="chargingChart"></canvas>
+
+                <p id="chargingInsight" class="oem-chart-insight"></p>
+            </div>
+
+            <div class="oem-chart">
+              <canvas id="phaseChart"></canvas>
+
+                <p id="phaseInsight" class="oem-chart-insight"></p>
+            </div>
+
+          </div>
+
+          <!-- DATA LAYERS -->
+          <div id="oem-heatmap"></div>
+          <div id="oem-dashboard"></div>
+
+          <!-- CTA -->
+          <div class="oem-deep-dive">
             <div class="oem-deep-dive-content">
 
                 <div class="oem-deep-dive-tag">
@@ -300,7 +330,11 @@
     </div>
   </footer>
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/oem-dashboard.js"></script>
+
 <script src="./js/nav.js"></script>
 <script src="./js/ajax-nav.js"></script>
 <script src="./js/app.js"></script>
