@@ -69,29 +69,22 @@ function buildOEMDashboard(vehicles){
                 <span>${profile.charging}</span>
               </div>
 
-              <div class="oem-row signal-row">
+              <div class="oem-row">
                 <span>Expansion Phase</span>
-                <span class="signal-phase ${getPhaseClass(v.weeklyIntel?.signalLayer?.phase)}">
-                  ${v.weeklyIntel?.signalLayer?.phase || "-"}
-                </span>
+                <span>${profile.expansionPhase}</span>
               </div>
 
               <div class="oem-row signal-row">
                 <span>Expansion</span>
-                <span class="signal-value high">
-                  ${v.momentum?.marketExpansion || 0}
-                </span>
+                <span class="signal-value high">${v.momentum?.marketExpansion || 0}</span>
               </div>
 
               <div class="oem-row signal-row">
                 <span>Technology</span>
-                <span class="signal-value mid">
-                  ${v.momentum?.technologyLeadership || 0}
-                </span>
+                <span class="signal-value mid">${v.momentum?.technologyLeadership || 0}</span>
               </div>
 
               <div class="oem-strategy">
-
                 <div class="oem-strategy-headline">
                   ${buildHeadline(v)}
                 </div>
@@ -99,7 +92,6 @@ function buildOEMDashboard(vehicles){
                 <div class="oem-strategy-text">
                   ${buildNarrative(v)}
                 </div>
-
               </div>
 
             </div>
@@ -170,6 +162,20 @@ function generateInsights(vehicles){
   return { positioning, charging, phase };
 }
 
+function highlightCard(slug){
+
+  document.querySelectorAll(".oem-card").forEach(card => {
+    card.classList.remove("is-highlighted");
+  });
+
+  const target = document.querySelector(`.oem-card[data-slug="${slug}"]`);
+
+  if(target){
+    target.classList.add("is-highlighted");
+  }
+
+}
+
 function buildOEMCharts(vehicles){
 
   // =========================
@@ -208,24 +214,173 @@ function buildOEMCharts(vehicles){
           data: vehicles.map(v => ({
             x: v.momentum?.marketExpansion ?? 0,
             y: v.momentum?.technologyLeadership ?? 0,
-            label: v.vehicle
+
+            label: v.vehicle,
+            slug: v.slug, 
+            hoverCursor: "pointer",
+
+            strategy: v.market?.strategy || "N/A",
+            phase: v.weeklyIntel?.signalLayer?.phase || "Unknown",
+            charging: v.intelligence?.systemBehaviour?.chargingProfile || "Unknown",
+            r: Math.max(4, (v.momentum?.marketExpansion ?? 0) / 20)
           })),
-          backgroundColor: "#00d4ff"
+          backgroundColor: "rgba(0, 212, 255, 0.85)",
+          // Use dynamic radius from data
+          pointRadius: ctx => ctx.raw.r,
+          pointHoverRadius: ctx => ctx.raw.r + 2,
+
+          pointBorderWidth: 1,
+          pointBorderColor: "#0b1f2a"
         }]
       },
       options: {
-        plugins: {
-          tooltip: {
-            callbacks: {
-              label: ctx => ctx.raw.label
-            }
+        onClick: (evt, elements) => {
+          if(!elements.length) return;
+
+          const chart = elements[0].element.$context.raw;
+
+          if(chart?.slug){
+            window.location.href = `./featured.html?car=${chart.slug}`;
           }
         },
-        scales: {
-          x: { title: { display: true, text: "Expansion" }},
-          y: { title: { display: true, text: "Technology" }}
+          onHover: (evt, elements) => {
+
+          if(!elements.length){
+            // remove highlight if nothing hovered
+            document.querySelectorAll(".oem-card").forEach(c =>
+              c.classList.remove("is-highlighted")
+            );
+            return;
+          }
+
+          const point = elements[0].element.$context.raw;
+
+          if(point?.slug){
+            highlightCard(point.slug);
+          }
+        },
+        plugins: {
+          annotation: {
+            annotations: {
+              xLine: {
+                type: "line",
+                xMin: 80,
+                xMax: 80,
+                borderColor: "rgba(0,212,255,0.2)",
+                borderWidth: 1
+              },
+              yLine: {
+                type: "line",
+                yMin: 80,
+                yMax: 80,
+                borderColor: "rgba(0,212,255,0.2)",
+                borderWidth: 1
+                 },
+
+                  // 🔹 QUADRANT LABELS
+                  q1: {
+                    type: "label",
+                    xValue: 90,
+                    yValue: 90,
+                    content: ["Leaders"],
+                    color: "#00d4ff",
+                    font: { size: 12 }
+                  },
+                  q2: {
+                    type: "label",
+                    xValue: 60,
+                    yValue: 90,
+                    content: ["Tech Leaders"],
+                    color: "#7dd3fc",
+                    font: { size: 12 }
+                  },
+                  q3: {
+                    type: "label",
+                    xValue: 90,
+                    yValue: 60,
+                    content: ["Expansion"],
+                    color: "#38bdf8",
+                    font: { size: 12 }
+                  },
+                  q4: {
+                    type: "label",
+                    xValue: 60,
+                    yValue: 60,
+                    content: ["Emerging"],
+                    color: "#64748b",
+                    font: { size: 12 }
+                  },
+
+                  // 🔹 OPTIONAL LEADER ZONE HIGHLIGHT
+                  box1: {
+                    type: "box",
+                    xMin: 80,
+                    xMax: 100,
+                    yMin: 80,
+                    yMax: 100,
+                    backgroundColor: "rgba(0,212,255,0.05)"
+                  }
+
+            }
+          },
+          tooltip: {
+            backgroundColor: "rgba(8, 25, 35, 0.95)",
+            borderColor: "#00d4ff",
+            borderWidth: 1,
+
+              padding: 12,
+
+              titleColor: "#ffffff",
+              titleFont: {
+                size: 13,
+                weight: "600"
+              },
+
+              bodyColor: "#9fdcff",
+              bodyFont: {
+                size: 12
+              },
+
+              displayColors: false,
+
+
+              callbacks: {
+
+                title: (ctx) => {
+                  return ctx[0].raw.label;
+                },
+
+              label: (ctx) => {
+                  const d = ctx.raw;
+
+                  const signal =
+                    d.strategy.toLowerCase().includes("performance") ? "Performance-led" :
+                    d.strategy.toLowerCase().includes("value") ? "Value-driven" :
+                    "Balanced";
+
+                  return [
+                    `${signal} strategy`,
+                    `Phase: ${d.phase}`,
+                    `Charging: ${d.charging}`,
+                    `Expansion: ${d.x} | Technology: ${d.y}`
+                  ];
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              min: 50,
+              max: 100,
+              title: { display: true, text: "Expansion" }
+            },
+            y: {
+              min: 50,
+              max: 100,
+              title: { display: true, text: "Technology" }
+            }
+          }
         }
-      }
     });
   }
 
@@ -284,8 +439,8 @@ function buildOEMCharts(vehicles){
         }]
       },
       options: {
-        cutout: "70%",
-        radius: "85%",
+        cutout: "75%",
+        radius: "80%",
         plugins: {
           legend: {
             position: "top",
@@ -510,7 +665,15 @@ function buildNarrative(v){
 
   const segment = (v.market?.segment || "").toLowerCase();
   const strategy = (v.market?.strategy || "").toLowerCase();
-  const phase = v.weeklyIntel?.signalLayer?.phase || "";
+  const phaseRaw = v.weeklyIntel?.signalLayer?.phase || "Unknown";
+
+  const phase =
+    phaseRaw === "Segment Expansion" ? "Expansion" :
+    phaseRaw === "Global Entry" ? "Global Entry" :
+    phaseRaw === "Scaling" ? "Scaling" :
+    "Other";
+
+
   const charging = (v.intelligence?.systemBehaviour?.chargingProfile || "").toLowerCase();
 
   let narrative = "";

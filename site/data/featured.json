@@ -2,6 +2,210 @@
   "current": "xpeng_g6",
 
   "vehicles": {
+      "lotus_emeya": {
+        "vehicle": "Lotus Emeya",
+        "slug": "lotus-emeya",
+        "tagline": "Ultra-premium electric grand tourer blending Lotus performance engineering with luxury EV architecture",
+
+        "model3d": "https://sketchfab.com/models/2a8bf6c9275c4a4ea951caf0f5e21077/embed?autostart=1&ui_theme=dark&ui_controls=1",
+
+        "range": "610 km WLTP",
+        "battery": "102 kWh",
+        "battery_kwh": 102,
+        "power": "905 hp",
+        "accel": "2.8 s",
+
+        "analysis": {
+          "themeColor": "#d9b36c",
+          "radar": {
+            "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+            "values": [92, 94, 96, 84, 70]
+          },
+          "breakdown": {
+            "labels": ["Range", "Charging", "Acceleration", "Efficiency", "Value"],
+            "values": [92, 94, 96, 84, 70]
+          },
+          "charging_curve": [
+            { "soc": 10, "kw": 350 },
+            { "soc": 30, "kw": 320 },
+            { "soc": 50, "kw": 250 },
+            { "soc": 70, "kw": 170 },
+            { "soc": 90, "kw": 85 }
+          ]
+        },
+
+        "intelligence": {
+          "systemBehaviour": {
+            "chargingProfile": "Ultra high-power front-loaded charging curve",
+            "efficiencyProfile": "Performance-biased efficiency tuning",
+            "performanceProfile": "Extreme acceleration with stable high-speed delivery"
+          },
+          "operationalInterpretation": {
+            "chargingImplication": "800V architecture significantly reduces charging dwell time on high-power infrastructure",
+            "efficiencyImplication": "Aerodynamic optimisation supports strong motorway efficiency despite high performance output",
+            "performanceImplication": "Dual-motor system delivers sustained acceleration and high-speed stability"
+          },
+          "environmentFit": {
+            "urban": "Moderate suitability",
+            "motorway": "Exceptional high-speed efficiency",
+            "coldClimate": "Moderate range sensitivity"
+          }
+        },
+
+        "description": "The Lotus Emeya represents Lotus Technology’s expansion into ultra-premium electric grand touring segments, combining high-performance dual-motor architecture with luxury-focused interior integration and advanced aerodynamic engineering. Built on the company’s next-generation EV platform, the Emeya reflects Lotus’ transition from niche sports car manufacturer into a broader premium EV performance brand targeting Europe, China and the Middle East.",
+
+        "specs": [
+          "Dual-motor AWD architecture",
+          "800V ultra-fast charging platform",
+          "Active aerodynamic system",
+          "Air suspension with dynamic handling control",
+          "Over-the-air software updates"
+        ],
+
+        "technology": [
+          {
+            "title": "800V Architecture",
+            "desc": "Ultra-fast charging system supporting reduced charging time and improved thermal efficiency."
+          },
+          {
+            "title": "Active Aerodynamics",
+            "desc": "Adaptive aerodynamic elements improving stability and high-speed efficiency."
+          },
+          {
+            "title": "Performance Chassis",
+            "desc": "Lotus-tuned suspension and handling systems designed for dynamic road behaviour."
+          }
+        ],
+
+        "insight": "What stands out in the data is how Lotus is repositioning itself from a lightweight sports car specialist into a technology-led luxury EV performance brand. The Emeya combines ultra-fast charging capability, high-speed efficiency, and aggressive aerodynamic engineering to compete directly with premium European performance EVs. This reflects a broader market transition where heritage performance brands are adapting to electrification by integrating software, charging performance, and luxury refinement into next-generation grand touring platforms.",
+
+        "comparison": [
+          {
+            "name": "Lotus Emeya",
+            "range": "610 km",
+            "battery": "102 kWh",
+            "power": "905 hp",
+            "accel": "2.8 s",
+            "featured": true
+          },
+          {
+            "name": "Porsche Taycan Turbo GT",
+            "range": "555 km",
+            "battery": "105 kWh",
+            "power": "1019 hp",
+            "accel": "2.3 s"
+          },
+          {
+            "name": "Lucid Air Sapphire",
+            "range": "694 km",
+            "battery": "118 kWh",
+            "power": "1200+ hp",
+            "accel": "2.0 s"
+          },
+          {
+            "name": "Tesla Model S Plaid",
+            "range": "637 km",
+            "battery": "100 kWh",
+            "power": "1020 hp",
+            "accel": "2.1 s"
+          }
+        ],
+
+        "momentum": {
+          "globalDemand": 72,
+          "technologyLeadership": 94,
+          "marketExpansion": 78,
+          "pricingStrategy": 62
+        },
+
+        "market": {
+          "segment": "Luxury performance EV",
+          "competitors": [
+            "Porsche Taycan Turbo",
+            "Tesla Model S Plaid",
+            "Lucid Air Sapphire",
+            "Audi e-tron GT"
+          ],
+          "strategy": "Technology-led premium performance positioning combining Lotus driving dynamics with next-generation EV architecture."
+        },
+
+        "expansionSummary": "Lotus Technology is accelerating global expansion across Europe, China and the Middle East, using the Emeya to strengthen its premium electric performance positioning.",
+
+        "signals": [
+          { "type": "positive", "text": "Lotus expanding premium EV portfolio globally" },
+          { "type": "positive", "text": "800V charging capability strengthens GT usability" },
+          { "type": "neutral", "text": "Brand repositioning still evolving beyond sports car heritage" }
+        ],
+
+        "tech": [
+          { "title": "800V Charging", "desc": "Ultra-fast charging reducing long-distance downtime." },
+          { "title": "Active Aero", "desc": "Dynamic aerodynamic optimisation at high speed." },
+          { "title": "Lotus Dynamics", "desc": "Performance-focused chassis tuning and handling control." }
+        ],
+
+        "expansionSignals": [
+          {
+            "region": "europe",
+            "label": "EUROPE PERFORMANCE EXPANSION",
+            "intensity": ["china","europe"]
+          },
+          {
+            "region": "uk",
+            "label": "UK PERFORMANCE POSITIONING",
+            "intensity": ["china","europe","uk"]
+          },
+          {
+            "region": "me",
+            "label": "MIDDLE EAST LUXURY EXPANSION",
+            "intensity": ["china","europe","uk","me"]
+          }
+        ],
+
+        "weeklyIntel": {
+          "week": "Week 20",
+          "tone": "Luxury EV Performance Expansion",
+          "summary": "The Emeya demonstrates how legacy performance manufacturers are evolving toward software-integrated electric grand touring platforms, combining charging capability, aerodynamic efficiency and premium positioning to compete within the global luxury EV market.",
+          "signals": [],
+          "signalLayer": {
+            "marketTone": "Premium Expansion",
+            "momentum": "High",
+            "phase": "Scaling",
+            "focus": "Luxury EV platform positioning"
+          }
+        },
+
+        "readiness": [
+          {
+            "region": "Europe",
+            "score": 90,
+            "meta": "Luxury EV demand · High-speed charging maturity"
+          },
+          {
+            "region": "United Kingdom",
+            "score": 84,
+            "meta": "Performance EV demand growth"
+          },
+          {
+            "region": "Middle East",
+            "score": 82,
+            "meta": "Luxury performance market expansion"
+          },
+          {
+            "region": "Latin America",
+            "score": 55,
+            "meta": "Limited ultra-premium EV adoption"
+          }
+        ],
+
+        "oem_line": "Lotus Technology · EPA Platform · 800V Architecture",
+
+        "oem_sales": {
+          "2022": 0.015,
+          "2023": 0.028,
+          "2024": 0.045,
+          "rank": 12
+        }
+      },
       "byd_sealion_7": {
       "vehicle": "BYD SEALION 7",
       "slug": "byd-sealion-7",

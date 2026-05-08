@@ -4,53 +4,41 @@ let cachedVehicles = null;
 --------------------------- */
 let engineInterval;
 
+
+function safeText(id, value){
+  const el = document.getElementById(id);
+  if(el) el.textContent = value || "";
+}
+
+function safeHTML(id, value){
+  const el = document.getElementById(id);
+  if(el) el.innerHTML = value || "";
+}
+
 async function loadFeatured(){
 
-try{
 
-const res = await fetch("./data/featured.json?v=2");
-const raw = await res.json();
+  try{
+    const res = await fetch("./data/featured.json?v=2");
+    const raw = await res.json();
 
-cachedVehicles = raw.vehicles; //  STORE ONCE
+    cachedVehicles = raw.vehicles; //  REQUIRED
 
-if(window.buildOEMDashboard){
-  buildOEMDashboard(raw.vehicles);
-}
+    const vehicles = raw.vehicles;
+    const defaultVehicle = raw.current;
 
-// ==========================
-// VEHICLE RESOLUTION LOGIC
-// ==========================
+    const params = new URLSearchParams(window.location.search);
+    const carSlug = params.get("car");
 
-const params = new URLSearchParams(window.location.search);
-const urlCar = params.get("car");
+    let currentKey;
 
-let currentKey = raw.current;
+    if(carSlug && vehicles[carSlug]){
+      currentKey = carSlug;
+    } else {
+      currentKey = defaultVehicle;
+    }
 
-// 1. URL PARAM (highest priority)
-if(urlCar){
-  const match = Object.keys(raw.vehicles).find(k => {
-    const v = raw.vehicles[k];
-    return v.slug === urlCar;
-  });
-
-  if(match){
-    currentKey = match;
-  }
-}
-
-// 2. ROTATION (only if NO URL param)
-else{
-
-  const keys = Object.keys(raw.vehicles);
-
-  // rotate every 6 hours
-  const index = Math.floor(Date.now() / (1000 * 60 * 60 * 6)) % keys.length;
-
-  currentKey = keys[index];
-}
-
-
-const data = raw.vehicles[currentKey];
+    const data = raw.vehicles[currentKey];
 
 window.currentVehicleData = data;
 
@@ -106,9 +94,8 @@ if (hint) {
 updateMedia(data);
 
 /* INTEL SUMMARY */
-const intelSummary = document.getElementById("intel-summary");
-if(intelSummary && window.weeklyIntel.summary){
-  intelSummary.innerHTML = `<p>${window.weeklyIntel.summary}</p>`;
+if(window.weeklyIntel?.summary){
+  safeHTML("intel-summary", `<p>${window.weeklyIntel.summary}</p>`);
 }
 
 const liveLabel = document.getElementById("live-label");
@@ -125,8 +112,8 @@ if(liveLabel){
 document.getElementById("expansion-title").textContent = data.vehicle + " Global Expansion";
 
 /* BASIC INFO */
-document.getElementById("featured-name").textContent = data.vehicle;
-document.getElementById("featured-tagline").textContent = data.tagline;
+safeText("featured-name", data.vehicle);
+safeText("featured-tagline", data.tagline);
 document.getElementById("featured-description").textContent = data.description;
 
 /* INDICATORS */
@@ -609,11 +596,8 @@ if(!data.expansionSignals.length){
   signalsSection.style.display = "block";
 }
 
-
-
-const intelSummary = document.getElementById("intel-summary");
-if(intelSummary && window.weeklyIntel.summary){
-  intelSummary.innerHTML = `<p>${window.weeklyIntel.summary}</p>`;
+if(window.weeklyIntel?.summary){
+  safeHTML("intel-summary", `<p>${window.weeklyIntel.summary}</p>`);
 }
 
 const list = document.getElementById("featured-specs");
@@ -629,8 +613,8 @@ data.specs.forEach(spec => {
 document.getElementById("expansion-title").textContent = data.vehicle + " Global Expansion";
 
 /* UPDATE UI */
-document.getElementById("featured-name").textContent = data.vehicle;
-document.getElementById("featured-tagline").textContent = data.tagline;
+safeText("featured-name", data.vehicle);
+safeText("featured-tagline", data.tagline);
 document.getElementById("featured-description").textContent = data.description;
 
 document.getElementById("featured-range").textContent = data.range;

@@ -142,12 +142,8 @@ ROW SYSTEM
   align-items: center;
   gap: 12px;
   margin: 6px 0;
-  font-size: 12.5px;
+  font-size: 13px;
   padding: 5px 0;
-}
-
-.oem-row span:first-child {
-  color: #8fa3c0;
 }
 
 .oem-row span:last-child {
@@ -156,13 +152,22 @@ ROW SYSTEM
 }
 
 .oem-row span:first-child {
-  opacity: 0.7;
+  color: rgba(210,225,245,0.7);
   font-size: 12px;
 }
 
 .oem-row span:last-child {
   text-align: right;
   font-size: 13px;
+}
+
+.oem-row span:first-child{
+  color: rgba(215,230,245,0.72);
+}
+
+.oem-row span:last-child{
+  color: rgba(245,250,255,0.95);
+  font-weight: 500;
 }
 
 /*========================
@@ -217,7 +222,18 @@ CARD STYLING
   padding: 4px 8px;
   border-radius: 20px;
   background: rgba(0,212,255,0.1);
-  color: #00d4ff;
+  color: #dff6ff;
+}
+
+.oem-card{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8,22,35,0.95),
+      rgba(5,14,24,0.98)
+    );
+
+  border: 1px solid rgba(0,212,255,0.08);
 }
 
 /*==========================
@@ -381,8 +397,8 @@ STRATEGY STYLING
 
 .oem-strategy-text {
   font-size: 12px;
-  line-height: 1.5;
-  color: #d6ecff;
+  color: rgba(225,235,255,0.82);
+  line-height: 1.6;
   font-weight: 400;
 }
 
@@ -499,6 +515,13 @@ FILTER ROW
   min-width: max-content;
 }
 
+/* EMPTY PANEL */
+
+.empty-panel,
+.oem-summary:empty{
+  display:none;
+}
+
 /* =========================
 FILTER INPUTS
 ========================= */
@@ -521,6 +544,28 @@ FILTER INPUTS
 
 .oem-chart-insight {
   transition: opacity 0.3s ease;
+}
+
+/* ADDITIONAL HOVER */
+
+.oem-card {
+  transition: all 0.25s ease;
+}
+
+/*  Highlight state */
+.oem-card.is-highlighted {
+  border-color: #00d4ff;
+  box-shadow: 0 0 0 1px rgba(0,212,255,0.4),
+              0 12px 30px rgba(0,212,255,0.15);
+  transform: translateY(-3px);
+}
+
+.oem-card {
+  opacity: 0.5;
+}
+
+.oem-card.is-highlighted {
+  opacity: 1;
 }
 
 /*==============================

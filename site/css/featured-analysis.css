@@ -394,6 +394,35 @@ SIGNAL LAYER ALIGNMENT
   color: #ffb450;
 }
 
+/*==================
+POINTER STYLING
+==================*/
+
+canvas {
+  cursor: pointer;
+}
+
+/*===================
+CONTROLS
+====================*/
+
+.oem-controls {
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(0,212,255,0.08);
+  padding-bottom: 14px;
+}
+
+/* MINI CARD STYLING */
+
+.oem-mini-card {
+  transition: all 0.2s ease;
+}
+
+.oem-mini-card:hover {
+  border-color: rgba(0,212,255,0.5);
+  transform: translateY(-2px);
+}
+
 /* VALUE SIGNALS */
 .signal-value {
   font-weight: 600;
