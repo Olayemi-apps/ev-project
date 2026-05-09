@@ -117,6 +117,29 @@
           "marketExpansion": 78,
           "pricingStrategy": 62
         },
+        "marketSignals": {
+          "visibilityTrend": "+14%",
+          "chargingPerception": "+16%",
+          "ukInterest": "+11%",
+          "dealerExpansion": "Selective Premium Expansion",
+          "infrastructureAlignment": "High-Speed Network Optimised"
+        },
+
+        "executiveSnapshot": {
+          "positioning": "Ultra-premium electric grand touring challenger",
+          "coreStrength": "High-speed charging and performance engineering",
+          "primaryRisk": "Limited global service footprint",
+          "ukReadiness": "Moderate-High",
+          "infrastructureFit": "Excellent",
+          "outlook": "Premium segment acceleration through 2026"
+        },
+
+        "forecast": {
+          "expectedGrowth": "+18%",
+          "pricingPressure": "Low",
+          "segmentCompetition": "Intensifying",
+          "chargingDependency": "Very High"
+        },
 
         "market": {
           "segment": "Luxury performance EV",
@@ -320,6 +343,29 @@
         "technologyLeadership": 88,
         "marketExpansion": 96,
         "pricingStrategy": 90
+      },
+      "marketSignals": {
+        "visibilityTrend": "+28%",
+        "chargingPerception": "+18%",
+        "ukInterest": "+26%",
+        "dealerExpansion": "Rapid European Scaling",
+        "infrastructureAlignment": "Strong"
+      },
+
+      "executiveSnapshot": {
+        "positioning": "Performance SUV expansion platform",
+        "coreStrength": "Scale efficiency and charging capability",
+        "primaryRisk": "Premium brand perception transition",
+        "ukReadiness": "High",
+        "infrastructureFit": "Strong",
+        "outlook": "Aggressive expansion trajectory"
+      },
+
+      "forecast": {
+        "expectedGrowth": "+32%",
+        "pricingPressure": "Medium",
+        "segmentCompetition": "High",
+        "chargingDependency": "High"
       },
 
       "market": {
@@ -525,6 +571,29 @@
         "marketExpansion": 88,
         "pricingStrategy": 90
       },
+      "marketSignals": {
+        "visibilityTrend": "+16%",
+        "chargingPerception": "+9%",
+        "ukInterest": "+13%",
+        "dealerExpansion": "Global SUV Expansion",
+        "infrastructureAlignment": "Moderate"
+      },
+
+      "executiveSnapshot": {
+        "positioning": "Lifestyle-oriented premium SUV entrant",
+        "coreStrength": "Value-led rugged SUV positioning",
+        "primaryRisk": "International brand recognition",
+        "ukReadiness": "Moderate",
+        "infrastructureFit": "Balanced",
+        "outlook": "Steady global rollout progression"
+      },
+
+      "forecast": {
+        "expectedGrowth": "+20%",
+        "pricingPressure": "Medium",
+        "segmentCompetition": "Rising",
+        "chargingDependency": "Moderate"
+      },
 
       "market": {
         "segment": "Mid-size electric SUV",
@@ -725,6 +794,29 @@
         "technologyLeadership": 70,
         "marketExpansion": 85,
         "pricingStrategy": 92
+      },
+      "marketSignals": {
+        "visibilityTrend": "+22%",
+        "chargingPerception": "+10%",
+        "ukInterest": "+19%",
+        "dealerExpansion": "Urban Market Scaling",
+        "infrastructureAlignment": "Urban Optimised"
+      },
+
+      "executiveSnapshot": {
+        "positioning": "Affordable global urban EV challenger",
+        "coreStrength": "Cost-efficient market penetration",
+        "primaryRisk": "Competitive compact EV segment saturation",
+        "ukReadiness": "Moderate-High",
+        "infrastructureFit": "Strong Urban Alignment",
+        "outlook": "Volume-driven expansion potential"
+      },
+
+      "forecast": {
+        "expectedGrowth": "+27%",
+        "pricingPressure": "High",
+        "segmentCompetition": "Very High",
+        "chargingDependency": "Moderate"
       },
 
       "market": {
@@ -931,6 +1023,29 @@
         "technologyLeadership": 86,
         "marketExpansion": 88,
         "pricingStrategy": 84
+      },
+      "marketSignals": {
+        "visibilityTrend": "+18%",
+        "chargingPerception": "+12%",
+        "ukInterest": "+22%",
+        "dealerExpansion": "Accelerating",
+        "infrastructureAlignment": "Strong"
+      },
+
+      "executiveSnapshot": {
+        "positioning": "Mid-market charging performance challenger",
+        "coreStrength": "Charging efficiency",
+        "primaryRisk": "Brand awareness scaling",
+        "ukReadiness": "High",
+        "infrastructureFit": "Strong",
+        "outlook": "Positive acceleration through 2026"
+      },
+
+      "forecast": {
+        "expectedGrowth": "+24%",
+        "pricingPressure": "Medium",
+        "segmentCompetition": "Rising",
+        "chargingDependency": "High"
       },
 
       "market": {
@@ -1181,6 +1296,29 @@
         "technologyLeadership": 95,
         "marketExpansion": 60,
         "pricingStrategy": 55
+      },
+      "marketSignals": {
+        "visibilityTrend": "+12%",
+        "chargingPerception": "+21%",
+        "ukInterest": "+8%",
+        "dealerExpansion": "Selective Luxury Scaling",
+        "infrastructureAlignment": "Ultra-Fast Charging Focused"
+      },
+
+      "executiveSnapshot": {
+        "positioning": "Ultra-luxury EV performance benchmark",
+        "coreStrength": "Powertrain efficiency and acceleration dominance",
+        "primaryRisk": "Low production scalability",
+        "ukReadiness": "Selective Premium Demand",
+        "infrastructureFit": "Excellent",
+        "outlook": "Strong prestige positioning with constrained scale"
+      },
+
+      "forecast": {
+        "expectedGrowth": "+14%",
+        "pricingPressure": "Low",
+        "segmentCompetition": "Intense Premium Rivalry",
+        "chargingDependency": "High"
       },
       "market": {
         "segment": "Luxury high-performance EV",
@@ -1435,6 +1573,29 @@
           "marketExpansion": 95,
           "pricingStrategy": 92
         },
+        "marketSignals": {
+          "visibilityTrend": "+31%",
+          "chargingPerception": "+17%",
+          "ukInterest": "+29%",
+          "dealerExpansion": "Rapid Distribution Growth",
+          "infrastructureAlignment": "Strong"
+        },
+
+        "executiveSnapshot": {
+          "positioning": "Mass-market SUV expansion leader",
+          "coreStrength": "Vertical integration and pricing efficiency",
+          "primaryRisk": "Legacy OEM brand trust competition",
+          "ukReadiness": "High",
+          "infrastructureFit": "Strong",
+          "outlook": "Sustained high-volume expansion"
+        },
+
+        "forecast": {
+          "expectedGrowth": "+36%",
+          "pricingPressure": "Medium-High",
+          "segmentCompetition": "Aggressive",
+          "chargingDependency": "Moderate"
+        },
         "market": {
         "segment": "Mid-size electric SUV",
           "competitors": [
@@ -1671,6 +1832,29 @@
       "technologyLeadership": 88,
       "marketExpansion": 80,
       "pricingStrategy": 82
+    },
+    "marketSignals": {
+      "visibilityTrend": "+19%",
+      "chargingPerception": "+15%",
+      "ukInterest": "+14%",
+      "dealerExpansion": "Premium European Expansion",
+      "infrastructureAlignment": "Performance Optimised"
+    },
+
+    "executiveSnapshot": {
+      "positioning": "Premium technology-led EV disruptor",
+      "coreStrength": "Platform capability and digital integration",
+      "primaryRisk": "Brand maturity outside China",
+      "ukReadiness": "Moderate-High",
+      "infrastructureFit": "Strong",
+      "outlook": "Premium segment growth acceleration"
+    },
+
+    "forecast": {
+      "expectedGrowth": "+23%",
+      "pricingPressure": "Medium",
+      "segmentCompetition": "High",
+      "chargingDependency": "High"
     },
 
     "market": {

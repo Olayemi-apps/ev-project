@@ -14,7 +14,7 @@
   <meta name="description" content="Curated OEM data for premium EV models, tuned for UK import reality: performance, charging, range standards, and compliance context." />
   <meta name="theme-color" content="#0B0F1A">
 
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="./manifest.json">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,6 +107,8 @@
 
         <section class="oem-dashboard-section">
 
+          <div class="oem-signal-bar" id="oem-signal-bar"></div>
+
           <!-- CONTROLS -->
           <div class="oem-controls">
             <div class="oem-filters-wrapper">
@@ -163,6 +165,13 @@
           <!-- DATA LAYERS -->
           <div id="oem-heatmap"></div>
           <div id="oem-dashboard"></div>
+          <section class="charging-matrix">
+
+            <h2>Charging Infrastructure Intelligence</h2>
+
+            <div id="charging-matrix-grid"></div>
+
+          </section>
 
           <!-- CTA -->
           <div class="oem-deep-dive">

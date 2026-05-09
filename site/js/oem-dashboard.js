@@ -21,8 +21,10 @@ async function loadOEMDashboard(){
     oemVehicles = Object.values(raw.vehicles);
 
     buildOEMDashboard(oemVehicles);
+    buildOEMSignals(oemVehicles);
     buildOEMCharts(oemVehicles);
     buildOEMHeatmap(oemVehicles);
+    buildChargingMatrix(oemVehicles);
     initOEMControls();
 
   } catch(err){
@@ -54,8 +56,10 @@ function buildOEMDashboard(vehicles){
               <h3>${v.vehicle}</h3>
 
               <div class="oem-signals">
-                ${getSignals(v).map(s => `
-                  <span class="signal-pill">${s}</span>
+                ${getSignals(v).map(signal => `
+                  <span class="signal-pill ${getSignalClass(signal)}">
+                    ${signal}
+                  </span>
                 `).join("")}
               </div>
 
@@ -85,12 +89,52 @@ function buildOEMDashboard(vehicles){
               </div>
 
               <div class="oem-strategy">
+                  <div class="executive-snapshot">
+                    <div class="snapshot-row positioning">
+                      <span>Positioning</span>
+                      <strong>${v.executiveSnapshot?.positioning || "N/A"}</strong>
+                    </div>
+
+                    <div class="snapshot-row strength">
+                      <span>Core Strength</span>
+                      <strong>${v.executiveSnapshot?.coreStrength || "N/A"}</strong>
+                    </div>
+
+                    <div class="snapshot-row risk">
+                      <span>Primary Risk</span>
+                      <strong>${v.executiveSnapshot?.primaryRisk || "N/A"}</strong>
+                    </div>
+                  </div>
                 <div class="oem-strategy-headline">
                   ${buildHeadline(v)}
                 </div>
 
                 <div class="oem-strategy-text">
                   ${buildNarrative(v)}
+                </div>
+                <div class="forecast-box">
+
+                  <div class="forecast-title">
+                    STRATUM FORECAST
+                  </div>
+
+                  <div class="forecast-grid">
+                    <div class="forecast-growth">
+                      <span>Growth</span>
+                      <strong>${v.forecast?.expectedGrowth || "N/A"}</strong>
+                    </div>
+
+                    <div class="forecast-competition">
+                      <span>Competition</span>
+                      <strong>${v.forecast?.segmentCompetition || "N/A"}</strong>
+                    </div>
+
+                    <div class="forecast-pricing">
+                      <span>Pricing Pressure</span>
+                      <strong>${v.forecast?.pricingPressure || "N/A"}</strong>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
@@ -631,6 +675,10 @@ function getSignals(v){
   const expansion = v.momentum?.marketExpansion || 0;
   const tech = v.momentum?.technologyLeadership || 0;
 
+  /* =========================
+     PRIMARY SIGNALS
+  ========================= */
+
   if(expansion >= 90){
     signals.push("Expansion Leader");
   }
@@ -643,8 +691,20 @@ function getSignals(v){
     signals.push("Early Expansion");
   }
 
-  if(v.intelligence?.systemBehaviour?.chargingProfile?.includes("front-loaded")){
+  if(
+    v.intelligence?.systemBehaviour?.chargingProfile
+      ?.toLowerCase()
+      .includes("front-loaded")
+  ){
     signals.push("Fast-Charge Optimised");
+  }
+
+  /* =========================
+     AUTO BALANCE
+  ========================= */
+
+  if(signals.length === 1){
+    signals.push("Neutral");
   }
 
   return signals;
@@ -719,4 +779,103 @@ function buildNarrative(v){
   narrative += "to strengthen market positioning.";
 
   return narrative;
+}
+
+// SIGNALS
+
+function buildOEMSignals(vehicles){
+
+  const container = document.getElementById("oem-signal-bar");
+  if(!container) return;
+
+  const signals = vehicles.map(v => {
+
+    const trend =
+      v.marketSignals?.dealerExpansion || "Stable";
+
+    return `
+      <div class="signal-item">
+        <span class="signal-oem">${v.vehicle}</span>
+        <span class="signal-trend">${trend}</span>
+      </div>
+    `;
+  }).join("");
+
+  container.innerHTML = signals;
+}
+
+// MATRIX
+
+function buildChargingMatrix(vehicles){
+
+  const container = document.getElementById("charging-matrix-grid");
+  if(!container) return;
+
+  container.innerHTML = vehicles.map(v => `
+
+    <div class="charging-card">
+
+      <h3>${v.vehicle}</h3>
+
+      <div class="charging-row">
+        <span>Charging Profile</span>
+        <strong>${v.intelligence?.systemBehaviour?.chargingProfile || "N/A"}</strong>
+      </div>
+
+      <div class="charging-row">
+        <span>Infrastructure Fit</span>
+        <strong>${v.executiveSnapshot?.infrastructureFit || "N/A"}</strong>
+      </div>
+
+      <div class="charging-row">
+        <span>UK Readiness</span>
+
+        <strong class="${getReadinessClass(v.executiveSnapshot?.ukReadiness)}">
+          ${v.executiveSnapshot?.ukReadiness || "N/A"}
+        </strong>
+      </div>
+
+    </div>
+
+  `).join("");
+}
+
+// SIGNAL CLASS
+
+function getSignalClass(signal){
+
+  const s = signal.toLowerCase();
+
+  if(s.includes("expansion")) return "signal-expansion";
+
+  if(s.includes("scaling")) return "signal-scaling";
+
+  if(s.includes("premium")) return "signal-premium";
+
+  if(s.includes("performance")) return "signal-performance";
+
+  if(s.includes("urban")) return "signal-urban";
+
+  if(s.includes("technology")) return "signal-technology";
+
+  if(s.includes("neutral")) return "signal-neutral";
+
+  return "";
+}
+
+// UK READINESS 
+
+function getReadinessClass(value){
+
+  if(!value) return "";
+
+  const v = value.toLowerCase();
+
+  if(v.includes("moderate")) return "readiness-moderate";
+
+  if(v.includes("selective")) return "readiness-selective";
+
+  if(v.includes("high")) return "readiness-high";
+
+  return "readiness-low";
 }
