@@ -22,34 +22,67 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/market-intelligence-drawer.css" />
   <link rel="stylesheet" href="./css/market-intelligence.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
   <link rel="stylesheet" href="./css/app.css?v=12" />
 </head>
-<body>
+<body data-page="compare">
   <header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="./index.html" aria-label="Stratum EV home">
-      <img class="brand-logo" src="./assets/img/brand/stratum-ev-logo-clean-h48.png" alt="Stratum EV" />
-    </a>
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html" aria-label="Stratum EV home">
+        <img class="brand-logo" src="./assets/img/brand/stratum-ev-logo-clean-h48.png" alt="Stratum EV" />
+      </a>
 
-    <nav class="tabs" aria-label="Primary">
-      <a class="tab is-active" href="./index.html">Market Intelligence</a>
-      <a class="tab" href="./about.html">About Us</a>
-      <a class="tab" href="./featured.html">Featured Analysis</a>
-      <a class="tab" href="./services.html">Services</a>
-      <a class="tab" href="./ev-history.html">EV History</a>
-      <a class="tab" href="./ev-evolution.html">EV Evolution</a>
-      <a class="tab" href="./innovation.html">Innovation</a>
-      <a class="tab" href="./store.html">Store</a>
-      <a class="tab" href="./contact.html">Contact</a>
-    </nav>
+      <nav class="tabs" aria-label="Primary">
 
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
-      <span></span><span></span><span></span>
-    </button>
+        <a class="tab" href="./index.html">Home</a>
+        <a class="tab" href="./market-intelligence.html">Market Intelligence</a>
+        <a class="tab" href="./articles.html">Articles</a>
+        <a class="tab" href="./the-hub.html">The Hub</a>
+        <a class="tab" href="./featured.html">Featured Analysis</a>
+        <a class="tab" href="./store.html">Store</a>
 
+        <!-- PLATFORM DROPDOWN -->
+        <div class="tab dropdown">
+          <span class="tab-link">Platform <span class="arrow">▾</span></span>
+          <div class="dropdown-menu">
+            <a href="./platform.html">Platform Overview</a>
+            <a href="./infrastructure.html">Infrastructure</a>
+            <a href="./sustainability.html">Sustainability</a>
+            <a href="./partnerships.html">Partnerships</a>
+          </div>
+        </div>
+
+        <!-- EXPLORE DROPDOWN -->
+        <div class="tab dropdown">
+          <span class="tab-link">Explore <span class="arrow">▾</span></span>
+          <div class="dropdown-menu">
+            <a href="./services.html">Services</a>
+            <a href="./innovation.html">Innovation</a>
+            <a href="./ev-history.html">EV History</a>
+            <a href="./ev-evolution.html">EV Evolution</a>
+          </div>
+        </div>
+
+        <a class="tab is-active" href="./about.html">About</a>
+        <a class="tab" href="./contact.html">Contact</a>
+
+        <!-- mobile CTA -->
+        <a class="tab tab-cta" href="./uk-compliance-led-sourcing.html">
+          UK compliance-led sourcing
+        </a>
+
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+      
     <a class="badge badge-cta" href="./uk-compliance-led-sourcing.html">UK compliance-led sourcing</a>
-  </div>
+
   </header>
+
+    <div class="nav-open-overlay"></div>
 
   <main class="container page">
     <a class="back" href="./index.html">← Back to models</a>
