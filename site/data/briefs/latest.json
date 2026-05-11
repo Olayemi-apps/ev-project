@@ -1,11 +1,11 @@
 {
-  "file": "Stratum-Weekly-Brief-2026-W19.pdf",
-  "week": "2026-W19",
-  "updated": "2026-05-04T08:28:02.753884+00:00",
-  "url": "./data/briefs/Stratum-Weekly-Brief-2026-W19.pdf",
+  "file": "Stratum-Weekly-Brief-2026-W20.pdf",
+  "week": "2026-W20",
+  "updated": "2026-05-11T09:36:46.364888+00:00",
+  "url": "./data/briefs/Stratum-Weekly-Brief-2026-W20.pdf",
   "kpis": {
     "total_7d": 40,
-    "top_cat": "Policy",
+    "top_cat": "Industry",
     "top_reg": "US"
   }
 }
