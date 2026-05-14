@@ -12,6 +12,7 @@ function loadPage(url, push = true){
   // FULL reload for complex / JS-heavy pages
   if(
     url.includes("market-intelligence") ||
+    url.includes("the-hub") ||
     url.includes("about") ||
     url.includes("featured") ||
     url.includes("ev-history") ||
