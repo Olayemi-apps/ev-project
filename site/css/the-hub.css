@@ -2350,11 +2350,18 @@ FURTHER STYLING
 }
 
 .roadmap-card h3{
-  margin-top:14px;
-  font-size:16px;
-  line-height:1.4;
-  letter-spacing:-0.3px;
-  font-weight:600;
+
+  font-size:22px;
+
+  line-height:1.18;
+
+  letter-spacing:-0.02em;
+
+  margin-top:10px;
+
+  margin-bottom:0;
+
+  max-width:220px;
 }
 
 /* SIGNAL */
@@ -3289,31 +3296,43 @@ STATUS
 ========================================= */
 
 .roadmap-card{
-  min-height:240px;
-  justify-content:space-between;
 
-  border-top:
-  2px solid rgba(56,189,248,0.18);
+  min-height:170px;
 
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
 
-  cursor: pointer;
-  position:relative;
-  isolation:isolate;
-  transform:translateZ(0);
-  backface-visibility:hidden;
-  will-change:transform;
-  overflow:visible;
-  padding:32px;
+  padding:26px 28px;
+
+  border-radius:24px;
+
+  border-top:
+  2px solid rgba(56,189,248,0.16);
 
   background:
-    linear-gradient(
-      180deg,
-      rgba(14,20,32,0.88),
-      rgba(6,8,14,0.96)
-    );
+  linear-gradient(
+    180deg,
+    rgba(14,20,32,0.88),
+    rgba(6,8,14,0.96)
+  );
+
+  position:relative;
+
+  isolation:isolate;
+
+  overflow:visible;
+
+  cursor:pointer;
+
+  transition:
+  transform 0.35s ease,
+  border-color 0.35s ease,
+  box-shadow 0.35s ease;
+
+  backface-visibility:hidden;
+
+  will-change:transform;
 }
 
 .roadmap-popup{
@@ -3366,9 +3385,13 @@ STATUS
 }
 
 .roadmap-card span{
-  font-size:10px;
-  letter-spacing:2px;
-  opacity:0.75;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:#4fb7ff;
+  opacity:0.9;
+  margin-bottom:14px;
 }
 
 .hub-main::before{
