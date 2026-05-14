@@ -1,0 +1,43 @@
+{
+  "liveMetrics": [
+    {
+      "title": "UK Infrastructure",
+      "value": "+38%",
+      "trend": "+4.2%",
+      "description": "Annual expansion in UK public charging infrastructure deployment.",
+      "status": "positive"
+    },
+    {
+      "title": "Rapid Charging",
+      "value": "+27%",
+      "trend": "+1.9%",
+      "description": "Growth in high-speed charging network availability.",
+      "status": "positive"
+    }
+  ],
+
+  "regionalHeat": [
+    {
+      "region": "London",
+      "label": "High Density",
+      "score": 94,
+      "theme": "blue"
+    }
+  ],
+
+  "reliabilityMetrics": [
+    {
+      "title": "Ultra Rapid Networks",
+      "score": 92,
+      "label": "Stable Performance",
+      "theme": "blue"
+    }
+  ],
+
+  "ticker": [
+    "UK GRID +2.8%",
+    "FAST CHARGING +11%",
+    "EV ADOPTION +9.1%",
+    "NETWORK UPTIME 94%"
+  ]
+}

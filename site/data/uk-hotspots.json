@@ -1,0 +1,44 @@
+{
+  "hotspots":[
+    {
+      "name":"Glasgow",
+      "x":58,
+      "y":18,
+      "density":"Moderate",
+      "uptime":"91%",
+      "growth":"+12%"
+    },
+    {
+      "name":"Manchester",
+      "x":54,
+      "y":46,
+      "density":"High",
+      "uptime":"93%",
+      "growth":"+18%"
+    },
+    {
+      "name":"Birmingham",
+      "x":56,
+      "y":61,
+      "density":"High",
+      "uptime":"92%",
+      "growth":"+16%"
+    },
+    {
+      "name":"Bristol",
+      "x":33,
+      "y":73,
+      "density":"Growing",
+      "uptime":"88%",
+      "growth":"+11%"
+    },
+    {
+      "name":"London",
+      "x":73,
+      "y":84,
+      "density":"Very High",
+      "uptime":"96%",
+      "growth":"+22%"
+    }
+  ]
+}

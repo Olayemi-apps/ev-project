@@ -1,0 +1,29 @@
+{
+  "networks":[
+
+    {
+      "network":"Ultra Rapid Networks",
+      "reliability":92,
+      "status":"Stable Performance"
+    },
+
+    {
+      "network":"Urban Fast Charging",
+      "reliability":81,
+      "status":"High Availability"
+    },
+
+    {
+      "network":"Regional Infrastructure",
+      "reliability":68,
+      "status":"Variable Consistency"
+    },
+
+    {
+      "network":"Destination Charging",
+      "reliability":74,
+      "status":"Moderate Stability"
+    }
+
+  ]
+}

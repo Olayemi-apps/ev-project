@@ -1,0 +1,56 @@
+{
+  "ukChargerGrowth":{
+    "value":"+38%",
+    "description":"Annual expansion in UK public charging infrastructure deployment."
+  },
+
+  "rapidCharging":{
+    "value":"+27%",
+    "description":"Growth in high-speed charging network availability."
+  },
+
+  "regionalCoverage":{
+    "value":"82%",
+    "description":"Coverage interpretation across mapped EV charging ecosystems."
+  },
+
+  "liveMetrics":[
+
+    {
+      "title":"UK Infrastructure",
+      "value":"+38%",
+      "description":"Annual expansion in UK public charging infrastructure deployment."
+    },
+
+    {
+      "title":"Rapid Charging",
+      "value":"+27%",
+      "description":"Growth in high-speed charging network availability."
+    },
+
+    {
+      "title":"Regional Visibility",
+      "value":"82%",
+      "description":"Coverage interpretation across mapped EV charging ecosystems."
+    },
+
+    {
+      "title":"OEM Expansion",
+      "value":"+19%",
+      "description":"Expansion of EV manufacturer ecosystem presence across UK infrastructure regions."
+    },
+
+    {
+      "title":"Charging Coverage",
+      "value":"84%",
+      "description":"Public rapid charging accessibility coverage across high-density transport corridors."
+    },
+
+    {
+      "title":"Network Stability",
+      "value":"91%",
+      "description":"Infrastructure consistency signals derived from charging uptime and availability trends."
+    }
+
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "regions":[
+
+    {
+      "name":"London",
+      "coverage":94,
+      "status":"High Density"
+    },
+
+    {
+      "name":"South East",
+      "coverage":86,
+      "status":"Strong Expansion"
+    },
+
+    {
+      "name":"Midlands",
+      "coverage":72,
+      "status":"Growing Network"
+    },
+
+    {
+      "name":"North West",
+      "coverage":69,
+      "status":"Scaling"
+    },
+
+    {
+      "name":"Scotland",
+      "coverage":63,
+      "status":"Infrastructure Growth"
+    },
+
+    {
+      "name":"Wales",
+      "coverage":58,
+      "status":"Emerging Coverage"
+    }
+
+  ]
+}

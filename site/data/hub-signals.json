@@ -1,0 +1,158 @@
+{
+  "ticker": [
+    "UK GRID COVERAGE 94%",
+    "OEM SIGNAL: POSITIVE",
+    "FAST CHARGING +27%",
+    "UPTIME 91%",
+    "EV ADOPTION +19%",
+    "REGIONAL COVERAGE 82%"
+  ],
+
+  "liveMetrics": [
+    {
+      "label": "UK Infrastructure",
+      "value": "+38%",
+      "trend": "+4.3% YoY",
+      "description": "Annual expansion in UK public charging infrastructure deployment.",
+      "status": "positive"
+    },
+
+    {
+      "label": "Rapid Charging",
+      "value": "+27%",
+      "trend": "+3.1% YoY",
+      "description": "Growth in high-speed charging network availability.",
+      "status": "positive"
+    },
+
+    {
+      "label": "Regional Visibility",
+      "value": "82%",
+      "trend": "+1.8% YoY",
+      "description": "Coverage interpretation across major EV charging ecosystems.",
+      "status": "positive"
+    },
+
+    {
+      "label": "OEM Expansion",
+      "value": "+19%",
+      "trend": "+2.6% YoY",
+      "description": "Expansion of EV manufacturer ecosystem presence across UK infrastructure regions.",
+      "status": "neutral"
+    },
+
+    {
+      "label": "Charging Coverage",
+      "value": "84%",
+      "trend": "+2.1% YoY",
+      "description": "Public rapid charging accessibility coverage across high-density transport corridors.",
+      "status": "positive"
+    },
+
+    {
+      "label": "Network Stability",
+      "value": "91%",
+      "trend": "+0.9% YoY",
+      "description": "Infrastructure consistency signals derived from charging uptime and availability trends.",
+      "status": "warning"
+    }
+  ],
+
+  "heatIndicators": [
+
+    {
+      "region": "London",
+      "label": "URBAN CORE // DENSE",
+      "subtitle": "High Density",
+      "value": 94,
+      "color": "blue",
+      "signal": "signal-high"
+    },
+
+    {
+      "region": "South East",
+      "label": "EXPANSION // ACTIVE",
+      "subtitle": "Strong Expansion",
+      "value": 86,
+      "color": "blue",
+      "signal": "signal-high"
+    },
+
+    {
+      "region": "Midlands",
+      "label": "NETWORK // GROWING",
+      "subtitle": "Growing Network",
+      "value": 72,
+      "color": "green",
+      "signal": "signal-positive"
+    },
+
+    {
+      "region": "North West",
+      "label": "GRID // SCALING",
+      "subtitle": "Scaling",
+      "value": 69,
+      "color": "green",
+      "signal": "signal-positive"
+    },
+
+    {
+      "region": "Scotland",
+      "label": "INFRASTRUCTURE // EMERGING",
+      "subtitle": "Infrastructure Growth",
+      "value": 63,
+      "color": "orange",
+      "signal": "signal-emerging"
+    },
+
+    {
+      "region": "Wales",
+      "label": "COVERAGE // DEVELOPING",
+      "subtitle": "Emerging Coverage",
+      "value": 58,
+      "color": "orange",
+      "signal": "signal-emerging"
+    }
+
+  ],
+
+  "reliabilityMetrics": [
+
+      {
+        "title": "Ultra Rapid Networks",
+        "label": "ULTRA RAPID // ACTIVE",
+        "value": 92,
+        "subtitle": "Stable Performance",
+        "color": "blue",
+        "signal": "signal-high"
+      },
+
+      {
+        "title": "Urban Fast Charging",
+        "label": "URBAN ACCESS // STABLE",
+        "value": 81,
+        "subtitle": "High Availability",
+        "color": "green",
+        "signal": "signal-positive"
+      },
+
+      {
+        "title": "Regional Infrastructure",
+        "label": "REGIONAL GRID // VARIABLE",
+        "value": 68,
+        "subtitle": "Variable Consistency",
+        "color": "orange",
+        "signal": "signal-warning"
+      },
+
+      {
+        "title": "Destination Charging",
+        "label": "DESTINATION // MODERATE",
+        "value": 74,
+        "subtitle": "Moderate Stability",
+        "color": "green",
+        "signal": "signal-moderate"
+      }
+
+    ]
+}

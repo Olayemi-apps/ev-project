@@ -1,0 +1,78 @@
+{
+  "ticker":[
+    {
+      "label":"UK GRID",
+      "value":"+12.4%"
+    },
+    {
+      "label":"FAST CHARGING",
+      "value":"+27%"
+    },
+    {
+      "label":"UPTIME",
+      "value":"94%"
+    },
+    {
+      "label":"EV ADOPTION",
+      "value":"+18%"
+    },
+    {
+      "label":"REGIONAL COVERAGE",
+      "value":"82%"
+    },
+    {
+      "label":"OEM SIGNAL",
+      "value":"POSITIVE"
+    }
+  ],
+
+  "liveMetrics":[
+    {
+      "title":"UK Infrastructure",
+      "value":"+38%",
+      "trend":"+4.2%",
+      "trendType":"positive",
+      "description":"Annual expansion in UK public charging infrastructure deployment."
+    },
+
+    {
+      "title":"Rapid Charging",
+      "value":"+27%",
+      "trend":"+1.8%",
+      "trendType":"positive",
+      "description":"Growth in high-speed charging network availability."
+    },
+
+    {
+      "title":"Regional Visibility",
+      "value":"82%",
+      "trend":"+2.4%",
+      "trendType":"positive",
+      "description":"Coverage interpretation across major EV charging ecosystems."
+    },
+
+    {
+      "title":"OEM Expansion",
+      "value":"+19%",
+      "trend":"+0.6%",
+      "trendType":"neutral",
+      "description":"Expansion of EV manufacturer ecosystem presence across UK infrastructure regions."
+    },
+
+    {
+      "title":"Charging Coverage",
+      "value":"84%",
+      "trend":"+3.1%",
+      "trendType":"positive",
+      "description":"Public rapid charging accessibility coverage across high-density transport corridors."
+    },
+
+    {
+      "title":"Network Stability",
+      "value":"91%",
+      "trend":"-0.8%",
+      "trendType":"warning",
+      "description":"Infrastructure consistency signals derived from charging uptime and availability trends."
+    }
+  ]
+}
